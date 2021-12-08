@@ -26,6 +26,20 @@
   -webkit-transform: scale(2); /* Safari 3-8 */
   transform: scale(2); 
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  background-color: white;
+  padding: 10px;
+}
+.grid-item {
+  background-color: red;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 15px;
+  text-align: center;
+}
 </style>
 	</head>
 	<body class="is-preload">
@@ -140,14 +154,24 @@
 <p style="text-align: center"><img src="images/ergyoroi.png" style="width: 10%;" ></p>
 
 	
-		<h3 style="text-align: center">ART SAMPLE</h3>
-									<p style="text-align: center;">
-									<img class="zoom" width="15%" src="images/commonx.png">
-									<img class="zoom" width="15%" src="images/upcoming.png">
-									<img class="zoom" width="15%" src="images/rarex.png">
-									<img class="zoom" width="15%" src="images/upcoming.png">
-									<img class="zoom" width="15%" src="images/upcoming.png"></p>
-	<p style="text-align: center"><img src="images/logo.png" style="width: 10%;" ></p>
+		<h3 style="text-align: center">ERGYODEX</h3>
+
+
+
+<div class="grid-container">
+  <div class="grid-item"><img class="zoom" width="100%" src="images/commonx.png"><span>ERGYOROI #001 HANNYA The Jealous Demon</span></div>
+  <div class="grid-item"><img class="zoom" width="100%" src="images/commonx.png"></div>
+  <div class="grid-item"><img class="zoom" width="100%" src="images/commonx.png"></div>  
+  <div class="grid-item"><img class="zoom" width="100%" src="images/commonx.png"></div>
+  <div class="grid-item"><img class="zoom" width="100%" src="images/commonx.png"></div>
+  <div class="grid-item"><img class="zoom" width="100%" src="images/commonx.png"></div>  
+  <div class="grid-item"><img class="zoom" width="100%" src="images/commonx.png"></div>
+  <div class="grid-item"><img class="zoom" width="100%" src="images/commonx.png"></div>
+  <div class="grid-item"><img class="zoom" width="100%" src="images/commonx.png"></div>  
+</div>
+
+						
+									<p style="text-align: center"><img src="images/logo.png" style="width: 10%;" ></p>
 								</div>
 							</section>
 
