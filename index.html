@@ -166,13 +166,36 @@ body{
 }
 /* Animation by Chris Smith */
 
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+opacity: 0.5;
+  background-color: #181c2d;
+  color: white;
+  cursor: pointer;
+  padding: 0PX;
+
+  border-radius: 50px;
+  width: 50PX;
+  height: 50PX;
+
+}
+
+#myBtn:hover {
+  background-color: #b22d3d;
+}
 
 </style>
 
 
 	</head>
 	<body class="is-preload">
-
+<button onclick="topFunction()" id="myBtn" title="Go to top"><span class="material-icons" style="padding-bottom: 15PX;">
+keyboard_arrow_up
+</span></button>
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -687,7 +710,8 @@ function myFunctionC() {
 					</footer>
 
 			</div>
-		</div>	<!--important
+		</div>	<!--important-->
+
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
@@ -697,6 +721,27 @@ function myFunctionC() {
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+			//Get the button
+			var mybutton = document.getElementById("myBtn");
+
+			// When the user scrolls down 20px from the top of the document, show the button
+			window.onscroll = function() {scrollFunction()};
+
+			function scrollFunction() {
+			  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+			    mybutton.style.display = "block";
+			  } else {
+			    mybutton.style.display = "none";
+			  }
+			}
+
+			// When the user clicks on the button, scroll to the top of the document
+			function topFunction() {
+			  document.body.scrollTop = 0;
+			  document.documentElement.scrollTop = 0;
+			}
+			</script>
 
 	</body>
 </html>
