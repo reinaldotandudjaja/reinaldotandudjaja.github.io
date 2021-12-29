@@ -19,7 +19,6 @@
 
 		<style>
 
-
 .zoom {
 
 
@@ -135,22 +134,6 @@
 	font-size: 11px;
 }
 
-
-.rank1{
-	color: white;
-	background-color: #630000;
-}
-
-.rank2{
-	color: white;
-	background-color: #000063;
-}
-
-.rank3{
-	color: white;
-	background-color: #006300;
-}
-
 .tokenid{
 	padding-left: 0px;
 	padding-right: 0px;
@@ -159,7 +142,6 @@
 
 .boldy{
 	font-weight: 700;
-
 }
 
 body{
@@ -304,9 +286,9 @@ gavel
 							
 						<!-- One -->
 						<section id="one" class="tiles">
-								<article>
+								<article >
 									<span class="image">
-										<img loading="lazy" src="images/pic04.jpg" alt="" />
+										<img  loading="lazy" src="images/pic04.jpg" alt="" />
 									</span>
 									<header class="major">
 
@@ -775,6 +757,13 @@ function myFunctionC() {
 
 			function scrollFunction() {
 			  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+			    mybutton.style.display = "block";
+			  } else {
+			    mybutton.style.display = "none";
+			  }
+			}
+
+			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
 			    mybutton.style.display = "block";
 			  } else {
 			    mybutton.style.display = "none";
