@@ -546,10 +546,67 @@ apps
 
 
 
+<script>
 
+function myFunctionD() {
 
+  var x=document.getElementById("MYTOKENIDD").value;
 
+  const tokenid = [
+'98551baac3139284e292a5839d1873593df395c43c5fc1619e789f4da3b00780',
+'fb760068f209cba8c3e63655bbed8afe200ce24f1bd1a6573d3555ef6b48d528',
+'f6af4dd2e5b9311f52edd95579570144f7729b96334ea8782ada9599db65742b',
+'fb8cdacdd0c9a1c13cc2521c871768a0309d2bc6d231dc7ba25f5a775e05f03b',
+'34cb312abbc7f8fb3f147d5b2aa3e5a7e2d8ab96de4315b9b1e25693d6c40703',
+'fd44c2c2eca0368e4eb5dee5c48a6157ca65114eff1207a7133e7108e51e3ae4',
+'cc3c68b062b117c1d0c78be7f5f362b234967b846cb92b787dcab23bcb1d82c4',
+'207b7356a003da53de1328a5124add84a76041c8666e24a28335398a72d67a93',
+'fc849bca5cef21199091373640b9c571d76ec5ebbcb9bfb180b557e2693cd9ed',
+'8c4d4be0a6ef0655cdf8d47b0c3e8d10ac386820b09437f0365762388f764728',
+'f54fececc49171fd32c6b4cba7963f230910f563dfb66fb02e37fb9abf03001b',
+'e1dddc22860912d271833f068ffb85972058cd855b5241b950754580ab096483',
+'c9919b497272ff9cd6354e04b26d6d7495b8aa9f114955ffc32657a95c878532',
+'498606cd6343621749e246261321414864acd5c9dcc3f0a87d2e9490f022b991',
+'9a099d315792502718153576cffe12c5467d1b23110dcc782e2dee2c66a41f7a',
+'3b1012319094c1ec6100ea8a161ee9756a94b80c321e370d36fdcf448880fd2d',
+'0eefe553170b892cc48739c6b39c70d0a060fe69dd5d8f54823b200d90c7c870',
+'3e839050c7f0fab1df029306aa660a7f16eab2be8d3280545c00722f52572b5e',
+'988aa7329da5b1398e08267dcb1ea45299f87e1446a3ad2ff9db50ff7f9b33b9',
+'0640b514697c9059b6007c80ef42e70ae505facf9843cdb90a9d525594d14e89',
+'9ff11af1d3ef0f4d81fdd2808fd47536b0f853900e121e1e7bd5d1005cabbd42',
+'5c6cbb2e118dc4a5d698b0c14015add45bcfd2d6564f172b9a4ef32fdce57c15',
+'fd1ee0204b9da053e3a8f3c2b18551136abd558e992dd42ca2ed6a165b334b7f',
+'52bbcae1f9cb25d3ecc4e5d97c045a438d5526c414f60316e4040958098bb2d2',
+'8ba16d31576a45c55ad76ccc3adc5acfa7ad4a1d6d80912cb2dfc2fe122ee7ec',
+'c7c7771d3da10f4d5e7f7aa1cbae8aac2719793988a448954e7d9ea24e50ee67',
+'4095f5f200dbf3c71bbf0c94e5cc8481cbb94478508cdc5ac01f0f38df8b56ff',
+'663b4af81eea810c0b6532efcb13274463372d9dde83d17fc0496c19076aea4e',
+'36cdc29277681c74a712ed409b998da4139b5b2433f195084858e1d0612b0089',
+'18628098617da2d0224097e20fb8e38a2862385692f9ebd7ec7f7daecd2220e8',
+'fc188a33486da6481d349a3dfa415d7e25e44679793afd9959161cefdfe5b250',
+'da6c2f7b2536df4e5b16e5f53a3159776cd12b8282b59fc0b09daf9dc37a57e1',
+'8f55de31fc003491dec64e764ca3ee67629c23d65c546860c6b04b54515d5419',
+'64ef95c5fb1ba4c9a4b2dd889d66bd5d434cd23c54e8cb1519becac6fd7995eb',
+'78029b54febfa9bccb79e37e8c6332b12b6bab391155f34fcc18888980140da7',
+'791e396dec17e57a973075aa07fdfac8ff5be5c2c9846b39b6959b990001f13e',
+'9188b3301b16751bec5aa320f1f6813181eafd4260350933b973563c7992a39e',
+'2e7e5e0081c2f1484d30734deeda8d4fb716837392b59e65c47ed43c8a17c81c',
+'c418c84106a337e9a0b544687e6d0267b0a9fd33ba5e36e5540504d994568f79',
+'75641c8efa512f94791f6d48bd684dbb2a28cb5d830b7447bbe214e82812624b',
+'3c92801add9210bdc0aef73501e64f411160610d7286a32490bfaad4ee78f84f',
+'8b6dcc4756dd92c9c5d425c4024703eb3ee44189d3da4fd8b2b6a6e492603407',
+'87a025fc3ae1b0c1183dd0743b2235d18f4a8c70345d4fa7e69de225a3401ad2',
+'4aa169c75357d415619fad57f826da9367b1692ac21429ab4be324759196735d',
+'131831df6b900f5d18e95b2b0b55cefabae32b47a3b1b6ec58f0c796d519ae8e',
+  ];
 
+  if (tokenid.includes(x)) {
+  	document.getElementById("msg").innerHTML='<span  style="color:aquamarine; ">100% Authentic ERGYOROI Token,</span> to avoid mis-information please always double check with other method below<br></span>'
+  }else{
+  	document.getElementById("msg").innerHTML='<span  style="color:crimson; ">NOT an ERGYOROI Token,</span> to avoid mis-information please always double check with other method below<br></span>'
+  }
+}
+</script>
 
 <!-- END -->
 
@@ -652,6 +709,13 @@ fingerprint
 									
 					
 							<div class="content">
+								<form onsubmit="myFunctionD()" action="javascript:void(0);">
+<input type="text" style="max-width: 800px" placeholder="Input your / any Token ID" required="required" id="MYTOKENIDD" pattern="[a-z0-9]{64,64}" oninvalid="setCustomValidity('Make sure its valid Token ID')" onchange="try{setCustomValidity('')}catch(e){}" oninput="myFunctionDClear()" >
+<span id="msg" style="font-size: 14px;" class="boldy"></span><br>
+<button type="submit" style="font-size:0.5em"><span class="material-icons">
+fingerprint
+</span> Instant Authentic Checker</button>
+</form>
 
 	<p > 
 									<b>Artist Address</b><br>
@@ -666,6 +730,8 @@ fingerprint
 									<p >
 									<b> Minting Address***</b> <br> 
 <span style="font-size: 18px;outline: 1px solid white;display:block; width:auto;max-width: 500px; word-wrap:break-word;">9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu</span>
+
+
 
 
 </p><div style="max-width: 800px;"><span style="font-size:14px;" >***minting address on <b>ergotokens.org</b> might be different. The minting address you see in <b>ergotokens.org</b> is the issuing address which is a proxy contract. <b>ergotokens.org</b> will get updates by ergo dev soon. Use <b>ergoauctions.org</b> instead</span></div>
@@ -724,6 +790,10 @@ function myFunctionC() {
 
   var x="https://ergonfts.org/#/"+document.getElementById("MYWALLETIDC").value;
   window.open(x); 
+}
+
+function myFunctionDClear() {
+	document.getElementById('msg').innerHTML=""
 }
 </script>
 								
