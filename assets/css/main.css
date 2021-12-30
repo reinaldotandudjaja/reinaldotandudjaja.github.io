@@ -1942,8 +1942,8 @@ input, select, textarea {
 		input[type="url"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #b22d3d;
-			box-shadow: 0 0 0 2px #b22d3d;
+			border-color: gold;
+			box-shadow: 0 0 0 2px gold;
 		}
 
 	select {
