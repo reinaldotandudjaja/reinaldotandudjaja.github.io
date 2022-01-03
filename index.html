@@ -559,11 +559,11 @@ apps
 									}
 
 
-		}else if(document.getElementById("checkcommon").checked == true ||
+		}else if(myid!="" && (document.getElementById("checkcommon").checked == true ||
 					  document.getElementById("checkuncommon").checked == true ||
 					  document.getElementById("checkrare").checked == true ||
 					  document.getElementById("checkepic").checked == true ||
-					  document.getElementById("checklegendary").checked == true ){
+					  document.getElementById("checklegendary").checked == true )){
 					myfilter();
 	
 					var matched = document.querySelectorAll("[id*="+CSS.escape(myid)+" i][style*='display:block'],[id*="+CSS.escape(myid)+" i][style*='display: block;']")	;
@@ -579,9 +579,9 @@ apps
 					    matched[i].style.display = 'block';
 					}
 	
-	}else{
+	}else if(myid!=""){
 					var matched = document.querySelectorAll("[id*="+CSS.escape(myid)+" i][style*='display:block'],[id*="+CSS.escape(myid)+" i][style*='display: block;']")	;
-					console.log(matched);
+					console.log("aiueo");
 
 					var filterrarity = document.getElementsByClassName('grid-item');
 
@@ -592,6 +592,8 @@ apps
 					for (var i = 0; i < matched.length; i ++) {
 					    matched[i].style.display = 'block';
 					}
+	}else{
+		
 	}
 }
 
