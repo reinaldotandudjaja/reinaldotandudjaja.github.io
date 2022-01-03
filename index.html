@@ -535,79 +535,91 @@ apps
 	}
 
 	function myfilter(){
-		if(document.getElementById("checkcommon").checked){
-			var filterrarity = document.getElementsByClassName('COMMON');
+		if(document.getElementById("checkcommon").checked == false &&
+	  document.getElementById("checkuncommon").checked == false &&
+	  document.getElementById("checkrare").checked == false &&
+	  document.getElementById("checkepic").checked == false &&
+	  document.getElementById("checklegendary").checked == false ){
+					var filterrarity = document.getElementsByClassName('grid-item');
 
-			for (var i = 0; i < filterrarity.length; i ++) {
-			    filterrarity[i].style.display = 'block';
-			}
+					for (var i = 0; i < filterrarity.length; i ++) {
+					    filterrarity[i].style.display = 'block';
+					}
 		}else{
-			var filterrarity = document.getElementsByClassName('COMMON');
+				if(document.getElementById("checkcommon").checked){
+					var filterrarity = document.getElementsByClassName('COMMON');
 
-			for (var i = 0; i < filterrarity.length; i ++) {
-			    filterrarity[i].style.display = 'none';
+					for (var i = 0; i < filterrarity.length; i ++) {
+					    filterrarity[i].style.display = 'block';
+					}
+				}else{
+					var filterrarity = document.getElementsByClassName('COMMON');
+
+					for (var i = 0; i < filterrarity.length; i ++) {
+					    filterrarity[i].style.display = 'none';
+					}
+				}
+
+
+				if(document.getElementById("checkuncommon").checked){
+					var filterrarity = document.getElementsByClassName('UNCOMMON');
+
+					for (var i = 0; i < filterrarity.length; i ++) {
+					    filterrarity[i].style.display = 'block';
+					}
+				}else{
+					var filterrarity = document.getElementsByClassName('UNCOMMON');
+
+					for (var i = 0; i < filterrarity.length; i ++) {
+					    filterrarity[i].style.display = 'none';
+					}
+				}
+
+
+				if(document.getElementById("checkrare").checked){
+					var filterrarity = document.getElementsByClassName('RARE');
+
+					for (var i = 0; i < filterrarity.length; i ++) {
+					    filterrarity[i].style.display = 'block';
+					}
+				}else{
+					var filterrarity = document.getElementsByClassName('RARE');
+
+					for (var i = 0; i < filterrarity.length; i ++) {
+					    filterrarity[i].style.display = 'none';
+					}
+				}
+
+
+				if(document.getElementById("checkepic").checked){
+					var filterrarity = document.getElementsByClassName('EPIC');
+
+					for (var i = 0; i < filterrarity.length; i ++) {
+					    filterrarity[i].style.display = 'block';
+					}
+				}else{
+					var filterrarity = document.getElementsByClassName('EPIC');
+
+					for (var i = 0; i < filterrarity.length; i ++) {
+					    filterrarity[i].style.display = 'none';
+					}
+				}
+
+
+				if(document.getElementById("checklegendary").checked){
+					var filterrarity = document.getElementsByClassName('LEGENDARY');
+
+					for (var i = 0; i < filterrarity.length; i ++) {
+					    filterrarity[i].style.display = 'block';
+					}
+				}else{
+					var filterrarity = document.getElementsByClassName('LEGENDARY');
+
+					for (var i = 0; i < filterrarity.length; i ++) {
+					    filterrarity[i].style.display = 'none';
+					}
+				}
 			}
-		}
-
-
-		if(document.getElementById("checkuncommon").checked){
-			var filterrarity = document.getElementsByClassName('UNCOMMON');
-
-			for (var i = 0; i < filterrarity.length; i ++) {
-			    filterrarity[i].style.display = 'block';
-			}
-		}else{
-			var filterrarity = document.getElementsByClassName('UNCOMMON');
-
-			for (var i = 0; i < filterrarity.length; i ++) {
-			    filterrarity[i].style.display = 'none';
-			}
-		}
-
-
-		if(document.getElementById("checkrare").checked){
-			var filterrarity = document.getElementsByClassName('RARE');
-
-			for (var i = 0; i < filterrarity.length; i ++) {
-			    filterrarity[i].style.display = 'block';
-			}
-		}else{
-			var filterrarity = document.getElementsByClassName('RARE');
-
-			for (var i = 0; i < filterrarity.length; i ++) {
-			    filterrarity[i].style.display = 'none';
-			}
-		}
-
-
-		if(document.getElementById("checkepic").checked){
-			var filterrarity = document.getElementsByClassName('EPIC');
-
-			for (var i = 0; i < filterrarity.length; i ++) {
-			    filterrarity[i].style.display = 'block';
-			}
-		}else{
-			var filterrarity = document.getElementsByClassName('EPIC');
-
-			for (var i = 0; i < filterrarity.length; i ++) {
-			    filterrarity[i].style.display = 'none';
-			}
-		}
-
-
-		if(document.getElementById("checklegendary").checked){
-			var filterrarity = document.getElementsByClassName('LEGENDARY');
-
-			for (var i = 0; i < filterrarity.length; i ++) {
-			    filterrarity[i].style.display = 'block';
-			}
-		}else{
-			var filterrarity = document.getElementsByClassName('LEGENDARY');
-
-			for (var i = 0; i < filterrarity.length; i ++) {
-			    filterrarity[i].style.display = 'none';
-			}
-		}
 	}
 </script>
 
