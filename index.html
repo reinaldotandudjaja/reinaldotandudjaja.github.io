@@ -557,6 +557,8 @@ apps
 									for (var i = 0; i < filterrarity.length; i ++) {
 									    filterrarity[i].style.display = 'block';
 									}
+
+
 		}else if(document.getElementById("checkcommon").checked == true ||
 					  document.getElementById("checkuncommon").checked == true ||
 					  document.getElementById("checkrare").checked == true ||
@@ -599,7 +601,7 @@ apps
 		var myid = document.getElementById("mysearch").value;
 
 
-						if(myid=="" && document.getElementById("checkcommon").checked == false &&
+						if(document.getElementById("checkcommon").checked == false &&
 					  document.getElementById("checkuncommon").checked == false &&
 					  document.getElementById("checkrare").checked == false &&
 					  document.getElementById("checkepic").checked == false &&
@@ -609,6 +611,7 @@ apps
 									for (var i = 0; i < filterrarity.length; i ++) {
 									    filterrarity[i].style.display = 'block';
 									}
+										mysearch();
 						}else{
 								if(document.getElementById("checkcommon").checked){
 									var filterrarity = document.getElementsByClassName('COMMON');
