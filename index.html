@@ -505,23 +505,23 @@ apps
 <span style="text-align: left;font-size: 12px">
 <br><br>*Record of ERGYOROI <b><span class="material-icons" style="font-size: 14px">looks_one</span> On-Release</b> Auctioned Price. <span class="material-icons" style="font-size: 14px">looks_two</span> <b>Aftermarket</b> Auction Price May Vary and <b>IS NOT</b> Recorded on ERGYODEX, its up to <span class="material-icons" style="font-size: 14px">looks_two</span> <b>Aftermarket</b> seller. Beware of <a href="#FAKESPATROL"><b><span class="material-icons" style="font-size: 12px">warning</span> Fake ERGYOROI</a></b> Auction Listings.<br>**New Token ID.<br>***ERGYODEX Updates daily.
 
-<Br><Br><div style="background-color:#111111	; padding: 10px;">
-	<!--=<input oninput="mysearch()" id="mysearch" type="text" style="max-width:600px;max-height: 32px;font-size: 18px;" placeholder="Search"></input><br>-->
- <input type="checkbox" id="checkcommon" name="checkcommon" value="checkcommon" onchange="myfilter()">
+<Br><Br><div style="background-color:#111111	; padding: 10px;max-width:100%"><div style="background-color:#111111	; padding: 10px;max-width:600px">
+	<input oninput="mysearch()" id="mysearch" type="text" style="max-width: 100%;max-height: 32px;font-size: 18px;" placeholder="Search"></input><br>
+ <input type="checkbox" id="checkcommon" name="checkcommon" value="checkcommon" onchange="myfilter();mysearch()">
   <label for="checkcommon"> <span class="boldy">Common</span></label>
 
-  <input type="checkbox" id="checkuncommon" name="checkuncommon" value="checkuncommon" onchange="myfilter()">
+  <input type="checkbox" id="checkuncommon" name="checkuncommon" value="checkuncommon" onchange="myfilter();mysearch()">
   <label for="checkuncommon"> <span style="color:#7ab257" class="boldy">Uncommon</span></label>
 
-  <input type="checkbox" id="checkrare" name="checkrare" value="checkrare" onchange="myfilter()">
+  <input type="checkbox" id="checkrare" name="checkrare" value="checkrare" onchange="myfilter();mysearch()">
   <label for="checkrare"> <span style="color:#52aeef" class="boldy">Rare</span></label>
 
-  <input type="checkbox" id="checkepic" name="checkepic" value="checkepic" onchange="myfilter()">
+  <input type="checkbox" id="checkepic" name="checkepic" value="checkepic" onchange="myfilter();mysearch()">
   <label for="checkepic"> <span style="color:#ab90d7" class="boldy">Epic</span></label>
 
-  <input type="checkbox" id="checklegendary" name="checklegendary" value="checklegendary" onchange="myfilter()">
-  <label for="checklegendary"> <span style="color:#ffae2b" class="boldy">Legendary</span></label>
-</div>
+  <input type="checkbox" id="checklegendary" name="checklegendary" value="checklegendary" onchange="myfilter();mysearch()">
+  <label for="checklegendary"> <span style="color:#ffae2b" class="boldy">Legendary</span></label>  <div style="text-align:right"><button style="max-height: 32px;font-size: 8px; width: 50%;" onclick="onPageLoad()">clear</button></div>
+</div> </div>
 </span>
 
 <script type="text/javascript">
@@ -534,98 +534,170 @@ apps
 	  document.getElementById("checkepic").checked = false;
 	  document.getElementById("checklegendary").checked = false;
 	  document.getElementById("mysearch").value=""
+	  									var filterrarity = document.getElementsByClassName('grid-item');
+
+									for (var i = 0; i < filterrarity.length; i ++) {
+									    filterrarity[i].style.display = 'block';
+									}
 	}
 
 
+	function mysearch(){
+
+		var myid = document.getElementById("mysearch").value;
+
+
+		if(myid=="" && document.getElementById("checkcommon").checked == false &&
+					  document.getElementById("checkuncommon").checked == false &&
+					  document.getElementById("checkrare").checked == false &&
+					  document.getElementById("checkepic").checked == false &&
+					  document.getElementById("checklegendary").checked == false){
+									var filterrarity = document.getElementsByClassName('grid-item');
+
+									for (var i = 0; i < filterrarity.length; i ++) {
+									    filterrarity[i].style.display = 'block';
+									}
+		}else if(document.getElementById("checkcommon").checked == true ||
+					  document.getElementById("checkuncommon").checked == true ||
+					  document.getElementById("checkrare").checked == true ||
+					  document.getElementById("checkepic").checked == true ||
+					  document.getElementById("checklegendary").checked == true ){
+					myfilter();
 	
+					var matched = document.querySelectorAll("[id*="+CSS.escape(myid)+" i][style*='display:block'],[id*="+CSS.escape(myid)+" i][style*='display: block;']")	;
+					console.log(matched);
 
-
-	function myfilter(){
-		if(document.getElementById("checkcommon").checked == false &&
-	  document.getElementById("checkuncommon").checked == false &&
-	  document.getElementById("checkrare").checked == false &&
-	  document.getElementById("checkepic").checked == false &&
-	  document.getElementById("checklegendary").checked == false ){
 					var filterrarity = document.getElementsByClassName('grid-item');
 
-					for (var i = 0; i < filterrarity.length; i ++) {
-					    filterrarity[i].style.display = 'block';
+										for (var i = 0; i < filterrarity.length; i ++) {
+										    filterrarity[i].style.display = 'none';
+										}
+
+					for (var i = 0; i < matched.length; i ++) {
+					    matched[i].style.display = 'block';
 					}
-		}else{
-				if(document.getElementById("checkcommon").checked){
-					var filterrarity = document.getElementsByClassName('COMMON');
+	
+	}else{
+					var matched = document.querySelectorAll("[id*="+CSS.escape(myid)+" i][style*='display:block'],[id*="+CSS.escape(myid)+" i][style*='display: block;']")	;
+					console.log(matched);
 
-					for (var i = 0; i < filterrarity.length; i ++) {
-					    filterrarity[i].style.display = 'block';
+					var filterrarity = document.getElementsByClassName('grid-item');
+
+										for (var i = 0; i < filterrarity.length; i ++) {
+										    filterrarity[i].style.display = 'none';
+										}
+
+					for (var i = 0; i < matched.length; i ++) {
+					    matched[i].style.display = 'block';
 					}
-				}else{
-					var filterrarity = document.getElementsByClassName('COMMON');
+	}
+}
 
-					for (var i = 0; i < filterrarity.length; i ++) {
-					    filterrarity[i].style.display = 'none';
-					}
-				}
+	function myfilter(){
 
 
-				if(document.getElementById("checkuncommon").checked){
-					var filterrarity = document.getElementsByClassName('UNCOMMON');
-
-					for (var i = 0; i < filterrarity.length; i ++) {
-					    filterrarity[i].style.display = 'block';
-					}
-				}else{
-					var filterrarity = document.getElementsByClassName('UNCOMMON');
-
-					for (var i = 0; i < filterrarity.length; i ++) {
-					    filterrarity[i].style.display = 'none';
-					}
-				}
+		var myid = document.getElementById("mysearch").value;
 
 
-				if(document.getElementById("checkrare").checked){
-					var filterrarity = document.getElementsByClassName('RARE');
+						if(myid=="" && document.getElementById("checkcommon").checked == false &&
+					  document.getElementById("checkuncommon").checked == false &&
+					  document.getElementById("checkrare").checked == false &&
+					  document.getElementById("checkepic").checked == false &&
+					  document.getElementById("checklegendary").checked == false ){
+									var filterrarity = document.getElementsByClassName('grid-item');
 
-					for (var i = 0; i < filterrarity.length; i ++) {
-					    filterrarity[i].style.display = 'block';
-					}
-				}else{
-					var filterrarity = document.getElementsByClassName('RARE');
+									for (var i = 0; i < filterrarity.length; i ++) {
+									    filterrarity[i].style.display = 'block';
+									}
+						}else{
+								if(document.getElementById("checkcommon").checked){
+									var filterrarity = document.getElementsByClassName('COMMON');
 
-					for (var i = 0; i < filterrarity.length; i ++) {
-					    filterrarity[i].style.display = 'none';
-					}
-				}
+									for (var i = 0; i < filterrarity.length; i ++) {
+									    filterrarity[i].style.display = 'block';
+									}
+								}else{
+									var filterrarity = document.getElementsByClassName('COMMON');
 
-
-				if(document.getElementById("checkepic").checked){
-					var filterrarity = document.getElementsByClassName('EPIC');
-
-					for (var i = 0; i < filterrarity.length; i ++) {
-					    filterrarity[i].style.display = 'block';
-					}
-				}else{
-					var filterrarity = document.getElementsByClassName('EPIC');
-
-					for (var i = 0; i < filterrarity.length; i ++) {
-					    filterrarity[i].style.display = 'none';
-					}
-				}
+									for (var i = 0; i < filterrarity.length; i ++) {
+									    filterrarity[i].style.display = 'none';
+									}
+								}
 
 
-				if(document.getElementById("checklegendary").checked){
-					var filterrarity = document.getElementsByClassName('LEGENDARY');
+								if(document.getElementById("checkuncommon").checked){
+									var filterrarity = document.getElementsByClassName('UNCOMMON');
 
-					for (var i = 0; i < filterrarity.length; i ++) {
-					    filterrarity[i].style.display = 'block';
-					}
-				}else{
-					var filterrarity = document.getElementsByClassName('LEGENDARY');
+									for (var i = 0; i < filterrarity.length; i ++) {
+									    filterrarity[i].style.display = 'block';
+									}
 
-					for (var i = 0; i < filterrarity.length; i ++) {
-					    filterrarity[i].style.display = 'none';
-					}
-				}
-			}
+
+								}else{
+									var filterrarity = document.getElementsByClassName('UNCOMMON');
+
+									for (var i = 0; i < filterrarity.length; i ++) {
+									    filterrarity[i].style.display = 'none';
+									}
+								}
+
+
+								if(document.getElementById("checkrare").checked){
+									var filterrarity = document.getElementsByClassName('RARE');
+
+									for (var i = 0; i < filterrarity.length; i ++) {
+									    filterrarity[i].style.display = 'block';
+									}
+								}else{
+									var filterrarity = document.getElementsByClassName('RARE');
+
+									for (var i = 0; i < filterrarity.length; i ++) {
+									    filterrarity[i].style.display = 'none';
+									}
+								}
+
+
+								if(document.getElementById("checkepic").checked){
+									var filterrarity = document.getElementsByClassName('EPIC');
+
+									for (var i = 0; i < filterrarity.length; i ++) {
+									    filterrarity[i].style.display = 'block';
+									}
+								}else{
+									var filterrarity = document.getElementsByClassName('EPIC');
+
+									for (var i = 0; i < filterrarity.length; i ++) {
+									    filterrarity[i].style.display = 'none';
+									}
+								}
+
+
+								if(document.getElementById("checklegendary").checked){
+									var filterrarity = document.getElementsByClassName('LEGENDARY');
+
+									for (var i = 0; i < filterrarity.length; i ++) {
+									    filterrarity[i].style.display = 'block';
+									}
+								}else{
+									var filterrarity = document.getElementsByClassName('LEGENDARY');
+
+									for (var i = 0; i < filterrarity.length; i ++) {
+									    filterrarity[i].style.display = 'none';
+									}
+								}
+							}
+					
+
+
+
+
+
+
+
+
+
+
+
 		}
 
 
