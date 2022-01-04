@@ -194,8 +194,8 @@ body{
 }
 /* Animation by Chris Smith */
 
-#myBtn {
-  display: none;
+#myBtn{
+  display: block;
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -212,7 +212,30 @@ margin: 0px;
 
 }
 
-#myBtn:hover {
+#myBtn:hover{
+  background-color: #b22d3d;
+}
+
+#myBtn2{
+  display: block;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  z-index: 99;
+opacity: 0.5;
+  background-color: #181c2d;
+  color: white;
+  cursor: pointer;
+  padding: 0PX;
+margin: 0px;
+  border-radius: 10px;
+  width: 40PX;
+  height: 40PX;
+
+}
+
+
+#myBtn2:hover{
   background-color: #b22d3d;
 }
 
@@ -221,9 +244,13 @@ margin: 0px;
 
 	</head>
 	<body class="is-preload">
-<button onclick="topFunction()" id="myBtn" title="Go to top"><span class="material-icons" style="vertical-align: middle;position: fixed;bottom:27px;right: 28px;">
+<button onclick="topFunction()" id="myBtn2" title="Go to top"><span class="material-icons" style="vertical-align: middle;position: fixed;fixed;bottom:86px;right: 28px;">keyboard_arrow_up
+</span>
+<button onclick="dexFunction()" id="myBtn" title="Go to top"><span class="material-icons" style="vertical-align: middle;position: fixed;bottom:27px;right: 28px;">
 
-keyboard_arrow_up
+
+
+apps
 </span></button>
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -1112,6 +1139,8 @@ fingerprint
 			<script>
 			//Get the button
 			var mybutton = document.getElementById("myBtn");
+			var mybutton2 = document.getElementById("myBtn2");
+
 
 			// When the user scrolls down 20px from the top of the document, show the button
 			window.onscroll = function() {scrollFunction()};
@@ -1119,16 +1148,27 @@ fingerprint
 			function scrollFunction() {
 			  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
 			    mybutton.style.display = "block";
+			    mybutton2.style.display = "block";
 			  } else {
 			    mybutton.style.display = "none";
+			    mybutton2.style.display = "none";
 			  }
 			}
+
+	
+
 
 
 
 			// When the user clicks on the button, scroll to the top of the document
 			function topFunction() {
 window.scroll({top: 0, behavior: "smooth"})
+			}
+
+			function dexFunction() {
+			document.getElementById('ERGYODEX').scrollIntoView({
+  behavior: 'smooth'
+});
 			}
 			</script>
 
