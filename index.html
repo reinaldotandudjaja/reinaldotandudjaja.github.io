@@ -507,19 +507,19 @@ apps
 
 <Br><Br><div style="background-color:#111111	; padding: 0px;max-width:100%"><div style="background-color:#111111	; padding: 10px;max-width:600px">
 	<input oninput="mysearch()" id="mysearch" type="text" style="max-width: 100%;max-height: 32px;font-size: 18px;" placeholder="Search"></input><br>
- <input type="checkbox" id="checkcommon" name="checkcommon" value="checkcommon" onchange="myfilter();mysearch()">
+ <input type="checkbox" id="checkcommon" name="checkcommon" value="checkcommon" onkeydown="myfilter();mysearch()">
   <label for="checkcommon"> <span class="boldy">Common</span></label>
 
-  <input type="checkbox" id="checkuncommon" name="checkuncommon" value="checkuncommon" onchange="myfilter();mysearch()">
+  <input type="checkbox" id="checkuncommon" name="checkuncommon" value="checkuncommon" onkeydown="myfilter();mysearch()">
   <label for="checkuncommon"> <span style="color:#7ab257" class="boldy">Uncommon</span></label>
 
-  <input type="checkbox" id="checkrare" name="checkrare" value="checkrare" onchange="myfilter();mysearch()">
+  <input type="checkbox" id="checkrare" name="checkrare" value="checkrare" onkeydown="myfilter();mysearch()">
   <label for="checkrare"> <span style="color:#52aeef" class="boldy">Rare</span></label>
 
-  <input type="checkbox" id="checkepic" name="checkepic" value="checkepic" onchange="myfilter();mysearch()">
+  <input type="checkbox" id="checkepic" name="checkepic" value="checkepic" onkeydown="myfilter();mysearch()">
   <label for="checkepic"> <span style="color:#ab90d7" class="boldy">Epic</span></label>
 
-  <input type="checkbox" id="checklegendary" name="checklegendary" value="checklegendary" onchange="myfilter();mysearch()">
+  <input type="checkbox" id="checklegendary" name="checklegendary" value="checklegendary" onkeydown="myfilter();mysearch()">
   <label for="checklegendary"> <span style="color:#ffae2b" class="boldy">Legendary</span></label>  <div style="text-align:right"><button style="margin-top: 10px;max-height: 32px;font-size: 8px; width: 50%;" onclick="onPageLoad()">clear</button></div>
 </div> </div>
 </span>
