@@ -1262,7 +1262,15 @@ window.scroll({top: 0, behavior: "smooth"})
 		                        // soon confirm find tokenid first then take the highest value     
 		                        //alert(data5.inputs[0].value/1000000000);
 		                        // document.getElementById(tokenidJSON).innerHTML = "<span class="material-icons" style="font-size:130%">trending_up</span> REAL-TIME ALL TIME HIGH <br>Σ"+data5.inputs[0].value/1000000000+" <span class='material-icons' style='font-size:130%'>open_in_new</span></span>";
-		                 document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">trending_up</span> ON-REALTIME ALL TIME HIGH <br>Σ'+data5.inputs[0].value/1000000000+ ' <span class="material-icons" style="font-size:130%"">open_in_new</span>';
+
+		                        var updatevalue=0.1;
+			                       if(updatevalue<(data5.inputs[0].value/1000000000)){
+			                       	updatevalue=data5.inputs[0].value/1000000000;
+			                       }else{
+			                       	updatevalue="~~~";
+			                       }
+		                       
+		                 document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">trending_up</span> ON-REALTIME ALL TIME HIGH <br>Σ'+updatevalue+ ' <span class="material-icons" style="font-size:130%"">open_in_new</span>';
 
 		                	 $("#"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data5.id);
 		                        console.log("INSIDE JSON FUN:"+tokenidJSON);
