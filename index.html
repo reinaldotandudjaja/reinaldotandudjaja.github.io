@@ -1229,7 +1229,7 @@ window.scroll({top: 0, behavior: "smooth"})
 		                var url3 = "https://api.ergoplatform.com/api/v1/transactions/"+data2.transactionId;
 		                $.getJSON(url3, function(data3) {
 
-		                    var url4 = "https://api.ergoplatform.com/api/v1/boxes/byAddress/"+data3.inputs[0].address;
+		                    var url4 = "https://api.ergoplatform.com/api/v1/boxes/byAddress/"+data3.inputs[0].address+"?limit=500";
 
 		                    $.getJSON(url4, function(data4) {
 		                    
