@@ -640,7 +640,7 @@ apps
 
 <Br><div style="background-color:#111111	; padding: 0px;max-width:100%;"><div style="background-color:#111111	; padding: 10px;max-width:100%;text-align: right;margin-left: auto; 
 margin-right: 0;">
-	<input  oninput="mysearch(); console.log('isi: '+document.getElementById('mysearch').value)"  id="mysearch" type="text" style="max-width: 100%;max-height: 32px;font-size: 16px;" placeholder="Search"></input><br>
+	<input  oninput="mysearch();"  id="mysearch" type="text" style="max-width: 100%;max-height: 32px;font-size: 16px;" placeholder="Search"></input><br>
  <input  type="checkbox" id="checkcommon" name="checkcommon" value="checkcommon" onchange="myfilter();mysearch()">
   <label for="checkcommon"> <span class="boldy">Common</span></label>
 
@@ -703,8 +703,8 @@ backspace
 					myfilter();
 	
 					var matched = document.querySelectorAll("[id*="+CSS.escape(myid)+" i][style*='display:block'],[id*="+CSS.escape(myid)+" i][style*='display: block;']")	;
-					console.log(matched);
-					console.log("triggered2");
+					//console.log(matched);
+					//console.log("triggered2");
 
 					var filterrarity = document.getElementsByClassName('grid-item');
 
@@ -718,7 +718,7 @@ backspace
 	
 	}else if(myid!=""){
 					var matched = document.querySelectorAll("[id*="+CSS.escape(myid)+" i]")	;
-					console.log("triggered");
+					//console.log("triggered");
 
 					var filterrarity = document.getElementsByClassName('grid-item');
 
@@ -735,9 +735,9 @@ backspace
 					  document.getElementById("checkepic").checked == true ||
 					  document.getElementById("checklegendary").checked == true )){
 		myfilter();
-		console.log("triggered3");
+		//console.log("triggered3");
 	}else{
-				console.log("triggered4");
+				//console.log("triggered4");
 	}
 }
 
@@ -1278,7 +1278,7 @@ window.scroll({top: 0, behavior: "smooth"})
 
 
 		function getath(tokenidJSON){
-			console.log("INSIDE JSON FUN:"+tokenidJSON);
+			//console.log("INSIDE JSON FUN:"+tokenidJSON);
 		    var url = "https://api.ergoplatform.com/api/v1/tokens/"+tokenidJSON;
 		    $.getJSON(url, function(data) {
 
@@ -1304,7 +1304,7 @@ window.scroll({top: 0, behavior: "smooth"})
 		                        }
 		                    };
 		                    
-		                    console.log(currvalue+" "+curri);
+		                    //console.log(currvalue+" "+curri);
 
 
 
