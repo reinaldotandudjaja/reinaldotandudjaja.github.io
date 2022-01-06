@@ -1354,7 +1354,7 @@ window.scroll({top: 0, behavior: "smooth"})
 
 
 			<script type="text/javascript">
-	$(document).ready(function(){
+	$(document).ready(function loadmyjson(){
 		var ids = $('.athvalue').map(function(index) {
 		    // this callback function will be called once for each matching element
 		    return this.id; 
@@ -1523,11 +1523,13 @@ window.scroll({top: 0, behavior: "smooth"})
 
 				                	 			$("[id='"+tokenidJSON+"']").attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data6.id);
 				                	 			$("[id='"+tokenidJSON+"']").attr("class", "sold");
+				                	 			$("[id='"+tokenidJSON+"']").show();
 				                	 		}else{
 				                	 			document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">looks_one</span> ON-RELEASE SOLD<br>Σ'+data6.inputs[0].value/1000000000+ ' <span class="material-icons" style="font-size:130%"">open_in_new</span>';
 
 				                	 			$("[id='"+tokenidJSON+"']").attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data6.id);
 				                	 			$("[id='"+tokenidJSON+"']").attr("class", "bidsold");
+				                	 			$("[id='"+tokenidJSON+"']").show();
 
 				                	 		}
 
@@ -1556,6 +1558,9 @@ window.scroll({top: 0, behavior: "smooth"})
 
 
 
+
+
+	var myInterval = setInterval(loadmyjson, 20000);
 
 	});
 
