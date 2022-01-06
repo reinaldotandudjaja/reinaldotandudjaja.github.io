@@ -1380,13 +1380,13 @@ window.scroll({top: 0, behavior: "smooth"})
 				if(datacurrowner.items[0].address=="9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu"){
 					slicedcurrowner = datacurrowner.items[0].address.slice(0,4)+"..."+datacurrowner.items[0].address.slice(-4);
 					$("#CURR"+tokenidJSON).attr("class", "currowner");
-					document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> ARTIST / INACTIVE AUCTION<br>'+slicedcurrowner+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
+					document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> ARTIST INACTIVE AUCTION<br>'+slicedcurrowner+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
 					$("#CURR"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/addresses/"+datacurrowner.items[0].address);
 				}else if(datacurrowner.items[0].address.slice(0,1)==9){
 
 						slicedcurrowner = datacurrowner.items[0].address.slice(0,4)+"..."+datacurrowner.items[0].address.slice(-4);
 						$("#CURR"+tokenidJSON).attr("class", "currowner");
-					document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> OWNER / INACTIVE AUCTION<br>'+slicedcurrowner+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
+					document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> OWNER INACTIVE AUCTION<br>'+slicedcurrowner+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
 		$("#CURR"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/addresses/"+datacurrowner.items[0].address);
 
 				}else if(datacurrowner.items[0].address.slice(0,1)==5){
