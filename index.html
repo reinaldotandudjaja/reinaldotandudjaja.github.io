@@ -172,7 +172,7 @@ margin-top: 12px;
 }
 
 .currownerlive{
-	color: white;
+	color: black;
 	background-color: #39b884  ;
 	font-weight: bold;
 	border-bottom: 0px;
@@ -262,7 +262,7 @@ margin-top: 12px;
 */
 .artistowned{
 	color: white;
-	background-color: #a12b5e;
+	background-color: #6e1f60;
 	font-weight: bold;
 	border-bottom: 0px;
 }
@@ -693,7 +693,7 @@ percent
 apps
 </span> ERGYODEX</div>
 <br>
-<span style="background-color: #a12b5e; font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style="font-size:12px"> Artist Owned / Not For Sale</span>
+<span style="background-color: #6e1f60; font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style="font-size:12px"> Artist Owned / Not For Sale</span>
 <br>
 <span style="background-color: #1a1333; font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style="font-size:12px"> Current Owner (RealTime Updates)</span>
 
@@ -1521,13 +1521,14 @@ window.scroll({top: 0, behavior: "smooth"})
 
 				                                document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">looks_one</span> ON-RELEASE INSTANT SOLD<br>Σ'+data6.inputs[0].value/1000000000+ ' <span class="material-icons" style="font-size:130%"">open_in_new</span>';
 
-				                	 			$("#"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data6.id);
-				                	 			$("#"+tokenidJSON).attr("class", "sold");
+				                	 			$("[id='"+tokenidJSON+"']").attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data6.id);
+				                	 			$("[id='"+tokenidJSON+"']").attr("class", "sold");
 				                	 		}else{
 				                	 			document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">looks_one</span> ON-RELEASE SOLD<br>Σ'+data6.inputs[0].value/1000000000+ ' <span class="material-icons" style="font-size:130%"">open_in_new</span>';
 
-				                	 			$("#"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data6.id);
-				                	 			$("#"+tokenidJSON).attr("class", "bidsold");
+				                	 			$("[id='"+tokenidJSON+"']".attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data6.id);
+				                	 			$("[id='"+tokenidJSON+"']".attr("class", "bidsold");
+
 				                	 		}
 
 			                             });
@@ -1536,8 +1537,8 @@ window.scroll({top: 0, behavior: "smooth"})
 		                         	
 		                         	document.getElementById(tokenidJSON).innerHTML = "CHECK ACTIVE<BR>AUCTION <span class='material-icons' style='font-size:130%'>open_in_new</span>";
 
-			                	 	$("#"+tokenidJSON).attr("href", "https://ergoauctions.org/#/auction/active?type=picture&artist=9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu");
-			                	 	$("#"+tokenidJSON).hide();
+			                	 	$("[id='"+tokenidJSON+"']").attr("href", "https://ergoauctions.org/#/auction/active?type=picture&artist=9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu");
+			                	 	$("[id='"+tokenidJSON+"']").hide();
 
 		                         };
 
