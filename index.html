@@ -699,7 +699,7 @@ apps
 <span style="background-color: #1a1333; font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style="font-size:12px"> Current Owner (RealTime Updates)</span>
 
 <br>
-<span style="background-color: #262949;font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style="font-size:12px"> Latest All Time High <span class="material-icons" style="font-size: 14px">trending_up</span> <b>On-Aftermarket</b> (RealTime Updates on Successful Auction) </span>
+<span style="background-color: #262949;font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style="font-size:12px"> Latest All Time High <span class="material-icons" style="font-size: 14px">trending_up</span> <b>On-RealTime</b> (RealTime Updates on Successful Auction) </span>
 <span style="text-align: left;font-size: 12px">
 
 <br>
@@ -1445,7 +1445,7 @@ window.scroll({top: 0, behavior: "smooth"})
 		                        var updatevalue=0.01;
 			                       if(updatevalue<(data5.inputs[0].value/1000000000)){
 			                       	updatevalue=data5.inputs[0].value/1000000000;
-			                       	document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">trending_up</span> ON-AFTERMARKET ALL TIME HIGH <br>Σ'+updatevalue+ ' <span class="material-icons" style="font-size:130%"">open_in_new</span>';
+			                       	document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">trending_up</span> ON-REALTIME ALL TIME HIGH <br>Σ'+updatevalue+ ' <span class="material-icons" style="font-size:130%"">open_in_new</span>';
 
 				                	 $("#"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data5.id);
 
@@ -1453,7 +1453,7 @@ window.scroll({top: 0, behavior: "smooth"})
 			                       }else{
 			                       	updatevalue="---";
 
-				                 	document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">trending_up</span> ON-AFTERMARKET ALL TIME HIGH <br>Σ'+updatevalue;
+				                 	document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">trending_up</span> ON-REALTIME ALL TIME HIGH <br>Σ'+updatevalue;
 
 				                	 // $("#"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data5.id);
 
