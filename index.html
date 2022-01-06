@@ -695,17 +695,17 @@ apps
 <span style="background-color: #484C2C; font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style="font-size:12px"> Artist Owned / Not For Sale</span>
 
 <br>
-<span style="background-color: #302c4c;font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style="font-size:12px">  Latest All Time High <span class="material-icons" style="font-size: 14px">trending_up</span> <b>On-RealTime</b> (RealTime Updates) </span>
+<span style="background-color: #302c4c;font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style="font-size:12px">  Latest All Time High <span class="material-icons" style="font-size: 14px">trending_up</span> <b>On-RealTime</b> (RealTime Updates on Successful Auction) </span>
 <span style="text-align: left;font-size: 12px">
 
 <br>
 <!-- <span style="background-color: mediumspringgreen; font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style="font-size:12px"> Active Bid (<span class="material-icons" style="font-size: 14px">looks_one</span> <b>On-Release*</b> Record)</span><br> -->
 <span style="background-color: #7d1f2b; font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> Sold Out <span style="font-size:12px"><span class="material-icons" style="font-size: 14px">looks_one</span> <b>On-Release</b> (RealTime Updates on Successful Auction)</span><br>
 
-<span style="background-color: #FF4500; font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style="font-size:12px"><span class="material-icons" style="font-size: 14px">gavel</span> <b>Auction Live Now !</b> (RealTime Updates on Successful Auction)</span><br>
+<!-- <span style="background-color: #FF4500; font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style="font-size:12px"><span class="material-icons" style="font-size: 14px">gavel</span> <b>Auction Live Now !</b> (RealTime Updates)</span><br> -->
 
 <span style="background-color: gold;font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style="font-size:12px"> Special Giveaway</span><br>
-<span style="background-color: dimgray;font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style="font-size:12px">  Check <span class="material-icons" style="font-size: 14px">filter_alt</span> <b>Filtered Active Auction(<span class="material-icons" style="font-size: 14px">fingerprint</span> <b>Authentic</b> + <span class="material-icons" style="font-size: 14px">looks_one</span> <b>On-Release</b> + <span class="material-icons" style="font-size: 14px">looks_two</span> <b>On-Aftermarket</b>)</b> </span>
+<span style="background-color: #FF4500;font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style="font-size:12px">  Auction Live Now ! <span class="material-icons" style="font-size: 14px">filter_alt</span> <b>Filtered Active Auction(<span class="material-icons" style="font-size: 14px">fingerprint</span> <b>Authentic</b> + <span class="material-icons" style="font-size: 14px">looks_one</span> <b>On-Release</b> + <span class="material-icons" style="font-size: 14px">looks_two</span> <b>On-Aftermarket</b>)</b> (RealTime Updates) </span>
 
 
 
@@ -1507,7 +1507,7 @@ window.scroll({top: 0, behavior: "smooth"})
 		                         	document.getElementById(tokenidJSON).innerHTML = "CHECK ACTIVE<BR>AUCTION <span class='material-icons' style='font-size:130%'>open_in_new</span>";
 
 			                	 	$("#"+tokenidJSON).attr("href", "https://ergoauctions.org/#/auction/active?type=picture&artist=9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu");
-
+			                	 	$("#"+tokenidJSON).hide();
 
 		                         };
 
