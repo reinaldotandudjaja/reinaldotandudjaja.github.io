@@ -19,7 +19,9 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
 		<style>
     
-
+.smalltext{
+	font-size: 10px;
+}
 
 .spinner {
   animation: spin 1s infinite ease-in-out; 
@@ -106,7 +108,7 @@
   border: 1px solid #111111;
   padding: 0px;
 
-  font-size: 8.3px;
+  font-size: 7.7px;
 
   text-align: center;
 }
@@ -1461,7 +1463,7 @@ window.scroll({top: 0, behavior: "smooth"})
 		                        var updatevalue=0.01;
 			                       if(updatevalue<(data5.inputs[0].value/1000000000)){
 			                       	updatevalue=data5.inputs[0].value/1000000000;
-			                       	document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">trending_up</span> ON-REALTIME ALL TIME HIGH <br>Σ'+updatevalue+ ' <span class="material-icons" style="font-size:130%"">open_in_new</span>';
+			                       	document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">trending_up</span> ON-REALTIME ALL TIME HIGH <br><span class="smalltext">Σ'+updatevalue+ '</span> <span class="material-icons" style="font-size:130%"">open_in_new</span>';
 
 				                	 $("#"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data5.id);
 
@@ -1469,13 +1471,13 @@ window.scroll({top: 0, behavior: "smooth"})
 			                       }else{
 			                       	//check #002
 			                       	if(tokenidJSON=="fb760068f209cba8c3e63655bbed8afe200ce24f1bd1a6573d3555ef6b48d528"){
-			                       		updatevalue="--- (NEW ID)";
+			                       		updatevalue="---</span> (NEW ID)";
 			                       	}else{
 
-			                       	updatevalue="---";
+			                       	updatevalue="---</span>";
 			                       }
 
-				                 	document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">trending_up</span> ON-REALTIME ALL TIME HIGH <br>Σ'+updatevalue;
+				                 	document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">trending_up</span> ON-REALTIME ALL TIME HIGH <br><span class="smalltext">Σ'+updatevalue;
 
 				                	 // $("#"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data5.id);
 
@@ -1545,14 +1547,14 @@ window.scroll({top: 0, behavior: "smooth"})
 
 											//check002
 						                     if(tokenidJSON=="ONRb31e22f1224ff0f7c36e7f7fd4b16b2c6350a7aadf58f78b203a35664c9660ae_6"){
-				                                document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">looks_one</span> ON-RELEASE INSTANT SOLD<br>Σ'+data6.inputs[0].value/1000000000+ ' (OLD ID) <span class="material-icons" style="font-size:130%"">open_in_new</span>';
+				                                document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">looks_one</span> ON-RELEASE INSTANT SOLD<br><span class="smalltext">Σ'+data6.inputs[0].value/1000000000+ '</span> (OLD ID) <span class="material-icons" style="font-size:130%"">open_in_new</span>';
 
 				                	 			$("[id='"+tokenidJSON+"']").attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data6.id);
 				                	 			$("[id='"+tokenidJSON+"']").attr("class", "sold");
 				                	 			//$("[id='"+tokenidJSON+"']").show();
 						                       	}else{
 
-				                                document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">looks_one</span> ON-RELEASE INSTANT SOLD<br>Σ'+data6.inputs[0].value/1000000000+ ' <span class="material-icons" style="font-size:130%"">open_in_new</span>';
+				                                document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">looks_one</span> ON-RELEASE INSTANT SOLD<br><span class="smalltext">Σ'+data6.inputs[0].value/1000000000+ '</span> <span class="material-icons" style="font-size:130%"">open_in_new</span>';
 
 				                	 			$("[id='"+tokenidJSON+"']").attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data6.id);
 				                	 			$("[id='"+tokenidJSON+"']").attr("class", "sold");
@@ -1563,7 +1565,7 @@ window.scroll({top: 0, behavior: "smooth"})
 
 
 				                	 		}else{
-				                	 			document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">looks_one</span> ON-RELEASE SOLD<br>Σ'+data6.inputs[0].value/1000000000+ ' <span class="material-icons" style="font-size:130%"">open_in_new</span>';
+				                	 			document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">looks_one</span> ON-RELEASE SOLD<br><span class="smalltext">Σ'+data6.inputs[0].value/1000000000+ '</span> <span class="material-icons" style="font-size:130%"">open_in_new</span>';
 
 				                	 			$("[id='"+tokenidJSON+"']").attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data6.id);
 				                	 			$("[id='"+tokenidJSON+"']").attr("class", "bidsold");
@@ -1575,7 +1577,7 @@ window.scroll({top: 0, behavior: "smooth"})
 			                        });
 		                         }else{
 		                         	
-		                         	document.getElementById(tokenidJSON).innerHTML = "<span class='material-icons' style='font-size:130%''>looks_one</span> ON-RELEASE --------<BR>Σ---";
+		                         	document.getElementById(tokenidJSON).innerHTML = "<span class='material-icons' style='font-size:130%''>looks_one</span> ON-RELEASE --------<BR><span class='smalltext'>Σ---</span>";
 
 			                	 	// $("[id='"+tokenidJSON+"']").attr("href", "https://ergoauctions.org/#/auction/active?type=picture&artist=9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu");
 			                	 	//$("[id='"+tokenidJSON+"']").show();
