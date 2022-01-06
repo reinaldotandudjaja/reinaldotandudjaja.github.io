@@ -698,7 +698,7 @@ apps
 <br>
 <span style="background-color: #6e1f60; font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12px"> &nbsp;Artist Owned (Not For Sale)</span>
 <br>
-<span style="background-color: #1a1333; font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12px"> &nbsp;Current Owner / Inactive Auction (RealTime Updates)</span>
+<span style="background-color: #1a1333; font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12px"> &nbsp;Current Owner / Auction Inactive Yet (RealTime Updates)</span>
 
 <br>
 <span style="background-color: #262949;font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12px"> &nbsp;Latest All Time High <span class="material-icons" style="font-size: 14px">trending_up</span> <b>On-RealTime</b> (RealTime Updates on Successful Auction) </span>
@@ -1380,13 +1380,13 @@ window.scroll({top: 0, behavior: "smooth"})
 				if(datacurrowner.items[0].address=="9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu"){
 					slicedcurrowner = datacurrowner.items[0].address.slice(0,4)+"..."+datacurrowner.items[0].address.slice(-4);
 					$("#CURR"+tokenidJSON).attr("class", "currowner");
-					document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> OWNER (AUCTION INACTIVE)<br>'+slicedcurrowner+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
+					document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> ARTIST (AUCTION INACTIVE YET)<br>'+slicedcurrowner+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
 					$("#CURR"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/addresses/"+datacurrowner.items[0].address);
 				}else if(datacurrowner.items[0].address.slice(0,1)==9){
 
 						slicedcurrowner = datacurrowner.items[0].address.slice(0,4)+"..."+datacurrowner.items[0].address.slice(-4);
 						$("#CURR"+tokenidJSON).attr("class", "currowner");
-					document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> OWNER (AUCTION INACTIVE)<br>'+slicedcurrowner+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
+					document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> OWNER (AUCTION INACTIVE YET)<br>'+slicedcurrowner+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
 		$("#CURR"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/addresses/"+datacurrowner.items[0].address);
 
 				}else if(datacurrowner.items[0].address.slice(0,1)==5){
