@@ -1526,8 +1526,8 @@ window.scroll({top: 0, behavior: "smooth"})
 				                	 		}else{
 				                	 			document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">looks_one</span> ON-RELEASE SOLD<br>Σ'+data6.inputs[0].value/1000000000+ ' <span class="material-icons" style="font-size:130%"">open_in_new</span>';
 
-				                	 			$("[id='"+tokenidJSON+"']".attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data6.id);
-				                	 			$("[id='"+tokenidJSON+"']".attr("class", "bidsold");
+				                	 			$("[id='"+tokenidJSON+"']").attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data6.id);
+				                	 			$("[id='"+tokenidJSON+"']").attr("class", "bidsold");
 
 				                	 		}
 
