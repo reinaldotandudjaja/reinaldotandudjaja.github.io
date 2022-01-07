@@ -804,7 +804,12 @@ margin-right: 0;">
   <label for="checkepic"> <span style="color:#ab90d7" class="boldy">Epic</span></label>
 
   <input type="checkbox" id="checklegendary" name="checklegendary" value="checklegendary" onchange="myfilter();mysearch()">
-  <label for="checklegendary"> <span style="color:#ffae2b" class="boldy">Legendary</span></label>  <div style="text-align:right"><button style="margin-top: 15px;max-height: 32px;font-size: 8px; width: 150px; background-color:#7d1f2b" onclick="onPageLoad()"><span class="material-icons" style="font-size: 12px;">
+  <label for="checklegendary"> <span style="color:#ffae2b" class="boldy">Legendary</span></label>  
+<br>
+  <input type="checkbox" id="checkactive" name="checkactive" value="checkactive" onchange="myfilter();mysearch()">
+  <label for="checkactive"> <span style="color:#39b884" class="boldy">Active Auction</span></label> 
+
+  <div style="text-align:right"><button style="margin-top: 15px;max-height: 32px;font-size: 8px; width: 150px; background-color:#7d1f2b" onclick="onPageLoad()"><span class="material-icons" style="font-size: 12px;">
 backspace
 </span> &nbsp;clear search</button></div>
 </div> </div>
@@ -819,6 +824,7 @@ backspace
 	  document.getElementById("checkrare").checked = false;
 	  document.getElementById("checkepic").checked = false;
 	  document.getElementById("checklegendary").checked = false;
+	  document.getElementById("checkactive").checked = false;
 	  document.getElementById("mysearch").value=""
 	  									var filterrarity = document.getElementsByClassName('grid-item');
 
@@ -837,7 +843,8 @@ backspace
 					  document.getElementById("checkuncommon").checked == false &&
 					  document.getElementById("checkrare").checked == false &&
 					  document.getElementById("checkepic").checked == false &&
-					  document.getElementById("checklegendary").checked == false){
+					  document.getElementById("checklegendary").checked == false&&
+					  document.getElementById("checkactive").checked == false){
 									var filterrarity = document.getElementsByClassName('grid-item');
 
 									for (var i = 0; i < filterrarity.length; i ++) {
@@ -849,7 +856,7 @@ backspace
 					  document.getElementById("checkuncommon").checked == true ||
 					  document.getElementById("checkrare").checked == true ||
 					  document.getElementById("checkepic").checked == true ||
-					  document.getElementById("checklegendary").checked == true )){	
+					  document.getElementById("checklegendary").checked == true || document.getElementById("checkactive").checked == true)){	
 					myfilter();
 	
 					var matched = document.querySelectorAll("[id*="+CSS.escape(myid)+" i][style*='display:block'],[id*="+CSS.escape(myid)+" i][style*='display: block;']")	;
@@ -883,7 +890,7 @@ backspace
 					  document.getElementById("checkuncommon").checked == true ||
 					  document.getElementById("checkrare").checked == true ||
 					  document.getElementById("checkepic").checked == true ||
-					  document.getElementById("checklegendary").checked == true )){
+					  document.getElementById("checklegendary").checked == true || document.getElementById("checklegendary").checked ==true  )){
 		myfilter();
 		//console.log("triggered3");
 	}else{
@@ -901,7 +908,8 @@ backspace
 					  document.getElementById("checkuncommon").checked == false &&
 					  document.getElementById("checkrare").checked == false &&
 					  document.getElementById("checkepic").checked == false &&
-					  document.getElementById("checklegendary").checked == false ){
+					  document.getElementById("checklegendary").checked == false &&
+					  document.getElementById("checkactive").checked == false  ){
 									var filterrarity = document.getElementsByClassName('grid-item');
 
 									for (var i = 0; i < filterrarity.length; i ++) {
@@ -909,81 +917,152 @@ backspace
 									}
 										mysearch();
 						}else{
-								if(document.getElementById("checkcommon").checked){
-									var filterrarity = document.getElementsByClassName('COMMON');
 
-									for (var i = 0; i < filterrarity.length; i ++) {
-									    filterrarity[i].style.display = 'block';
-									}
-								}else{
-									var filterrarity = document.getElementsByClassName('COMMON');
+								if(document.getElementById("checkactive").checked==false){
+									if(document.getElementById("checkcommon").checked){
+										var filterrarity = document.getElementsByClassName('COMMON');
 
-									for (var i = 0; i < filterrarity.length; i ++) {
-									    filterrarity[i].style.display = 'none';
+										for (var i = 0; i < filterrarity.length; i ++) {
+										    filterrarity[i].style.display = 'block';
+										}
+									}else{
+										var filterrarity = document.getElementsByClassName('COMMON');
+
+										for (var i = 0; i < filterrarity.length; i ++) {
+										    filterrarity[i].style.display = 'none';
+										}
 									}
+
+
+									if(document.getElementById("checkuncommon").checked){
+										var filterrarity = document.getElementsByClassName('UNCOMMON');
+
+										for (var i = 0; i < filterrarity.length; i ++) {
+										    filterrarity[i].style.display = 'block';
+										}
+
+
+									}else{
+										var filterrarity = document.getElementsByClassName('UNCOMMON');
+
+										for (var i = 0; i < filterrarity.length; i ++) {
+										    filterrarity[i].style.display = 'none';
+										}
+									}
+
+
+									if(document.getElementById("checkrare").checked){
+										var filterrarity = document.getElementsByClassName('RARE');
+
+										for (var i = 0; i < filterrarity.length; i ++) {
+										    filterrarity[i].style.display = 'block';
+										}
+									}else{
+										var filterrarity = document.getElementsByClassName('RARE');
+
+										for (var i = 0; i < filterrarity.length; i ++) {
+										    filterrarity[i].style.display = 'none';
+										}
+									}
+
+
+									if(document.getElementById("checkepic").checked){
+										var filterrarity = document.getElementsByClassName('EPIC');
+
+										for (var i = 0; i < filterrarity.length; i ++) {
+										    filterrarity[i].style.display = 'block';
+										}
+									}else{
+										var filterrarity = document.getElementsByClassName('EPIC');
+
+										for (var i = 0; i < filterrarity.length; i ++) {
+										    filterrarity[i].style.display = 'none';
+										}
+									}
+
+
+									if(document.getElementById("checklegendary").checked){
+										var filterrarity = document.getElementsByClassName('LEGENDARY');
+
+										for (var i = 0; i < filterrarity.length; i ++) {
+										    filterrarity[i].style.display = 'block';
+										}
+									}else{
+										var filterrarity = document.getElementsByClassName('LEGENDARY');
+
+										for (var i = 0; i < filterrarity.length; i ++) {
+										    filterrarity[i].style.display = 'none';
+										}
+									}
+
+
+
+								}else if(document.getElementById("checkactive").checked){
+										var filterrarity = document.getElementsByClassName('grid-item');
+
+										for (var i = 0; i < filterrarity.length; i ++) {
+										    filterrarity[i].style.display = 'none';
+										}
+
+										if(document.getElementById("checkcommon").checked == false &&
+					  					document.getElementById("checkuncommon").checked == false &&
+									  document.getElementById("checkrare").checked == false &&
+									  document.getElementById("checkepic").checked == false &&
+									  document.getElementById("checklegendary").checked == false &&document.getElementById("checkactive").checked){
+											var filterrarity = document.getElementsByClassName('ACTIVE');
+
+											for (var i = 0; i < filterrarity.length; i ++) {
+											    filterrarity[i].style.display = 'block';
+											}
+										}
+
+
+										if(document.getElementById("checkcommon").checked){
+											var filterrarity = document.getElementsByClassName('ACTIVE COMMON');
+
+											for (var i = 0; i < filterrarity.length; i ++) {
+											    filterrarity[i].style.display = 'block';
+											}
+										}
+
+										if(document.getElementById("checkuncommon").checked){
+											var filterrarity = document.getElementsByClassName('ACTIVE UNCOMMON');
+
+											for (var i = 0; i < filterrarity.length; i ++) {
+											    filterrarity[i].style.display = 'block';
+											}
+										}
+
+									
+										if(document.getElementById("checkrare").checked){
+											var filterrarity = document.getElementsByClassName('ACTIVE RARE');
+
+											for (var i = 0; i < filterrarity.length; i ++) {
+											    filterrarity[i].style.display = 'block';
+											}
+										}
+		
+										if(document.getElementById("checkepic").checked){
+											var filterrarity = document.getElementsByClassName('ACTIVE EPIC');
+
+											for (var i = 0; i < filterrarity.length; i ++) {
+											    filterrarity[i].style.display = 'block';
+											}
+										}
+
+										if(document.getElementById("checklegendary").checked){
+											var filterrarity = document.getElementsByClassName('ACTIVE LEGENDARY');
+
+											for (var i = 0; i < filterrarity.length; i ++) {
+											    filterrarity[i].style.display = 'block';
+											}
+										}
+
+
+
 								}
 
 
-								if(document.getElementById("checkuncommon").checked){
-									var filterrarity = document.getElementsByClassName('UNCOMMON');
-
-									for (var i = 0; i < filterrarity.length; i ++) {
-									    filterrarity[i].style.display = 'block';
-									}
-
-
-								}else{
-									var filterrarity = document.getElementsByClassName('UNCOMMON');
-
-									for (var i = 0; i < filterrarity.length; i ++) {
-									    filterrarity[i].style.display = 'none';
-									}
-								}
-
-
-								if(document.getElementById("checkrare").checked){
-									var filterrarity = document.getElementsByClassName('RARE');
-
-									for (var i = 0; i < filterrarity.length; i ++) {
-									    filterrarity[i].style.display = 'block';
-									}
-								}else{
-									var filterrarity = document.getElementsByClassName('RARE');
-
-									for (var i = 0; i < filterrarity.length; i ++) {
-									    filterrarity[i].style.display = 'none';
-									}
-								}
-
-
-								if(document.getElementById("checkepic").checked){
-									var filterrarity = document.getElementsByClassName('EPIC');
-
-									for (var i = 0; i < filterrarity.length; i ++) {
-									    filterrarity[i].style.display = 'block';
-									}
-								}else{
-									var filterrarity = document.getElementsByClassName('EPIC');
-
-									for (var i = 0; i < filterrarity.length; i ++) {
-									    filterrarity[i].style.display = 'none';
-									}
-								}
-
-
-								if(document.getElementById("checklegendary").checked){
-									var filterrarity = document.getElementsByClassName('LEGENDARY');
-
-									for (var i = 0; i < filterrarity.length; i ++) {
-									    filterrarity[i].style.display = 'block';
-									}
-								}else{
-									var filterrarity = document.getElementsByClassName('LEGENDARY');
-
-									for (var i = 0; i < filterrarity.length; i ++) {
-									    filterrarity[i].style.display = 'none';
-									}
-								}
 							}
 					
 
@@ -1477,7 +1556,7 @@ window.scroll({top: 0, behavior: "smooth"})
 					$("#CURR"+tokenidJSON).attr("class", "currownerlive");
 					document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">gavel</span> LIVE ACTIVE AUCTION<br> CHECK NOW ! <span class="material-icons" style="font-size:130%">open_in_new</span>';
 		$("#CURR"+tokenidJSON).attr("href", "https://ergoauctions.org/#/auction/active?type=picture&artist=9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu");
-
+					$("#CURR"+tokenidJSON).parent().parent().addClass('ACTIVE');
 				}else{
 					slicedcurrowner = datacurrowner.items[0].address.slice(0,4)+"..."+datacurrowner.items[0].address.slice(-4);
 					$("#CURR"+tokenidJSON).attr("class", "currowner");
