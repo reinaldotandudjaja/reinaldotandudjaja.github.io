@@ -23,6 +23,21 @@
 	font-size: 10px;
 }
 
+.history{
+	display: block;
+
+	z-index: 9999999;
+	background-color: #2F345C;
+		font-weight: bold;
+	border-bottom: 0px;
+
+}
+
+.history:hover{
+
+	background-color: white;
+}
+
 .spinner {
   animation: spin 1s infinite ease-in-out; 
 //  animation: dash 2s infinite ease-in-out; 
@@ -170,6 +185,7 @@ margin-top: 12px;
 	.recent{
 			height: 48px;
 		display: inline-block;
+		z-index: 99;
 	}
 
 	.bidsold{
@@ -263,6 +279,7 @@ margin-top: 12px;
 	background-color: #1e213a;
 	font-weight: bold;
 	border-bottom: 0px;
+
 }
 
 .recent:hover{
@@ -735,18 +752,18 @@ apps
 <span style="background-color: #17192c; font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12px"> &nbsp;Current Owner / Auction Inactive Yet (RealTime Updates)</span>
 
 <br>
-<span style="background-color: #1e213a;font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12px"> &nbsp;Latest <span class="material-icons" style="font-size: 14px">update</span> <b>On-Recent Sold</b> (RealTime Updates on Successful Finished Auction) </span>
+<span style="background-color: #1e213a;font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12px"> &nbsp; <span class="material-icons" style="font-size: 14px">update</span> <b>Total Auction + Auction History</b> (RealTime Updates on Winning Auction) </span>
 <span style="text-align: left;font-size: 12px">
 
 <br>
-<span style="background-color: #262949;font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12px"> &nbsp;Latest <span class="material-icons" style="font-size: 14px">trending_up</span> <b>On-AllTime High</b> (RealTime Updates on Successful Finished Auction) </span>
+<span style="background-color: #262949;font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12px"> &nbsp;Latest <span class="material-icons" style="font-size: 14px">trending_up</span> <b>On-AllTime High</b> (RealTime Updates on Winning Auction) </span>
 <span style="text-align: left;font-size: 12px">
 
 <br>
 <!-- <span style="background-color: mediumspringgreen; font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style="font-size:12px"> Active Bid (<span class="material-icons" style="font-size: 14px">looks_one</span> <b>On-Release*</b> Record)</span><br> -->
-<span style="background-color: #eb1948; font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;Instant Sold <span style="font-size:12px"><span class="material-icons" style="font-size: 14px">looks_one</span> <b>On-Release</b> (RealTime Updates on Successful Finished Auction)</span><br>
+<span style="background-color: #eb1948; font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;Instant Sold <span style="font-size:12px"><span class="material-icons" style="font-size: 14px">looks_one</span> <b>On-Release</b> (RealTime Updates on Winning Auction)</span><br>
 
-<span style="background-color: #253674; font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;Sold <span style="font-size:12px"><span class="material-icons" style="font-size: 14px">looks_one</span> <b>On-Release</b> (RealTime Updates on Successful Finished Auction)</span><br>
+<span style="background-color: #253674; font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;Sold <span style="font-size:12px"><span class="material-icons" style="font-size: 14px">looks_one</span> <b>On-Release</b> (RealTime Updates on Winning Auction)</span><br>
 
 <!-- <span style="background-color: #FF4500; font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style="font-size:12px"><span class="material-icons" style="font-size: 14px">gavel</span> <b>Auction Live Now !</b> (RealTime Updates)</span><br> -->
 
@@ -767,7 +784,7 @@ apps
 
 <Br><div style="background-color:#111111	; padding: 0px;max-width:100%;"><div style="background-color:#111111	; padding: 10px;max-width:100%;text-align: right;margin-left: auto; 
 margin-right: 0;">
-	<input  oninput="mysearch();"  id="mysearch" type="text" style="max-width: 100%;max-height: 32px;font-size: 16px;" placeholder="Search by Name"></input><br>
+	<input  oninput="mysearch();"  id="mysearch" type="text" style="max-width: 100%;max-height: 32px;font-size: 16px;" placeholder="Search by Name "></input><br>
  <input  type="checkbox" id="checkcommon" name="checkcommon" value="checkcommon" onchange="myfilter();mysearch()">
   <label for="checkcommon"> <span class="boldy">Common</span></label>
 
@@ -1061,6 +1078,24 @@ backspace
 
 
 <script>
+
+
+	function togglehistory(mythis){
+   		
+   		var substr_id=$(mythis).attr("id").slice(6);
+  
+   		
+
+   		if($('.history'+substr_id).is(":visible")){
+			$('.history'+substr_id).hide();
+			document.getElementById("iconhistory"+substr_id).innerHTML="expand_more";
+   		}else{
+   			$('.history'+substr_id).show();
+   			document.getElementById("iconhistory"+substr_id).innerHTML="expand_less";
+   		}
+	}
+
+
 
 function myFunctionD() {
 
@@ -1459,8 +1494,8 @@ window.scroll({top: 0, behavior: "smooth"})
 		                var url3 = "https://api.ergoplatform.com/api/v1/transactions/"+data2.transactionId;
 		                $.getJSON(url3, function(data3) {
 
-		             		//START RECENT#########################################################################
-		                    var url4RNT = "https://api.ergoplatform.com/api/v1/boxes/byAddress/"+data3.inputs[0].address+"?limit=1";
+		             		//START RECENT######################################################################### IN THE FUTURE MUST CHECK > 500
+		                    var url4RNT = "https://api.ergoplatform.com/api/v1/boxes/byAddress/"+data3.inputs[0].address+"?limit=500";
 
 		                    $.getJSON(url4RNT, function(data4RNT) {
 		                    
@@ -1472,21 +1507,60 @@ window.scroll({top: 0, behavior: "smooth"})
 		                        var updatevalueRNT=0.01;
 			                       if(updatevalueRNT<(data5RNT.inputs[0].value/1000000000)){
 			                       	updatevalueRNT=data5RNT.inputs[0].value/1000000000;
-			                       	document.getElementById("RECENT"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">update</span> ON-RECENT SOLD<br><span class="smalltext">Σ'+updatevalueRNT+ '</span> <span class="material-icons" style="font-size:130%"">youtube_searched_for</span>';
+			                       	// document.getElementById("RECENT"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">update</span> ON-RECENT SOLD<br><span class="smalltext">Σ'+updatevalueRNT+ '</span> <span class="material-icons" style="font-size:130%"">youtube_searched_for</span>';
+
+			                       	var totalauction = data4RNT.total-1;
+
+			                     	document.getElementById("RECENT"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">update</span> TOTAL AUCTION <br><span class="smalltext">'+(totalauction)+ '</span> <span class="material-icons" style="font-size:130%" id="iconhistory'+tokenidJSON+'">expand_more</span>';
+							
+			                       	for(var i=0;i<totalauction;i++){
+			                       		var url6RNT="https://api.ergoplatform.com/api/v1/transactions/"+data4RNT.items[i].transactionId;
+
+			                       		var auctionnumber = totalauction-i;
+			                
+			                       		
+			                       		gethistory(url6RNT,auctionnumber,i);
+
+  										document.getElementById("RECENT"+tokenidJSON).innerHTML = (document.getElementById("RECENT"+tokenidJSON).innerHTML)+'<a  class="history'+tokenidJSON+' history"  style="display:none" target="_blank" id="'+i+'LINKHISTORY'+tokenidJSON+'"><span class="smalltext">'+auctionnumber+': Σ'+'<span id="'+i+'HISTORY'+tokenidJSON+'"></span> <span class="material-icons" style="font-size:130%">youtube_searched_for</span></span>'+'</a>'
+									
+
+		                        		
+			                       	};
+
+			                       	function gethistory(url6RNT,auctionnumber,i){
+		                        			$.getJSON(url6RNT, function(data6RNT) {
+			                     			
+			                       			 document.getElementById(i+"HISTORY"+tokenidJSON).innerHTML = data6RNT.inputs[0].value/1000000000;
+		                        		  
+											$("#"+i+"LINKHISTORY"+tokenidJSON).attr("href", "https://ergoauctions.org/#/auction/specific/"+data6RNT.inputs[0].boxId);
+		                        		    //	return (data6RNT.inputs[0].value/1000000000);
+			                     			//'<br>'+(totalauction--)+': Σ'+data6RNT.inputs[0].value/1000000000+' <span class="material-icons" style="font-size:130%">youtube_searched_for</span>';
+		                        			});
+
+		                        	
+		                        	};
+
+
+
+
+
+										$("#RECENT"+tokenidJSON).attr("onclick", 'togglehistory(this)');
+
 
 				                	 //$("#RECENT"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data5RNT.id);
-				                	 $("#RECENT"+tokenidJSON).attr("href", "https://ergoauctions.org/#/auction/specific/"+data5RNT.inputs[0].boxId);
+				                	 // $("#RECENT"+tokenidJSON).attr("href", "https://ergoauctions.org/#/auction/specific/"+data5RNT.inputs[0].boxId);
 
 				                	 $("#RECENT"+tokenidJSON).attr("class", "recent");
 			                       }else{
 				                       			//check #002
 				                       			if(tokenidJSON=="fb760068f209cba8c3e63655bbed8afe200ce24f1bd1a6573d3555ef6b48d528"){
-				                       				updatevalueRNT="---</span> (NEW ID)";
+				                       				updatevalueRNT="--</span> (NEW ID)";
 				                       			}else{
-				                       				updatevalueRNT="---</span>";
+				                       				updatevalueRNT="--</span>";
 				                       			}
 
-				                 				document.getElementById("RECENT"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">update</span> ON-RECENT SOLD<br><span class="smalltext">Σ'+updatevalueRNT;
+				                 				// document.getElementById("RECENT"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">update</span> ON-RECENT SOLD<br><span class="smalltext">Σ'+updatevalueRNT;
+				                 				document.getElementById("RECENT"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">update</span> TOTAL AUCTION<br><span class="smalltext">'+updatevalueRNT;
 
 				                	 // $("#"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data5.id);
 
@@ -1682,9 +1756,6 @@ window.scroll({top: 0, behavior: "smooth"})
 
 		    })
 		}
-
-
-
 
 
 
