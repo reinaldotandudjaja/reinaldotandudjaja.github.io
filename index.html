@@ -735,11 +735,11 @@ apps
 <span style="background-color: #17192c; font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12px"> &nbsp;Current Owner / Auction Inactive Yet (RealTime Updates)</span>
 
 <br>
-<span style="background-color: #1e213a;font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12px"> &nbsp;<span class="material-icons" style="font-size: 14px">update</span> <b>On-Recent Sold</b> (RealTime Updates on Successful Auction) </span>
+<span style="background-color: #1e213a;font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12px"> &nbsp;Latest <span class="material-icons" style="font-size: 14px">update</span> <b>On-Recent Sold</b> (RealTime Updates on Successful Auction) </span>
 <span style="text-align: left;font-size: 12px">
 
 <br>
-<span style="background-color: #262949;font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12px"> &nbsp;Latest All Time High <span class="material-icons" style="font-size: 14px">trending_up</span> <b>On-AllTime High</b> (RealTime Updates on Successful Auction) </span>
+<span style="background-color: #262949;font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12px"> &nbsp;Latest <span class="material-icons" style="font-size: 14px">trending_up</span> <b>On-AllTime High</b> (RealTime Updates on Successful Auction) </span>
 <span style="text-align: left;font-size: 12px">
 
 <br>
@@ -762,6 +762,7 @@ apps
 
 *ERGYODEX Updates in RealTime. Find Errors? DM to <a href="https://twitter.com/ERGYOROI" target="_blank">ERGYOROI</a><br>
 **New Token ID.
+<br>***Each Auction Bid History can be found on <span class="material-icons" style="font-size: 14px">youtube_searched_for</span> icon.
 <br>
 
 <Br><div style="background-color:#111111	; padding: 0px;max-width:100%;"><div style="background-color:#111111	; padding: 10px;max-width:100%;text-align: right;margin-left: auto; 
@@ -1471,9 +1472,10 @@ window.scroll({top: 0, behavior: "smooth"})
 		                        var updatevalueRNT=0.01;
 			                       if(updatevalueRNT<(data5RNT.inputs[0].value/1000000000)){
 			                       	updatevalueRNT=data5RNT.inputs[0].value/1000000000;
-			                       	document.getElementById("RECENT"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">update</span> ON-RECENT SOLD<br><span class="smalltext">Σ'+updatevalueRNT+ '</span> <span class="material-icons" style="font-size:130%"">open_in_new</span>';
+			                       	document.getElementById("RECENT"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">update</span> ON-RECENT SOLD<br><span class="smalltext">Σ'+updatevalueRNT+ '</span> <span class="material-icons" style="font-size:130%"">youtube_searched_for</span>';
 
-				                	 $("#RECENT"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data5RNT.id);
+				                	 //$("#RECENT"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data5RNT.id);
+				                	 $("#RECENT"+tokenidJSON).attr("href", "https://ergoauctions.org/#/auction/specific/"+data5RNT.inputs[0].boxId);
 
 				                	 $("#RECENT"+tokenidJSON).attr("class", "recent");
 			                       }else{
@@ -1532,9 +1534,9 @@ window.scroll({top: 0, behavior: "smooth"})
 		                        var updatevalue=0.01;
 			                       if(updatevalue<(data5.inputs[0].value/1000000000)){
 			                       	updatevalue=data5.inputs[0].value/1000000000;
-			                       	document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">trending_up</span> ON-ALLTIME HIGH <br><span class="smalltext">Σ'+updatevalue+ '</span> <span class="material-icons" style="font-size:130%"">open_in_new</span>';
+			                       	document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">trending_up</span> ON-ALLTIME HIGH <br><span class="smalltext">Σ'+updatevalue+ '</span> <span class="material-icons" style="font-size:130%"">youtube_searched_for</span>';
 
-				                	 $("#"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data5.id);
+				                	 $("#"+tokenidJSON).attr("href", "https://ergoauctions.org/#/auction/specific/"+data5.inputs[0].boxId);
 
 				                	 $("#"+tokenidJSON).attr("class", "ATH");
 			                       }else{
@@ -1620,27 +1622,30 @@ window.scroll({top: 0, behavior: "smooth"})
 
 											//check002
 						                     if(tokenidJSON=="ONRb31e22f1224ff0f7c36e7f7fd4b16b2c6350a7aadf58f78b203a35664c9660ae_6"){
-				                                document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">looks_one</span> ON-RELEASE INSTANT SOLD<br><span class="smalltext">Σ'+data6.inputs[0].value/1000000000+ '</span> (OLD ID) <span class="material-icons" style="font-size:130%"">open_in_new</span>';
+				                                document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">looks_one</span> ON-RELEASE INSTANT SOLD<br><span class="smalltext">Σ'+data6.inputs[0].value/1000000000+ '</span> (OLD ID) <span class="material-icons" style="font-size:130%"">youtube_searched_for</span>';
 
-				                	 			$("[id='"+tokenidJSON+"']").attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data6.id);
+				                	 			// $("[id='"+tokenidJSON+"']").attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data6.id);
+				                	 			$("[id='"+tokenidJSON+"']").attr("href", "https://ergoauctions.org/#/auction/specific/"+data6.inputs[0].boxId);
 				                	 			$("[id='"+tokenidJSON+"']").attr("class", "sold");
 				                	 			//$("[id='"+tokenidJSON+"']").show();
 						                       	}else{
 
-				                                document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">looks_one</span> ON-RELEASE INSTANT SOLD<br><span class="smalltext">Σ'+data6.inputs[0].value/1000000000+ '</span> <span class="material-icons" style="font-size:130%"">open_in_new</span>';
+				                                document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">looks_one</span> ON-RELEASE INSTANT SOLD<br><span class="smalltext">Σ'+data6.inputs[0].value/1000000000+ '</span> <span class="material-icons" style="font-size:130%"">youtube_searched_for</span>';
 
-				                	 			$("[id='"+tokenidJSON+"']").attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data6.id);
+				                	 			// $("[id='"+tokenidJSON+"']").attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data6.id);
+				                	 			$("[id='"+tokenidJSON+"']").attr("href", "https://ergoauctions.org/#/auction/specific/"+data6.inputs[0].boxId);
 				                	 			$("[id='"+tokenidJSON+"']").attr("class", "sold");
-				                	 			//$("[id='"+tokenidJSON+"']").show();
+				                	 		
 						                       }
 
 
 
 
 				                	 		}else{
-				                	 			document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">looks_one</span> ON-RELEASE SOLD<br><span class="smalltext">Σ'+data6.inputs[0].value/1000000000+ '</span> <span class="material-icons" style="font-size:130%"">open_in_new</span>';
+				                	 			document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">looks_one</span> ON-RELEASE SOLD<br><span class="smalltext">Σ'+data6.inputs[0].value/1000000000+ '</span> <span class="material-icons" style="font-size:130%"">youtube_searched_for</span>';
 
-				                	 			$("[id='"+tokenidJSON+"']").attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data6.id);
+				                	 			// $("[id='"+tokenidJSON+"']").attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data6.id);
+				                	 			$("[id='"+tokenidJSON+"']").attr("href", "https://ergoauctions.org/#/auction/specific/"+data6.inputs[0].boxId);
 				                	 			$("[id='"+tokenidJSON+"']").attr("class", "bidsold");
 				                	 			//$("[id='"+tokenidJSON+"']").show();
 
