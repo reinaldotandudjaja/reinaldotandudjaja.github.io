@@ -1646,11 +1646,12 @@ window.scroll({top: 0, behavior: "smooth"})
 				}else if(datacurrowner.items[0].address.slice(0,3)=="5t1"){
 					
 					var lastbid = datacurrowner.items[0].value/1000000000;
+					var arrayminbid = (datacurrowner.items[0].additionalRegisters.R6.renderedValue).split(',')
 
 					if(lastbid>0.05){
 						lastbid = "LIVE BID Σ"+ lastbid;
 					}else{
-						lastbid = "NO LIVE BIDS YET" ;
+						lastbid = "START BID FROM Σ" + arrayminbid[0].substring(1)/1000000000 ;
 					}
 
 					$("#CURR"+tokenidJSON).attr("class", "currownerlive");
