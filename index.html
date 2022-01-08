@@ -1723,14 +1723,6 @@ window.scroll({top: 0, behavior: "smooth"})
 	});
 
 		function ANTgetJSON(tokenidJSON){
-
-
-
-
-
-
-
-
 			var url = "https://api.ergoplatform.com/api/v1/tokens/"+tokenidJSON;
 			$.getJSON(url, function(ANTdata1) {
 
@@ -1966,14 +1958,13 @@ window.scroll({top: 0, behavior: "smooth"})
 		// }
 
 		function getONR(tokenidJSON){
+			//START GET ONR#########################
 			if(tokenidJSON!==undefined){
 				var substr_tokenidJSON0 = tokenidJSON.substring(3);
 				var substr_tokenidJSON=substr_tokenidJSON0.slice(0,substr_tokenidJSON0.indexOf("_"));
 				var substr_price;
 				substr_price = substr_tokenidJSON0.slice(substr_tokenidJSON0.indexOf("_")+1,substr_tokenidJSON0.length);
 
-
-	
 		    var url = "https://api.ergoplatform.com/api/v1/tokens/"+substr_tokenidJSON;
 		    $.getJSON(url, function(data) {
 		          
@@ -1983,12 +1974,8 @@ window.scroll({top: 0, behavior: "smooth"})
 		                var url3 = "https://api.ergoplatform.com/api/v1/transactions/"+data2.transactionId;
 		                $.getJSON(url3, function(data3) {
 
-		                    var url4 = "https://api.ergoplatform.com/api/v1/boxes/byAddress/"+data3.inputs[0].address;
-
-
-
-		                    ;
-
+		                    var url4 = "https://api.ergoplatform.com/api/v1/boxes/byAddress/"+data3.inputs[0].address+"?limit=1";
+		               
 		                    $.getJSON(url4, function(data4) {
 
 			                     total=data4.total
@@ -2043,12 +2030,6 @@ window.scroll({top: 0, behavior: "smooth"})
 
 
 
-
-
-
-
-
-
 		                         }else{
 		                         	
 		                         	document.getElementById(tokenidJSON).innerHTML = "<span class='material-icons' style='font-size:130%''>looks_one</span> ON-RELEASE<BR><span class='smalltext'>Σ---</span>";
@@ -2068,6 +2049,7 @@ window.scroll({top: 0, behavior: "smooth"})
 
 		    })
 			}
+			//ENDONR #################################################################
 		}
 
 
@@ -2078,7 +2060,7 @@ window.scroll({top: 0, behavior: "smooth"})
 
 	ANTgetJSON(mythis.id.substring(7));
 	getONR($(mythis).siblings('.ONRvalue').attr('id'));
-
+	//ANTgetJSON(mythis.id.substring(7),$(mythis).siblings('.ONRvalue').attr('id'));
 	} 
 
 
@@ -2087,19 +2069,18 @@ window.scroll({top: 0, behavior: "smooth"})
 $('.lazyload').lazyload({
   // Sets the pixels to load earlier. Setting threshold to 200 causes image to load 200 pixels
   // before it appears on viewport. It should be greater or equal zero.
-  threshold: 200,
+  //threshold: 200,
 
   // Sets the callback function when the load event is firing.
   // element: The content in lazyload tag will be returned as a jQuery object.
-  load: function(element) {console.log(this.attr('id'))
-
-	var element = document.getElementById(this.attr('id'))
+  load: function(element) {
+	var element = document.getElementById(this.attr('id'));
   lazyloadjson(element);
   },
 
   // Sets events to trigger lazyload. Default is customized event `appear`, it will trigger when
   // element appear in screen. You could set other events including each one separated by a space.
-  trigger: "appear"
+  //trigger: "appear"
 });
 
 //	});
