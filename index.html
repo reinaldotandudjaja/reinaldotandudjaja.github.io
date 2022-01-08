@@ -468,8 +468,31 @@ margin: 0px;
 #myBtn2{
   display: block;
   position: fixed;
-  bottom: 80px;
+  bottom: 70px;
   right: 20px;
+  z-index: 99;
+opacity: 0.5;
+  background-color: #181c2d;
+  color: white;
+  cursor: pointer;
+  padding: 0PX;
+margin: 0px;
+  border-radius: 10px;
+  width: 40PX;
+  height: 40PX;
+
+}
+
+
+#myBtn2:hover{
+  background-color: #b22d3d;
+}
+
+#myBtn3{
+  display: block;
+  position: fixed;
+  bottom: 20px;
+  right: 70px;
   z-index: 99;
 opacity: 0.5;
   background-color: #181c2d;
@@ -501,6 +524,9 @@ html{scroll-behavior:smooth}
 </span></button>
 
 <button onclick="topFunction()" id="myBtn" title="Go to top" style="line-height: 40px;"><span class="material-icons">keyboard_arrow_up
+</span></button>
+
+<button onclick="auctionFunction()" id="myBtn3" title="Go to auction" style="line-height: 40px;"><span class="material-icons">gavel
 </span></button>
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -1546,9 +1572,11 @@ fingerprint
 			  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
 			    mybutton.style.display = "block";
 			    mybutton2.style.display = "block";
+			    mybutton3.style.display = "block";
 			  } else {
 			    mybutton.style.display = "none";
 			    mybutton2.style.display = "none";
+			    mybutton3.style.display = "none";
 			  }
 			}
 
@@ -1560,6 +1588,10 @@ fingerprint
 			// When the user clicks on the button, scroll to the top of the document
 			function topFunction() {
 window.scroll({top: 0, behavior: "smooth"})
+			}
+
+			function auctionFunction() {
+				window.open("https://ergoauctions.org/#/auction/active?type=picture&artist=9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu");
 			}
 
 			function dexFunction() {
