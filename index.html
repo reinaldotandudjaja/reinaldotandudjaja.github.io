@@ -54,8 +54,8 @@
   border-radius: 50%;
   border-top: 1px solid #000;
   display: inline-block;
-  height:12.5px;
-  width: 12.5px;
+  height:13px;
+  width: 13px;
 }
 
 @keyframes spin {
@@ -128,26 +128,38 @@
 
 
 @media only screen and (max-width: 600px) {
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /*grid-auto-rows: 1fr;*/
-  padding: 0px;
-}
-
-.grid-item {
-  border: 1px solid #111111;
-  padding: 0px;
-
-  font-size: 9px;
-
-  text-align: center;
-}
 
 
-.spinner {
-margin-top: 12px;
-}
+
+	.spinnersmall {
+	  animation: spin 1s infinite ease-in-out; 
+	//  animation: dash 2s infinite ease-in-out; 
+	  border-radius: 50%;
+	  border-top: 1px solid #000;
+	  display: inline-block;
+	  height:12.5px;
+	  width: 12.5px;
+	}
+	.grid-container {
+	  display: grid;
+	  grid-template-columns: repeat(3, 1fr);
+	  /*grid-auto-rows: 1fr;*/
+	  padding: 0px;
+	}
+
+	.grid-item {
+	  border: 1px solid #111111;
+	  padding: 0px;
+
+	  font-size: 9px;
+
+	  text-align: center;
+	}
+
+
+	.spinner {
+	margin-top: 12px;
+	}
 
 
 
