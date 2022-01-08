@@ -23,6 +23,10 @@
 	font-size: 10px;
 }
 
+.subhistoryvalue{
+	display: inline-block !important;
+}
+
 .history{
 	display: block;
 
@@ -858,7 +862,8 @@ backspace
 	  									var filterrarity = document.getElementsByClassName('grid-item');
 
 									for (var i = 0; i < filterrarity.length; i ++) {
-									    filterrarity[i].style.display = 'block';
+									 
+									    $(filterrarity[i]).show();
 									}
 	}
 
@@ -877,7 +882,7 @@ backspace
 									var filterrarity = document.getElementsByClassName('grid-item');
 
 									for (var i = 0; i < filterrarity.length; i ++) {
-									    filterrarity[i].style.display = 'block';
+									     $(filterrarity[i]).show();
 									}
 
 
@@ -1675,7 +1680,7 @@ window.scroll({top: 0, behavior: "smooth"})
 			                       		
 			                       		gethistory(url6RNT,auctionnumber,i);
 
-  										document.getElementById("RECENT"+tokenidJSON).innerHTML = (document.getElementById("RECENT"+tokenidJSON).innerHTML)+'<a  class="history'+tokenidJSON+' history"  style="display:none" target="_blank" id="'+i+'LINKHISTORY'+tokenidJSON+'"><span class="smalltext">'+auctionnumber+': Σ'+'<span id="'+i+'HISTORY'+tokenidJSON+'"></span> <span class="material-icons" style="font-size:130%">youtube_searched_for</span></span>'+'</a>'
+  										document.getElementById("RECENT"+tokenidJSON).innerHTML = (document.getElementById("RECENT"+tokenidJSON).innerHTML)+'<a  class="history'+tokenidJSON+' history"  style="display:block" target="_blank" id="'+i+'LINKHISTORY'+tokenidJSON+'"><span class="smalltext">'+auctionnumber+': Σ'+'<span class="subhistoryvalue" id="'+i+'HISTORY'+tokenidJSON+'"></span> <span class="material-icons" style="font-size:130%">youtube_searched_for</span></span>'+'</a>'
 									
 
 		                        		
