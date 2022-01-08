@@ -1788,8 +1788,6 @@ window.scroll({top: 0, behavior: "smooth"})
 		                    		}else{
 		                    			recentindex = 0;
 		                    		}
-  													
-		                        
   													//bug token 21
 		                        var url5RNT="https://api.ergoplatform.com/api/v1/transactions/"+data4RNT.items[recentindex].transactionId;
 
@@ -1813,7 +1811,15 @@ window.scroll({top: 0, behavior: "smooth"})
 			                     			}
 							
 			                       	for(var i=0;i<totalauction;i++){
-			                       		var url6RNT="https://api.ergoplatform.com/api/v1/transactions/"+data4RNT.items[i].transactionId;
+			                       		//bug token 21
+			                       		if(data4RNT.items[0].index==0&&data4RNT.total>1){
+																	recentindex=1;
+			                       		}else{
+			                       			var recentindex = i
+			                       	 	}	
+			                       		//bug token 21
+
+			                       		var url6RNT="https://api.ergoplatform.com/api/v1/transactions/"+data4RNT.items[recentindex].transactionId;
 
 			                       		var auctionnumber = totalauction-i;
 			                
