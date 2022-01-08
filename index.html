@@ -1643,10 +1643,23 @@ window.scroll({top: 0, behavior: "smooth"})
 					document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> CURRENT-OWNER INACTIVE-AUCTION<br>'+slicedcurrowner+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
 		$("#CURR"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/addresses/"+datacurrowner.items[0].address);
 
-				}else if(datacurrowner.items[0].address.slice(0,1)==5){
+				}else if(datacurrowner.items[0].address.slice(0,3)=="5t1"){
 					
+					var lastbid = datacurrowner.items[0].value/1000000000;
+
+					if(lastbid>0.05){
+						lastbid = "LAST BID Σ"+ lastbid;
+					}else{
+						lastbid = "NO BIDS YET" ;
+					}
+
 					$("#CURR"+tokenidJSON).attr("class", "currownerlive");
-					document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">gavel</span> LIVE ACTIVE AUCTION<br> CHECK NOW ! <span class="material-icons" style="font-size:130%">open_in_new</span>';
+					document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">gavel</span> LIVE ACTIVE AUCTION<br>'+lastbid+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
+
+
+
+
+
 		$("#CURR"+tokenidJSON).attr("href", "https://ergoauctions.org/#/auction/active?type=picture&artist=9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu");
 					$("#CURR"+tokenidJSON).parent().parent().addClass('ACTIVE');
 				}else{
