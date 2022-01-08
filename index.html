@@ -27,6 +27,10 @@
 	display: inline-block !important;
 }
 
+.iconhistorydefault{
+		display: inline-block !important;
+}
+
 .history{
 	display: block;
 
@@ -822,23 +826,23 @@ apps
 
 <Br><div style="background-color:#111111	; padding: 0px;max-width:100%;"><div style="background-color:#111111	; padding: 10px;max-width:100%;text-align: right;margin-left: auto; 
 margin-right: 0;">
-	<input  oninput="mysearch();"  id="mysearch" type="text" style="max-width: 100%;max-height: 32px;font-size: 16px;" placeholder="Search by Name "></input><br>
- <input  type="checkbox" id="checkcommon" name="checkcommon" value="checkcommon" onchange="myfilter();mysearch()">
+	<input  oninput="mysearch();hidehistory();"  id="mysearch" type="text" style="max-width: 100%;max-height: 32px;font-size: 16px;" placeholder="Search by Name "></input><br>
+ <input  type="checkbox" id="checkcommon" name="checkcommon" value="checkcommon" onchange="myfilter();mysearch();hidehistory()">
   <label for="checkcommon"> <span class="boldy">Common</span></label>
 
-  <input type="checkbox" id="checkuncommon" name="checkuncommon" value="checkuncommon" onchange="myfilter();mysearch()">
+  <input type="checkbox" id="checkuncommon" name="checkuncommon" value="checkuncommon" onchange="myfilter();mysearch();hidehistory()">
   <label for="checkuncommon"> <span style="color:#7ab257" class="boldy">Uncommon</span></label>
 
-  <input type="checkbox" id="checkrare" name="checkrare" value="checkrare" onchange="myfilter();mysearch()">
+  <input type="checkbox" id="checkrare" name="checkrare" value="checkrare" onchange="myfilter();mysearch();hidehistory()">
   <label for="checkrare"> <span style="color:#52aeef" class="boldy">Rare</span></label>
 
-  <input type="checkbox" id="checkepic" name="checkepic" value="checkepic" onchange="myfilter();mysearch()">
+  <input type="checkbox" id="checkepic" name="checkepic" value="checkepic" onchange="myfilter();mysearch();hidehistory()">
   <label for="checkepic"> <span style="color:#ab90d7" class="boldy">Epic</span></label>
 
-  <input type="checkbox" id="checklegendary" name="checklegendary" value="checklegendary" onchange="myfilter();mysearch()">
+  <input type="checkbox" id="checklegendary" name="checklegendary" value="checklegendary" onchange="myfilter();mysearch();hidehistory()">
   <label for="checklegendary"> <span style="color:#ffae2b" class="boldy">Legendary</span></label>  
 <br>
-  <input type="checkbox" id="checkactive" name="checkactive" value="checkactive" onchange="myfilter();mysearch()">
+  <input type="checkbox" id="checkactive" name="checkactive" value="checkactive" onchange="myfilter();mysearch();hidehistory()">
   <label for="checkactive"> <span style="color:#39b884" class="boldy">Active Auction</span></label> 
 
   <div style="text-align:right"><button style="margin-top: 15px;max-height: 32px;font-size: 8px; width: 150px; background-color:#7d1f2b" onclick="onPageLoad()"><span class="material-icons" style="font-size: 12px;">
@@ -850,8 +854,22 @@ backspace
 <script type="text/javascript">
 	window.onload = onPageLoad();
 
+	function hidehistory(){
+		var items = document.getElementsByClassName("iconhistorydefault"),
+    	i, len;
+
+		// loop through all elements having class name ".my-class"
+		for (i = 0, len = items.length; i < len; i++) {
+		    items[i].innerHTML = "expand_more";
+		}
+
+
+
+		$('.history').hide();
+	}
+
 	function onPageLoad() {
-	  $('.history').hide();
+	  
 	  document.getElementById("checkcommon").checked = false;
 	  document.getElementById("checkuncommon").checked = false;
 	  document.getElementById("checkrare").checked = false;
@@ -865,6 +883,7 @@ backspace
 									 
 									    $(filterrarity[i]).show();
 									}
+									hidehistory();
 	}
 
 
@@ -884,7 +903,7 @@ backspace
 									for (var i = 0; i < filterrarity.length; i ++) {
 									     $(filterrarity[i]).show();
 									}
-
+$('.history').hide();
 
 		}else if((myid!="") && (document.getElementById("checkcommon").checked == true ||
 					  document.getElementById("checkuncommon").checked == true ||
@@ -930,6 +949,8 @@ backspace
 	}else{
 				//console.log("triggered4");
 	}
+
+	
 }
 
 	function myfilter(){
@@ -1098,7 +1119,7 @@ backspace
 
 
 							}
-					
+				
 
 
 
@@ -1670,7 +1691,7 @@ window.scroll({top: 0, behavior: "smooth"})
 
 			                       	var totalauction = data4RNT.total-1;
 
-			                     	document.getElementById("RECENT"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">update</span> TOTAL AUCTION <br><span class="smalltext">'+(totalauction)+ '</span> <span class="material-icons" style="font-size:130%" id="iconhistory'+tokenidJSON+'">expand_more</span>';
+			                     	document.getElementById("RECENT"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">update</span> TOTAL AUCTION <br><span class="smalltext">'+(totalauction)+ '</span> <span class="material-icons iconhistorydefault" style="font-size:130%" id="iconhistory'+tokenidJSON+'">expand_more</span>';
 							
 			                       	for(var i=0;i<totalauction;i++){
 			                       		var url6RNT="https://api.ergoplatform.com/api/v1/transactions/"+data4RNT.items[i].transactionId;
