@@ -2000,14 +2000,25 @@ window.scroll({top: 0, behavior: "smooth"})
 		                var url3 = "https://api.ergoplatform.com/api/v1/transactions/"+data2.transactionId;
 		                $.getJSON(url3, function(data3) {
 
-		                    var url4 = "https://api.ergoplatform.com/api/v1/boxes/byAddress/"+data3.inputs[0].address+"?limit=1";
+		                    var url4 = "https://api.ergoplatform.com/api/v1/boxes/byAddress/"+data3.inputs[0].address+"?limit=500"; //soon update auction >500
 		               
 		                    $.getJSON(url4, function(data4) {
 
 			                     total=data4.total
 			                     mintotal=total-2;
 			                     if(total>1){    
-			                        var url5 = "https://api.ergoplatform.com/api/v1/boxes/byAddress/"+data3.inputs[0].address+"?limit=1&offset="+mintotal+"";
+
+
+			                     		//BUG TOKEN ERGYOROI #021 Kappa The River Child
+			                     		if(data4.items[total-1].value>data4.items[total-2].value){
+			                     			var url5 = "https://api.ergoplatform.com/api/v1/boxes/byAddress/"+data3.inputs[0].address+"?limit=1&offset="+(mintotal+1);
+			                     		}else{
+
+
+			                        	var url5 = "https://api.ergoplatform.com/api/v1/boxes/byAddress/"+data3.inputs[0].address+"?limit=1&offset="+mintotal;
+			                      	}
+			                      	//BUG TOKEN ERGYOROI #021 Kappa The River Child
+			                      	//var url5 = "https://api.ergoplatform.com/api/v1/boxes/byAddress/"+data3.inputs[0].address+"?limit=1&offset="+mintotal+"";
 			                        $.getJSON(url5, function(data5) {
 			                            
 			                            var ONRtransactionid = data5.items[0].transactionId;
