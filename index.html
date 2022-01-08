@@ -1780,13 +1780,28 @@ window.scroll({top: 0, behavior: "smooth"})
 		                    var url4RNT = "https://api.ergoplatform.com/api/v1/boxes/byAddress/"+data3.inputs[0].address+"?limit=500";
 
 		                    $.getJSON(url4RNT, function(data4RNT) {
-		                    
-
-		                        var url5RNT="https://api.ergoplatform.com/api/v1/transactions/"+data4RNT.items[0].transactionId;
+		                    		
+														var recentindex = 0;
+		                    		//bug token 21
+		                    		if(data4RNT.items[0].index==0){
+															recentindex=1;
+		                    		}else{
+		                    			recentindex = 0;
+		                    		}
+  													
+		                        
+  													//bug token 21
+		                        var url5RNT="https://api.ergoplatform.com/api/v1/transactions/"+data4RNT.items[recentindex].transactionId;
 
 		                        $.getJSON(url5RNT, function(data5RNT) {
 
 		                        var updatevalueRNT=0.01;
+
+
+		                      
+
+
+
 			                       if(updatevalueRNT<(data5RNT.inputs[0].value/1000000000)){
 			                       	updatevalueRNT=data5RNT.inputs[0].value/1000000000;
 			                       	// document.getElementById("RECENT"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">update</span> ON-RECENT SOLD<br><span class="smalltext">Σ'+updatevalueRNT+ '</span> <span class="material-icons" style="font-size:130%"">youtube_searched_for</span>';
