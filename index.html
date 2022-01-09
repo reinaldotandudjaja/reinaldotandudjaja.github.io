@@ -1732,8 +1732,23 @@ window.scroll({top: 0, behavior: "smooth"})
 								lastbid = '<span class="material-icons" style="font-size:130%">play_arrow</span> START BID Σ' + arrayminbid[0].substring(1)/1000000000 ;
 							}
 
-							$("#CURR"+tokenidJSON).attr("class", "currownerlive");
-							document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">gavel</span> ACTIVE AUCTION<br>'+lastbid+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
+							var activeauctionby;
+							var urlactiveauctionby = "https://api.ergoplatform.com/api/v1/boxes/unspent/byErgoTree/"+datacurrowner.items[0].additionalRegisters.R4.renderedValue+"?limit=1"
+
+							$.getJSON(urlactiveauctionby, function(dataactiveauctionby) {
+								
+								activeauctionby = dataactiveauctionby.items[0].address.slice(0,4)+"..."+dataactiveauctionby.items[0].address.slice(-4)
+								
+								// if(dataactiveauctionby.items[0].address=="9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu"){
+								// 	activeauctionby="ARTIST";
+								// }
+
+								$("#CURR"+tokenidJSON).attr("class", "currownerlive");
+								document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">gavel</span> ACTIVE AUCTION BY '+activeauctionby+'<br>'+lastbid+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
+							});
+
+
+
 
 
 
