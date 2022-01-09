@@ -19,6 +19,9 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
    <script src="assets/js/jquery.lazyload-any.js"></script> 
 		<style>
+			.whobid{
+				color: #B8396D;
+			}
 
 			.cloud{
 				border: 0.5px solid white;
@@ -1740,7 +1743,7 @@ window.scroll({top: 0, behavior: "smooth"})
 							var lastbid = datacurrowner.items[0].value/1000000000;
 							var arrayminbid = (datacurrowner.items[0].additionalRegisters.R6.renderedValue).split(',')
 
-							if(lastbid>0.05){
+							if(lastbid>0.025){
 								var	urlwhobid = "https://api.ergoplatform.com/api/v1/boxes/unspent/byErgoTree/"+datacurrowner.items[0].additionalRegisters.R4.renderedValue+"?limit=1"		;
 								
 								$.getJSON(urlwhobid, function(datawhobid) {
@@ -1760,7 +1763,7 @@ window.scroll({top: 0, behavior: "smooth"})
 										// }
 
 										$("#CURR"+tokenidJSON).attr("class", "currownerlive");
-										document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">gavel</span> ACTIVE AUCTION BY '+activeauctionby+'<br>'+lastbid+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
+										document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">gavel</span> ACTIVE AUCTION BY '+activeauctionby+'<br><span class="whobid">'+lastbid+' <span class="material-icons" style="font-size:130%">open_in_new</span></span>';
 									});
 
 
