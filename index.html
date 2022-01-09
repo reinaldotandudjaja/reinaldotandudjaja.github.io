@@ -1727,9 +1727,9 @@ window.scroll({top: 0, behavior: "smooth"})
 							var arrayminbid = (datacurrowner.items[0].additionalRegisters.R6.renderedValue).split(',')
 
 							if(lastbid>0.05){
-								lastbid = "<span class="material-icons" style="font-size:130%">radio_button_checked</span> LIVE BID Σ"+ lastbid;
+								lastbid = '<span class="material-icons" style="font-size:130%">radio_button_checked</span> LIVE BID Σ'+ lastbid;
 							}else{
-								lastbid = "<span class="material-icons" style="font-size:130%">play_arrow</span> START BID Σ" + arrayminbid[0].substring(1)/1000000000 ;
+								lastbid = '<span class="material-icons" style="font-size:130%">play_arrow</span> START BID Σ' + arrayminbid[0].substring(1)/1000000000 ;
 							}
 
 							$("#CURR"+tokenidJSON).attr("class", "currownerlive");
