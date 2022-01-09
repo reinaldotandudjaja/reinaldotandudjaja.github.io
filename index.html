@@ -954,7 +954,7 @@ $('.history').hide();
 					  document.getElementById("checklegendary").checked == true || document.getElementById("checkactive").checked == true)){	
 					myfilter();
 	
-					var matched = document.querySelectorAll("[id*="+CSS.escape(myid)+" i][style*='display:block'],[id*="+CSS.escape(myid)+" i][style*='display: block;']")	;
+					var matched = document.querySelectorAll("[id*="+CSS.escape(myid)+" i][style*='display:block'].grid-item,[id*="+CSS.escape(myid)+" i][style*='display: block;'].grid-item")	;
 					//console.log(matched);
 					//console.log("triggered2");
 
@@ -969,7 +969,7 @@ $('.history').hide();
 					}
 	
 	}else if(myid!=""){
-					var matched = document.querySelectorAll("[id*="+CSS.escape(myid)+" i]")	;
+					var matched = document.querySelectorAll("[id*="+CSS.escape(myid)+" i].grid-item")	;
 					//console.log("triggered");
 
 					var filterrarity = document.getElementsByClassName('grid-item');
@@ -979,6 +979,7 @@ $('.history').hide();
 										}
 
 					for (var i = 0; i < matched.length; i ++) {
+					    //bug search find all
 					    matched[i].style.display = 'block';
 					}
 	}else if((myid=="")&& (document.getElementById("checkcommon").checked == true ||
