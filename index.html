@@ -888,7 +888,9 @@ backspace
 
 <script type="text/javascript">
 	var intervalId = window.setInterval(function(){
-	  myfilter();
+		if($("#checkactive").is(':checked')){
+	  	myfilter();
+		}
 	}, 2500);
 
 
