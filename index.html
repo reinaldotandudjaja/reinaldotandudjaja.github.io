@@ -871,7 +871,7 @@ apps
   <input type="checkbox" id="checkrare" name="checkrare" value="checkrare" onchange="myfilter();mysearch();hidehistory()">
   <label for="checkrare"> <span style="color:#52aeef" class="boldy cloud">&nbsp;Rare&nbsp;</span></label>
 
-  <input type="checkbox" id="checkepic" name="checkepic" value="checkepic" onchange="myfilter();mysearch();hidehistory()">
+  <input type="checkbox" id="checkepic" name="checkepic" value="checkepic" onchange="myfilter();mysearch();hidehistory();">
   <label for="checkepic"> <span style="color:#ab90d7" class="boldy cloud">&nbsp;Epic&nbsp;</span></label>
 
   <input type="checkbox" id="checklegendary" name="checklegendary" value="checklegendary" onchange="myfilter();mysearch();hidehistory()">
@@ -993,8 +993,10 @@ $('.history').hide();
 				//console.log("triggered4");
 	}
 
+
+$.lazyload.check();
 	
-}
+}//end mysearch
 
 	function myfilter(){
 
@@ -1168,13 +1170,17 @@ $('.history').hide();
 
 
 
+			 // var scrollValue=document.querySelector('html').scrollTop;
+			 // document.querySelector('html').scrollLeft = scrollValue+1;
+			 // document.querySelector('html').scrollLeft = scrollValue-1;
 
 
 
-
-
+			$.lazyload.check();
 
 		}
+
+
 
 
 
