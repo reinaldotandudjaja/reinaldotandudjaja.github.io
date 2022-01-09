@@ -1397,7 +1397,7 @@ function myFunctionD() {
 <!--START LEGEND-->
 <span style="background-color: #6e1f60; font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12px"> &nbsp;Artist Owned (Not For Sale)</span>
 <br>
-<span style="background-color: #17192c; font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12px"> &nbsp;Current-Owner Inactive-Auction (RealTime Updates)</span>
+<span style="background-color: #17192c; font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12px"> &nbsp;Inactive-Auction Current-Owner  (RealTime Updates)</span>
 
 <br>
 <span style="background-color: #1e213a;font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12px"> &nbsp; <span class="material-icons" style="font-size: 14px">update</span> <b>Total Auction + Auction History</b> (RealTime Updates on Winning Auction) </span>
@@ -1724,19 +1724,19 @@ window.scroll({top: 0, behavior: "smooth"})
 					var urlcurrowner ="https://api.ergoplatform.com/api/v1/boxes/unspent/byTokenId/"+tokenidJSON;
 					$.getJSON(urlcurrowner, function(datacurrowner) {
 						
-						slicedcurrowner = datacurrowner.items[0].address.slice(0,4)+"..."+datacurrowner.items[0].address.slice(-4);
+						slicedcurrowner = datacurrowner.items[0].address.slice(0,3)+".."+datacurrowner.items[0].address.slice(-3);
 						
 						if(datacurrowner.items[0].address=="9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu"&&document.getElementById("CURR"+tokenidJSON)!=null){
-							slicedcurrowner = datacurrowner.items[0].address.slice(0,4)+"..."+datacurrowner.items[0].address.slice(-4);
+							slicedcurrowner = datacurrowner.items[0].address.slice(0,3)+".."+datacurrowner.items[0].address.slice(-3);
 							$("#CURR"+tokenidJSON).attr("class", "currowner");
-							document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> ARTIST INACTIVE-AUCTION<br>'+slicedcurrowner+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
+							document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> INACTIVE-AUCTION ARTIST<br>'+slicedcurrowner+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
 							$("#CURR"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/addresses/"+datacurrowner.items[0].address);
 							
 						}else if(datacurrowner.items[0].address.slice(0,1)==9&&document.getElementById("CURR"+tokenidJSON)!=null){
 
-								slicedcurrowner = datacurrowner.items[0].address.slice(0,4)+"..."+datacurrowner.items[0].address.slice(-4);
+								slicedcurrowner = datacurrowner.items[0].address.slice(0,3)+".."+datacurrowner.items[0].address.slice(-3);
 								$("#CURR"+tokenidJSON).attr("class", "currowner");
-							document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> CURRENT-OWNER INACTIVE-AUCTION<br>'+slicedcurrowner+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
+							document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> INACTIVE-AUCTION CURRENT-OWNER<br>'+slicedcurrowner+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
 							$("#CURR"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/addresses/"+datacurrowner.items[0].address);
 
 						}else if(datacurrowner.items[0].address.slice(0,3)=="5t1"&&document.getElementById("CURR"+tokenidJSON)!=null){
@@ -1813,9 +1813,9 @@ window.scroll({top: 0, behavior: "smooth"})
 							$("#CURR"+tokenidJSON).attr("href", "https://ergoauctions.org/#/auction/active?type=picture&artist=9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu");
 							$("#CURR"+tokenidJSON).parent().parent().addClass('ACTIVE');
 						}else if(document.getElementById("CURR"+tokenidJSON)!=null){
-							slicedcurrowner = datacurrowner.items[0].address.slice(0,4)+"..."+datacurrowner.items[0].address.slice(-4);
+							slicedcurrowner = datacurrowner.items[0].address.slice(0,3)+".."+datacurrowner.items[0].address.slice(-3);
 							$("#CURR"+tokenidJSON).attr("class", "currowner");
-							document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> CURRENT OWNER<br>'+'ON PROCESS';
+							document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> CURRENT-OWNER<br>'+'ON PROCESS';
 						}
 
 					});
