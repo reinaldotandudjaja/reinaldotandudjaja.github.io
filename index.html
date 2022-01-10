@@ -1771,14 +1771,14 @@ window.scroll({top: 0, behavior: "smooth"})
 						if(datacurrowner.items[0].address=="9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu"&&document.getElementById("CURR"+tokenidJSON)!=null){
 							slicedcurrowner = datacurrowner.items[0].address.slice(0,3)+".."+datacurrowner.items[0].address.slice(-3);
 							$("#CURR"+tokenidJSON).attr("class", "currowner");
-							document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> INACTIVE AUCTION / ARTIST<br>'+slicedcurrowner+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
+							document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> (INACTIVE AUCTION) ARTIST<br>'+slicedcurrowner+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
 							$("#CURR"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/addresses/"+datacurrowner.items[0].address);
 							
 						}else if(datacurrowner.items[0].address.slice(0,1)==9&&document.getElementById("CURR"+tokenidJSON)!=null){
 
 								slicedcurrowner = datacurrowner.items[0].address.slice(0,3)+".."+datacurrowner.items[0].address.slice(-3);
 								$("#CURR"+tokenidJSON).attr("class", "currowner");
-							document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> INACTIVE AUCTION / CURRENT OWNER<br>'+slicedcurrowner+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
+							document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> (INACTIVE AUCTION) CURRENT OWNER<br>'+slicedcurrowner+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
 							$("#CURR"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/addresses/"+datacurrowner.items[0].address);
 
 						}else if(datacurrowner.items[0].address.slice(0,3)=="5t1"&&document.getElementById("CURR"+tokenidJSON)!=null){
@@ -1857,7 +1857,7 @@ window.scroll({top: 0, behavior: "smooth"})
 						}else if(document.getElementById("CURR"+tokenidJSON)!=null){
 							slicedcurrowner = datacurrowner.items[0].address.slice(0,3)+".."+datacurrowner.items[0].address.slice(-3);
 							$("#CURR"+tokenidJSON).attr("class", "currowner");
-							document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> INACTIVE AUCTION / CURRENT OWNER<br>'+'ON PROCESS';
+							document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> (INACTIVE AUCTION) CURRENT OWNER<br>'+'ON PROCESS';
 						}
 
 					});
