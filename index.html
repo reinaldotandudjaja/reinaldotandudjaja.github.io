@@ -1745,7 +1745,7 @@ window.scroll({top: 0, behavior: "smooth"})
 							var arrayminbid = (datacurrowner.items[0].additionalRegisters.R6.renderedValue).split(',')
 
 							if(lastbid>0.025){
-								var	urlwhobid = "https://api.ergoplatform.com/api/v1/boxes/unspent/byErgoTree/"+datacurrowner.items[0].additionalRegisters.R4.renderedValue+"?limit=1"		;
+								var	urlwhobid = "https://api.ergoplatform.com/api/v1/boxes/unspent/byErgoTree/"+datacurrowner.items[0].additionalRegisters.R5.renderedValue+"?limit=1"		;
 								
 								$.getJSON(urlwhobid, function(datawhobid) {
 									whobid = datawhobid.items[0].address.slice(0,3)+".."+datawhobid.items[0].address.slice(-3);
