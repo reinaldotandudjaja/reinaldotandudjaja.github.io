@@ -1443,7 +1443,7 @@ function myFunctionD() {
 <span style="background-color: #17192c; font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12px"> &nbsp;Current Owner (Inactive Auction) (RealTime Updates)</span>
 
 <br>
-<span style="background-color: #1e213a;font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12px"> &nbsp; <span class="material-icons" style="font-size: 14px">update</span> <b>Total Auction + Auction History</b> (RealTime Updates on Winning Auction) </span>
+<span style="background-color: #1e213a;font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12px"> &nbsp; <span class="material-icons" style="font-size: 14px">update</span> <b>Total Auction Winner + Auction & Bid History</b> (RealTime Updates on Winning Auction) </span>
 <span style="text-align: left;font-size: 12px">
 
 <br>
@@ -1931,7 +1931,7 @@ window.scroll({top: 0, behavior: "smooth"})
 			                       	var totalauction = data4RNT.total-1;
 
 			                       		if(document.getElementById("RECENT"+tokenidJSON)!=null){
-			                     				document.getElementById("RECENT"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">restore</span> TOTAL AUCTION <br><span class="smalltext">'+(totalauction)+ '</span> <span class="material-icons iconhistorydefault" style="font-size:130%" id="iconhistory'+tokenidJSON+'">expand_more</span>';
+			                     				document.getElementById("RECENT"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">restore</span> TOTAL AUCTION WINNER<br><span class="smalltext">'+(totalauction)+ '</span> <span class="material-icons iconhistorydefault" style="font-size:130%" id="iconhistory'+tokenidJSON+'">expand_more</span>';
 			                     			}
 							
 			                       	for(var i=0;i<totalauction;i++){
@@ -1994,7 +1994,7 @@ window.scroll({top: 0, behavior: "smooth"})
 
 				                 				// document.getElementById("RECENT"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">update</span> ON-RECENT SOLD<br><span class="smalltext">Σ'+updatevalueRNT;
 				                 				if(document.getElementById("RECENT"+tokenidJSON)!=null){
-				                 					document.getElementById("RECENT"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">restore</span> TOTAL AUCTION<br><span class="smalltext">'+updatevalueRNT;
+				                 					document.getElementById("RECENT"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">restore</span> TOTAL AUCTION WINNER<br><span class="smalltext">'+updatevalueRNT;
 																}
 				                	 // $("#"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data5.id);
 
