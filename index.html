@@ -183,6 +183,10 @@
   text-align: center;
 }
 
+.soon1,.soon2,.soon3,.soon4{
+	display: block;
+}
+
 @media only screen and (max-width: 350px) {
 	.grid-container {
 	  display: grid;
@@ -190,11 +194,25 @@
 	  /*grid-auto-rows: 1fr;*/
 	  padding: 0px;
 	}
+
+		.soon3,.soon4{
+		display: none!important;
+	}
+
+			.soon1,.soon2{
+		display: block;
+	}
 }
 
 
 @media only screen and (max-width: 880px) {
+		.soon4{
+		display: none;
+	}
 
+  .soon1,.soon2,.soon3{
+		display: block;
+	}
 
 	.zoom:hover {
 	  -ms-transform: scale(1.8); /* IE 9 */
@@ -1421,10 +1439,10 @@ function myFunctionD() {
 <!-- END -->
 
 
-<div class="grid-itemsoon"><img class="negativezoom" loading="lazy" width="100%" src="images/ERGYOROI/upcoming.png"><span>???</span></div>
-<div class="grid-itemsoon"><img class="negativezoom" loading="lazy"  width="100%" src="images/ERGYOROI/upcoming.png"><span>???</span></div>
-<div class="grid-itemsoon"><img class="negativezoom" loading="lazy"  width="100%" src="images/ERGYOROI/upcoming.png"><span>???</span></div>
-<div class="grid-itemsoon"><img class="negativezoom" loading="lazy"  width="100%" src="images/ERGYOROI/upcoming.png"><span>???</span></div>
+<div class="grid-itemsoon soon1"><img class="negativezoom" loading="lazy" width="100%" src="images/ERGYOROI/upcoming.png"><span>???</span></div>
+<div class="grid-itemsoon soon2"><img class="negativezoom" loading="lazy"  width="100%" src="images/ERGYOROI/upcoming.png"><span>???</span></div>
+<div class="grid-itemsoon soon3"><img class="negativezoom" loading="lazy"  width="100%" src="images/ERGYOROI/upcoming.png"><span>???</span></div>
+<div class="grid-itemsoon soon4"><img class="negativezoom" loading="lazy"  width="100%" src="images/ERGYOROI/upcoming.png"><span>???</span></div>
 
 
 
