@@ -936,8 +936,11 @@ apps
   <label for="checkepic"> <span style="color:#ab90d7" class="boldy cloud">&nbsp;Epic&nbsp;</span></label>
 
   <input type="checkbox" id="checklegendary" name="checklegendary" value="checklegendary" onchange="myfilter();mysearch();hidehistory()">
-  <label for="checklegendary"> <span style="color:#ffae2b" class="boldy cloud">&nbsp;Legendary&nbsp;</span></label>  
+  <label for="checklegendary"> <span style="color:#ffae2b" class="boldy cloud">&nbsp;Legendary&nbsp;</span></label> 
 <br>
+  <input type="checkbox" id="checknew" name="checknew" value="checknew" onchange="mynew();">
+  <label for="checknew"> <span  style="color:#eb1948 ;" class="boldy cloud">&nbsp;New Release&nbsp;</span></label>  
+
   <input type="checkbox" id="checkactive" name="checkactive" value="checkactive" onchange="myfilter();mysearch();hidehistory()">
   <label for="checkactive"> <span  style="color:#39b884 ;" class="boldy cloud">&nbsp;Active Auction&nbsp;</span></label> 
 
@@ -953,6 +956,16 @@ backspace
 	  	myfilter();mysearch();
 		}
 	}, 2500);
+
+	function mynew(){
+		
+			$('.grid-item').each(function() {
+	    		$(this).prependTo(this.parentNode);
+	    });
+
+
+	    $.lazyload.check();
+	}
 
 
 	window.onload = onPageLoad();
@@ -972,7 +985,11 @@ backspace
 	}
 
 	function onPageLoad() {
-	  
+		if($('#checknew').is(":checked")==true){
+	 		$('#checknew').prop('checked', false);
+	 		mynew();
+		};
+
 	  document.getElementById("checkcommon").checked = false;
 	  document.getElementById("checkuncommon").checked = false;
 	  document.getElementById("checkrare").checked = false;
