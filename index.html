@@ -630,7 +630,7 @@ html{scroll-behavior:smooth}
 
 
 	</head>
-	<body class="is-preload" onpageshow="onPageLoad()">
+	<body class="is-preload" onpageshow="onPageShow()">
 
 
 <button onclick="dexFunction()" id="myBtn2" title="Go to ERGYODEX" style="line-height: 40px;"><span class="material-icons" style="padding-top: 0px;margin-top: 0px;">apps
@@ -1002,6 +1002,12 @@ backspace
 
 
 		$('.history').hide();
+	}
+
+	function onPageShow(){
+		if($('#checknew').is(":checked")==true){
+	 		$('#checknew').prop('checked', false);
+		};
 	}
 
 	function onPageLoad() {
