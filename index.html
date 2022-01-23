@@ -1009,10 +1009,15 @@ backspace
         var idleInterval = setInterval(timerIncrement, 1000); // 1 seconds
 
         // Zero the idle timer on mouse movement.
+        $(this).mousemove(function (e) {
+            idleTime = 0;
+        });
+        $(this).keypress(function (e) {
+            idleTime = 0;
+        });
         $(this).scroll(function (e) {
             idleTime = 0;
         });
-
     });
 
     function timerIncrement() {
