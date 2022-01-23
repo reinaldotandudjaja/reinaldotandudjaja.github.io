@@ -165,7 +165,7 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: 20% 20% 20% 20% 20%;
   /*grid-auto-rows: 1fr;*/
   padding: 0px;
 }
@@ -186,35 +186,37 @@
   text-align: center;
 }
 
-.soon1,.soon2,.soon3,.soon4{
+.soon1,.soon2,.soon3,.soon4,.soon5{
 	display: block;
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 1100px) {
 	.grid-container {
 	  display: grid;
-	  grid-template-columns: repeat(2, 1fr) !important;
+	  grid-template-columns: repeat(4, 1fr);
 	  /*grid-auto-rows: 1fr;*/
 	  padding: 0px;
 	}
 
-		.soon3,.soon4{
+		.soon4,.soon5{
 		display: none!important;
 	}
 
-			.soon1,.soon2{
-		display: block;
+			.soon1,.soon2,.soon3,.soon4{
+		display: block!important;
 	}
 }
 
 
-@media only screen and (max-width: 880px) {
+
+
+@media only screen and (max-width: 900px) {
 		.soon4{
-		display: none;
+		display: none!important;
 	}
 
   .soon1,.soon2,.soon3{
-		display: block;
+		display: block!important; 	
 	}
 
 	.zoom:hover {
@@ -331,6 +333,24 @@ display: inline-block;
 
 
 } 
+
+
+@media only screen and (max-width: 350px) {
+	.grid-container {
+	  display: grid;
+	  grid-template-columns: repeat(2, 1fr) !important;
+	  /*grid-auto-rows: 1fr;*/
+	  padding: 0px;
+	}
+
+		.soon3,.soon4,.soon5{
+		display: none!important;
+	}
+
+			.soon1,.soon2{
+		display: block!important;
+	}
+}
 
 .loadsold{
 	color: WHITE;
@@ -1527,6 +1547,8 @@ function myFunctionD() {
 <div class="grid-itemsoon soon2"><img class="negativezoom" loading="lazy"  width="100%" src="images/ERGYOROI/upcoming.png"><span>???</span></div>
 <div class="grid-itemsoon soon3"><img class="negativezoom" loading="lazy"  width="100%" src="images/ERGYOROI/upcoming.png"><span>???</span></div>
 <div class="grid-itemsoon soon4"><img class="negativezoom" loading="lazy"  width="100%" src="images/ERGYOROI/upcoming.png"><span>???</span></div>
+<div class="grid-itemsoon soon5"><img class="negativezoom" loading="lazy"  width="100%" src="images/ERGYOROI/upcoming.png"><span>???</span></div>
+
 
 
 
