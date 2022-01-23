@@ -976,7 +976,10 @@ backspace
 		if($("#checkactive").is(':checked')){
 	  	myfilter();mysearch();
 		}
-	}, 2500);
+
+
+
+	}, 2000);
 
 	function mynew(){
 		
@@ -990,6 +993,9 @@ backspace
 
 
 	window.onload = onPageLoad();
+  window.onpageshow = onPageLoad();
+
+
 
 	function hidehistory(){
 		var items = document.getElementsByClassName("iconhistorydefault"),
