@@ -1003,6 +1003,29 @@ backspace
 </span>
 
 <script type="text/javascript">
+    var idleTime = 0;
+    $(document).ready(function () {
+        // Increment the idle time counter every minute.
+        var idleInterval = setInterval(timerIncrement, 1000); // 1 minute
+
+        // Zero the idle timer on mouse movement.
+        $(this).mousemove(function (e) {
+            idleTime = 0;
+        });
+        $(this).keypress(function (e) {
+            idleTime = 0;
+        });
+    });
+
+    function timerIncrement() {
+        idleTime = idleTime + 1;
+        if (idleTime > 5) { // 20 minutes
+            window.location.reload();
+        }
+    }
+</script>
+
+<script type="text/javascript">
 	var intervalId = window.setInterval(function(){
 		if($("#checkactive").is(':checked')){
 	  	myfilter();mysearchfunc();
@@ -1012,9 +1035,15 @@ backspace
 
 	}, 1000);
 
-	window.setInterval(function(){
-		location.reload();
-	}, 900000);
+	// var refresh = window.setInterval(function(){
+	// 	location.reload();
+	// }, 2000);
+
+	// 	window.addEventListener('scroll',(event) => {
+	// 	    refresh=window.setInterval(function(){
+	// 				location.reload();
+	// 			}, 2000);
+	// 	});
 
 	function mynew(){
 		
@@ -1409,6 +1438,7 @@ $.lazyload.check();
 <div style='display:block' id='ERGYOROI #057 Basan The Ghost-Fire Rooster' class='grid-item UNCOMMON'><span class='lazyload lazyhead'><!--<span id='LAZYHEADa9b50c51e29d75b2964bf3e262194a91b818ab545877dd649b563963de8ac0fc' style='text-align:top'></span>--></span><img loading='lazy' class='zoom' width='100%' src='images/ERGYOROI/ERGYOROI %23057 Basan The Ghost-Fire Rooster.png'><div class="ergyoroiname">ERGYOROI #057 Basan The Ghost-Fire Rooster</div><ul class="actions stacked"><li><a href="https://ergonfts.org/#/?token=a9b50c51e29d75b2964bf3e262194a91b818ab545877dd649b563963de8ac0fc" target=_blank" class="button fit tokenid"><span class="material-icons" style="font-size:150%">search</span> Token ID</a></li><span class='variant' id='VARIANT'><span class='material-icons' style='font-size:130%'>category</span> Variant 3/4</span><span class='antiquity' id='ANTIQUITYa9b50c51e29d75b2964bf3e262194a91b818ab545877dd649b563963de8ac0fc'><span class='spinnersmall' ></span></span><a id='CURRa9b50c51e29d75b2964bf3e262194a91b818ab545877dd649b563963de8ac0fc' target='_blank' class='checkauction'><span class='spinner'></span></a><a id='RECENTa9b50c51e29d75b2964bf3e262194a91b818ab545877dd649b563963de8ac0fc' target='_blank' class='checkauction'><span class='spinner'></span></a><a id='a9b50c51e29d75b2964bf3e262194a91b818ab545877dd649b563963de8ac0fc' target='_blank' class='athvalue checkauction'><span class='spinner'></span></a><a id='ONRa9b50c51e29d75b2964bf3e262194a91b818ab545877dd649b563963de8ac0fc' class='ONRvalue checkauctionlast' target='_blank'><span class='spinner'></span></a></div>
 <div style='display:block' id='ERGYOROI #058 Basan The Ghost-Fire Rooster' class='grid-item UNCOMMON'><span class='lazyload lazyhead'><!--<span id='LAZYHEADc3a062c568870dcca174f8ff28a432cf53e179dce514b5923e5a6f3e45e9cc73' style='text-align:top'></span>--></span><img loading='lazy' class='zoom' width='100%' src='images/ERGYOROI/ERGYOROI %23058 Basan The Ghost-Fire Rooster.png'><div class="ergyoroiname">ERGYOROI #058 Basan The Ghost-Fire Rooster</div><ul class="actions stacked"><li><a href="https://ergonfts.org/#/?token=c3a062c568870dcca174f8ff28a432cf53e179dce514b5923e5a6f3e45e9cc73" target=_blank" class="button fit tokenid"><span class="material-icons" style="font-size:150%">search</span> Token ID</a></li><span class='variant' id='VARIANT'><span class='material-icons' style='font-size:130%'>category</span> Variant 4/4</span><span class='antiquity' id='ANTIQUITYc3a062c568870dcca174f8ff28a432cf53e179dce514b5923e5a6f3e45e9cc73'><span class='spinnersmall' ></span></span><a id='CURRc3a062c568870dcca174f8ff28a432cf53e179dce514b5923e5a6f3e45e9cc73' target='_blank' class='checkauction'><span class='spinner'></span></a><a id='RECENTc3a062c568870dcca174f8ff28a432cf53e179dce514b5923e5a6f3e45e9cc73' target='_blank' class='checkauction'><span class='spinner'></span></a><a id='c3a062c568870dcca174f8ff28a432cf53e179dce514b5923e5a6f3e45e9cc73' target='_blank' class='athvalue checkauction'><span class='spinner'></span></a><a id='ONRc3a062c568870dcca174f8ff28a432cf53e179dce514b5923e5a6f3e45e9cc73' class='ONRvalue checkauctionlast' target='_blank'><span class='spinner'></span></a></div>
 <div style='display:block' id='ERGYOROI #059 Amemasu The Mutant Whale' class='grid-item RARE'><span class='lazyload lazyhead'><!--<span id='LAZYHEAD91a3c67094083d9ffb9e3e8b326dbf7c24759bde4f368076a9eefdf53161763e' style='text-align:top'></span>--></span><img loading='lazy' class='zoom' width='100%' src='images/ERGYOROI/ERGYOROI %23059 Amemasu The Mutant Whale.png'><div class="ergyoroiname">ERGYOROI #059 Amemasu The Mutant Whale</div><ul class="actions stacked"><li><a href="https://ergonfts.org/#/?token=91a3c67094083d9ffb9e3e8b326dbf7c24759bde4f368076a9eefdf53161763e" target=_blank" class="button fit tokenid"><span class="material-icons" style="font-size:150%">search</span> Token ID</a></li><span class='variant' id='VARIANT'><span class='material-icons' style='font-size:130%'>category</span> Variant 1/2</span><span class='antiquity' id='ANTIQUITY91a3c67094083d9ffb9e3e8b326dbf7c24759bde4f368076a9eefdf53161763e'><span class='spinnersmall' ></span></span><a id='CURR91a3c67094083d9ffb9e3e8b326dbf7c24759bde4f368076a9eefdf53161763e' target='_blank' class='checkauction'><span class='spinner'></span></a><a id='RECENT91a3c67094083d9ffb9e3e8b326dbf7c24759bde4f368076a9eefdf53161763e' target='_blank' class='checkauction'><span class='spinner'></span></a><a id='91a3c67094083d9ffb9e3e8b326dbf7c24759bde4f368076a9eefdf53161763e' target='_blank' class='athvalue checkauction'><span class='spinner'></span></a><a id='ONR91a3c67094083d9ffb9e3e8b326dbf7c24759bde4f368076a9eefdf53161763e' class='ONRvalue checkauctionlast' target='_blank'><span class='spinner'></span></a></div>
+<div style='display:block' id='ERGYOROI #060 Amemasu The Mutant Whale' class='grid-item RARE'><span class='lazyload lazyhead'><!--<span id='LAZYHEADd29f0f2e5b3aeca0fd5a1ef2d6e8ca8d13eba887818b9c0ecab853ca6bc6d2c1' style='text-align:top'></span>--></span><img loading='lazy' class='zoom' width='100%' src='images/ERGYOROI/ERGYOROI %23060 Amemasu The Mutant Whale.png'><div class="ergyoroiname">ERGYOROI #060 Amemasu The Mutant Whale</div><ul class="actions stacked"><li><a href="https://ergonfts.org/#/?token=d29f0f2e5b3aeca0fd5a1ef2d6e8ca8d13eba887818b9c0ecab853ca6bc6d2c1" target=_blank" class="button fit tokenid"><span class="material-icons" style="font-size:150%">search</span> Token ID</a></li><span class='variant' id='VARIANT'><span class='material-icons' style='font-size:130%'>category</span> Variant 2/2</span><span class='antiquity' id='ANTIQUITYd29f0f2e5b3aeca0fd5a1ef2d6e8ca8d13eba887818b9c0ecab853ca6bc6d2c1'><span class='spinnersmall' ></span></span><a id='CURRd29f0f2e5b3aeca0fd5a1ef2d6e8ca8d13eba887818b9c0ecab853ca6bc6d2c1' target='_blank' class='checkauction'><span class='spinner'></span></a><a id='RECENTd29f0f2e5b3aeca0fd5a1ef2d6e8ca8d13eba887818b9c0ecab853ca6bc6d2c1' target='_blank' class='checkauction'><span class='spinner'></span></a><a id='d29f0f2e5b3aeca0fd5a1ef2d6e8ca8d13eba887818b9c0ecab853ca6bc6d2c1' target='_blank' class='athvalue checkauction'><span class='spinner'></span></a><a id='ONRd29f0f2e5b3aeca0fd5a1ef2d6e8ca8d13eba887818b9c0ecab853ca6bc6d2c1' class='ONRvalue checkauctionlast' target='_blank'><span class='spinner'></span></a></div>
 
 
 
@@ -1545,6 +1575,7 @@ function myFunctionD() {
 'a9b50c51e29d75b2964bf3e262194a91b818ab545877dd649b563963de8ac0fc',
 'c3a062c568870dcca174f8ff28a432cf53e179dce514b5923e5a6f3e45e9cc73',
 '91a3c67094083d9ffb9e3e8b326dbf7c24759bde4f368076a9eefdf53161763e',
+'d29f0f2e5b3aeca0fd5a1ef2d6e8ca8d13eba887818b9c0ecab853ca6bc6d2c1',
 
 
 
