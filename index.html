@@ -968,7 +968,7 @@ apps
 <Br><div style="background-color:#111111	; padding: 0px;max-width:100%; ">
 	<div style="background-color:#111111	; padding: 10px;max-width:100%;text-align: right;margin-left: auto; margin-right: 0; font-size: 12px;">
 
-		<form autocomplete="off">
+		<form autocomplete="off" style="padding-bottom:0px;margin-bottom: 0px;">
 
 
 	<input  oninput="mysearchfunc();hidehistory();"  id="mysearch" type="text" style="max-width: 100%;max-height: 32px;font-size: 16px;" placeholder="Search by Name "></input><br>
@@ -993,10 +993,11 @@ apps
   <input type="checkbox" id="checkactive" name="checkactive" value="checkactive" onchange="myfilter();mysearchfunc();hidehistory()">
   <label for="checkactive"> <span  style="color:#39b884 ;" class="boldy cloud">&nbsp;Active Auction&nbsp;</span></label> 
 
-  <div style="text-align:right"><button style="margin-top: 15px;max-height: 32px;font-size: 8px; width: 150px; background-color:#7d1f2b" onclick="onPageLoad()"><span class="material-icons" style="font-size: 12px;">
+</form>
+  <div style="text-align:right"><button style="margin-top: 15px;max-height: 32px;font-size: 8px; width: 150px; background-color:#7d1f2b" onclick="onPageLoadFunc()"><span class="material-icons" style="font-size: 12px;">
 backspace
 </span> &nbsp;clear search</button></div>
-</form>
+
 
 </div> </div>
 </span>
@@ -1022,7 +1023,7 @@ backspace
 	}
 
 
-	window.onload = onPageLoad();
+	window.onload = onPageLoadFunc();
 
 
 
@@ -1047,7 +1048,7 @@ backspace
 		};
 	}
 
-	function onPageLoad() {
+	function onPageLoadFunc() {
 		if($('#checknew').is(":checked")==true){
 	 		$('#checknew').prop('checked', false);
 	 		mynew();
