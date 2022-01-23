@@ -654,10 +654,10 @@ margin: 0px;
 
 }
 
-.myBtn4{
-  display: block !important;
-  position: fixed !important;
-  bottom: 10px !important;
+#myBtn4{
+  display: block ;
+  position: fixed ;
+  bottom: 10px ;
   z-index: 1000000000;
 	left: 10px;
 }
@@ -675,7 +675,7 @@ margin: 0px;
 	</head>
 	<body class="is-preload" onpageshow="onPageShow()">
 
-<div class="myBtn4"><div style="background-color:#7d1f2b;width: 100%; text-align:center;font-size: 12px;padding: 10px;border-radius: 10px;" class="boldy">Beware of <a href="#FAKESPATROL"><span class="material-icons" style="font-size: 12px">warning</span> Fake ERGYOROI</a></div></div>
+<div id="myBtn4"><div style="background-color:#7d1f2b;width: 100%; text-align:center;font-size: 12px;padding: 10px;border-radius: 10px;" class="boldy">Beware of <a href="#FAKESPATROL"><span class="material-icons" style="font-size: 12px">warning</span> Fake ERGYOROI</a></div></div>
 
 <button onclick="dexFunction()" id="myBtn2" title="Go to ERGYODEX" style="line-height: 40px;"><span class="material-icons" style="padding-top: 0px;margin-top: 0px;">apps
 </span></button>
@@ -1889,6 +1889,7 @@ fingerprint
 			var mybutton = document.getElementById("myBtn");
 			var mybutton2 = document.getElementById("myBtn2");
 			var mybutton3 = document.getElementById("myBtn3");
+			var mybutton4 = document.getElementById("myBtn4");
 
 
 			// When the user scrolls down 20px from the top of the document, show the button
@@ -1899,10 +1900,12 @@ fingerprint
 			    mybutton.style.display = "block";
 			    mybutton2.style.display = "block";
 			    mybutton3.style.display = "block";
+			    mybutton4.style.display = "block";
 			  } else {
 			    mybutton.style.display = "none";
 			    mybutton2.style.display = "none";
 			    mybutton3.style.display = "none";
+			    mybutton4.style.display = "none";
 			  }
 			}
 
