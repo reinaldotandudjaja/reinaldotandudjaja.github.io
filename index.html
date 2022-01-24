@@ -582,6 +582,14 @@ display: inline-block;
 	box-shadow: inset 0 0 0 2px #ffffff;
 }
 
+.tokenid-myergyoroi{
+	padding-left: 0px;
+	padding-right: 0px;
+	text-align: center;
+	box-shadow: inset 0 0 0 2px #ffffff;
+	border-radius: 0px 0px 10px 10px;
+}
+
 
 .boldy{
 	font-weight: 700;
@@ -1952,7 +1960,7 @@ function myFunctionC() {
                         //console.log(hexToAscii(data3.additionalRegisters.R9.renderedValue).replace("ipfs://", "https://cloudflare-ipfs.com/ipfs/"))
 
                         var ergyoroilink = hexToAscii(data3.additionalRegisters.R9.renderedValue).replace("ipfs://", "https://cloudflare-ipfs.com/ipfs/");
-                        $(".grid-container-myergyoroi").append("<div class='grid-item-myergyoroi'><img class='myergyoroiimg zoom' src='"+ergyoroilink+"'></img><div class='ergyoroiname'>"+data3.assets[0].name+"</div></div>");
+                        $(".grid-container-myergyoroi").append("<div class='grid-item-myergyoroi'><img class='myergyoroiimg zoom' src='"+ergyoroilink+"'></img><div class='ergyoroiname'>"+data3.assets[0].name+"</div><a href='https://ergonfts.org/#/?token="+data3.assets[0].tokenId+"' target=_blank' class='button fit tokenid-myergyoroi'><span class='material-icons' style='font-size:150%'>search</span> Token ID</a></div>");
 
                         if($('.myergyoroiimg').length == totalergyoroi){
                         	$("#btn-myergyoroi").prop('disabled', false);
