@@ -1095,9 +1095,9 @@ apps
 </form>
 
   <div style="text-align:right">
-<button style="margin-top: 15px;max-height: 32px;font-size: 8px; width: 100px; background-color:#21507a" onclick="reload()"><span class="material-icons" style="font-size: 12px;">
+<button style="margin-top: 15px;max-height: 32px;font-size: 8px; width: 150px; background-color:#21507a" onclick="reload()"><span class="material-icons" style="font-size: 12px;">
 refresh
-</span> &nbsp;Reload</button>
+</span> &nbsp;Reload in <span id="mytimer">--:--</span></button>
 
 
   	<button style="margin-top: 15px;max-height: 32px;font-size: 8px; width: 150px; background-color:#7d1f2b" onclick="onPageLoadFunc()"><span class="material-icons" style="font-size: 12px;">
@@ -1128,10 +1128,27 @@ backspace
 
     function timerIncrement() {
         idleTime = idleTime + 1;
-        if (idleTime > 900) { // 900 seconds
+
+        var reloadin = 900;
+
+        remainingTime = reloadin+1-idleTime;
+        remainingMinute = Math.floor(remainingTime/60);
+
+        if(remainingMinute<=9){
+					remainingMinute="0"+remainingMinute
+        }
+
+        var remainingSeconds = (remainingTime%60);
+        if(remainingSeconds<=9){
+        	remainingSeconds="0"+remainingSeconds
+        }
+        $("#mytimer").html(remainingMinute+":"+(remainingSeconds));
+        if (idleTime > reloadin) { // 900 seconds
             window.location.reload();
         }
     }
+
+
 
     function reload() {
 
