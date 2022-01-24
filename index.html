@@ -655,7 +655,7 @@ margin: 0px;
   width: 40PX;
   height: 40PX;
   text-align: center;
-  
+
 
 }
 
@@ -1014,7 +1014,14 @@ apps
   <label for="checkactive"> <span  style="color:#39b884 ;" class="boldy cloud">&nbsp;Active Auction&nbsp;</span></label> 
 
 </form>
-  <div style="text-align:right"><button style="margin-top: 15px;max-height: 32px;font-size: 8px; width: 150px; background-color:#7d1f2b" onclick="onPageLoadFunc()"><span class="material-icons" style="font-size: 12px;">
+
+  <div style="text-align:right">
+<button style="margin-top: 15px;max-height: 32px;font-size: 8px; width: 100px; background-color:#21507a" onclick="reload()"><span class="material-icons" style="font-size: 12px;">
+refresh
+</span> &nbsp;Reload</button>
+
+
+  	<button style="margin-top: 15px;max-height: 32px;font-size: 8px; width: 150px; background-color:#7d1f2b" onclick="onPageLoadFunc()"><span class="material-icons" style="font-size: 12px;">
 backspace
 </span> &nbsp;clear search</button></div>
 
@@ -1046,6 +1053,11 @@ backspace
             window.location.reload();
         }
     }
+
+    function reload() {
+
+   window.location.reload();
+ }
 </script>
 
 <script type="text/javascript">
