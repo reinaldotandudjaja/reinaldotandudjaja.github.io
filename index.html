@@ -21,6 +21,10 @@
    
       <script src="assets/js/html2canvas.js"></script> 
 		<style>
+.myergyoroiimg{
+	width: 100%;
+}
+
 .imgem{
 	height: 1.5em;
 	vertical-align: -22%;
@@ -172,6 +176,22 @@
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
+.grid-container-myergyoroi {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-auto-rows: 1fr; /*all same height*/
+  padding: 0px;
+}
+
+.grid-item-myergyoroi {
+  border: 1px solid #111111;
+  padding: 0px;
+  font-size: 10px;
+  background-color: rgba(212, 212, 255, 0.05);
+  border-radius: 10px;
+  text-align: center;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
@@ -203,6 +223,13 @@ background-color: rgba(212, 212, 255, 0.15);
 
 @media only screen and (max-width: 1100px) {
 	.grid-container {
+	  display: grid;
+	  grid-template-columns: repeat(4, 1fr);
+	  /*grid-auto-rows: 1fr;*/
+	  padding: 0px;
+	}
+
+	.grid-container-myergyoroi {
 	  display: grid;
 	  grid-template-columns: repeat(4, 1fr);
 	  /*grid-auto-rows: 1fr;*/
@@ -246,6 +273,13 @@ background-color: rgba(212, 212, 255, 0.15);
 	  width: 14px;
 	}
 	.grid-container {
+	  display: grid;
+	  grid-template-columns: repeat(3, 1fr);
+	  /*grid-auto-rows: 1fr;*/
+	  padding: 0px;
+	}
+
+	.grid-container-myergyoroi {
 	  display: grid;
 	  grid-template-columns: repeat(3, 1fr);
 	  /*grid-auto-rows: 1fr;*/
@@ -350,6 +384,13 @@ display: inline-block;
 	.grid-container {
 	  display: grid;
 	  grid-template-columns: repeat(2, 1fr) !important;
+	  /*grid-auto-rows: 1fr;*/
+	  padding: 0px;
+	}
+
+	.grid-container-myergyoroi {
+	  display: grid;
+	  grid-template-columns: repeat(2, 1fr);
 	  /*grid-auto-rows: 1fr;*/
 	  padding: 0px;
 	}
@@ -717,7 +758,7 @@ apps
 </span> ERGYODEX<!-- <span class="material-icons" style="font-size:16px;vertical-align: 50%;">looks_one</span><span class="material-icons" style="font-size:16px;vertical-align: 50%;">trending_up</span> --></a></li>
 							<li><a href="#COLLECTION"><span class="material-icons">
 inventory_2
-</span> Your Collections</a></li>
+</span> My ERGYOROI</a></li>
 							<li><a href="#AUTHENTIC"><span class="material-icons">
 fingerprint
 </span> Authentic Check</a></li>
@@ -1544,13 +1585,7 @@ $.lazyload.check();
    		}
 	}
 
-
-
-function myFunctionD() {
-
-  var x=document.getElementById("MYTOKENIDD").value;
-
-  const tokenid = [
+  const globaltokenid = [
 '98551baac3139284e292a5839d1873593df395c43c5fc1619e789f4da3b00780',
 'fb760068f209cba8c3e63655bbed8afe200ce24f1bd1a6573d3555ef6b48d528',
 'f6af4dd2e5b9311f52edd95579570144f7729b96334ea8782ada9599db65742b',
@@ -1612,9 +1647,13 @@ function myFunctionD() {
 '91a3c67094083d9ffb9e3e8b326dbf7c24759bde4f368076a9eefdf53161763e',
 'd29f0f2e5b3aeca0fd5a1ef2d6e8ca8d13eba887818b9c0ecab853ca6bc6d2c1',
 
-
-
   ];
+
+function myFunctionD() {
+
+  var x=document.getElementById("MYTOKENIDD").value;
+
+  var tokenid = globaltokenid;
 
   if (tokenid.includes(x)) {
   	document.getElementById("msg").innerHTML='<span  style="color:aquamarine; ">100% Authentic ERGYOROI Token,</span> to avoid mis-information please always double check with other method below<br></span>'
@@ -1741,17 +1780,18 @@ gavel
 
 										<h3><span class="material-icons">
 inventory_2
-</span> Your Token Collections</h3>
+</span> My ERGYOROI Collections</h3>
 									</header>
 
 									<form onsubmit="myFunctionC()" action="javascript:void(0);">
 <input style="max-width: 800px" type="text" placeholder="Input your / any Wallet Address" required="required" id="MYWALLETIDC" pattern="[a-zA-Z0-9]{51,51}" oninvalid="setCustomValidity('Make sure its valid Wallet Address and not a typo')" oninput="try{setCustomValidity('')}catch(e){}" >
+<span id="msg-myergyoroi" style="font-size: 14px;" class="boldy"></span>
 <br>
-<button type="submit" style="font-size:0.5em"><span class="material-icons" style="font-size:150%">
+<button type="submit" style="font-size:0.5em" id="btn-myergyoroi"><span class="material-icons" style="font-size:150%">
 account_balance_wallet
-</span> Check Your Collections on ergonfts.org</button>
+</span> Show My ERGYOROI Collections</button>
 </form>
-
+<div class="grid-container-myergyoroi"></div>
 </section>
 
 <section id="two" style="background-image: url(images/seamless3.png); background-repeat: repeat;">
@@ -1844,10 +1884,76 @@ function myFunctionB() {
   window.open(x); 
 }
 
+function hexToAscii(str){
+        hexString = str;
+        strOut = '';
+            for (x = 0; x < hexString.length; x += 2) {
+                strOut += String.fromCharCode(parseInt(hexString.substr(x, 2), 16));
+            }
+        return strOut;    
+}
+
 function myFunctionC() {
 
-  var x="https://ergonfts.org/#/"+document.getElementById("MYWALLETIDC").value;
-  window.open(x); 
+	$(".grid-container-myergyoroi").html("");
+	$("#msg-myergyoroi").html("<span class='spinner' ></span>");
+	$("#btn-myergyoroi").prop('disabled', true);
+
+  var x=document.getElementById("MYWALLETIDC").value;
+
+    var wallet = x
+    var url = "https://api.ergoplatform.com/api/v1/addresses/"+wallet+"/balance/confirmed";
+    $.getJSON(url, function(data) {
+          //console.log(data.tokens.length);
+          var totalergyoroi = 0;
+
+          for(var i=0;i<data.tokens.length;i++){
+            
+            if(jQuery.inArray(data.tokens[i].tokenId, globaltokenid) !== -1){
+                //console.log(data.tokens[i].tokenId);
+                totalergyoroi++;
+
+                var url2="https://api.ergoplatform.com/api/v1/tokens/"+data.tokens[i].tokenId
+                $.getJSON(url2, function(data2) {
+                    //console.log(data2.boxId);
+
+                    var url3 = "https://api.ergoplatform.com/api/v1/boxes/"+data2.boxId;
+                    $.getJSON(url3, function(data3) {
+                        //console.log(hexToAscii(data3.additionalRegisters.R9.renderedValue).replace("ipfs://", "https://cloudflare-ipfs.com/ipfs/"))
+
+                        var ergyoroilink = hexToAscii(data3.additionalRegisters.R9.renderedValue).replace("ipfs://", "https://cloudflare-ipfs.com/ipfs/");
+                        $(".grid-container-myergyoroi").append("<div class='grid-item-myergyoroi'><img class='myergyoroiimg zoom' src='"+ergyoroilink+"'></img><div class='ergyoroiname'>"+data3.assets[0].name+"</div></div>");
+
+                        if($('.myergyoroiimg').length == data.tokens.length){
+                        	$("#btn-myergyoroi").prop('disabled', false);
+                        }
+                    });
+
+                });
+            }
+
+
+            
+          }
+
+          if(totalergyoroi==0){
+          	$("#msg-myergyoroi").html("<span  style='color:crimson; '>Seems like you dont own any ERGYOROI yet,</span> get one or try again later, Your ERGYOROI that in active auction won't be displayed<br>");
+          	$("#btn-myergyoroi").prop('disabled', false);
+
+          }else{
+          	$("#msg-myergyoroi").html("<span  style='color:aquamarine; '>You own "+totalergyoroi+" Authentic ERGYOROI,</span> Your ERGYOROI that in active auction won't be displayed<br>");
+
+          }
+
+
+    }).fail(function() { 
+
+		$("#msg-myergyoroi").html("<span  style='color:crimson; '> Make sure its valid Wallet Address and not a typo,</span> or try again later<br>");
+    $("#btn-myergyoroi").prop('disabled', false);
+
+    })
+
+  //window.open(x); 
 }
 
 function myFunctionDClear() {
