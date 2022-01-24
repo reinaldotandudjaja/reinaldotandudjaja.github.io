@@ -1924,7 +1924,7 @@ function myFunctionC() {
                         var ergyoroilink = hexToAscii(data3.additionalRegisters.R9.renderedValue).replace("ipfs://", "https://cloudflare-ipfs.com/ipfs/");
                         $(".grid-container-myergyoroi").append("<div class='grid-item-myergyoroi'><img class='myergyoroiimg zoom' src='"+ergyoroilink+"'></img><div class='ergyoroiname'>"+data3.assets[0].name+"</div></div>");
 
-                        if($('.myergyoroiimg').length == data.tokens.length){
+                        if($('.myergyoroiimg').length == totalergyoroi){
                         	$("#btn-myergyoroi").prop('disabled', false);
                         }
                     });
