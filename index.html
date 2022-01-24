@@ -21,6 +21,51 @@
    
       <script src="assets/js/html2canvas.js"></script> 
 		<style>
+
+	#myProgress {
+	  width: 100%;
+	  max-width: 800px;
+	  background-color: #fff;
+	    border-radius: 10px;
+	    
+	    border: 1px solid white;
+
+	}
+
+
+
+	#myBar {
+	  width: 10%;
+	  height: 14px;
+	  background-color: #b22d3d;
+		border-radius: 10px;
+		text-align: right;
+		line-height: 14px;
+		color: white;
+		font-weight: bold;
+		font-size: 10px;
+		padding-right: 5px;
+	}
+
+	.spinnersmallwhite {
+	  animation: spin 0.2s infinite ease-in-out; 
+	//  animation: dash 2s infinite ease-in-out; 
+	  border-radius: 50%;
+	  border-top: 1px solid #fff;
+	  display: inline-block;
+	  height:14px;
+	  width: 14px;
+	}
+
+
+#insert1{
+	color: #eb1948;
+}
+
+#insert2,#insert3{
+	color: #39b884;
+}
+
 .myergyoroiimg{
 	width: 100%;
 }
@@ -91,6 +136,8 @@
   height:13.1px;
   width: 13.1px;
 }
+
+
 
 @keyframes spin {
   100% {
@@ -1057,10 +1104,16 @@ percent
 apps
 </span> ERGYODEX<br></span>
 <span style="font-size:12px;vertical-align: top">a RealTime Authentic ERGYOROI Insight</span></div>
-
-
-
-
+<br>
+<div style="font-size: 14px; text-align: left;" class="boldy">
+<span class="material-icons" style="font-size: 14px">looks_one</span> On-Release <span id="insert1"><span class='spinnersmallwhite'></span></span> <span style="color:#eb1948">ERGYOROI Sold</span><br>
+<div id="myProgress">
+  <div id="myBar"><span id="mybartext">%</span></div>
+</div>
+<br>
+<span class="material-icons" style="font-size: 14px">looks_one</span> On-Release <span id="insert2"><span class='spinnersmallwhite'></span></span> <span style="color: #39b884">Active Auction</span><br>
+<span class="material-icons" style="font-size: 14px">looks_two</span> On-Aftermarket <span id="insert3"><span class='spinnersmallwhite'></span></span> <span style="color: #39b884">Active Auction</span>
+</div>
 
 
 
@@ -1167,7 +1220,42 @@ backspace
 	  	myfilter();mysearchfunc();
 		}
 
+		if(($('.currowner').length +
+		$('.firstmarket').length +
+		$('.secondmarket').length +
+		$('.artistowned').length)==$('.grid-item').length){
+		
+		var percent=($('.currowner').length +
+		$('.secondmarket').length +
+		$('.artistowned').length -
+		$('.artistsoon').length)
+		+"/"+
+		($('.currowner').length +
+		$('.firstmarket').length +
+		$('.secondmarket').length +
+		$('.artistowned').length)
 
+		$('#insert1').html(
+		percent);
+
+		percentage=($('.currowner').length +
+		$('.secondmarket').length +
+		$('.artistowned').length -
+		$('.artistsoon').length)
+		/
+		($('.currowner').length +
+		$('.firstmarket').length +
+		$('.secondmarket').length +
+		$('.artistowned').length)
+
+		$('#myBar').animate({"width":""+(percentage*100)+"%"},2000);
+		$('#mybartext').html(Math.floor(percentage*100)+"% ERGYOROI Sold");
+
+
+
+			$('#insert2').html($('.firstmarket').length);
+			$('#insert3').html($('.secondmarket').length);
+		}
 
 	}, 1000);
 
@@ -2165,7 +2253,7 @@ fingerprint
 						
 						if(datacurrowner.items[0].address=="9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu"&&document.getElementById("CURR"+tokenidJSON)!=null){
 							slicedcurrowner = datacurrowner.items[0].address.slice(0,3)+".."+datacurrowner.items[0].address.slice(-3);
-							$("#CURR"+tokenidJSON).attr("class", "currowner");
+							$("#CURR"+tokenidJSON).attr("class", "currowner artistsoon");
 							document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> ARTIST (INACTIVE AUCTION)<br>'+slicedcurrowner+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
 							$("#CURR"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/addresses/"+datacurrowner.items[0].address);
 							
@@ -2196,11 +2284,13 @@ fingerprint
 										
 										activeauctionby = dataactiveauctionby.items[0].address.slice(0,3)+".."+dataactiveauctionby.items[0].address.slice(-3);
 										
-										// if(dataactiveauctionby.items[0].address=="9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu"){
-										// 	activeauctionby="ARTIST";
-										// }
+										if(dataactiveauctionby.items[0].address=="9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu"){
+											$("#CURR"+tokenidJSON).attr("class", "currownerlive firstmarket");
+										}else{
 
-										$("#CURR"+tokenidJSON).attr("class", "currownerlive");
+											$("#CURR"+tokenidJSON).attr("class", "currownerlive secondmarket");
+
+										}
 										document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">gavel</span> ACTIVE AUCTION BY '+activeauctionby+'<br><span class="whobid">'+lastbid+' <span class="material-icons" style="font-size:130%">open_in_new</span></span>';
 									});
 
@@ -2226,11 +2316,14 @@ fingerprint
 										
 										activeauctionby = dataactiveauctionby.items[0].address.slice(0,3)+".."+dataactiveauctionby.items[0].address.slice(-3);
 										
-										// if(dataactiveauctionby.items[0].address=="9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu"){
-										// 	activeauctionby="ARTIST";
-										// }
+										if(dataactiveauctionby.items[0].address=="9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu"){
+											$("#CURR"+tokenidJSON).attr("class", "currownerlive firstmarket");
+										}else{
 
-										$("#CURR"+tokenidJSON).attr("class", "currownerlive");
+											$("#CURR"+tokenidJSON).attr("class", "currownerlive secondmarket");
+
+										}
+
 										document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">gavel</span> ACTIVE AUCTION BY '+activeauctionby+'<br>'+lastbid+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
 									});
 
