@@ -2039,11 +2039,7 @@ fingerprint
 			<script src="assets/js/main.js"></script>
 			<script>
 			//Get the button
-			var mybutton = document.getElementById("myBtn");
-			var mybutton2 = document.getElementById("myBtn2");
-			var mybutton3 = document.getElementById("myBtn3");
-			var mybutton4 = document.getElementById("myBtn4");
-			var mybutton5 = document.getElementById("myBtn5");
+
 
 
 			// When the user scrolls down 20px from the top of the document, show the button
@@ -2051,17 +2047,17 @@ fingerprint
 
 			function scrollFunction() {
 			  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-			    mybutton.style.display = "block";
-			    mybutton2.style.display = "block";
-			    mybutton3.style.display = "block";
-			    mybutton4.style.display = "block";
-			    mybutton5.style.display = "block";
+			    $("#myBtn").fadeIn();
+			    $("#myBtn2").fadeIn();
+			    $("#myBtn3").fadeIn();
+			    $("#myBtn4").fadeIn();
+			    $("#myBtn5").fadeIn();
 			  } else {
-			    mybutton.style.display = "none";
-			    mybutton2.style.display = "none";
-			    mybutton3.style.display = "none";
-			    mybutton4.style.display = "none";
-			    mybutton5.style.display = "none";
+			    $("#myBtn").hide();
+			    $("#myBtn2").hide();
+			    $("#myBtn3").hide();
+			    $("#myBtn4").hide();
+			    $("#myBtn5").hide();
 			  }
 			}
 
