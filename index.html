@@ -1097,7 +1097,7 @@ apps
   <div style="text-align:right">
 <button style="margin-top: 15px;max-height: 32px;font-size: 8px; width: 200px; background-color:#21507a" onclick="reload()"><span class="material-icons" style="font-size: 12px;">
 refresh
-</span> &nbsp;Reload in <span id="mytimer">--:--</span></button>
+</span> &nbsp;Reload<span id="mytimer"></span></button>
 
 
   	<button style="margin-top: 15px;max-height: 32px;font-size: 8px; width: 100px; background-color:#7d1f2b" onclick="onPageLoadFunc()"><span class="material-icons" style="font-size: 12px;">
@@ -1142,10 +1142,10 @@ backspace
         if(remainingSeconds<=9){
         	remainingSeconds="0"+remainingSeconds
         }
-        if(remainingTime>=reloadin){
-        	$("#mytimer").html("--"+":"+"--");
+        if(remainingTime+60>=reloadin){
+        	$("#mytimer").html("");
         }else{
-        	$("#mytimer").html(remainingMinute+":"+(remainingSeconds)+" (IDLE)");
+        	$("#mytimer").html(" IN "+remainingMinute+":"+(remainingSeconds)+" (IDLE)");
         }
       
         if (idleTime > reloadin) { // 900 seconds
