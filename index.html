@@ -1351,46 +1351,57 @@ backspace
 </script>
 
 <script type="text/javascript">
+	var globalcounter=0;
+
+
 	var intervalId = window.setInterval(function(){
 		if($("#checkactive").is(':checked')){
 	  	myfilter();mysearchfunc();
 		}
 
-		if(($('.currowner').length +
+		if(
+
+		(($('.currowner').length +
 		$('.firstmarket').length +
 		$('.secondmarket').length +
-		$('.artistowned').length)==$('.grid-item').length){
+		$('.artistowned').length)==$('.grid-item').length)
+		&&
+		globalcounter==0
+
+		){
 		
-		var x =($('.currowner').length +
-		$('.secondmarket').length +
-		$('.artistowned').length -
-		$('.artistsoon').length)
+				var x =($('.currowner').length +
+				$('.secondmarket').length +
+				$('.artistowned').length -
+				$('.artistsoon').length)
 
-		var y = ($('.currowner').length +
-		$('.firstmarket').length +
-		$('.secondmarket').length +
-		$('.artistowned').length)
+				var y = ($('.currowner').length +
+				$('.firstmarket').length +
+				$('.secondmarket').length +
+				$('.artistowned').length)
 
-		var percent=x+"/"+y;
+				var percent=x+"/"+y;
 
-		$('#insert1').html(
-		percent);
-
-
-
-		percentage=Math.floor(x/y*100);
+				$('#insert1').html(
+				percent);
 
 
-		$('#myBar').animate({"width":""+percentage+"%"},2000);
-		$('#mybartext').html('<span class="material-icons" style="font-size: 14px">looks_one</span> On-Release <span class="highlightred">'+x+"/"+y+"</span> ERGYOROI Sold - <span class='highlightred'>"+percentage+"%</span>");
 
-		$('#myBar2').animate({"width":""+percentage+"%"},2000);
-		$('#mybartext2').html('<span class="material-icons" style="font-size: 14px">looks_one</span> On-Release <span class="highlightred">'+x+"/"+y+"</span> Sold - <span class='highlightred'>"+percentage+"%</span>");
+				percentage=Math.floor(x/y*100);
 
-			$('#insert5').html($('.firstmarket').length+$('.secondmarket').length);
 
-			$('#insert2').html($('.firstmarket').length);
-			$('#insert3').html($('.secondmarket').length);
+				$('#myBar').animate({"width":""+percentage+"%"},2000);
+				$('#mybartext').html('<span class="material-icons" style="font-size: 14px">looks_one</span> On-Release <span class="highlightred">'+x+"/"+y+"</span> ERGYOROI Sold - <span class='highlightred'>"+percentage+"%</span>");
+
+				$('#myBar2').animate({"width":""+percentage+"%"},2000);
+				$('#mybartext2').html('<span class="material-icons" style="font-size: 14px">looks_one</span> On-Release <span class="highlightred">'+x+"/"+y+"</span> Sold - <span class='highlightred'>"+percentage+"%</span>");
+
+				$('#insert5').html($('.firstmarket').length+$('.secondmarket').length);
+
+				$('#insert2').html($('.firstmarket').length);
+				$('#insert3').html($('.secondmarket').length);
+
+				globalcounter=1;
 		}
 
 	}, 1000);
