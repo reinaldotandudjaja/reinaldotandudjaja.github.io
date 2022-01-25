@@ -19,9 +19,16 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
    <script src="assets/js/jquery.lazyload-any.js"></script> 
 
+<script src="assets/js/jquery.marquee.js"></script> 
    
       <script src="assets/js/html2canvas.js"></script> 
 		<style>
+.marquee {
+
+  overflow: hidden;
+  height: 18px;
+
+}
 
 	#myProgress {
 	  width: 100%;
@@ -95,6 +102,10 @@
 
 #insert2,#insert3{
 	color: #39b884;
+}
+
+#insert5{
+	color: black;
 }
 
 .myergyoroiimg{
@@ -835,7 +846,16 @@ margin: 0px;
 	</head>
 	<body class="is-preload" onpageshow="onPageShow()">
 
-<div id="myBtn4"><div style="background-color:#39b884;width: 100%; text-align:center;font-size: 11px;border-radius: 10px;" class="boldy"><marquee direction="down" height="14px" style="text-align:center; " scrollamount="1">🚨 Beware of <span class="material-icons" style="font-size: 12px">warning</span> Fake ERGYOROI 🚨<br>Active Auction: <span id="insert5"><span class='spinnersmallwhite'></span><span></marquee></div></div>
+<div id="myBtn4"><div style="background-color:#39b884;width: 100%; text-align:center;font-size: 11px;border-radius: 10px;" class="boldy">
+
+
+<!-- 	<marquee direction="down" height="14px" style="text-align:center; " scrollamount="1">🚨 Beware of <span class="material-icons" style="font-size: 12px">warning</span> Fake ERGYOROI 🚨<br>Active Auction: <span id="insert5"><span class='spinnersmallwhite'></span><span></marquee> -->
+
+		<div class="marquee" data-duplicated='true' data-direction='down' >🚨 Beware of <span class="material-icons" style="font-size: 12px">warning</span> Fake ERGYOROI 🚨<br>Active Auction: <span id="insert5"><span class='spinnersmallwhite'></span></span></div>
+
+
+
+</div></div>
 
 <button onclick="dexFunction()" id="myBtn2" title="Go to ERGYODEX" style="line-height: 40px;"><span class="material-icons" style="padding-top: 0px;margin-top: 0px;">apps
 </span></button>
@@ -2800,6 +2820,14 @@ $('.lazyload').lazyload({
 });
 
 //	});
+
+
+$('.marquee').marquee({
+  	duration: 1500,
+  	duplicated: true,
+  	pauseOnHover: true,
+  	gap: 0
+});
 
 </script>
 <!--END LOAD JSON SCRIPT-->
