@@ -733,7 +733,7 @@ html{
 /* Animation by Chris Smith */
 
 #myBtn{
-  display: block;
+  display: none;
   position: fixed;
   bottom: 10px;
   right: 10px;
@@ -755,7 +755,7 @@ margin: 0px;
 }
 
 #myBtn2{
-  display: block;
+  display: none;
   position: fixed;
   bottom: 55px;
   right: 10px;
@@ -778,7 +778,7 @@ margin: 0px;
 }
 
 #myBtn3{
-  display: block;
+  display: none;
   position: fixed;
   bottom: 10px;
   right: 55px;
@@ -798,7 +798,7 @@ margin: 0px;
 }
 
 #myBtn5{
-  display: block;
+  display: none;
   position: fixed;
   bottom: 55px;
   right: 55px;
@@ -818,7 +818,7 @@ margin: 0px;
 }
 
 #myBtn4{
-  display: block ;
+  display: none;
   position: fixed ;
   bottom: 35px ;
   z-index: 1000;
@@ -1223,14 +1223,12 @@ backspace
 </span>
 
 <script type="text/javascript">
-				  $("#myBtn").hide();
-			    $("#myBtn2").hide();
-			    $("#myBtn3").hide();
-			    $("#myBtn4").hide();
-			    $("#myBtn5").hide();
-			    
+
+
     var idleTime = 0;
     $(document).ready(function () {
+
+
         // Increment the idle time counter every minute.
         var idleInterval = setInterval(timerIncrement, 1000); // 1 seconds
 
@@ -2834,7 +2832,9 @@ $('.marquee').marquee({
   	duplicated: true,
   	pauseOnHover: true,
   	gap: 0,
-  	startVisible: true
+  	startVisible: true,
+
+
 });
 
 
