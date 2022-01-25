@@ -23,6 +23,13 @@
    
       <script src="assets/js/html2canvas.js"></script> 
 		<style>
+.radialbg{
+	     background: repeating-radial-gradient(closest-side at 25px 35px, #7d1f2b 15%, #b22d3d 40%);
+    background-size:60px 60px;
+    height: 200px;
+  }
+}
+
 .marquee {
 
   overflow: hidden;
@@ -33,11 +40,12 @@
 	#myProgress {
 	  width: 100%;
 	  max-width: 600px;
-	  background-color: rgba(0,0,0,0);
+	  background-color: rgba(0,0,0,1);
 	    border-radius: 10px;
 	    
 	    border: 2px solid white;
 	overflow: hidden;
+
 	}
 
 
@@ -45,7 +53,12 @@
 	#myBar {
 	  width: 40px;
 	  height: 18px;
-	  background-color: #7d1f2b;
+
+  /* with multiple color stop lengths */
+  background-image: repeating-linear-gradient(-45deg,
+      #7d1f2b 0 20px,
+      #b22d3d 20px 40px);
+
 		border-radius: 10px;
 		text-align: right;
 		line-height: 18px;
@@ -57,7 +70,7 @@
 
 	#myProgress2 {
 	  width: 200px;
-	  background-color: rgba(0,0,0,0);
+	  background-color: rgba(0,0,0,1);
 	    border-radius: 10px;
 	    overflow: hidden;
 	    border: 2px solid #fff;
@@ -74,7 +87,10 @@
 	#myBar2 {
 	  width: 40px;
 	  height: 18px;
-	  background-color: #7d1f2b;
+	  /*background-color: #7d1f2b;*/
+	    background-image: repeating-linear-gradient(-45deg,
+      #7d1f2b 0 20px,
+      #b22d3d 20px 40px);
 		border-radius: 10px;
 		text-align: right;
 		line-height: 18px;
@@ -827,6 +843,7 @@ margin: 0px;
 	border: 2px solid #fff;
 	border-radius: 10px;
 overflow: hidden;
+
 }
 
 
@@ -1157,7 +1174,7 @@ percent
 <p style="text-align: center"><img loading="lazy" src="images/ergyoroi.png" style="width: 150px"id="ERGYODEX"  ></p
 >
 	
-<div style="text-align: center;background-color: #7d1f2b; color: white; border-radius: 20px;padding-top: 10px;padding-bottom: 10px;height: 85px;" ><span class="boldy" style=" font-size:24px"><span class="material-icons" style="padding-bottom: 3px;">
+<div class="radialbg" style="text-align: center; color: white; border-radius: 20px;padding-top: 10px;padding-bottom: 10px;height: 85px;" ><span class="boldy" style=" font-size:24px"><span class="material-icons" style="padding-bottom: 3px;">
 apps
 </span> ERGYODEX<br></span>
 <span style="font-size:12px;vertical-align: top">a RealTime Authentic ERGYOROI Insight</span></div>
