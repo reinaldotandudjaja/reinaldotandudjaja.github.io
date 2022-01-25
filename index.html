@@ -2917,17 +2917,15 @@ $('.lazyload').lazyload({
 
 
 $('.marquee').marquee({
-  	speed: 141,
+  	duration: 2000,
   	duplicated: true,
   	pauseOnHover: true,
   	gap:0,
   	startVisible: true,
-  	delayBeforeStart:0,
+  	delayBeforeStart:1000,
 });
 
-	setInterval(function () {
-			$('.marquee').marquee('toggle')
-	}, 1000);
+
 
 
 
