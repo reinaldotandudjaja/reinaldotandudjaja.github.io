@@ -52,7 +52,7 @@
 	  background-color: rgba(0,0,0,0);
 	    border-radius: 10px;
 	    
-	    border: 2px solid #ccc;
+	    border: 2px solid #fff;
   display: block ;
   position: fixed ;
   bottom: 10px ;
@@ -92,7 +92,7 @@
 	color: #eb1948;
 }
 
-#insert2,#insert3{
+#insert2,#insert3,#insert5{
 	color: #39b884;
 }
 
@@ -812,7 +812,7 @@ margin: 0px;
   z-index: 1000;
 	left: 10px;
 	width: 200px;
-	border: 2px solid #ccc;
+	border: 2px solid #fff;
 	border-radius: 10px;
 
 }
@@ -834,7 +834,7 @@ margin: 0px;
 	</head>
 	<body class="is-preload" onpageshow="onPageShow()">
 
-<div id="myBtn4"><div style="background-color:#7d1f2b;width: 100%; text-align:center;font-size: 11px;border-radius: 10px;" class="boldy">🚨 Beware of <a href="#FAKESPATROL"><span class="material-icons" style="font-size: 12px">warning</span> Fake ERGYOROI</a> 🚨</div></div>
+<div id="myBtn4"><div style="background-color:#7d1f2b;width: 100%; text-align:center;font-size: 11px;border-radius: 10px;" class="boldy"><marquee direction="down" height="14px" style="text-align:center; " scrollamount="1">🚨 Beware of <span class="material-icons" style="font-size: 12px">warning</span> Fake ERGYOROI 🚨<br>Active Auction: <span id="insert5"><span class='spinnersmallwhite'></span><span></marquee></div></div>
 
 <button onclick="dexFunction()" id="myBtn2" title="Go to ERGYODEX" style="line-height: 40px;"><span class="material-icons" style="padding-top: 0px;margin-top: 0px;">apps
 </span></button>
@@ -1291,7 +1291,7 @@ backspace
 		$('#myBar2').animate({"width":""+percentage+"%"},2000);
 		$('#mybartext2').html('<span class="material-icons" style="font-size: 14px">looks_one</span> On-Release '+x+"/"+y+" Sold - "+percentage+"%");
 
-
+			$('#insert5').html($('.firstmarket').length+$('.secondmarket').length);
 
 			$('#insert2').html($('.firstmarket').length);
 			$('#insert3').html($('.secondmarket').length);
