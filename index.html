@@ -25,17 +25,17 @@
 	#myProgress {
 	  width: 100%;
 	  max-width: 600px;
-	  background-color: #fff;
+	  background-color: rgba(0,0,0,0);
 	    border-radius: 10px;
 	    
-	    border: 1px solid white;
+	    border: 2px solid white;
 
 	}
 
 
 
 	#myBar {
-	  width: 10%;
+	  width: 40px;
 	  height: 18px;
 	  background-color: #7d1f2b;
 		border-radius: 10px;
@@ -44,6 +44,35 @@
 		color: white;
 		font-weight: bold;
 		font-size: 12px;
+		padding-right: 5px;
+	}
+
+	#myProgress2 {
+	  width: 200px;
+	  background-color: rgba(0,0,0,0);
+	    border-radius: 10px;
+	    
+	    border: 2px solid #ccc;
+  display: block ;
+  position: fixed ;
+  bottom: 10px ;
+  z-index: 1000;
+	left: 10px;
+
+	}
+
+
+
+	#myBar2 {
+	  width: 40px;
+	  height: 18px;
+	  background-color: #7d1f2b;
+		border-radius: 10px;
+		text-align: right;
+		line-height: 18px;
+		color: white;
+		font-weight: bold;
+		font-size: 11px;
 		padding-right: 5px;
 	}
 
@@ -779,9 +808,13 @@ margin: 0px;
 #myBtn4{
   display: block ;
   position: fixed ;
-  bottom: 10px ;
+  bottom: 35px ;
   z-index: 1000;
 	left: 10px;
+	width: 200px;
+	border: 2px solid #ccc;
+	border-radius: 10px;
+
 }
 
 
@@ -801,7 +834,7 @@ margin: 0px;
 	</head>
 	<body class="is-preload" onpageshow="onPageShow()">
 
-<div id="myBtn4"><div style="background-color:#7d1f2b;width: 100%; text-align:center;font-size: 11px;padding: 10px;border-radius: 10px;" class="boldy">🚨 Beware of <a href="#FAKESPATROL"><span class="material-icons" style="font-size: 12px">warning</span> Fake ERGYOROI</a> 🚨</div></div>
+<div id="myBtn4"><div style="background-color:#7d1f2b;width: 100%; text-align:center;font-size: 11px;border-radius: 10px;" class="boldy">🚨 Beware of <a href="#FAKESPATROL"><span class="material-icons" style="font-size: 12px">warning</span> Fake ERGYOROI</a> 🚨</div></div>
 
 <button onclick="dexFunction()" id="myBtn2" title="Go to ERGYODEX" style="line-height: 40px;"><span class="material-icons" style="padding-top: 0px;margin-top: 0px;">apps
 </span></button>
@@ -827,7 +860,7 @@ inventory_2
 							<a href="#menu">EXPLORE</a>
 						</nav>
 					</header>
-aaa
+
 				<!-- Menu -->
 
 					<nav id="menu">
@@ -1114,6 +1147,10 @@ apps
   <div id="myBar"><span id="mybartext"><span class='spinnersmallwhite'></span> %</span></div>
 </div>
 
+<div id="myProgress2">
+  <div id="myBar2"><span id="mybartext2"><span class='spinnersmallwhite'></span> %</span></div>
+</div>
+
 <span class="material-icons" style="font-size: 14px">looks_one</span> On-Release <span id="insert2"><span class='spinnersmallwhite'></span></span> <span style="color: #39b884">Active Auction</span><br>
 <span class="material-icons" style="font-size: 14px">looks_two</span> On-Aftermarket <span id="insert3"><span class='spinnersmallwhite'></span></span> <span style="color: #39b884">Active Auction</span>
 </div>
@@ -1250,6 +1287,9 @@ backspace
 
 		$('#myBar').animate({"width":""+percentage+"%"},2000);
 		$('#mybartext').html('<span class="material-icons" style="font-size: 14px">looks_one</span> On-Release '+x+"/"+y+" ERGYOROI Sold - "+percentage+"%");
+
+		$('#myBar2').animate({"width":""+percentage+"%"},2000);
+		$('#mybartext2').html('<span class="material-icons" style="font-size: 14px">looks_one</span> On-Release '+x+"/"+y+" Sold - "+percentage+"%");
 
 
 
