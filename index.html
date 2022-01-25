@@ -154,7 +154,7 @@
 	color: #69ffb7;
 }
 
-#insert5{
+#insert5,#insert6{
 	color: #69ffb7;
 }
 
@@ -903,11 +903,18 @@ overflow: hidden;
 	</head>
 	<body class="is-preload" onpageshow="onPageShow()">
 
-<div id="myBtn4"><div style="width: 100%; text-align:center;font-size: 11px;border-radius: 10px;" class="boldy">
+<div id="myBtn4">
+	<div style="width: 100%; text-align:center;font-size: 11px;border-radius: 10px;" class="boldy">
 
 <!-- 	<marquee direction="down" height="14px" style="text-align:center; " scrollamount="1">🚨 Beware of <span class="material-icons" style="font-size: 12px">warning</span> Fake ERGYOROI 🚨<br>Active Auction: <span id="insert5"><span class='spinnersmallwhite'></span><span></marquee> -->
 
-	<div class="marquee" data-duplicated='true' data-direction='down' >🚨 Beware of <span class="material-icons" style="font-size: 12px;line-height: 18px;">warning</span> <a href="#FAKESPATROL">Fake ERGYOROI</a> 🚨<br><a href="#ERGYODEX"><span id="insert5"><span class='spinnersmallwhite'></span></span> Active Auction</a></div>
+		<div class="marquee" data-duplicated='true' data-direction='down' >
+			🚨 Beware of <span class="material-icons" style="font-size: 12px;line-height: 18px;">warning</span> <a href="#FAKESPATROL">Fake ERGYOROI</a> 🚨
+			<br>
+			<a href="#ERGYODEX">On-Aftermarket <span id="insert6"><span class='spinnersmallwhite'></span></span> Active Auction</a>
+			<br>
+			<a href="#ERGYODEX">On-Release <span id="insert5"><span class='spinnersmallwhite'></span></span> Active Auction</a>
+		</div>
 	</div>
 
 </div>
@@ -1394,7 +1401,8 @@ backspace
 				$('#myBar2').animate({"width":""+percentage+"%"},2000);
 				$('#mybartext2').html('<span class="material-icons" style="font-size: 14px">looks_one</span> On-Release <span class="highlightred">'+x+"/"+y+"</span> Sold - <span class='highlightred'>"+percentage+"%</span>");
 
-				$('#insert5').html($('.firstmarket').length+$('.secondmarket').length);
+				$('#insert5').html($('.firstmarket').length);
+				$('#insert6').html($('.secondmarket').length);
 
 				$('#insert2').html($('.firstmarket').length);
 				$('#insert3').html($('.secondmarket').length);
@@ -2908,7 +2916,7 @@ $('.lazyload').lazyload({
 
 
 $('.marquee').marquee({
-  	duration: 1800,
+  	duration: 2000,
   	duplicated: true,
   	pauseOnHover: true,
   	gap: 0,
