@@ -1355,9 +1355,7 @@ backspace
 
 
 	var intervalId = window.setInterval(function(){
-		if($("#checkactive").is(':checked')){
-	  	myfilter();mysearchfunc();
-		}
+
 
 		if(
 
@@ -1369,6 +1367,10 @@ backspace
 		globalcounter==0
 
 		){
+
+				if($("#checkactive").is(':checked')){
+			  	myfilter();mysearchfunc();
+				}
 		
 				var x =($('.currowner').length +
 				$('.secondmarket').length +
