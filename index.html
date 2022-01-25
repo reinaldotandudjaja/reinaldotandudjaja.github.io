@@ -69,6 +69,7 @@
   overflow: hidden;
   height: 18px;
 
+
 }
 
 	#myProgress {
@@ -2916,14 +2917,17 @@ $('.lazyload').lazyload({
 
 
 $('.marquee').marquee({
-  	duration: 2000,
+  	speed: 141,
   	duplicated: true,
   	pauseOnHover: true,
-  	gap: 0,
+  	gap:0,
   	startVisible: true,
-
-
+  	delayBeforeStart:0,
 });
+
+	setInterval(function () {
+			$('.marquee').marquee('toggle')
+	}, 1000);
 
 
 
