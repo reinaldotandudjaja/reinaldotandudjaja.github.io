@@ -36,14 +36,14 @@
 
 	#myBar {
 	  width: 10%;
-	  height: 14px;
+	  height: 18px;
 	  background-color: #7d1f2b;
 		border-radius: 10px;
 		text-align: right;
-		line-height: 14px;
+		line-height: 18px;
 		color: white;
 		font-weight: bold;
-		font-size: 10px;
+		font-size: 12px;
 		padding-right: 5px;
 	}
 
@@ -55,6 +55,7 @@
 	  display: inline-block;
 	  height:14px;
 	  width: 14px;
+	  vertical-align: -15%;
 	}
 
 
@@ -1106,11 +1107,11 @@ apps
 <span style="font-size:12px;vertical-align: top">a RealTime Authentic ERGYOROI Insight</span></div>
 <br>
 <div style="font-size: 12px; text-align: left;" class="boldy">
-<span class="material-icons" style="font-size: 14px">looks_one</span> On-Release <span id="insert1"><span class='spinnersmallwhite'></span></span> <span style="color:#eb1948">ERGYOROI Sold</span><br>
+<!-- <span class="material-icons" style="font-size: 14px">looks_one</span> On-Release <span id="insert1"><span class='spinnersmallwhite'></span></span> <span style="color:#eb1948">ERGYOROI Sold</span><br> -->
 <div id="myProgress">
-  <div id="myBar"><span id="mybartext">%</span></div>
+  <div id="myBar"><span id="mybartext"><span class='spinnersmallwhite'></span> %</span></div>
 </div>
-<br>
+
 <span class="material-icons" style="font-size: 14px">looks_one</span> On-Release <span id="insert2"><span class='spinnersmallwhite'></span></span> <span style="color: #39b884">Active Auction</span><br>
 <span class="material-icons" style="font-size: 14px">looks_two</span> On-Aftermarket <span id="insert3"><span class='spinnersmallwhite'></span></span> <span style="color: #39b884">Active Auction</span>
 </div>
@@ -1225,31 +1226,28 @@ backspace
 		$('.secondmarket').length +
 		$('.artistowned').length)==$('.grid-item').length){
 		
-		var percent=($('.currowner').length +
+		var x =($('.currowner').length +
 		$('.secondmarket').length +
 		$('.artistowned').length -
 		$('.artistsoon').length)
-		+"/"+
-		($('.currowner').length +
+
+		var y = ($('.currowner').length +
 		$('.firstmarket').length +
 		$('.secondmarket').length +
 		$('.artistowned').length)
+
+		var percent=x+"/"+y;
 
 		$('#insert1').html(
 		percent);
 
-		percentage=($('.currowner').length +
-		$('.secondmarket').length +
-		$('.artistowned').length -
-		$('.artistsoon').length)
-		/
-		($('.currowner').length +
-		$('.firstmarket').length +
-		$('.secondmarket').length +
-		$('.artistowned').length)
 
-		$('#myBar').animate({"width":""+(percentage*100)+"%"},2000);
-		$('#mybartext').html("ERGYOROI Sold "+Math.floor(percentage*100)+"%");
+
+		percentage=Math.floor(x/y*100);
+
+
+		$('#myBar').animate({"width":""+percentage+"%"},2000);
+		$('#mybartext').html('<span class="material-icons" style="font-size: 14px">looks_one</span> On-Release '+x+"/"+y+" ERGYOROI Sold "+percentage+"%");
 
 
 
