@@ -2916,14 +2916,38 @@ $('.lazyload').lazyload({
 //	});
 
 
-$('.marquee').marquee({
-  	duration: 2000,
-  	duplicated: true,
-  	pauseOnHover: true,
-  	gap:0,
-  	startVisible: true,
-  	delayBeforeStart:1000,
-});
+
+
+$('.marquee')
+    .bind('beforeStarting', function () {
+		  // setTimeout(
+	   //  function() {
+				// $('.marquee').marquee('pause')
+	   //  }, 850);
+    })
+    .bind('paused', function () {
+		  // setTimeout(
+	   //  function() {
+				// $('.marquee').marquee('resume')
+	   //  }, 700);
+    })
+    .bind('resumed', function () {
+		  // setTimeout(
+	   //  function() {
+				// $('.marquee').marquee('pause')
+	   //  }, 700);
+    })
+    //Apply plugin
+    .marquee({
+	  	duration: 2000,
+	  	duplicated: true,
+	  	pauseOnHover: true,
+	  	gap:0,
+	  	startVisible: true,
+	  	delayBeforeStart:0,
+    });
+
+
 
 
 
