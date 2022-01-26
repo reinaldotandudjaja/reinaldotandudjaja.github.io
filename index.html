@@ -110,7 +110,11 @@
 		font-weight: bold;
 		font-size: 12px;
 		padding-right: 5px;
+
 	}
+
+
+
 
 	#myProgress2 {
 	  width: 200px;
@@ -1414,6 +1418,16 @@ backspace
 
 				$('#myBar').animate({"width":""+percentage+"%"},2000);
 				$('#mybartext').html('<span class="material-icons" style="font-size: 14px">looks_one</span> On-Release <span class="highlightred">'+x+"/"+y+"</span> ERGYOROI Sold - <span class='highlightred'>"+percentage+"%</span>");
+
+				if(percentage==100){
+					setTimeout(function() { 
+			        $('#myProgress').css("border","2px solid red");
+			        $('#myProgress2').css("border","2px solid red");
+			    }, 2000);
+				}else{
+						$('#myProgress').css("border","2px solid yellow");
+			      $('#myProgress2').css("border","2px solid yellow");
+				}
 
 				$('#myBar2').animate({"width":""+percentage+"%"},2000);
 				$('#mybartext2').html('<span class="material-icons" style="font-size: 14px">looks_one</span> On-Release <span class="highlightred">'+x+"/"+y+"</span> Sold - <span class='highlightred'>"+percentage+"%</span>");
