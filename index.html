@@ -100,8 +100,8 @@
 
   /* with multiple color stop lengths */
   background-image: repeating-linear-gradient(-45deg,
-      #731d28 0 20px,
-      #b22d3d 20px 40px);
+      #123928 0 20px,
+      #267957 20px 40px);
 
 		border-radius: 10px;
 		text-align: right;
@@ -135,10 +135,9 @@
 	#myBar2 {
 	  width: 40px;
 	  height: 16px;
-	  /*background-color: #7d1f2b;*/
-	    background-image: repeating-linear-gradient(-45deg,
-      #731d28 0 20px,
-      #b22d3d 20px 40px);
+  background-image: repeating-linear-gradient(-45deg,
+      #123928 0 20px,
+      #267957 20px 40px);
 		border-radius: 10px;
 		text-align: right;
 		line-height: 16px;
@@ -1431,6 +1430,9 @@ backspace
 					setTimeout(function() { 
 						$('#myProgress').css("border","2px solid yellow");
 			      $('#myProgress2').css("border","2px solid yellow");
+
+			      $('#myBar').css("background-image","repeating-linear-gradient(-45deg,#72721e 0 20px,#afaf2e 20px 40px)");
+			      $('#myBar2').css("background-image","repeating-linear-gradient(-45deg,#72721e 0 20px,#afaf2e 20px 40px)");
 			     }, 1000);
 				}
 
@@ -1438,19 +1440,51 @@ backspace
 					setTimeout(function() { 
 			        $('#myProgress').css("border","2px solid red");
 			        $('#myProgress2').css("border","2px solid red");
+
+			      	$('#myBar').css("background-image","repeating-linear-gradient(-45deg,#731d28 0 20px,#b22d3d 20px 40px)");
+			      	$('#myBar2').css("background-image","repeating-linear-gradient(-45deg,#731d28 0 20px,#b22d3d 20px 40px)");
 			    }, 2000);
 				}
 
 
 
 				$('#myBar2').animate({"width":""+percentage+"%"},2000);
-				$('#mybartext2').html('<span class="material-icons" style="font-size: 14px">looks_one</span> On-Release <span class="highlightred">'+x+"/"+y+"</span> Sold - <span class='highlightred'>"+percentage+"%</span>");
+				$('#mybartext2').html('<div class="marquee"  " data-duplicated="true" data-direction="left"><span class="material-icons" style="font-size: 14px">looks_one</span> On-Release <span class="highlightred">'+x+"/"+y+"</span> ERGYOROI Sold - <span class='highlightred'>"+percentage+"%</span></div>");
 
 				$('#insert5').html($('.firstmarket').length);
 				$('#insert6').html($('.secondmarket').length);
 
 				$('#insert2').html($('.firstmarket').length);
 				$('#insert3').html($('.secondmarket').length);
+
+				$('.marquee')
+			    .bind('beforeStarting', function () {
+					  // setTimeout(
+				   //  function() {
+							// $('.marquee').marquee('pause')
+				   //  }, 850);
+			    })
+			    .bind('paused', function () {
+					  // setTimeout(
+				   //  function() {
+							// $('.marquee').marquee('resume')
+				   //  }, 700);
+			    })
+			    .bind('resumed', function () {
+					  // setTimeout(
+				   //  function() {
+							// $('.marquee').marquee('pause')
+				   //  }, 700);
+			    })
+			    //Apply plugin
+			    .marquee({
+				  	duration: 2000,
+				  	duplicated: true,
+				  	pauseOnHover: true,
+				  	gap:20,
+				  	startVisible: true,
+				  	delayBeforeStart:0
+			   });
 
 				globalcounter=1;
 		}
@@ -2962,34 +2996,10 @@ $('.lazyload').lazyload({
 
 
 
-// $('.marquee')
-//     .bind('beforeStarting', function () {
-// 		  // setTimeout(
-// 	   //  function() {
-// 				// $('.marquee').marquee('pause')
-// 	   //  }, 850);
-//     })
-//     .bind('paused', function () {
-// 		  // setTimeout(
-// 	   //  function() {
-// 				// $('.marquee').marquee('resume')
-// 	   //  }, 700);
-//     })
-//     .bind('resumed', function () {
-// 		  // setTimeout(
-// 	   //  function() {
-// 				// $('.marquee').marquee('pause')
-// 	   //  }, 700);
-//     })
-//     //Apply plugin
-//     .marquee({
-// 	  	duration: 2500,
-// 	  	duplicated: true,
-// 	  	pauseOnHover: true,
-// 	  	gap:0,
-// 	  	startVisible: true,
-// 	  	delayBeforeStart:0,
-//     });
+
+
+
+
 
 $('#marquee1').fadeIn()
 
