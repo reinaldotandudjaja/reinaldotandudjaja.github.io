@@ -1420,11 +1420,11 @@ backspace
 				$('#mybartext').html('<span class="material-icons" style="font-size: 14px">looks_one</span> On-Release <span class="highlightred">'+x+"/"+y+"</span> ERGYOROI Sold - <span class='highlightred'>"+percentage+"%</span>");
 
 
-				if(percentage>=12.5){
+				if(percentage>=0){
 					setTimeout(function() { 
 						$('#myProgress').css("border","2px solid #39b884");
 			      $('#myProgress2').css("border","2px solid #39b884");
-			     }, 250);
+			     }, 0);
 				}
 
 				if(percentage>=50){
