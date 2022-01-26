@@ -1424,9 +1424,13 @@ backspace
 			        $('#myProgress').css("border","2px solid red");
 			        $('#myProgress2').css("border","2px solid red");
 			    }, 2000);
-				}else{
+				}
+
+				if(percentage>=50){
+					setTimeout(function() { 
 						$('#myProgress').css("border","2px solid yellow");
 			      $('#myProgress2').css("border","2px solid yellow");
+			     }, 1000);
 				}
 
 				$('#myBar2').animate({"width":""+percentage+"%"},2000);
