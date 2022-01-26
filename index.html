@@ -75,8 +75,7 @@
 
 .marquee {
 
-  overflow: hidden;
-  height: 18px;
+
 
 
 }
@@ -1416,7 +1415,7 @@ backspace
 
 
 				$('#myBar').animate({"width":""+percentage+"%"},2000);
-				$('#mybartext').html('<span class="material-icons" style="font-size: 14px">looks_one</span> On-Release <span class="highlightred">'+x+"/"+y+"</span> ERGYOROI Sold - <span class='highlightred'>"+percentage+"%</span>");
+				$('#mybartext').html('<span class="material-icons" style="font-size: 14px;margin-bottom:0px">looks_one</span> On-Release <span class="highlightred">'+x+"/"+y+"</span> ERGYOROI Sold - <span class='highlightred'>"+percentage+"%</span>");
 
 
 				if(percentage>=0){
@@ -1449,7 +1448,7 @@ backspace
 
 
 				$('#myBar2').animate({"width":""+percentage+"%"},2000);
-				$('#mybartext2').html('<div class="marquee"  " data-duplicated="true" data-direction="left"><span class="material-icons" style="font-size: 14px">looks_one</span> On-Release <span class="highlightred">'+x+"/"+y+"</span> ERGYOROI Sold - <span class='highlightred'>"+percentage+"%</span></div>");
+				$('#mybartext2').html('<div class="marquee"  data-duplicated="true" data-direction="left"><span class="material-icons" style="font-size: 14px;margin-bottom:0px">looks_one</span> On-Release <span class="highlightred">'+x+"/"+y+"</span> ERGYOROI Sold - <span class='highlightred'>"+percentage+"%</span></div>");
 
 				$('#insert5').html($('.firstmarket').length);
 				$('#insert6').html($('.secondmarket').length);
@@ -1457,34 +1456,14 @@ backspace
 				$('#insert2').html($('.firstmarket').length);
 				$('#insert3').html($('.secondmarket').length);
 
-				$('.marquee')
-			    .bind('beforeStarting', function () {
-					  // setTimeout(
-				   //  function() {
-							// $('.marquee').marquee('pause')
-				   //  }, 850);
-			    })
-			    .bind('paused', function () {
-					  // setTimeout(
-				   //  function() {
-							// $('.marquee').marquee('resume')
-				   //  }, 700);
-			    })
-			    .bind('resumed', function () {
-					  // setTimeout(
-				   //  function() {
-							// $('.marquee').marquee('pause')
-				   //  }, 700);
-			    })
-			    //Apply plugin
-			    .marquee({
-				  	duration: 2000,
-				  	duplicated: true,
-				  	pauseOnHover: true,
-				  	gap:20,
-				  	startVisible: true,
-				  	delayBeforeStart:0
-			   });
+
+					$('.marquee')
+				    .marquee({
+					  	duration: 2000,
+					  	pauseOnHover: true,
+					  	delayBeforeStart:0
+				   });
+
 
 				globalcounter=1;
 		}
