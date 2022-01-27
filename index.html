@@ -37,10 +37,10 @@
 }
 #myBar3C,#myBar3U,#myBar3R,#myBar3E,#myBar3L{
 
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	direction: rtl;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  justify-content: flex-end;
 	float: left;
 	  width: 20px;
 	  height: 16px;
@@ -55,8 +55,8 @@
 		line-height: 16px;
 		color: white;
 		font-weight: bold;
-		font-size: 12px;
-		padding-right: 2px;
+		font-size: 10px;
+	
 }
 
 #myBar3C{
@@ -196,12 +196,9 @@
 	  width: 40px;
 	  height: 16px;
 		overflow: hidden;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		overflow: hidden;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		direction: rtl;
+	  white-space: nowrap;
+	  display: flex;
+	  justify-content: flex-end;
   /* with multiple color stop lengths */
   background-image: repeating-linear-gradient(-45deg,
       #123928 0 20px,
@@ -1549,7 +1546,7 @@ backspace
 
 
 				$('#myBar').animate({"width":""+percentage+"%"},2000);
-				$('#mybartext').html('On-Release <span class="highlight1">'+x+"/"+y+"</span> Sold <span class='highlight1' >"+percentage+"%</span>&nbsp;<span class='material-icons' style='font-size: 14px'>looks_one</span>");
+				$('#mybartext').html('<span class="material-icons" style="font-size: 14px">looks_one</span> On-Release <span class="highlight1">'+x+"/"+y+"</span> Sold <span class='highlight1' >"+percentage+"%</span>");
 
 
 
@@ -1630,11 +1627,11 @@ backspace
 
 
 
-				    $('#myBar3C').animate({"width":((c/allrarity*100)-8)+'%'},2000)
-				    $('#myBar3U').animate({"width":(u/allrarity*100)+2+'%'},2000)
-				    $('#myBar3R').animate({"width":(r/allrarity*100)+2+'%'},2000)
-				    $('#myBar3E').animate({"width":(e/allrarity*100)+2+'%'},2000)
-				    $('#myBar3L').animate({"width":(l/allrarity*100)+2+'%'},2000)
+				    $('#myBar3C').animate({"width":(Math.round(c/allrarity*100)-8)+'%'},2000)
+				    $('#myBar3U').animate({"width":Math.round(u/allrarity*100)+2+'%'},2000)
+				    $('#myBar3R').animate({"width":Math.round(r/allrarity*100)+2+'%'},2000)
+				    $('#myBar3E').animate({"width":Math.round(e/allrarity*100)+2+'%'},2000)
+				    $('#myBar3L').animate({"width":Math.round(l/allrarity*100)+2+'%'},2000)
 
 
 
