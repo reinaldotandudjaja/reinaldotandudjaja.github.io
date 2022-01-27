@@ -36,6 +36,11 @@
 	overflow: hidden;
 }
 #myBar3C,#myBar3U,#myBar3R,#myBar3E,#myBar3L{
+
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	direction: rtl;
 	float: left;
 	  width: 20px;
 	  height: 16px;
@@ -179,13 +184,10 @@
 
 	#myProgress {
 	  width: 100%;
-	  
 	  background-color: rgba(0,0,0,1);
-	    border-radius: 10px;
-	    
-	    border: 2px solid white;
-	overflow: hidden;
-
+	  border-radius: 10px;
+	  border: 2px solid white;
+		overflow: hidden;
 	}
 
 
@@ -193,7 +195,13 @@
 	#myBar {
 	  width: 40px;
 	  height: 16px;
-
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		direction: rtl;
   /* with multiple color stop lengths */
   background-image: repeating-linear-gradient(-45deg,
       #123928 0 20px,
@@ -1541,7 +1549,7 @@ backspace
 
 
 				$('#myBar').animate({"width":""+percentage+"%"},2000);
-				$('#mybartext').html('<span class="material-icons" style="font-size: 14px">looks_one</span> On-Release <span class="highlight1">'+x+"/"+y+"</span> Sold <span class='highlight1' >"+percentage+"%</span>");
+				$('#mybartext').html('On-Release <span class="highlight1">'+x+"/"+y+"</span> Sold <span class='highlight1' >"+percentage+"%</span>&nbsp;<span class='material-icons' style='font-size: 14px'>looks_one</span>");
 
 
 
@@ -1622,19 +1630,19 @@ backspace
 
 
 
-				    $('#myBar3C').animate({"width":((c/allrarity*100)-8)+'%'},2000)
-				    $('#myBar3U').animate({"width":(u/allrarity*100)+2+'%'},2000)
-				    $('#myBar3R').animate({"width":(r/allrarity*100)+2+'%'},2000)
-				    $('#myBar3E').animate({"width":(e/allrarity*100)+2+'%'},2000)
-				    $('#myBar3L').animate({"width":(l/allrarity*100)+2+'%'},2000)
+				    $('#myBar3C').animate({"width":((c/allrarity*100)-16)+'%'},2000)
+				    $('#myBar3U').animate({"width":(u/allrarity*100)+4+'%'},2000)
+				    $('#myBar3R').animate({"width":(r/allrarity*100)+4+'%'},2000)
+				    $('#myBar3E').animate({"width":(e/allrarity*100)+4+'%'},2000)
+				    $('#myBar3L').animate({"width":(l/allrarity*100)+4+'%'},2000)
 
 
 
-				    $('#myBar3C').html("Rarity "+Math.round(c/allrarity*100)+'%')
-				    $('#myBar3U').html(Math.round(u/allrarity*100)+'%')
-				    $('#myBar3R').html(Math.round(r/allrarity*100)+'%')
-				    $('#myBar3E').html(Math.round(e/allrarity*100)+'%')
-				    $('#myBar3L').html(Math.round(l/allrarity*100)+'%')
+				    $('#myBar3C').html("Common "+Math.round(c/allrarity*100)+'%')
+				    $('#myBar3U').html("Uncommon "+Math.round(u/allrarity*100)+'%')
+				    $('#myBar3R').html("Rare  "+Math.round(r/allrarity*100)+'%')
+				    $('#myBar3E').html("Epic "+Math.round(e/allrarity*100)+'%')
+				    $('#myBar3L').html("Legendary "+Math.round(l/allrarity*100)+'%')
 				});
 
 
