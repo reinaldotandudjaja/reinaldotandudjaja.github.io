@@ -25,13 +25,11 @@
       <script src="assets/js/jquery-ui.js"></script> 
 
 		<style>
-#marquee2,#marquee3,#marquee4{
+#marquee1,#marquee2,#marquee3,#marquee4,#marquee00,#marquee0{
 	display: none;
 }
 
-#marquee1{
-	display: none;
-}
+
 
 .floatmsg{
 	background-color:#7d1f2b;
@@ -954,6 +952,12 @@ overflow: hidden;
 <!-- 	<marquee direction="down" height="14px" style="text-align:center; " scrollamount="1">🚨 Beware of <span class="material-icons" style="font-size: 12px">warning</span> Fake ERGYOROI 🚨<br>Active Auction: <span id="insert5"><span class='spinnersmallwhite'></span><span></marquee> -->
 
 <!-- 		<div class="marquee" data-duplicated='true' data-direction='down' > -->
+			<span id="marquee0" class="mymarquee">
+			Hello <span class="highlightgreen2">Samurai !</span>
+			</span>
+			<span id="marquee00" class="mymarquee">
+			Ready to catch an ERGYOROI ?
+			</span>
 			<span id="marquee1" class="mymarquee">
 			🚨 Beware of <span class="material-icons" style="font-size: 14px;line-height: 18px;">warning</span> <a href="#FAKESPATROL">Fake ERGYOROI</a> 🚨
 			</span>
@@ -963,7 +967,7 @@ overflow: hidden;
 			<a href="#ERGYODEX"><span class="material-icons" style="font-size: 14px;line-height: 18px;">looks_two</span> On-Aftermarket <span class="highlightgreen2" id="insert6"><span class='spinnersmallwhite'></span></span> Active Auction</a>
 			</span>
 			<span id="marquee4" class="mymarquee">
-			More Releases Soon !
+			More ERGYOROI Soon !
 			</span>
 
 <!-- 		</div> -->
@@ -3024,11 +3028,26 @@ $('.lazyload').lazyload({
 
 
 
-$('#marquee1').fadeIn()
+$('#marquee0').fadeIn()
 
 setInterval(function () {
 
+if($('#marquee0').is(':visible')){
+	$('#marquee0').fadeOut(500)
+	setTimeout(
+	function() {
+		$('#marquee00').fadeIn(500)
+	}, 500);
 
+}else 
+if($('#marquee00').is(':visible')){
+	$('#marquee00').fadeOut(500)
+	setTimeout(
+	function() {
+		$('#marquee1').fadeIn(500)
+	}, 500);
+
+}else 
 if($('#marquee1').is(':visible')){
 	$('#marquee1').fadeOut(500)
 	setTimeout(
@@ -3058,7 +3077,7 @@ if($('#marquee4').is(':visible')){
 	$('#marquee4').fadeOut(500)
 	setTimeout(
 	function() {
-		$('#marquee1').fadeIn(500)
+		$('#marquee0').fadeIn(500)
 	}, 500);
 }
 
