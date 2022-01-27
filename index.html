@@ -51,7 +51,7 @@
 		color: white;
 		font-weight: bold;
 		font-size: 12px;
-		padding-right: 5px;
+		padding-right: 2px;
 }
 
 #myBar3C{
@@ -1622,17 +1622,13 @@ backspace
 
 
 
-				    $('#myBar3C').animate({"width":((c/allrarity*100)-12)+'%'},2000)
-				    $('#myBar3U').animate({"width":(u/allrarity*100)+3+'%'},2000)
-				    $('#myBar3R').animate({"width":(r/allrarity*100)+3+'%'},2000)
-				    $('#myBar3E').animate({"width":(e/allrarity*100)+3+'%'},2000)
-				    $('#myBar3L').animate({"width":(l/allrarity*100)+3+'%'},2000)
+				    $('#myBar3C').animate({"width":((c/allrarity*100)-8)+'%'},2000)
+				    $('#myBar3U').animate({"width":(u/allrarity*100)+2+'%'},2000)
+				    $('#myBar3R').animate({"width":(r/allrarity*100)+2+'%'},2000)
+				    $('#myBar3E').animate({"width":(e/allrarity*100)+2+'%'},2000)
+				    $('#myBar3L').animate({"width":(l/allrarity*100)+2+'%'},2000)
 
 
-				    $('#myBar3U').css('width',(u/allrarity*100)+3+'%')
-				    $('#myBar3R').css('width',(r/allrarity*100)+3+'%')
-				    $('#myBar3E').css('width',(e/allrarity*100)+3+'%')
-				    $('#myBar3L').css('width',(l/allrarity*100)+3+'%')
 
 				    $('#myBar3C').html("Rarity "+Math.round(c/allrarity*100)+'%')
 				    $('#myBar3U').html(Math.round(u/allrarity*100)+'%')
