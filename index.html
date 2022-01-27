@@ -929,6 +929,16 @@ overflow: hidden;
 
 }
 
+#myBtnAvatar{
+  display: none ;
+  position: fixed ;
+  bottom: 35px ;
+  z-index: 1000;
+	left: 10px;
+	width: 200px;
+
+}
+
 
 #myBtn3:hover{
   background-color: #b22d3d;
@@ -945,7 +955,8 @@ overflow: hidden;
 
 	</head>
 	<body class="is-preload" onpageshow="onPageShow()">
-
+<div id="myBtnAvatar"><img width="50px" src="images/ERGYOROI/ERGYOROI %23001 Hannya The Jealous Demon Evolution.png"></img>
+</div>
 <div id="myBtn4">
 	<div style="width: 100%; text-align:center;font-size: 11px;border-radius: 10px;" class="boldy">
 
@@ -3028,6 +3039,7 @@ $('.lazyload').lazyload({
 
 
 $('#marquee0').fadeIn()
+$('#myBtnAvatar').fadeIn()
 
 setInterval(function () {
 
@@ -3041,6 +3053,7 @@ if($('#marquee0').is(':visible')){
 }else 
 if($('#marquee00').is(':visible')){
 	$('#marquee00').fadeOut(500)
+	$('#myBtnAvatar').fadeOut(500)
 	setTimeout(
 	function() {
 		$('#marquee1').fadeIn(500)
