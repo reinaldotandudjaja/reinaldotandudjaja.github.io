@@ -25,6 +25,72 @@
       <script src="assets/js/jquery-ui.js"></script> 
 
 		<style>
+#myProgress3{
+
+		  width: 100%;
+	  
+	  background-color: rgba(0,0,0,1);
+	    border-radius: 10px;
+	    
+	    border: 2px solid white;
+	overflow: hidden;
+}
+#myBar3C,#myBar3U,#myBar3R,#myBar3E,#myBar3L{
+	float: left;
+	  width: 40px;
+	  height: 16px;
+	    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  
+
+
+		text-align: right;
+		line-height: 16px;
+		color: white;
+		font-weight: bold;
+		font-size: 12px;
+		padding-right: 5px;
+}
+
+#myBar3C{
+	border-radius: 10px 0px 0px 10px;
+	  background-image: repeating-linear-gradient(-45deg,
+      #bfbfbf 0 20px,
+      #808080 20px 40px);
+}
+
+#myBar3U{
+  background-image: repeating-linear-gradient(-45deg,
+      #7ab257 0 20px,
+      #4e7238 20px 40px);
+  color: #aefe7c;
+}
+
+#myBar3R{
+	  background-image: repeating-linear-gradient(-45deg,
+      #52aeef 0 20px,
+      #3c80af 20px 40px);
+	  color: #56b7fc;
+}
+
+#myBar3E{
+	  background-image: repeating-linear-gradient(-45deg,
+      #ab90d7 0 20px,
+      #786597 20px 40px);
+	  color: #b599e4;
+
+}
+
+#myBar3L{
+	border-radius: 0px 10px 10px 0px;
+		  background-image: repeating-linear-gradient(-45deg,
+      #ffae2b 0 20px,
+      #bf8320 20px 40px);
+      color: #ffe12e;
+}
+
 #marquee1,#marquee2,#marquee3,#marquee4,#marquee00,#marquee0{
 	display: none;
 }
@@ -991,6 +1057,8 @@ overflow: hidden;
   <div id="myBar2"><a href="#ERGYODEX"><span id="mybartext2"><span class='spinnersmallwhite'></span> %</span></a></div>
 </div>
 
+
+
 <button onclick="dexFunction()" id="myBtn2" title="Go to ERGYODEX" style="line-height: 40px;"><span class="material-icons" style="padding-top: 0px;margin-top: 0px;">apps
 </span></button>
 
@@ -1304,6 +1372,15 @@ apps
 <!-- <span class="material-icons" style="font-size: 14px">looks_one</span> On-Release <span id="insert1"><span class='spinnersmallwhite'></span></span> <span style="color:#eb1948">ERGYOROI Sold</span><br> -->
 <div id="myProgress">
   <div id="myBar"><span id="mybartext"><span class='spinnersmallwhite'></span> %</span></div>
+</div>
+<br style="   margin: 5px 0;  display: block; content:''">
+
+<div id="myProgress3">
+  <div id="myBar3C">C</div>
+  <div id="myBar3U">U</div>
+  <div id="myBar3R">R</div>
+  <div id="myBar3E">E</div>
+  <div id="myBar3L">L</div>
 </div>
 
 <br style="   margin: 5px 0;  display: block; content:''">
@@ -3099,7 +3176,35 @@ if($('#marquee4').is(':visible')){
 }, 2500);
 
 
+$( document ).ready(function() {
+		var allrarity = $('.COMMON').length+
+			$('.UNCOMMON').length+
+			$('.RARE').length+
+			$('.EPIC').length+
+			$('.LEGENDARY').length
 
+		var c = $('.COMMON').length
+		var u = $('.UNCOMMON').length
+		var r = $('.RARE').length
+		var e = $('.EPIC').length
+		var l = $('.LEGENDARY').length
+
+		console.log(c/allrarity*100);
+
+
+
+    $('#myBar3C').css('width',(c/allrarity*100)+'%')
+    $('#myBar3U').css('width',(u/allrarity*100)+'%')
+    $('#myBar3R').css('width',(r/allrarity*100)+'%')
+    $('#myBar3E').css('width',(e/allrarity*100)+'%')
+    $('#myBar3L').css('width',(l/allrarity*100)+'%')
+
+    $('#myBar3C').html(Math.round(c/allrarity*100)+'%')
+    $('#myBar3U').html(Math.round(u/allrarity*100)+'%')
+    $('#myBar3R').html(Math.round(r/allrarity*100)+'%')
+    $('#myBar3E').html(Math.round(e/allrarity*100)+'%')
+    $('#myBar3L').html(Math.round(l/allrarity*100)+'%')
+});
 
 
 </script>
