@@ -37,7 +37,7 @@
 }
 #myBar3C,#myBar3U,#myBar3R,#myBar3E,#myBar3L{
 	float: left;
-	  width: 1px;
+	  width: 20px;
 	  height: 16px;
 	    text-shadow:
     -1px -1px 0 #000,
@@ -1600,6 +1600,47 @@ backspace
 					  	startVisible : true
 				   });
 				}, 2000);
+
+
+
+
+
+				$( document ).ready(function() {
+						var allrarity = $('.COMMON').length+
+							$('.UNCOMMON').length+
+							$('.RARE').length+
+							$('.EPIC').length+
+							$('.LEGENDARY').length
+
+						var c = $('.COMMON').length
+						var u = $('.UNCOMMON').length
+						var r = $('.RARE').length
+						var e = $('.EPIC').length
+						var l = $('.LEGENDARY').length
+
+						console.log(c/allrarity*100);
+
+
+
+				    $('#myBar3C').animate({"width":((c/allrarity*100)-12)+'%'},2000)
+				    $('#myBar3U').animate({"width":(u/allrarity*100)+3+'%'},2000)
+				    $('#myBar3R').animate({"width":(r/allrarity*100)+3+'%'},2000)
+				    $('#myBar3E').animate({"width":(e/allrarity*100)+3+'%'},2000)
+				    $('#myBar3L').animate({"width":(l/allrarity*100)+3+'%'},2000)
+
+
+				    $('#myBar3U').css('width',(u/allrarity*100)+3+'%')
+				    $('#myBar3R').css('width',(r/allrarity*100)+3+'%')
+				    $('#myBar3E').css('width',(e/allrarity*100)+3+'%')
+				    $('#myBar3L').css('width',(l/allrarity*100)+3+'%')
+
+				    $('#myBar3C').html("Rarity "+Math.round(c/allrarity*100)+'%')
+				    $('#myBar3U').html(Math.round(u/allrarity*100)+'%')
+				    $('#myBar3R').html(Math.round(r/allrarity*100)+'%')
+				    $('#myBar3E').html(Math.round(e/allrarity*100)+'%')
+				    $('#myBar3L').html(Math.round(l/allrarity*100)+'%')
+				});
+
 
 
 				globalcounter=1;
@@ -3176,41 +3217,6 @@ if($('#marquee4').is(':visible')){
 }, 2500);
 
 
-$( document ).ready(function() {
-		var allrarity = $('.COMMON').length+
-			$('.UNCOMMON').length+
-			$('.RARE').length+
-			$('.EPIC').length+
-			$('.LEGENDARY').length
-
-		var c = $('.COMMON').length
-		var u = $('.UNCOMMON').length
-		var r = $('.RARE').length
-		var e = $('.EPIC').length
-		var l = $('.LEGENDARY').length
-
-		console.log(c/allrarity*100);
-
-
-
-    $('#myBar3C').animate({"width":((c/allrarity*100)-12)+'%'},2000)
-    $('#myBar3U').animate({"width":(u/allrarity*100)+3+'%'},2000)
-    $('#myBar3R').animate({"width":(r/allrarity*100)+3+'%'},2000)
-    $('#myBar3E').animate({"width":(e/allrarity*100)+3+'%'},2000)
-    $('#myBar3L').animate({"width":(l/allrarity*100)+3+'%'},2000)
-
-
-    $('#myBar3U').css('width',(u/allrarity*100)+3+'%')
-    $('#myBar3R').css('width',(r/allrarity*100)+3+'%')
-    $('#myBar3E').css('width',(e/allrarity*100)+3+'%')
-    $('#myBar3L').css('width',(l/allrarity*100)+3+'%')
-
-    $('#myBar3C').html("Rarity "+Math.round(c/allrarity*100)+'%')
-    $('#myBar3U').html(Math.round(u/allrarity*100)+'%')
-    $('#myBar3R').html(Math.round(r/allrarity*100)+'%')
-    $('#myBar3E').html(Math.round(e/allrarity*100)+'%')
-    $('#myBar3L').html(Math.round(l/allrarity*100)+'%')
-});
 
 
 </script>
