@@ -46,8 +46,41 @@
 }
 
 .highlightred{
-	color: white ;
+	color: red ;
+	    text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;  
 }
+
+.highlightgreen{
+	color:  #69ffb7;
+	    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000 ;  
+}
+
+.highlightgreen2{
+	color:  #69ffb7;
+	    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000 !important;  
+}
+
+.highlightyellow{
+	color: yellow ;
+	    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  
+}
+
 
 .radialbg{
 	  background: repeating-radial-gradient(closest-side at 25px 35px, #7d1f2b 10%, #b22d3d 40%);
@@ -924,10 +957,10 @@ overflow: hidden;
 			<span id="marquee1" class="mymarquee">
 			🚨 Beware of <span class="material-icons" style="font-size: 14px;line-height: 18px;">warning</span> <a href="#FAKESPATROL">Fake ERGYOROI</a> 🚨
 			</span>
-			<span id="marquee2" class="mymarquee"><a href="#ERGYODEX"><span class="material-icons" style="font-size: 14px;line-height: 18px;">looks_one</span> On-Release <span id="insert5"><span class='spinnersmallwhite'></span></span> Active Auction</a>
+			<span id="marquee2" class="mymarquee"><a href="#ERGYODEX"><span class="material-icons" style="font-size: 14px;line-height: 18px;">looks_one</span> On-Release <span class="highlightgreen2" id="insert5"><span class='spinnersmallwhite'></span></span> Active Auction</a>
 		  </span>
 			<span id="marquee3" class="mymarquee">
-			<a href="#ERGYODEX"><span class="material-icons" style="font-size: 14px;line-height: 18px;">looks_two</span> On-Aftermarket <span id="insert6"><span class='spinnersmallwhite'></span></span> Active Auction</a>
+			<a href="#ERGYODEX"><span class="material-icons" style="font-size: 14px;line-height: 18px;">looks_two</span> On-Aftermarket <span class="highlightgreen2" id="insert6"><span class='spinnersmallwhite'></span></span> Active Auction</a>
 			</span>
 			<span id="marquee4" class="mymarquee">
 			More Releases Soon !
@@ -1260,13 +1293,13 @@ apps
 <br style="   margin: 5px 0;  display: block; content:''">
 
 
-<div class="stripebg"><span class="material-icons" style="font-size: 14px">looks_one</span> On-Release <span id="insert2"><span class='spinnersmallwhite'></span></span> <span style="color: white">Active Auction</span></div>
+<div class="stripebg"><span class="material-icons" style="font-size: 14px">looks_one</span> On-Release <span id="insert2" class="highlightgreen2"><span class='spinnersmallwhite'></span></span> <span style="color: white">Active Auction</span></div>
 
 
 <br style="   margin: 5px 0;  display: block;content:''">
 
 
-<div class="stripebg"><span class="material-icons" style="font-size: 14px">looks_two</span> On-Aftermarket <span id="insert3"><span class='spinnersmallwhite'></span></span> <span style="color: white">Active Auction</span></div>
+<div class="stripebg"><span class="material-icons" style="font-size: 14px">looks_two</span> On-Aftermarket <span id="insert3" class="highlightgreen2"><span class='spinnersmallwhite'></span></span> <span style="color: white">Active Auction</span></div>
 </div>
 
 <br style="   margin: 10px 0;  display: block;">
@@ -1415,13 +1448,28 @@ backspace
 
 
 				$('#myBar').animate({"width":""+percentage+"%"},2000);
-				$('#mybartext').html('<span class="material-icons" style="font-size: 14px">looks_one</span> On-Release <span class="highlightred">'+x+"/"+y+"</span> Sold - <span class='highlightred'>"+percentage+"%</span>");
+				$('#mybartext').html('<span class="material-icons" style="font-size: 14px">looks_one</span> On-Release <span class="highlight1">'+x+"/"+y+"</span> Sold - <span class='highlight1' >"+percentage+"%</span>");
 
+
+
+
+
+
+				$('#myBar2').animate({"width":""+percentage+"%"},2000);
+				$('#mybartext2').html('<div class="marquee"  data-duplicated="true" data-direction="left"><span class="material-icons" style="font-size: 14px;margin-bottom:0px;vertical-align: text-top;">looks_one</span> On-Release <span class="highlight2">'+x+"/"+y+"</span> ERGYOROI Sold - <span class='highlight2' >"+percentage+"%</span></div>");
+
+				$('#insert5').html($('.firstmarket').length);
+				$('#insert6').html($('.secondmarket').length);
+
+				$('#insert2').html($('.firstmarket').length);
+				$('#insert3').html($('.secondmarket').length);
 
 				if(percentage>=0){
 					setTimeout(function() { 
 						$('#myProgress').css("border","2px solid #39b884");
 			      $('#myProgress2').css("border","2px solid #39b884");
+			      $('.highlight1').addClass('highlightgreen')
+			      $('.highlight2').addClass('highlightgreen')
 			     }, 0);
 				}
 
@@ -1432,6 +1480,8 @@ backspace
 
 			      $('#myBar').css("background-image","repeating-linear-gradient(-45deg,#72721e 0 20px,#afaf2e 20px 40px)");
 			      $('#myBar2').css("background-image","repeating-linear-gradient(-45deg,#72721e 0 20px,#afaf2e 20px 40px)");
+			      $('.highlightgreen').removeClass().addClass('highlightyellow')
+			      $('.highlightgreen').removeClass().addClass('highlightyellow')
 			     }, 1000);
 				}
 
@@ -1442,27 +1492,21 @@ backspace
 
 			      	$('#myBar').css("background-image","repeating-linear-gradient(-45deg,#731d28 0 20px,#b22d3d 20px 40px)");
 			      	$('#myBar2').css("background-image","repeating-linear-gradient(-45deg,#731d28 0 20px,#b22d3d 20px 40px)");
+
+			      $('.highlightyellow').removeClass().addClass('highlightred')
+			      $('.highlightyellow').removeClass().addClass('highlightred')
 			    }, 2000);
 				}
 
-
-
-				$('#myBar2').animate({"width":""+percentage+"%"},2000);
-				$('#mybartext2').html('<div class="marquee"  data-duplicated="true" data-direction="left"><span class="material-icons" style="font-size: 14px;margin-bottom:0px;vertical-align: text-top;">looks_one</span> On-Release <span class="highlightred">'+x+"/"+y+"</span> ERGYOROI Sold - <span class='highlightred'>"+percentage+"%</span></div>");
-
-				$('#insert5').html($('.firstmarket').length);
-				$('#insert6').html($('.secondmarket').length);
-
-				$('#insert2').html($('.firstmarket').length);
-				$('#insert3').html($('.secondmarket').length);
-
-
+				setTimeout(function() { 
 					$('.marquee')
 				    .marquee({
-					  	duration: 2000,
+					  	duration: 6000,
 					  	pauseOnHover: true,
-					  	delayBeforeStart:0
+					  	delayBeforeStart:0,
+					  	startVisible : true
 				   });
+				}, 2000);
 
 
 				globalcounter=1;
