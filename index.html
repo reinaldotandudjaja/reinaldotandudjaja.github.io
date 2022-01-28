@@ -1381,11 +1381,11 @@ apps
 <br style="   margin: 5px 0;  display: block; content:''">
 
 <div id="myProgress3">
-  <div id="myBar3C">%</div>
-  <div id="myBar3U">%</div>
-  <div id="myBar3R">%</div>
-  <div id="myBar3E">%</div>
-  <div id="myBar3L">%</div>
+  <div id="myBar3C" class="myBarClass">%</div>
+  <div id="myBar3U" class="myBarClass">%</div>
+  <div id="myBar3R" class="myBarClass">%</div>
+  <div id="myBar3E" class="myBarClass">%</div>
+  <div id="myBar3L" class="myBarClass">%</div>
 </div>
 
 <br style="   margin: 5px 0;  display: block; content:''">
@@ -3220,6 +3220,40 @@ if($('#marquee4').is(':visible')){
 
 
 }, 2500);
+
+$('#myBar3C').click(function(e){
+	e.stopPropagation();
+	$('.myBarClass').css('overflow','hidden')
+	$('#myBar3C').css('overflow','visible')
+});
+
+$('#myBar3U').click(function(e){
+	e.stopPropagation();
+	$('.myBarClass').css('overflow','hidden')
+	$('#myBar3U').css('overflow','visible')
+});
+
+$('#myBar3R').click(function(e){
+	e.stopPropagation();
+	$('.myBarClass').css('overflow','hidden')
+	$('#myBar3R').css('overflow','visible')
+});
+
+$('#myBar3E').click(function(e){
+	e.stopPropagation();
+	$('.myBarClass').css('overflow','hidden')
+	$('#myBar3E').css('overflow','visible')
+});
+
+$('#myBar3L').click(function(e){
+	e.stopPropagation();
+	$('.myBarClass').css('overflow','hidden')
+	$('#myBar3L').css('overflow','visible')
+});
+
+$(document).click(function() {
+    $('.myBarClass').css('overflow','hidden');
+});
 
 
 
