@@ -66,7 +66,6 @@
 
 #myBar3C:hover,#myBar3U:hover,#myBar3R:hover,#myBar3E:hover,#myBar3L:hover{
 	filter: brightness(120%);
-
 }
 
 #myBar3C{
@@ -1656,6 +1655,27 @@ backspace
 				    $('#myBar3R').html("Rare  ("+(r+"/"+allrarity)+") "+Math.round(r/allrarity*100)+'%')
 				    $('#myBar3E').html("Epic ("+(e+"/"+allrarity)+") "+Math.round(e/allrarity*100)+'%')
 				    $('#myBar3L').html("Legendary ("+(l+"/"+allrarity)+") "+Math.round(l/allrarity*100)+'%')
+
+				    setTimeout(function(){
+
+				    	var i=0;
+							function myLoop() {         //  create a loop function
+							  setTimeout(function() {   //  call a 3s setTimeout when the loop is called
+							    //console.log('hello');   //  your code here
+							    i++;                    //  increment the counter
+							    if (i < 8) {           //  if the counter < 10, call the loop function
+							    	setTimeout(function(){($('#myProgress3').css('filter','brightness(120%)'))},200);
+										setTimeout(function(){($('#myProgress3').css('filter','brightness(100%)'))},400);
+							      myLoop();             //  ..  again which will trigger another 
+							    }                       //  ..  setTimeout()
+							  }, 400)
+							}
+
+							myLoop();                   //  start the loop
+
+
+
+						},0);
 				});
 
 
