@@ -37,10 +37,15 @@
 }
 #myBar3C,#myBar3U,#myBar3R,#myBar3E,#myBar3L{
 
-  overflow: hidden;
+	overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  direction: rtl;
+
+/*  overflow: hidden;
   white-space: nowrap;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-end;*/
 	float: left;
 	  width: 20px;
 	  height: 16px;
@@ -55,7 +60,7 @@
 		line-height: 16px;
 		color: white;
 		font-weight: bold;
-		font-size: 10px;
+		font-size: 12px;
 	
 }
 
@@ -1635,11 +1640,17 @@ backspace
 
 
 
-				    $('#myBar3C').html(c+"/"+allrarity+" Common "+Math.round(c/allrarity*100)+'%')
-				    $('#myBar3U').html(u+"/"+allrarity+" Uncommon "+Math.round(u/allrarity*100)+'%')
-				    $('#myBar3R').html(r+"/"+allrarity+" Rare  "+Math.round(r/allrarity*100)+'%')
-				    $('#myBar3E').html(e+"/"+allrarity+" Epic "+Math.round(e/allrarity*100)+'%')
-				    $('#myBar3L').html(l+"/"+allrarity+" Legendary "+Math.round(l/allrarity*100)+'%')
+				    // $('#myBar3C').html(c+"/"+allrarity+" Common "+Math.round(c/allrarity*100)+'%')
+				    // $('#myBar3U').html(u+"/"+allrarity+" Uncommon "+Math.round(u/allrarity*100)+'%')
+				    // $('#myBar3R').html(r+"/"+allrarity+" Rare  "+Math.round(r/allrarity*100)+'%')
+				    // $('#myBar3E').html(e+"/"+allrarity+" Epic "+Math.round(e/allrarity*100)+'%')
+				    // $('#myBar3L').html(l+"/"+allrarity+" Legendary "+Math.round(l/allrarity*100)+'%')
+
+				    $('#myBar3C').html("Common ("+(c+"/"+allrarity)+") "+Math.round(c/allrarity*100)+'%')
+				    $('#myBar3U').html("Uncommon ("+(u+"/"+allrarity)+") "+Math.round(u/allrarity*100)+'%')
+				    $('#myBar3R').html("Rare  ("+(r+"/"+allrarity)+") "+Math.round(r/allrarity*100)+'%')
+				    $('#myBar3E').html("Epic ("+(e+"/"+allrarity)+") "+Math.round(e/allrarity*100)+'%')
+				    $('#myBar3L').html("Legendary ("+(l+"/"+allrarity)+") "+Math.round(l/allrarity*100)+'%')
 				});
 
 
