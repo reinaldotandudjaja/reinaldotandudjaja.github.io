@@ -1635,11 +1635,11 @@ backspace
 
 
 
-				    $('#myBar3C').html(c+"/"+allrarity+" Common "+Math.round(c/allrarity*100)+'% &nbsp;<span class="material-icons" style="font-size:14px;line-height: 16px;">visibility_off</span>')
-				    $('#myBar3U').html(u+"/"+allrarity+" Uncommon "+Math.round(u/allrarity*100)+'% &nbsp;<span class="material-icons" style="font-size:14px;line-height: 16px;">visibility_off</span>')
-				    $('#myBar3R').html(r+"/"+allrarity+" Rare  "+Math.round(r/allrarity*100)+'% &nbsp;<span class="material-icons" style="font-size:14px;line-height: 16px;">visibility_off</span>')
-				    $('#myBar3E').html(e+"/"+allrarity+" Epic "+Math.round(e/allrarity*100)+'% &nbsp;<span class="material-icons" style="font-size:14px;line-height: 16px;">visibility_off</span>')
-				    $('#myBar3L').html(l+"/"+allrarity+" Legendary "+Math.round(l/allrarity*100)+'% &nbsp;<span class="material-icons" style="font-size:14px;line-height: 16px;">visibility_off</span>')
+				    $('#myBar3C').html(c+"/"+allrarity+" Common "+Math.round(c/allrarity*100)+'% &nbsp;<span class="material-icons" style="font-size:14px;line-height: 16px;">open_in_full</span>')
+				    $('#myBar3U').html(u+"/"+allrarity+" Uncommon "+Math.round(u/allrarity*100)+'% &nbsp;<span class="material-icons" style="font-size:14px;line-height: 16px;">open_in_full</span>')
+				    $('#myBar3R').html(r+"/"+allrarity+" Rare  "+Math.round(r/allrarity*100)+'% &nbsp;<span class="material-icons" style="font-size:14px;line-height: 16px;">open_in_full</span>')
+				    $('#myBar3E').html(e+"/"+allrarity+" Epic "+Math.round(e/allrarity*100)+'% &nbsp;<span class="material-icons" style="font-size:14px;line-height: 16px;">open_in_full</span>')
+				    $('#myBar3L').html(l+"/"+allrarity+" Legendary "+Math.round(l/allrarity*100)+'% &nbsp;<span class="material-icons" style="font-size:14px;line-height: 16px;">open_in_full</span>')
 				});
 
 
@@ -3249,6 +3249,7 @@ $('#myBar3L').click(function(e){
 	e.stopPropagation();
 	$('.myBarClass').css('overflow','hidden')
 	$('#myBar3L').css('overflow','visible')
+	
 });
 
 $(document).click(function() {
