@@ -3232,40 +3232,67 @@ if($('#marquee4').is(':visible')){
 
 }, 2500);
 
-$('#myBar3C').click(function(e){
-	e.stopPropagation();
-	$('.myBarClass').css('overflow','hidden')
-	$('#myBar3C').css('overflow','visible')
-});
+// $('#myBar3C').hover(function(e){
+// 	e.stopPropagation();
+// 	$('.myBarClass').css('overflow','hidden')
+// 	$('#myBar3C').css('overflow','visible')
+// });
 
-$('#myBar3U').click(function(e){
-	e.stopPropagation();
-	$('.myBarClass').css('overflow','hidden')
-	$('#myBar3U').css('overflow','visible')
-});
+// $('#myBar3U').hover(function(e){
+// 	e.stopPropagation();
+// 	$('.myBarClass').css('overflow','hidden')
+// 	$('#myBar3U').css('overflow','visible')
+// });
 
-$('#myBar3R').click(function(e){
-	e.stopPropagation();
-	$('.myBarClass').css('overflow','hidden')
-	$('#myBar3R').css('overflow','visible')
-});
+// $('#myBar3R').hover(function(e){
+// 	e.stopPropagation();
+// 	$('.myBarClass').css('overflow','hidden')
+// 	$('#myBar3R').css('overflow','visible')
+// });
 
-$('#myBar3E').click(function(e){
-	e.stopPropagation();
-	$('.myBarClass').css('overflow','hidden')
-	$('#myBar3E').css('overflow','visible')
-});
+// $('#myBar3E').hover(function(e){
+// 	e.stopPropagation();
+// 	$('.myBarClass').css('overflow','hidden')
+// 	$('#myBar3E').css('overflow','visible')
+// });
 
-$('#myBar3L').click(function(e){
-	e.stopPropagation();
-	$('.myBarClass').css('overflow','hidden')
-	$('#myBar3L').css('overflow','visible')
+// $('#myBar3L').hover(function(e){
+// 	e.stopPropagation();
+// 	$('.myBarClass').css('overflow','hidden')
+// 	$('#myBar3L').css('overflow','visible')
 
-});
+// });
 
-$(document).click(function() {
-    $('.myBarClass').css('overflow','hidden');
-});
+  $('#myBar3C').hover(function(){
+    $(this).css('overflow','visible');
+    }, function(){
+    $(this).css('overflow','hidden');
+  });
+  $('#myBar3U').hover(function(){
+    $(this).css('overflow','visible');
+    }, function(){
+    $(this).css('overflow','hidden');
+  });
+  $('#myBar3R').hover(function(){
+    $(this).css('overflow','visible');
+    }, function(){
+    $(this).css('overflow','hidden');
+  });
+  $('#myBar3E').hover(function(){
+    $(this).css('overflow','visible');
+    }, function(){
+    $(this).css('overflow','hidden');
+  });
+
+  $('#myBar3L').hover(function(){
+    $(this).css('overflow','visible');
+    }, function(){
+    $(this).css('overflow','hidden');
+  });
+
+// $(document).click(function() {
+//     $('.myBarClass').css('overflow','hidden');
+// });
 
 
 
