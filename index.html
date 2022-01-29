@@ -595,6 +595,7 @@ display: inline-block;
 	.checkauction{
 		height: 48px;
 		display: inline-block;
+
 	}
 
 .checkauctionlast{
@@ -771,18 +772,23 @@ display: inline-block;
 
 .checkauction{
 	color: white;
-	background-color: dimgray;
+	/*background-color: dimgray;*/
 	font-weight: bold;
 	border-bottom: 0px;
-
+	background: linear-gradient(45deg, darkgray, dimgray, darkgray,dimgray);
+	background-size: 400% 400%;
+	animation: gradient 2s infinite;
 }
 
 .checkauctionlast{
 	color: white;
-	background-color: dimgray;
+	/*background-color: dimgray;*/
 	font-weight: bold;
 	border-bottom: 0px;
 	border-radius: 0px 0px 10px 10px;
+	background: linear-gradient(45deg, darkgray, dimgray, darkgray,dimgray);
+	background-size: 400% 400%;
+	animation: gradient 2s infinite;
 }
 
 
@@ -825,9 +831,12 @@ display: inline-block;
 
 .antiquity{
 	color: black;
-	background-color: #fff;
+	/*background-color: #fff;*/
 	font-weight: bold;
 	transition: 0.5s background-color;
+	background: linear-gradient(45deg, #ddd, #fff, #ddd,#fff);
+	background-size: 400% 400%;
+	animation: gradient 2s infinite;
 }
 
 .ergyoroiname{
@@ -1030,6 +1039,19 @@ overflow: hidden;
 }
 
 /*html{scroll-behavior:smooth}*/
+
+
+@keyframes gradient {
+	0% {
+		background-position: 100%;
+	}
+	100% {
+		background-position: 0%;
+	}
+/*	100% {
+		background-position: 200% 50%;
+	}*/
+}
 
 </style>
 
@@ -2804,7 +2826,7 @@ fingerprint
 							stringtime = '<span class="material-icons" style="font-size:150%">hourglass_top</span> Antiquity '+timestamp + " days"
 						}
 						
-						$("#ANTIQUITY"+tokenidJSON).css("background-color",'#eee').html(stringtime).fadeIn(4000);
+						$("#ANTIQUITY"+tokenidJSON).css("background",'#eee').html(stringtime).fadeIn(4000);
 
 					});
 
@@ -2902,13 +2924,17 @@ fingerprint
 				                       			//check #002
 				                       			if(tokenidJSON=="fb760068f209cba8c3e63655bbed8afe200ce24f1bd1a6573d3555ef6b48d528"){
 				                       				updatevalueRNT="---</span> (NEW ID)";
+				                       				//$('.checkauction').css('background-color','dimgray');
 				                       			}else{
 				                       				updatevalueRNT="---</span>";
+																			//checkauction').css('background-color','dimgray');
 				                       			}
-
+																
 				                 				// document.getElementById("RECENT"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">update</span> ON-RECENT SOLD<br><span class="smalltext">Σ'+updatevalueRNT;
 				                 				if(document.getElementById("RECENT"+tokenidJSON)!=null){
 				                 					document.getElementById("RECENT"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">restore</span> TOTAL AUCTION WINNER<br><span class="smalltext">'+updatevalueRNT;
+
+				                 					$('#RECENT'+tokenidJSON).css('background','dimgray');
 																}
 				                	 // $("#"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data5.id);
 
@@ -2968,14 +2994,18 @@ fingerprint
 			                       	//check #002
 			                       	if(tokenidJSON=="fb760068f209cba8c3e63655bbed8afe200ce24f1bd1a6573d3555ef6b48d528"){
 			                       		updatevalue="---</span> (NEW ID)";
+			                       		//$('#'+tokenidJSON).css('background-color','dimgray');
 			                       	}else{
 
-			                       	updatevalue="---</span>";
+			                       		updatevalue="---</span>";
+			                       		
 			                       }
 
-
+			               
 			                      if(document.getElementById(tokenidJSON)!=null){
 				                 			document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">trending_up</span> ON-ALLTIME HIGH WINNER<br><span class="smalltext">Σ'+updatevalue;
+																$('#'+tokenidJSON).css('background','dimgray');
+
 														}
 				                	 // $("#"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data5.id);
 
@@ -3132,12 +3162,15 @@ fingerprint
 			                        });
 
 
-
+															//console.log(tokenidJSON);
 
 		                         }else{
 		                         	
 		                         	document.getElementById(tokenidJSON).innerHTML = "<span class='material-icons' style='font-size:130%''>looks_one</span> ON-RELEASE<BR><span class='smalltext'>Σ---</span>";
 
+		                         	$('#'+tokenidJSON).css('background','dimgray')
+
+		                         	console.log(tokenidJSON);
 		                        	// document.getElementById("RECENT"+substr_tokenidJSON).innerHTML = "<span class='material-icons' style='font-size:130%''>looks_one</span> ON-RECENT SOLD<BR><span class='smalltext'>Σ---</span>";
 
 			                	 	// $("[id='"+tokenidJSON+"']").attr("href", "https://ergoauctions.org/#/auction/active?type=picture&artist=9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu");
