@@ -462,7 +462,12 @@
   background-color: rgba(212, 212, 255, 0.05);
   border-radius: 10px;
   text-align: center;
+
+
+
 }
+
+
 
 .grid-container {
   display: grid;
@@ -2524,7 +2529,12 @@ function myFunctionC() {
                         //console.log(hexToAscii(data3.additionalRegisters.R9.renderedValue).replace("ipfs://", "https://cloudflare-ipfs.com/ipfs/"))
 
                         var ergyoroilink = hexToAscii(data3.additionalRegisters.R9.renderedValue).replace("ipfs://", "https://cloudflare-ipfs.com/ipfs/");
-                        $(".grid-container-myergyoroi").append("<div class='grid-item-myergyoroi'><img class='myergyoroiimg zoom' src='"+ergyoroilink+"'></img><div class='ergyoroiname'>"+data3.assets[0].name+"</div><a href='https://ergonfts.org/#/?token="+data3.assets[0].tokenId+"' target=_blank' class='button fit tokenid-myergyoroi'><span class='material-icons' style='font-size:150%'>search</span> Token ID</a></div>");
+
+                        var item= $("<div class='grid-item-myergyoroi'><img class='myergyoroiimg zoom' src='"+ergyoroilink+"'></img><div class='ergyoroiname'>"+data3.assets[0].name+"</div><a href='https://ergonfts.org/#/?token="+data3.assets[0].tokenId+"' target=_blank' class='button fit tokenid-myergyoroi'><span class='material-icons' style='font-size:150%'>search</span> Token ID</a></div>").hide().fadeIn(1000);
+               
+                        $(".grid-container-myergyoroi").append(item);
+			
+
 
                         if($('.myergyoroiimg').length == totalergyoroi){
                         	$("#btn-myergyoroi").prop('disabled', false);
