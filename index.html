@@ -397,8 +397,9 @@
 
 
 .zoom {
-	visibility: hidden;
+	opacity: 0;
   transition: transform .2s;
+  transition: opacity 1s;
 }
 
 .negativezoom {
@@ -2563,12 +2564,12 @@ function myFunctionC() {
                         if($('.myergyoroiimg').length == totalergyoroi){
                         	$("#btn-myergyoroi").prop('disabled', false);
                         }
-
 											$(".zoom").one("load", function() {
-											  $(this).css('visibility','visible').hide().fadeIn('1000');
+											  $(this).css('opacity','1')
 											}).each(function() {
 											  if(this.complete) {
-											      $(this).css('visibility','visible').hide().fadeIn('1000');
+											  		$(this).css('opacity','1')
+											      //$(this).css('visibility','visible').hide().fadeIn('1000');
 											      // $(this).trigger('load'); // For jQuery >= 3.0 
 											  }
 											});
@@ -3398,10 +3399,11 @@ if($('#marquee4').is(':visible')){
 // });
 
 $(".zoom").one("load", function() {
-  $(this).css('visibility','visible').hide().fadeIn('1000');
+  $(this).css('opacity','1')
 }).each(function() {
   if(this.complete) {
-      $(this).css('visibility','visible').hide().fadeIn('1000');
+  		$(this).css('opacity','1')
+      //$(this).css('visibility','visible').hide().fadeIn('1000');
       // $(this).trigger('load'); // For jQuery >= 3.0 
   }
 });
