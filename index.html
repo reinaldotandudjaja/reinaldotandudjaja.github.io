@@ -397,13 +397,14 @@
 
 
 .zoom {
-	opacity: 0;
+	
   transition: transform .2s;
-  -moz-transition: -moz-opacity 1s;
+/*  opacity: 0;*/
+/*  -moz-transition: -moz-opacity 1s;
   -o-transition: -o-opacity 1s;
   -webkit-transition: -webkit-opacity 1s;
   -ms-transition: -ms-opacity 1s;
-  transition: opacity 1s;
+  transition: opacity 1s;*/
 }
 
 .negativezoom {
@@ -2179,7 +2180,7 @@ $.lazyload.check();
 
 
 <script>
-	$(".zoom").css('opacity','1')
+	// $(".zoom").css('opacity','1')
 // $(window).on('resize scroll', function() {
 //     if ($('#IMGb70dc4a6fb9ab95122327834d76cff7a0ff5e51e05a7526b636a699296cb0974').visible(true)==true) {
 //        alert('a');
