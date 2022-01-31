@@ -2563,6 +2563,10 @@ function myFunctionC() {
                         if($('.myergyoroiimg').length == totalergyoroi){
                         	$("#btn-myergyoroi").prop('disabled', false);
                         }
+
+                        $(".zoom").bind('load', function() {
+												  $(this).css('visibility','visible').hide().fadeIn('1000');
+												});
                     });
 
                 });
@@ -3390,7 +3394,6 @@ if($('#marquee4').is(':visible')){
 
 
 $(".zoom").bind('load', function() {
-
   $(this).css('visibility','visible').hide().fadeIn('1000');
 });
 
