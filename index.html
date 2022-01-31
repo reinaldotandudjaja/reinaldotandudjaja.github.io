@@ -2165,7 +2165,17 @@ $.lazyload.check();
 
 
 
-
+<script type="text/javascript">
+	$(".zoom").one("load", function() {
+	 $(this).css('opacity','1')
+	}).each(function() {
+	  if(this.complete) {
+	  		$(this).css('opacity','1')
+	      //$(this).css('visibility','visible').hide().fadeIn('1000');
+	      // $(this).trigger('load'); // For jQuery >= 3.0 
+	  }
+	});
+</script>
 
 
 <script>
@@ -3402,15 +3412,7 @@ if($('#marquee4').is(':visible')){
 //     $('.myBarClass').css('overflow','hidden');
 // });
 
-$(".zoom").one("load", function() {
-  $(this).css('opacity','1')
-}).each(function() {
-  if(this.complete) {
-  		$(this).css('opacity','1')
-      //$(this).css('visibility','visible').hide().fadeIn('1000');
-      // $(this).trigger('load'); // For jQuery >= 3.0 
-  }
-});
+
 
 
 
