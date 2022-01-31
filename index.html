@@ -397,6 +397,7 @@
 
 
 .zoom {
+	visibility: hidden;
   transition: transform .2s;
 }
 
@@ -3388,7 +3389,10 @@ if($('#marquee4').is(':visible')){
 // });
 
 
+$(".zoom").bind('load', function() {
 
+  $(this).css('visibility','visible').hide().fadeIn('1000');
+});
 
 </script>
 <!--END LOAD JSON SCRIPT-->
