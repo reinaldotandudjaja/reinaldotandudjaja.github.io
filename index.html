@@ -3392,10 +3392,17 @@ if($('#marquee4').is(':visible')){
 //     $('.myBarClass').css('overflow','hidden');
 // });
 
-
-$(".zoom").bind('load', function() {
+$(".zoom").one("load", function() {
   $(this).css('visibility','visible').hide().fadeIn('1000');
+}).each(function() {
+  if(this.complete) {
+      $(this).css('visibility','visible').hide().fadeIn('1000');
+      // $(this).trigger('load'); // For jQuery >= 3.0 
+  }
 });
+
+
+
 
 </script>
 <!--END LOAD JSON SCRIPT-->
