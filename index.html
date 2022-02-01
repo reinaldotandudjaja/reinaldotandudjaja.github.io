@@ -166,6 +166,16 @@
     1px 1px 0 #000;  
 }
 
+.highlightororange{
+	color: orange ;
+	    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  
+}
+
+
 
 .radialbg{
 	  background: repeating-radial-gradient(closest-side at 25px 35px, #7d1f2b 10%, #b22d3d 40%);
@@ -1667,7 +1677,19 @@ backspace
 			      $('#myBar2').css("background-image","repeating-linear-gradient(-45deg,#72721e 0 20px,#afaf2e 20px 40px)");
 			      $('.highlightgreen').removeClass().addClass('highlightyellow')
 			      $('.highlightgreen').removeClass().addClass('highlightyellow')
-			     }, 1000);
+			     }, 1500);
+				}
+
+				if(percentage>=90){
+					setTimeout(function() { 
+						$('#myProgress').css("border","2px solid DarkOrange");
+			      $('#myProgress2').css("border","2px solid DarkOrange");
+
+			      $('#myBar').css("background-image","repeating-linear-gradient(-45deg,#B66928 0 20px, 	#FF8C00 20px 40px)");
+			      $('#myBar2').css("background-image","repeating-linear-gradient(-45deg,#B66928 0 20px, 	#FF8C00 20px 40px)");
+			      $('.highlightyellow').removeClass().addClass('highlightorange')
+			      $('.highlightyellow').removeClass().addClass('highlightorange')
+			     }, 1800);
 				}
 
 				if(percentage==100){
