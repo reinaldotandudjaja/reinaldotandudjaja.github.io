@@ -1733,14 +1733,16 @@ backspace
 						var l = $('.LEGENDARY').length
 
 						console.log(c/allrarity*100);
+						function roundToTwo(num) {    
+						    return +(Math.round(num + "e+2")  + "e-2");
+						}
 
 
-
-				    $('#myBar3C').animate({"width":(Math.round(c/allrarity*100)-2)+'%'},2000)
-				    $('#myBar3U').animate({"width":Math.round(u/allrarity*100)-(0.5)+'%'},2000)
-				    $('#myBar3R').animate({"width":Math.round(r/allrarity*100)-(0.5)+'%'},2000)
-				    $('#myBar3E').animate({"width":Math.round(e/allrarity*100)+1+'%'},2000)
-				    $('#myBar3L').animate({"width":Math.round(l/allrarity*100)+2+'%'},2000)
+				    $('#myBar3C').animate({"width":(roundToTwo(c/allrarity*100)-2)+'%'},2000)
+				    $('#myBar3U').animate({"width":roundToTwo(u/allrarity*100)-(0.5)+'%'},2000)
+				    $('#myBar3R').animate({"width":roundToTwo(r/allrarity*100)-(0.5)+'%'},2000)
+				    $('#myBar3E').animate({"width":roundToTwo(e/allrarity*100)+1+'%'},2000)
+				    $('#myBar3L').animate({"width":roundToTwo(l/allrarity*100)+2+'%'},2000)
 
 
 
