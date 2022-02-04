@@ -1737,12 +1737,17 @@ backspace
 						    return +(Math.round(num + "e+2")  + "e-2");
 						}
 
+						cx=roundToTwo(c/allrarity*100)
+						ux=roundToTwo(u/allrarity*100)
+						rx=roundToTwo(r/allrarity*100)
+						ex=roundToTwo(e/allrarity*100)
+						lx=100-(cx+ux+rx+ex)
 
-				    $('#myBar3C').animate({"width":(roundToTwo(c/allrarity*100)-1)+'%'},2000)
-				    $('#myBar3U').animate({"width":roundToTwo(u/allrarity*100)-(0.5)+'%'},2000)
-				    $('#myBar3R').animate({"width":roundToTwo(r/allrarity*100)-(0.5)+'%'},2000)
-				    $('#myBar3E').animate({"width":roundToTwo(e/allrarity*100)+1+'%'},2000)
-				    $('#myBar3L').animate({"width":roundToTwo(l/allrarity*100)+1+'%'},2000)
+				    $('#myBar3C').animate({"width":cx+'%'},2000)
+				    $('#myBar3U').animate({"width":ux+'%'},2000)
+				    $('#myBar3R').animate({"width":rx+'%'},2000)
+				    $('#myBar3E').animate({"width":ex+'%'},2000)
+				    $('#myBar3L').animate({"width":lx+'%'},2000)
 
 
 
