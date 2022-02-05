@@ -25,6 +25,18 @@
       <script src="assets/js/jquery-ui.js"></script> 
 
 		<style>
+.blink{
+	opacity: 1;
+	animation: blinkanimation 1s infinite;
+}
+
+@keyframes blinkanimation {
+  0% { opacity: 1; }
+  50% { opacity: 0;}
+  100% { opacity: 1; }
+}
+
+
 #myProgress3{
 	width: 100%;
 	background-color: rgba(0,0,0,1);
@@ -3500,12 +3512,12 @@ if($('#marquee4').is(':visible')){
 // });
 
 
-window.setInterval(function(){
-	 $('.blink').animate({"opacity":"0"},800);
-}, 800);
-window.setInterval(function(){
-	 $('.blink').animate({"opacity":"1"},800);
-}, 800);
+// window.setInterval(function(){
+// 	 $('.blink').animate({"opacity":"0"},800);
+// }, 800);
+// window.setInterval(function(){
+// 	 $('.blink').animate({"opacity":"1"},800);
+// }, 800);
 
 
 
