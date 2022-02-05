@@ -2874,7 +2874,7 @@ fingerprint
 								
 								$.getJSON(urlwhobid, function(datawhobid) {
 									whobid = datawhobid.items[0].address.slice(0,3)+".."+datawhobid.items[0].address.slice(-3);
-									lastbid = '<span class="material-icons blink" style="font-size:140%">radio_button_checked</span> '+whobid+' BID Σ'+ lastbid;
+									lastbid = '<span class="material-icons blink" style="font-size:130%;color:red">circle</span> '+whobid+' BID Σ'+ lastbid;
 									console.log(lastbid)
 
 									var activeauctionby;
