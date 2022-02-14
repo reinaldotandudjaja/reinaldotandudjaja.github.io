@@ -3290,7 +3290,7 @@ fingerprint
 			                            	//auto check instant buy
 			                            if((data6.inputs[0].additionalRegisters.R8.renderedValue)!==undefined){
 					                            	var onreleaseinstantbid = data6.inputs[0].additionalRegisters.R8.renderedValue;
-					                            	if((data6.inputs[0].value/1000000000)>=(onreleaseinstantbid/1000000000)){
+					                            	if((onreleaseinstantbid!=-1&&(data6.inputs[0].value/1000000000)>=(onreleaseinstantbid/1000000000))){
 					                            	//	console.log(onreleaseinstantbid[1]/1000000000)
 
 																			//check002
