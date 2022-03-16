@@ -1064,6 +1064,25 @@ margin: 0px;
   text-align: center;
 }
 
+#myBtn7{
+  display: none;
+  position: fixed;
+  bottom: 235px;
+  right: 10px;
+  z-index: 1000;
+opacity: 0.8;
+  background-color: #181c2d;
+  color: white;
+  cursor: pointer;
+  padding: 0PX;
+margin: 0px;
+  border-radius: 15px;
+  width: 40PX;
+  height: 40PX;
+  text-align: center;
+}
+
+
 #myBtn5{
   display: none;
   position: fixed;
@@ -1200,6 +1219,8 @@ overflow: hidden;
 
 <button onclick="skyharborFunction()" id="myBtn6" title="Go to SKYHARBOR" style="line-height: 10px; "><img width="55%" src="images/SKYHARBOR LOGO SMALL.png"></img>
 </span></button>
+
+
 
 <button onclick="collectionFunction()" id="myBtn5" title="Go to My ERGYOROI Collection" style="line-height: 40px; "><span class="material-icons">
 inventory_2
@@ -2904,13 +2925,14 @@ fingerprint
 			window.onscroll = function() {scrollFunction()};
 
 			function scrollFunction() {
-			  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+			  if ((document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)&&globalhide!=1) {
 			    $("#myBtn").fadeIn();
 			    $("#myBtn2").fadeIn();
 			    $("#myBtn3").fadeIn();
 			    //$("#myBtn4").fadeIn();
 			    $("#myBtn5").fadeIn();
 			    $("#myBtn6").fadeIn();
+			    $("#myBtn7").fadeIn();
 			  } else {
 
 			    $("#myBtn").fadeOut();
@@ -2919,6 +2941,7 @@ fingerprint
 			    //$("#myBtn4").fadeOut();
 			    $("#myBtn5").fadeOut();
 			    $("#myBtn6").fadeOut();
+
 			  }
 
 
@@ -2943,6 +2966,30 @@ fingerprint
 
 			function skyharborFunction() {
 				window.open("https://skyharbor-git-beta-enftexchange.vercel.app/collection/ergyoroi");
+			}
+
+			var globalhide=0
+
+			function hideFunction() {
+				if($('#leftright').html()=="keyboard_arrow_right"){
+					$('#leftright').html('keyboard_arrow_left');
+				$('#myBtn').fadeOut();
+				$('#myBtn2').fadeOut();
+				$('#myBtn3').fadeOut();
+				$('#myBtn5').fadeOut();
+				$('#myBtn6').fadeOut();
+				globalhide=1;
+				}else{
+					$('#leftright').html('keyboard_arrow_right');
+					$('#myBtn').fadeIn();
+				$('#myBtn2').fadeIn();
+				$('#myBtn3').fadeIn();
+				$('#myBtn5').fadeIn();
+				$('#myBtn6').fadeIn();
+				globalhide=0;
+				}
+
+
 			}
 
 			function dexFunction() {
