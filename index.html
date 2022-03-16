@@ -1029,8 +1029,8 @@ margin: 0px;
 #myBtn3{
   display: none;
   position: fixed;
-  bottom: 10px;
-  right: 55px;
+  bottom: 100px;
+  right: 10px;
   z-index: 1000;
 opacity: 0.8;
   background-color: #181c2d;
@@ -1046,11 +1046,29 @@ margin: 0px;
 
 }
 
+#myBtn6{
+  display: none;
+  position: fixed;
+  bottom: 145px;
+  right: 10px;
+  z-index: 1000;
+opacity: 0.8;
+  background-color: #181c2d;
+  color: white;
+  cursor: pointer;
+  padding: 0PX;
+margin: 0px;
+  border-radius: 15px;
+  width: 40PX;
+  height: 40PX;
+  text-align: center;
+}
+
 #myBtn5{
   display: none;
   position: fixed;
-  bottom: 55px;
-  right: 55px;
+  bottom: 190px;
+  right: 10px;
   z-index: 1000;
 opacity: 0.8;
   background-color: #181c2d;
@@ -1103,6 +1121,10 @@ overflow: hidden;
 
 
 #myBtn3:hover{
+  background-color: #b22d3d;
+}
+
+#myBtn6:hover{
   background-color: #b22d3d;
 }
 
@@ -1170,10 +1192,13 @@ overflow: hidden;
 <button onclick="dexFunction()" id="myBtn2" title="Go to ERGYODEX" style="line-height: 40px;"><span class="material-icons" style="padding-top: 0px;margin-top: 0px;">apps
 </span></button>
 
-<button onclick="topFunction()" id="myBtn" title="Go to Top" style="line-height: 40px;"><span class="material-icons">keyboard_arrow_up
+<button onclick="topFunction()" id="myBtn" title="Go to TOP" style="line-height: 40px;"><span class="material-icons">keyboard_arrow_up
 </span></button>
 
-<button onclick="auctionFunction()" id="myBtn3" title="Go to Auction" style="line-height: 10px; "><img width="55%" src="images/ERGO AUCTION HOUSE LOGO SMALL.png"></img>
+<button onclick="auctionFunction()" id="myBtn3" title="Go to AUCTION" style="line-height: 10px; "><img width="55%" src="images/ERGO AUCTION HOUSE LOGO SMALL.png"></img>
+</span></button>
+
+<button onclick="skyharborFunction()" id="myBtn6" title="Go to SKYHARBOR" style="line-height: 10px; "><img width="55%" src="images/SKYHARBOR LOGO SMALL.png"></img>
 </span></button>
 
 <button onclick="collectionFunction()" id="myBtn5" title="Go to My ERGYOROI Collection" style="line-height: 40px; "><span class="material-icons">
@@ -2707,13 +2732,13 @@ fact_check
 	local_police
 	</span> ERGYOROI Fakes Patrol</h3>
 </header>
-<ul class="actions">
+<ul class="actions" style="margin-bottom: 0px;">
 										<li><a href="https://twitter.com/hashtag/ERGYOROIFakesPatrol?src=hashtag_click&f=live" target="_blank" class="button primary fit" style="font-size:0.5em"><span class="material-icons" style="font-size:150%">
 warning
 </span> FAKE ERGYOROI: HALL OF SHAME</a></li>
 </ul>
 
-<ul class="actions">
+<ul class="actions" style="margin-top: 10px;">
 										<li><a href="https://twitter.com/intent/tweet?&text=GOTCHA+A+RED-HANDED+PIRATE+!%20%3Cplease%20insert%20crime%20details%20here... with screenshot evidence would be nice%3E%20&hashtags=ERGYOROIFakesPatrol" target="_blank" class="button primary fit" style="font-size:0.5em"><span class="material-icons" style="font-size:150%">
 local_police
 </span> Anyone can Be a Fakes Patrol</a></li>
@@ -2885,6 +2910,7 @@ fingerprint
 			    $("#myBtn3").fadeIn();
 			    //$("#myBtn4").fadeIn();
 			    $("#myBtn5").fadeIn();
+			    $("#myBtn6").fadeIn();
 			  } else {
 
 			    $("#myBtn").fadeOut();
@@ -2892,6 +2918,7 @@ fingerprint
 			    $("#myBtn3").fadeOut();
 			    //$("#myBtn4").fadeOut();
 			    $("#myBtn5").fadeOut();
+			    $("#myBtn6").fadeOut();
 			  }
 
 
@@ -2912,6 +2939,10 @@ fingerprint
 
 			function auctionFunction() {
 				window.open("https://ergoauctions.org/#/auction/active?type=picture&artist=9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu");
+			}
+
+			function skyharborFunction() {
+				window.open("https://skyharbor-git-beta-enftexchange.vercel.app/collection/ergyoroi");
 			}
 
 			function dexFunction() {
