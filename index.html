@@ -3121,20 +3121,53 @@ fingerprint
 										document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">gavel</span> ACTIVE AUCTION BY '+activeauctionby+'<br><span class="whobid">'+lastbid+' <span class="material-icons" style="font-size:130%">open_in_new</span></span>';
 									});
 
-
+							
 
 
 
 								});
 
 
+
+
 	
 
 
 
+							//non erg active bid
+							}else if(datacurrowner.items[0].assets[1] !== undefined&& datacurrowner.items[0].assets[1].amount >= JSON.parse(datacurrowner.items[0].additionalRegisters.R6.renderedValue)[0] ){
+									var	urlwhobid = "https://api.ergoplatform.com/api/v1/boxes/unspent/byErgoTree/"+datacurrowner.items[0].additionalRegisters.R5.renderedValue+"?limit=1"		;
+								
+									$.getJSON(urlwhobid, function(datawhobid) {
+										whobid = datawhobid.items[0].address.slice(0,3)+".."+datawhobid.items[0].address.slice(-3);
+										lastbid = '<span class="material-icons blink" style="font-size:130%;color:red">circle</span> '+whobid+' BID '+ datacurrowner.items[0].assets[1].amount + " " + datacurrowner.items[0].assets[1].name ;
+										console.log(lastbid)
 
+										var activeauctionby;
+										var urlactiveauctionby = "https://api.ergoplatform.com/api/v1/boxes/unspent/byErgoTree/"+datacurrowner.items[0].additionalRegisters.R4.renderedValue+"?limit=1"
+
+										$.getJSON(urlactiveauctionby, function(dataactiveauctionby) {
+											
+											activeauctionby = dataactiveauctionby.items[0].address.slice(0,3)+".."+dataactiveauctionby.items[0].address.slice(-3);
+											
+											if(dataactiveauctionby.items[0].address=="9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu"){
+												$("#CURR"+tokenidJSON).attr("class", "currownerlive firstmarket");
+											}else{
+
+												$("#CURR"+tokenidJSON).attr("class", "currownerlive secondmarket");
+
+											}
+											document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">gavel</span> ACTIVE AUCTION BY '+activeauctionby+'<br><span class="whobid">'+lastbid+' <span class="material-icons" style="font-size:130%">open_in_new</span></span>';
+										});
+
+									});
 							}else{
-								lastbid = '<span class="material-icons" style="font-size:130%">play_arrow</span> START BID Σ' + arrayminbid[0]/1000000000 ;
+
+								if(datacurrowner.items[0].assets[1] !== undefined)
+									lastbid = '<span class="material-icons" style="font-size:130%">play_arrow</span> START BID ' + JSON.parse(datacurrowner.items[0].additionalRegisters.R6.renderedValue)[0] + " " + datacurrowner.items[0].assets[1].name ;
+								else{
+									lastbid = '<span class="material-icons" style="font-size:130%">play_arrow</span> START BID Σ' + arrayminbid[0]/1000000000 ;
+								}
 
 									var activeauctionby;
 									var urlactiveauctionby = "https://api.ergoplatform.com/api/v1/boxes/unspent/byErgoTree/"+datacurrowner.items[0].additionalRegisters.R4.renderedValue+"?limit=1"
@@ -3262,7 +3295,8 @@ fingerprint
 		                        var updatevalueRNT=0.01;
 		                        var maxaucvalue=0;
 
-			                      if(updatevalueRNT<(data5RNT.inputs[0].value/1000000000)){
+			                      // if(updatevalueRNT<(data5RNT.inputs[0].value/1000000000)){
+			                      if(data4RNT.total>=2){
 			                       	updatevalueRNT=data5RNT.inputs[0].value/1000000000;
 			                       	// document.getElementById("RECENT"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">update</span> ON-RECENT SOLD<br><span class="smalltext">Σ'+updatevalueRNT+ '</span> <span class="material-icons" style="font-size:130%"">youtube_searched_for</span>';
 
@@ -3289,7 +3323,7 @@ fingerprint
 			                       		gethistory(url6RNT,auctionnumber,i);
 
 			                       		if(document.getElementById("RECENT"+tokenidJSON)!=null){
-  																document.getElementById("RECENT"+tokenidJSON).innerHTML = (document.getElementById("RECENT"+tokenidJSON).innerHTML)+'<a  class="history'+tokenidJSON+' history"  style="display:none" target="_blank" id="'+i+'LINKHISTORY'+tokenidJSON+'"><span class="smalltext">'+auctionnumber+': Σ'+'<span class="subhistoryvalue" id="'+i+'HISTORY'+tokenidJSON+'"></span> <span class="material-icons" style="font-size:130%">gavel</span></span>'+'</a>'
+  																document.getElementById("RECENT"+tokenidJSON).innerHTML = (document.getElementById("RECENT"+tokenidJSON).innerHTML)+'<a  class="history'+tokenidJSON+' history"  style="display:none" target="_blank" id="'+i+'LINKHISTORY'+tokenidJSON+'"><span class="smalltext">'+auctionnumber+': '+'<span class="subhistoryvalue" id="'+i+'HISTORY'+tokenidJSON+'"></span> <span class="material-icons" style="font-size:130%">gavel</span></span>'+'</a>'
 
 																}
 
@@ -3300,11 +3334,19 @@ fingerprint
 		                        			$.getJSON(url6RNT, function(data6RNT) {
 			                     					
 				                       			if(document.getElementById(i+"HISTORY"+tokenidJSON)!=null){
-				                       				document.getElementById(i+"HISTORY"+tokenidJSON).innerHTML = data6RNT.inputs[0].value/1000000000;
+
+				                       				if(data6RNT.inputs[0].assets[1] === undefined){
+				                       					document.getElementById(i+"HISTORY"+tokenidJSON).innerHTML = "Σ"+data6RNT.inputs[0].value/1000000000;
+				                       					maxaucvalueconverted = data6RNT.inputs[0].value/1000000000;
+				                       				}else{
+				                       					document.getElementById(i+"HISTORY"+tokenidJSON).innerHTML = data6RNT.inputs[0].assets[1].amount + " " + data6RNT.inputs[0].assets[1].name;
+				                       					maxaucvalueconverted = data6RNT.inputs[0].value/1000000000;
+				                       				}
+				                       				//document.getElementById(i+"HISTORY"+tokenidJSON).innerHTML = data6RNT.inputs[0].value/1000000000;
 				                       				$("#"+i+"LINKHISTORY"+tokenidJSON).attr("href", "https://ergoauctions.org/#/auction/specific/"+data6RNT.inputs[0].boxId);
 
 				                       				if(data6RNT.inputs[0].value/1000000000>maxaucvalue){
-				                       					maxaucvalue=data6RNT.inputs[0].value/1000000000;
+				                       					maxaucvalue=maxaucvalueconverted;
 				                       				}else{
 				                       					maxaucvalue
 				                       				}
