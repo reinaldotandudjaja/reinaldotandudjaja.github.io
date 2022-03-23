@@ -25,6 +25,10 @@
       <script src="assets/js/jquery-ui.js"></script> 
 
 		<style>
+.skyharbor{
+	background-color: #f4900c !important;
+}
+
 .zen{
 	font-family: 'Zen Dots';
 	font-weight: 400;
@@ -3219,11 +3223,9 @@ fingerprint
 										activeskyharborby = dataactiveskyharborby.items[0].address.slice(0,3)+".."+dataactiveskyharborby.items[0].address.slice(-3);
 										
 										if(dataactiveskyharborby.items[0].address=="9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu"){
-											$("#CURR"+tokenidJSON).attr("class", "currownerlive firstmarket");
+											$("#CURR"+tokenidJSON).attr("class", "currownerlive firstmarket skyharbor");
 										}else{
-
-											$("#CURR"+tokenidJSON).attr("class", "currownerlive secondmarket");
-
+											$("#CURR"+tokenidJSON).attr("class", "currownerlive secondmarket skyharbor");
 										}
 
 										document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">sailing</span> ACTIVE SKYHARBOR BY '+activeskyharborby+'<br>'+skyharborbuy+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
