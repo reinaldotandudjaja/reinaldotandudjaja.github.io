@@ -3523,7 +3523,7 @@ fingerprint
 			        var maxskyvalue = 0.01;
 			        //alert(Math.ceil(repeat));
 
-			        for(var i=0;i<=repeat;i++){
+			        for(var i=0;i<=Math.ceil(repeat);i++){
 
 			            var urlskyharborhistory = "https://api.ergoplatform.com/api/v1/boxes/byTokenId/"+tokenidJSON+"?limit="+addoffset+"&offset="+offset;
 			                $.getJSON(urlskyharborhistory, function(dataskyharborhistory) {
