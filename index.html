@@ -3345,6 +3345,7 @@ fingerprint
 
 			                       		if(document.getElementById("RECENT"+tokenidJSON)!=null){
   																document.getElementById("RECENT"+tokenidJSON).innerHTML = (document.getElementById("RECENT"+tokenidJSON).innerHTML)+'<a  class="history'+tokenidJSON+' history"  style="display:none" target="_blank" id="'+i+'LINKHISTORY'+tokenidJSON+'"><span class="smalltext">'+auctionnumber+': '+'<span class="subhistoryvalue" id="'+i+'HISTORY'+tokenidJSON+'"></span> <span class="material-icons" style="font-size:130%">gavel</span></span>'+'</a>'
+  																$("#RECENT"+tokenidJSON).css('opacity', '0.0');
 
 																}
 
@@ -3373,7 +3374,8 @@ fingerprint
 				                       				}
 
 				                       				document.getElementById("MAXAUC"+tokenidJSON).innerHTML = "Σ"+maxaucvalue
-
+																			$("#RECENT"+tokenidJSON).css('opacity', '1');
+																			$("#RECENT"+tokenidJSON).attr("class", "recent");
 				                       			}
 		                        		  
 		                        		    //	return (data6RNT.inputs[0].value/1000000000);
@@ -3393,7 +3395,7 @@ fingerprint
 				                	 //$("#RECENT"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data5RNT.id);
 				                	 // $("#RECENT"+tokenidJSON).attr("href", "https://ergoauctions.org/#/auction/specific/"+data5RNT.inputs[0].boxId);
 
-				                	 		$("#RECENT"+tokenidJSON).attr("class", "recent");
+				                	 		
 			                      }else{
 			                      	
 				                       			//check #002
