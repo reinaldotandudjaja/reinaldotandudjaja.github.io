@@ -1070,6 +1070,24 @@ margin: 0px;
   text-align: center;
 }
 
+#myBtn8{
+  display: none;
+  position: fixed;
+  bottom: 100px;
+  right: 55px;
+  z-index: 1000;
+opacity: 0.8;
+  background-color: #181c2d;
+  color: white;
+  cursor: pointer;
+  padding: 0PX;
+margin: 0px;
+  border-radius: 15px;
+  width: 40PX;
+  height: 40PX;
+  text-align: center;
+}
+
 #myBtn7{
   display: none;
   position: fixed;
@@ -1150,6 +1168,10 @@ overflow: hidden;
 }
 
 #myBtn6:hover{
+  background-color: #b22d3d;
+}
+
+#myBtn8:hover{
   background-color: #b22d3d;
 }
 
@@ -1240,7 +1262,9 @@ overflow: hidden;
 <button onclick="skyharborFunction()" id="myBtn6" title="Go to SKYHARBOR" style="line-height: 10px; "><img width="55%" src="images/SKYHARBOR LOGO SMALL.png"></img>
 </span></button>
 
-
+<button onclick="reloadFunction()" id="myBtn8" title="RELOAD" style="line-height: 25px;"><div id="mytimer2"><span class="material-icons">refresh
+</span></div>
+</span></button>
 
 <button onclick="collectionFunction()" id="myBtn5" title="Go to My ERGYOROI Collection" style="line-height: 40px; "><span class="material-icons">
 inventory_2
@@ -1688,8 +1712,10 @@ backspace
         }
         if(remainingTime+60>=reloadin){
         	$("#mytimer").html("");
+        	//$("#mytimer2").html('<span style="font-size:5px;line">10:10</span>');
         }else{
         	$("#mytimer").html(" IN "+remainingMinute+":"+(remainingSeconds)+" (IDLE)");
+        	//$("#mytimer2").html(remainingMinute+":"+(remainingSeconds));
         }
       
         if (idleTime > reloadin) { // 900 seconds
@@ -2988,6 +3014,7 @@ fingerprint
 			    $("#myBtn5").fadeIn();
 			    $("#myBtn6").fadeIn();
 			    $("#myBtn7").fadeIn();
+			    $("#myBtn8").fadeIn();
 			  } else {
 
 			    $("#myBtn").fadeOut();
@@ -2996,7 +3023,7 @@ fingerprint
 			    //$("#myBtn4").fadeOut();
 			    $("#myBtn5").fadeOut();
 			    $("#myBtn6").fadeOut();
-
+			    $("#myBtn8").fadeOut();
 			  }
 
 
@@ -3021,6 +3048,10 @@ fingerprint
 
 			function skyharborFunction() {
 				window.open("https://www.skyharbor.io/collection/ergyoroi");
+			}
+
+			function reloadFunction(){
+            window.location.reload();
 			}
 
 			var globalhide=0
