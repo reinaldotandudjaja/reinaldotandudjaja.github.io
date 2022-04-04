@@ -3149,7 +3149,7 @@ fingerprint
 						if(datacurrowner.items[0].address=="9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu"&&document.getElementById("CURR"+tokenidJSON)!=null){
 							slicedcurrowner = datacurrowner.items[0].address.slice(0,3)+".."+datacurrowner.items[0].address.slice(-3);
 							$("#CURR"+tokenidJSON).attr("class", "currowner artistsoon");
-							document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> CURRENT OWNER (ARTIST)<br>'+slicedcurrowner+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
+							document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> CURRENT OWNER <span class="material-icons" style="font-size:130%" >brush</span><br>'+slicedcurrowner+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
 							$("#CURR"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/addresses/"+datacurrowner.items[0].address);
 							
 						}else if(datacurrowner.items[0].address.slice(0,1)==9&&document.getElementById("CURR"+tokenidJSON)!=null){
@@ -3181,12 +3181,17 @@ fingerprint
 										
 										if(dataactiveauctionby.items[0].address=="9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu"){
 											$("#CURR"+tokenidJSON).attr("class", "currownerlive firstmarket");
+
+											document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">gavel</span> ACTIVE AUCTION BY '+activeauctionby+' <span class="material-icons" style="font-size:130%">brush</span><br><span class="whobid">'+lastbid+' <span class="material-icons" style="font-size:130%">open_in_new</span></span>';
+
 										}else{
 
 											$("#CURR"+tokenidJSON).attr("class", "currownerlive secondmarket");
 
+											document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">gavel</span> ACTIVE AUCTION BY '+activeauctionby+'<br><span class="whobid">'+lastbid+' <span class="material-icons" style="font-size:130%">open_in_new</span></span>';
+
 										}
-										document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">gavel</span> ACTIVE AUCTION BY '+activeauctionby+'<br><span class="whobid">'+lastbid+' <span class="material-icons" style="font-size:130%">open_in_new</span></span>';
+
 									});
 
 							
@@ -3220,12 +3225,16 @@ fingerprint
 											
 											if(dataactiveauctionby.items[0].address=="9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu"){
 												$("#CURR"+tokenidJSON).attr("class", "currownerlive firstmarket");
+
+												document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">gavel</span> ACTIVE AUCTION BY '+activeauctionby+' <span class="material-icons" style="font-size:130%">brush</span><br><span class="whobid">'+lastbid+' <span class="material-icons" style="font-size:130%">open_in_new</span></span>';
+
 											}else{
 
 												$("#CURR"+tokenidJSON).attr("class", "currownerlive secondmarket");
 
+												document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">gavel</span> ACTIVE AUCTION BY '+activeauctionby+'<br><span class="whobid">'+lastbid+' <span class="material-icons" style="font-size:130%">open_in_new</span></span>';
 											}
-											document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">gavel</span> ACTIVE AUCTION BY '+activeauctionby+'<br><span class="whobid">'+lastbid+' <span class="material-icons" style="font-size:130%">open_in_new</span></span>';
+
 										});
 
 									});
@@ -3246,13 +3255,14 @@ fingerprint
 										
 										if(dataactiveauctionby.items[0].address=="9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu"){
 											$("#CURR"+tokenidJSON).attr("class", "currownerlive firstmarket");
+											document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">gavel</span> ACTIVE AUCTION BY '+activeauctionby+' <span class="material-icons" style="font-size:130%">brush</span><br>'+lastbid+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
 										}else{
 
 											$("#CURR"+tokenidJSON).attr("class", "currownerlive secondmarket");
-
+											document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">gavel</span> ACTIVE AUCTION BY '+activeauctionby+'<br>'+lastbid+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
 										}
 
-										document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">gavel</span> ACTIVE AUCTION BY '+activeauctionby+'<br>'+lastbid+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
+
 									});
 
 
@@ -3287,8 +3297,10 @@ fingerprint
 										
 										if(dataactiveskyharborby.items[0].address=="9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu"){
 											$("#CURR"+tokenidJSON).attr("class", "currownerlive firstmarket skyharbor");
+											document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">sailing</span> ACTIVE SKYHARBOR BY '+activeskyharborby+' <span class="material-icons" style="font-size:130%">brush</span><br>'+skyharborbuy+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
 										}else{
 											$("#CURR"+tokenidJSON).attr("class", "currownerlive secondmarket skyharbor");
+											document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">sailing</span> ACTIVE SKYHARBOR BY '+activeskyharborby+'<br>'+skyharborbuy+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
 										}
 
 										document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">sailing</span> ACTIVE SKYHARBOR BY '+activeskyharborby+'<br>'+skyharborbuy+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
