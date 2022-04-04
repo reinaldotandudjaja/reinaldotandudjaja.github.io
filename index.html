@@ -3154,7 +3154,7 @@ fingerprint
 						if(datacurrowner.items[0].address=="9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu"&&document.getElementById("CURR"+tokenidJSON)!=null){
 							slicedcurrowner = datacurrowner.items[0].address.slice(0,3)+".."+datacurrowner.items[0].address.slice(-3);
 							$("#CURR"+tokenidJSON).attr("class", "currowner artistsoon");
-							document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> CURRENT OWNER <span class="material-icons" style="font-size:130%" >brush</span><br>'+slicedcurrowner+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
+							document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> CURRENT OWNER<br>'+slicedcurrowner+' <span class="material-icons" style="font-size:130%">brush</span>';
 							$("#CURR"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/addresses/"+datacurrowner.items[0].address);
 							
 						}else if(datacurrowner.items[0].address.slice(0,1)==9&&document.getElementById("CURR"+tokenidJSON)!=null){
