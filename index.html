@@ -1673,6 +1673,11 @@ backspace
 </span>
 
 <script type="text/javascript">
+		// var skyp2s = "Y2KFdpZQzL2Pb1vwYnaaYXcQCo7sajiPK3iL8TXttqAKwoqvVCSjqJEqi4x3PeQ8Ap5rUWYN7681J5DA7TzX5XSwVuNVatLYjmRKisnW8KoE7vGpfap4ixXB4jnw7jHMGvL81P8RtLDHvWTKDuDtnDFJiSaYH6SWxy8VKNDSM3H5sr7QSkG7NbN3wYAPHfmDnXwBajEbBRLXekpYnPc7Hb66buc1bBMhQE3vKXCxrzb93wX5zxy4cDoJhZtcFCHcxWpf1vh6DoxWu9tWEkLSaAHeVbm8fF34Nu6QZpSyQpb592ZzGgBBDz35WtYiDCyHb1CKEz1ckwXuF6cRNE2WP8ttsKX1HTPByZaaiXCqQTqWg31p1SrGj7pUXKQ9y8yYf6AJW2frv1nb9aLxmqozgZcZgVj9xeQ6BF2BVcqaiAjdwcRovh42vPzhJ2CTMEZ"
+
+		var skyp2s = "X2nDjRGSwafYukBtSZruDGUNEc9wV3VnzNtmBukpHfK4Amv5aDwkx2WRL6KqRfT1BoPyzmQKZRNQBqrhv6xKYEhdAygRNAZS73ZkeTNtEpVhcwecQaNP217KXtHeN3nkogBUoNjraRwz5GkicJh2FrPapFFqFpCTUk8wuRDMw8pVDXeERkZhquKAcn8NDmtF6nfgFzLGnGUyC8FY2ACEfD9aCHEFUL1jcWMWm6CsxgwLWDE43SMjxJy8iMjHUWofTj1SiQJRaLPZWMakgXMCzRgEgT4NNbek1ggwWp5SsNg9hVGgKWnKCrsPS8fR8EzvACspP8vcpPUuUkroxQbYrAEVVk5F2LmRusUywgoWiWAdi9AWjqpBVTLXPvRYqfTgsZiJQ94BCiQf1JVD26FSXrjqDWdDXoF1dwJBTbKpjMJrT3iLHHiHjjUFyDM5wxuMivywBQmFWtFsU8EgPMnYHCRu5rEB4os2ZxU4su3GWfgS2rCk8xUh4GR"
+
+		var skyp2sslice = "X2n"
 
 
     var idleTime = 0;
@@ -3288,7 +3293,7 @@ fingerprint
 							$("#CURR"+tokenidJSON).attr("href", "https://ergoauctions.org/#/auction/active?type=picture&artist=9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu");
 							$("#CURR"+tokenidJSON).parent().parent().addClass('ACTIVE');
 
-						}else if(datacurrowner.items[0].address.slice(0,3)=="Y2K"&&document.getElementById("CURR"+tokenidJSON)!=null){
+						}else if(datacurrowner.items[0].address.slice(0,3)==skyp2sslice &&document.getElementById("CURR"+tokenidJSON)!=null){
 
 							var skyharborprice = JSON.parse(datacurrowner.items[0].additionalRegisters.R4.renderedValue)/1000000000;
 							
@@ -3644,7 +3649,7 @@ fingerprint
 			                    var pretotalsalescounter=0;
 			                    for (var j = 0; j < dataskyharborhistory.items.length; j++) {
 
-			                        if(dataskyharborhistory.items[j].address=="Y2KFdpZQzL2Pb1vwYnaaYXcQCo7sajiPK3iL8TXttqAKwoqvVCSjqJEqi4x3PeQ8Ap5rUWYN7681J5DA7TzX5XSwVuNVatLYjmRKisnW8KoE7vGpfap4ixXB4jnw7jHMGvL81P8RtLDHvWTKDuDtnDFJiSaYH6SWxy8VKNDSM3H5sr7QSkG7NbN3wYAPHfmDnXwBajEbBRLXekpYnPc7Hb66buc1bBMhQE3vKXCxrzb93wX5zxy4cDoJhZtcFCHcxWpf1vh6DoxWu9tWEkLSaAHeVbm8fF34Nu6QZpSyQpb592ZzGgBBDz35WtYiDCyHb1CKEz1ckwXuF6cRNE2WP8ttsKX1HTPByZaaiXCqQTqWg31p1SrGj7pUXKQ9y8yYf6AJW2frv1nb9aLxmqozgZcZgVj9xeQ6BF2BVcqaiAjdwcRovh42vPzhJ2CTMEZ" && (dataskyharborhistory.items[j].spentTransactionId) !== null){
+			                        if(dataskyharborhistory.items[j].address==skyp2s && (dataskyharborhistory.items[j].spentTransactionId) !== null){
 			                            pretotalsalescounter++;
 			                            skyharborsellerusertree = dataskyharborhistory.items[j].additionalRegisters.R5.renderedValue
 			                            skyharborsoldfor = (dataskyharborhistory.items[j].additionalRegisters.R4.renderedValue)/1000000000;
@@ -3844,7 +3849,7 @@ fingerprint
 
 															        for (var i = 0; i < dataskyharborONR.items.length; i++) {
 
-															            if(dataskyharborONR.items[i].address=="Y2KFdpZQzL2Pb1vwYnaaYXcQCo7sajiPK3iL8TXttqAKwoqvVCSjqJEqi4x3PeQ8Ap5rUWYN7681J5DA7TzX5XSwVuNVatLYjmRKisnW8KoE7vGpfap4ixXB4jnw7jHMGvL81P8RtLDHvWTKDuDtnDFJiSaYH6SWxy8VKNDSM3H5sr7QSkG7NbN3wYAPHfmDnXwBajEbBRLXekpYnPc7Hb66buc1bBMhQE3vKXCxrzb93wX5zxy4cDoJhZtcFCHcxWpf1vh6DoxWu9tWEkLSaAHeVbm8fF34Nu6QZpSyQpb592ZzGgBBDz35WtYiDCyHb1CKEz1ckwXuF6cRNE2WP8ttsKX1HTPByZaaiXCqQTqWg31p1SrGj7pUXKQ9y8yYf6AJW2frv1nb9aLxmqozgZcZgVj9xeQ6BF2BVcqaiAjdwcRovh42vPzhJ2CTMEZ" && (dataskyharborONR.items[i+1]) !== undefined && dataskyharborONR.items[i+1].address != "9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu" && dataskyharborONR.items[i+1].address.length == 51 ){
+															            if(dataskyharborONR.items[i].address==skyp2s && (dataskyharborONR.items[i+1]) !== undefined && dataskyharborONR.items[i+1].address != "9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu" && dataskyharborONR.items[i+1].address.length == 51 ){
 
 															           
 															                boolY2K = 1;
@@ -3942,7 +3947,7 @@ fingerprint
 
 														        for (var i = 0; i < dataskyharborONR.items.length; i++) {
 
-														            if(dataskyharborONR.items[i].address=="Y2KFdpZQzL2Pb1vwYnaaYXcQCo7sajiPK3iL8TXttqAKwoqvVCSjqJEqi4x3PeQ8Ap5rUWYN7681J5DA7TzX5XSwVuNVatLYjmRKisnW8KoE7vGpfap4ixXB4jnw7jHMGvL81P8RtLDHvWTKDuDtnDFJiSaYH6SWxy8VKNDSM3H5sr7QSkG7NbN3wYAPHfmDnXwBajEbBRLXekpYnPc7Hb66buc1bBMhQE3vKXCxrzb93wX5zxy4cDoJhZtcFCHcxWpf1vh6DoxWu9tWEkLSaAHeVbm8fF34Nu6QZpSyQpb592ZzGgBBDz35WtYiDCyHb1CKEz1ckwXuF6cRNE2WP8ttsKX1HTPByZaaiXCqQTqWg31p1SrGj7pUXKQ9y8yYf6AJW2frv1nb9aLxmqozgZcZgVj9xeQ6BF2BVcqaiAjdwcRovh42vPzhJ2CTMEZ" && (dataskyharborONR.items[i+1]) !== undefined && dataskyharborONR.items[i+1].address != "9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu" && dataskyharborONR.items[i+1].address.length == 51 ){
+														            if(dataskyharborONR.items[i].address==skyp2s && (dataskyharborONR.items[i+1]) !== undefined && dataskyharborONR.items[i+1].address != "9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu" && dataskyharborONR.items[i+1].address.length == 51 ){
 
 														           
 														                boolY2K = 1;
