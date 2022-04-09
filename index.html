@@ -25,6 +25,38 @@
       <script src="assets/js/jquery-ui.js"></script> 
 
 		<style>
+#shadowBox {
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Black w/opacity/see-through */
+    border: 3px solid;
+}
+
+.rainbow {
+
+}
+
+.rainbow_text_animated {
+    background: linear-gradient(to right, #000000, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff, #000000);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 4s ease-in-out infinite;
+    background-size: 400% 100%;
+}
+
+@keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+}
+
+
 .zen{
 	font-family: 'Zen Dots';
 	font-weight: 400;
@@ -2679,9 +2711,10 @@ function myFunctionD() {
 <span class="material-icons" style="font-size: 14px">sailing</span> SKYHARBOR &nbsp;
 <span class="material-icons" style="font-size: 14px">trending_up</span> All Time High &nbsp;
 <span class="material-icons" style="font-size: 14px">restore</span> History &nbsp;
-<span class="material-icons" style="font-size: 14px">brush</span> By Artist / Creator &nbsp;
+
 <span class="material-icons" style="font-size: 14px">looks_one</span> On-Release &nbsp;
-<span class="material-icons" style="font-size: 14px">looks_two</span> On-Aftermarket
+<span class="material-icons" style="font-size: 14px">looks_two</span> On-Aftermarket &nbsp;
+<span class="rainbow rainbow_text_animated"><span class="material-icons" style="font-size: 14px">brush</span></span> By Artist / Creator 
 </span>
 
 <br>
@@ -3170,7 +3203,7 @@ fingerprint
 						if(datacurrowner.items[0].address=="9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu"&&document.getElementById("CURR"+tokenidJSON)!=null){
 							slicedcurrowner = datacurrowner.items[0].address.slice(0,3)+".."+datacurrowner.items[0].address.slice(-3);
 							$("#CURR"+tokenidJSON).attr("class", "currowner artistsoon");
-							document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> CURRENT OWNER<br>'+slicedcurrowner+' <span class="material-icons" style="font-size:130%">brush</span>';
+							document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> CURRENT OWNER<br>'+slicedcurrowner+' <span class="rainbow rainbow_text_animated"><span class="material-icons" style="font-size:130%">brush</span></span>';
 							$("#CURR"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/addresses/"+datacurrowner.items[0].address);
 							
 						}else if(datacurrowner.items[0].address.slice(0,1)==9&&document.getElementById("CURR"+tokenidJSON)!=null){
@@ -3203,7 +3236,7 @@ fingerprint
 										if(dataactiveauctionby.items[0].address=="9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu"){
 											$("#CURR"+tokenidJSON).attr("class", "currownerlive firstmarket");
 
-											document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">gavel</span> ACTIVE AUCTION BY '+activeauctionby+' <span class="material-icons" style="font-size:130%">brush</span><br><span class="whobid">'+lastbid+' <span class="material-icons" style="font-size:130%">open_in_new</span></span>';
+											document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">gavel</span> ACTIVE AUCTION BY '+activeauctionby+' <span class="rainbow rainbow_text_animated"><span class="material-icons" style="font-size:130%">brush</span></span><br><span class="whobid">'+lastbid+' <span class="material-icons" style="font-size:130%">open_in_new</span></span>';
 
 										}else{
 
@@ -3247,7 +3280,7 @@ fingerprint
 											if(dataactiveauctionby.items[0].address=="9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu"){
 												$("#CURR"+tokenidJSON).attr("class", "currownerlive firstmarket");
 
-												document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">gavel</span> ACTIVE AUCTION BY '+activeauctionby+' <span class="material-icons" style="font-size:130%">brush</span><br><span class="whobid">'+lastbid+' <span class="material-icons" style="font-size:130%">open_in_new</span></span>';
+												document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">gavel</span> ACTIVE AUCTION BY '+activeauctionby+' <span class="rainbow rainbow_text_animated"><span class="material-icons" style="font-size:130%">brush</span></span><br><span class="whobid">'+lastbid+' <span class="material-icons" style="font-size:130%">open_in_new</span></span>';
 
 											}else{
 
@@ -3276,7 +3309,7 @@ fingerprint
 										
 										if(dataactiveauctionby.items[0].address=="9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu"){
 											$("#CURR"+tokenidJSON).attr("class", "currownerlive firstmarket");
-											document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">gavel</span> ACTIVE AUCTION BY '+activeauctionby+' <span class="material-icons" style="font-size:130%">brush</span><br>'+lastbid+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
+											document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">gavel</span> ACTIVE AUCTION BY '+activeauctionby+' <span class="rainbow rainbow_text_animated"><span class="material-icons" style="font-size:130%">brush</span></span><br>'+lastbid+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
 										}else{
 
 											$("#CURR"+tokenidJSON).attr("class", "currownerlive secondmarket");
@@ -3318,7 +3351,7 @@ fingerprint
 										
 										if(dataactiveskyharborby.items[0].address=="9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu"){
 											$("#CURR"+tokenidJSON).attr("class", "currownerlive firstmarket skyharbor");
-											document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">sailing</span> ACTIVE SKYHARBOR BY '+activeskyharborby+' <span class="material-icons" style="font-size:130%">brush</span><br>'+skyharborbuy+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
+											document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">sailing</span> ACTIVE SKYHARBOR BY '+activeskyharborby+' <span class="rainbow rainbow_text_animated"><span class="material-icons" style="font-size:130%">brush</span></span><br>'+skyharborbuy+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
 										}else{
 											$("#CURR"+tokenidJSON).attr("class", "currownerlive secondmarket skyharbor");
 											document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">sailing</span> ACTIVE SKYHARBOR BY '+activeskyharborby+'<br>'+skyharborbuy+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
