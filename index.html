@@ -12,17 +12,15 @@
 		<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet"> 
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,700;1,600&display=swap" rel="stylesheet"> 
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-   <script src="assets/js/jquery.lazyload-any.js"></script> 
-
-<script src="assets/js/jquery.marquee.js"></script> 
-   
-      <!-- <script src="assets/js/html2canvas.js"></script>  -->
-      <script src="assets/js/jquery-ui.js"></script> 
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,700;1,600&display=swap" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		      rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	  <script src="assets/js/jquery.lazyload-any.js"></script> 
+		<script src="assets/js/jquery.marquee.js"></script>  
+    <!-- <script src="assets/js/html2canvas.js"></script>  -->
+    <script src="assets/js/jquery-ui.js"></script> 
 
 		<style>
 #shadowBox {
@@ -1707,9 +1705,21 @@ backspace
 </span>
 
 <script type="text/javascript">
+		var erg_usd = 0;
+		var usd_erg = 0;
+		$.getJSON("https://ergopad.io/api/asset/price/ergo", function(dataerg_usd) {
+			erg_usd = dataerg_usd.price
+			usd_erg = 1/erg_usd
+		});
+
+
 		//var skyp2s = "Y2KFdpZQzL2Pb1vwYnaaYXcQCo7sajiPK3iL8TXttqAKwoqvVCSjqJEqi4x3PeQ8Ap5rUWYN7681J5DA7TzX5XSwVuNVatLYjmRKisnW8KoE7vGpfap4ixXB4jnw7jHMGvL81P8RtLDHvWTKDuDtnDFJiSaYH6SWxy8VKNDSM3H5sr7QSkG7NbN3wYAPHfmDnXwBajEbBRLXekpYnPc7Hb66buc1bBMhQE3vKXCxrzb93wX5zxy4cDoJhZtcFCHcxWpf1vh6DoxWu9tWEkLSaAHeVbm8fF34Nu6QZpSyQpb592ZzGgBBDz35WtYiDCyHb1CKEz1ckwXuF6cRNE2WP8ttsKX1HTPByZaaiXCqQTqWg31p1SrGj7pUXKQ9y8yYf6AJW2frv1nb9aLxmqozgZcZgVj9xeQ6BF2BVcqaiAjdwcRovh42vPzhJ2CTMEZ"
 
 		var skyp2s = "X2nDjRGSwafYukBtSZruDGUNEc9wV3VnzNtmBukpHfK4Amv5aDwkx2WRL6KqRfT1BoPyzmQKZRNQBqrhv6xKYEhdAygRNAZS73ZkeTNtEpVhcwecQaNP217KXtHeN3nkogBUoNjraRwz5GkicJh2FrPapFFqFpCTUk8wuRDMw8pVDXeERkZhquKAcn8NDmtF6nfgFzLGnGUyC8FY2ACEfD9aCHEFUL1jcWMWm6CsxgwLWDE43SMjxJy8iMjHUWofTj1SiQJRaLPZWMakgXMCzRgEgT4NNbek1ggwWp5SsNg9hVGgKWnKCrsPS8fR8EzvACspP8vcpPUuUkroxQbYrAEVVk5F2LmRusUywgoWiWAdi9AWjqpBVTLXPvRYqfTgsZiJQ94BCiQf1JVD26FSXrjqDWdDXoF1dwJBTbKpjMJrT3iLHHiHjjUFyDM5wxuMivywBQmFWtFsU8EgPMnYHCRu5rEB4os2ZxU4su3GWfgS2rCk8xUh4GR"
+
+		var usd_skyp2s = "qNtfov7o2g1GYShDaD4a1QNv1bSjEXAbnWzVJQA7qVYogTFuxuw659G1WWwonQqA91AsYa9vL7JQLysRvMyNdZ6iLHH5mgx5RKn6tEE5uki3MPNg5cVrnG9rhZuKA3CpyaMbBBus7fxoYQsHgLCShaqJEyjFZsKooWqVJ1nFQeo9hiTCLcWd91B4EeWzrimYswG4cPaJyBwQp9eit1Hq1UtZ8dwo3r7vKsH7aJLzZbq6mky4itWHKueA4bybDQfPwYXoujsChY5jawj6V1YQrrVbzdxm66pBSfCdzr76nWp5VdnPJXbvnN6tHpv2Taivs23JJBPakAeDSpX1TuYx7Ce5KYHutTczNcytPQgbetWXNxTKzDsmzLbEX1bsWdryJnJT5bUHUXEEacWmz6JgUaKRbrJwWNgrpH5V3t6nvUgpZFpwQnNLYnLQs4tVHch3DeifD3f7BX4s5E3qArtDkNMPsY6AgUPd6kLNbfRvyZPf2RDA2CXn9ABmnKmTZdJYfc2bLHG1H7igeBH4g5Tok5fkjux6L8T8Pf7jBiV6WYRjD4y8E6idTTWrBJ9vvPJURnFD6L8jp2f3xt6HvKD1bokKUZyeTiu9hmFm3s9TE8x7ztCXeYUiJq7Lm4FzFsXkyqKgGDRSXXGmqDpwaWSdtH9Pn43kLWr8hRoMkAm1f9e6nhJQfCRu8wAK3Zv74vRfq"
+
+		var usd_skyp2sslice = "qNt"
 
 		var skyp2sslice = "X2n"
 
@@ -1783,7 +1793,10 @@ backspace
 		(($('.currowner').length +
 		$('.firstmarket').length +
 		$('.secondmarket').length +
-		$('.artistowned').length)==$('.grid-item').length)
+		$('.artistowned').length)==$('.grid-item').length) &&
+
+		erg_usd != 0 && 
+		usd_erg != 0
 	
 
 		){
@@ -2441,6 +2454,9 @@ $.lazyload.check();
 <div style='display:block' id='ERGYOROI #127 Morinji-no-Okama The 100 Years Kettle' class='grid-item COMMON'><span class='lazyload lazyhead'><!--<span id='LAZYHEAD7574e91d72074f5571942b8e8e44a4d34ccefb392af6653cd42e613a6371e3d4' style='text-align:top'></span>--></span><img loading='lazy' class='zoom' width='100%' src='images/ERGYOROI/ERGYOROI %23127 Morinji-no-Okama The 100 Years Kettle.png'><div class="ergyoroiname">ERGYOROI #127 Morinji-no-Okama The 100 Years Kettle</div><ul class="actions stacked"><li><a href="https://ergonfts.org/#/?token=7574e91d72074f5571942b8e8e44a4d34ccefb392af6653cd42e613a6371e3d4" target=_blank" class="button fit tokenid"><span class="material-icons" style="font-size:150%">search</span> Token ID</a></li><span class='variant' id='VARIANT'><span class='material-icons' style='font-size:130%'>category</span> Variant 3/8</span><span class='antiquity' id='ANTIQUITY7574e91d72074f5571942b8e8e44a4d34ccefb392af6653cd42e613a6371e3d4'><span class='spinnersmall' ></span></span><a id='CURR7574e91d72074f5571942b8e8e44a4d34ccefb392af6653cd42e613a6371e3d4' target='_blank' class='checkauction'><span class='spinner'></span></a><a id='RECENT7574e91d72074f5571942b8e8e44a4d34ccefb392af6653cd42e613a6371e3d4' target='_blank' class='checkauction'><span class='spinner'></span></a><a id='SKY7574e91d72074f5571942b8e8e44a4d34ccefb392af6653cd42e613a6371e3d4' target='_blank' class='checkauction'><span class='spinner'></span></a><a id='7574e91d72074f5571942b8e8e44a4d34ccefb392af6653cd42e613a6371e3d4' target='_blank' class='athvalue checkauction'><span class='spinner'></span></a><a id='ONR7574e91d72074f5571942b8e8e44a4d34ccefb392af6653cd42e613a6371e3d4' class='ONRvalue checkauctionlast' target='_blank'><span class='spinner'></span></a></div>
 <div style='display:block' id='ERGYOROI #128 Morinji-no-Okama The 100 Years Kettle' class='grid-item COMMON'><span class='lazyload lazyhead'><!--<span id='LAZYHEAD5ecec3be9f0aac72ebedc7ce0718fe176147204e645c2b89717b347610bd05bc' style='text-align:top'></span>--></span><img loading='lazy' class='zoom' width='100%' src='images/ERGYOROI/ERGYOROI %23128 Morinji-no-Okama The 100 Years Kettle.png'><div class="ergyoroiname">ERGYOROI #128 Morinji-no-Okama The 100 Years Kettle</div><ul class="actions stacked"><li><a href="https://ergonfts.org/#/?token=5ecec3be9f0aac72ebedc7ce0718fe176147204e645c2b89717b347610bd05bc" target=_blank" class="button fit tokenid"><span class="material-icons" style="font-size:150%">search</span> Token ID</a></li><span class='variant' id='VARIANT'><span class='material-icons' style='font-size:130%'>category</span> Variant 4/8</span><span class='antiquity' id='ANTIQUITY5ecec3be9f0aac72ebedc7ce0718fe176147204e645c2b89717b347610bd05bc'><span class='spinnersmall' ></span></span><a id='CURR5ecec3be9f0aac72ebedc7ce0718fe176147204e645c2b89717b347610bd05bc' target='_blank' class='checkauction'><span class='spinner'></span></a><a id='RECENT5ecec3be9f0aac72ebedc7ce0718fe176147204e645c2b89717b347610bd05bc' target='_blank' class='checkauction'><span class='spinner'></span></a><a id='SKY5ecec3be9f0aac72ebedc7ce0718fe176147204e645c2b89717b347610bd05bc' target='_blank' class='checkauction'><span class='spinner'></span></a><a id='5ecec3be9f0aac72ebedc7ce0718fe176147204e645c2b89717b347610bd05bc' target='_blank' class='athvalue checkauction'><span class='spinner'></span></a><a id='ONR5ecec3be9f0aac72ebedc7ce0718fe176147204e645c2b89717b347610bd05bc' class='ONRvalue checkauctionlast' target='_blank'><span class='spinner'></span></a></div>
 <div style='display:block' id='ERGYOROI #129 Morinji-no-Okama The 100 Years Kettle' class='grid-item COMMON'><span class='lazyload lazyhead'><!--<span id='LAZYHEAD21656a4f8a7cbccfaa595e5c51f554c9cfbf76ed30dbba3518f14be2862a60ea' style='text-align:top'></span>--></span><img loading='lazy' class='zoom' width='100%' src='images/ERGYOROI/ERGYOROI %23129 Morinji-no-Okama The 100 Years Kettle.png'><div class="ergyoroiname">ERGYOROI #129 Morinji-no-Okama The 100 Years Kettle</div><ul class="actions stacked"><li><a href="https://ergonfts.org/#/?token=21656a4f8a7cbccfaa595e5c51f554c9cfbf76ed30dbba3518f14be2862a60ea" target=_blank" class="button fit tokenid"><span class="material-icons" style="font-size:150%">search</span> Token ID</a></li><span class='variant' id='VARIANT'><span class='material-icons' style='font-size:130%'>category</span> Variant 5/8</span><span class='antiquity' id='ANTIQUITY21656a4f8a7cbccfaa595e5c51f554c9cfbf76ed30dbba3518f14be2862a60ea'><span class='spinnersmall' ></span></span><a id='CURR21656a4f8a7cbccfaa595e5c51f554c9cfbf76ed30dbba3518f14be2862a60ea' target='_blank' class='checkauction'><span class='spinner'></span></a><a id='RECENT21656a4f8a7cbccfaa595e5c51f554c9cfbf76ed30dbba3518f14be2862a60ea' target='_blank' class='checkauction'><span class='spinner'></span></a><a id='SKY21656a4f8a7cbccfaa595e5c51f554c9cfbf76ed30dbba3518f14be2862a60ea' target='_blank' class='checkauction'><span class='spinner'></span></a><a id='21656a4f8a7cbccfaa595e5c51f554c9cfbf76ed30dbba3518f14be2862a60ea' target='_blank' class='athvalue checkauction'><span class='spinner'></span></a><a id='ONR21656a4f8a7cbccfaa595e5c51f554c9cfbf76ed30dbba3518f14be2862a60ea' class='ONRvalue checkauctionlast' target='_blank'><span class='spinner'></span></a></div>
+<div style='display:block' id='ERGYOROI #102 Test' class='grid-item LEGENDARY'><span class='lazyload lazyhead'><!--<span id='LAZYHEADb0a42a8add0d71f513e08918db32b9a6286e4040f6e47d123861d7dc4bf9f2fa' style='text-align:top'></span>--></span><img loading='lazy' class='zoom' width='100%' src='images/ERGYOROI/ERGYOROI %23102 Test.png'><div class="ergyoroiname">ERGYOROI #102 Test</div><ul class="actions stacked"><li><a href="https://ergonfts.org/#/?token=b0a42a8add0d71f513e08918db32b9a6286e4040f6e47d123861d7dc4bf9f2fa" target=_blank" class="button fit tokenid"><span class="material-icons" style="font-size:150%">search</span> Token ID</a></li><span class='variant' id='VARIANT'><span class='material-icons' style='font-size:130%'>category</span> Variant 1/1</span><span class='antiquity' id='ANTIQUITYb0a42a8add0d71f513e08918db32b9a6286e4040f6e47d123861d7dc4bf9f2fa'><span class='spinnersmall' ></span></span><a id='CURRb0a42a8add0d71f513e08918db32b9a6286e4040f6e47d123861d7dc4bf9f2fa' target='_blank' class='checkauction'><span class='spinner'></span></a><a id='RECENTb0a42a8add0d71f513e08918db32b9a6286e4040f6e47d123861d7dc4bf9f2fa' target='_blank' class='checkauction'><span class='spinner'></span></a><a id='SKYb0a42a8add0d71f513e08918db32b9a6286e4040f6e47d123861d7dc4bf9f2fa' target='_blank' class='checkauction'><span class='spinner'></span></a><a id='b0a42a8add0d71f513e08918db32b9a6286e4040f6e47d123861d7dc4bf9f2fa' target='_blank' class='athvalue checkauction'><span class='spinner'></span></a><a id='ONRb0a42a8add0d71f513e08918db32b9a6286e4040f6e47d123861d7dc4bf9f2fa' class='ONRvalue checkauctionlast' target='_blank'><span class='spinner'></span></a></div>
+	<div style='display:block' id='ERGYOROI #103 Test' class='grid-item LEGENDARY'><span class='lazyload lazyhead'><!--<span id='LAZYHEAD5f2ca6a607013d6e48451faf277b3c4b94990d9217a36a5b975396c48dc6631d' style='text-align:top'></span>--></span><img loading='lazy' class='zoom' width='100%' src='images/ERGYOROI/ERGYOROI %23103 Test.png'><div class="ergyoroiname">ERGYOROI #103 Test</div><ul class="actions stacked"><li><a href="https://ergonfts.org/#/?token=5f2ca6a607013d6e48451faf277b3c4b94990d9217a36a5b975396c48dc6631d" target=_blank" class="button fit tokenid"><span class="material-icons" style="font-size:150%">search</span> Token ID</a></li><span class='variant' id='VARIANT'><span class='material-icons' style='font-size:130%'>category</span> Variant 1/1</span><span class='antiquity' id='ANTIQUITY5f2ca6a607013d6e48451faf277b3c4b94990d9217a36a5b975396c48dc6631d'><span class='spinnersmall' ></span></span><a id='CURR5f2ca6a607013d6e48451faf277b3c4b94990d9217a36a5b975396c48dc6631d' target='_blank' class='checkauction'><span class='spinner'></span></a><a id='RECENT5f2ca6a607013d6e48451faf277b3c4b94990d9217a36a5b975396c48dc6631d' target='_blank' class='checkauction'><span class='spinner'></span></a><a id='SKY5f2ca6a607013d6e48451faf277b3c4b94990d9217a36a5b975396c48dc6631d' target='_blank' class='checkauction'><span class='spinner'></span></a><a id='5f2ca6a607013d6e48451faf277b3c4b94990d9217a36a5b975396c48dc6631d' target='_blank' class='athvalue checkauction'><span class='spinner'></span></a><a id='ONR5f2ca6a607013d6e48451faf277b3c4b94990d9217a36a5b975396c48dc6631d' class='ONRvalue checkauctionlast' target='_blank'><span class='spinner'></span></a></div>
+
 
 
 
@@ -3387,6 +3403,37 @@ fingerprint
 
 							console.log(skyharborprice);
 
+						}else if(datacurrowner.items[0].address.slice(0,3)==usd_skyp2sslice &&document.getElementById("CURR"+tokenidJSON)!=null){
+
+							var skyharborprice = JSON.parse(datacurrowner.items[0].additionalRegisters.R4.renderedValue)/100;
+							
+
+							var activeskyharborby;
+							var urlskyharborby = "https://api.ergoplatform.com/api/v1/boxes/unspent/byErgoTree/"+datacurrowner.items[0].additionalRegisters.R5.renderedValue+"?limit=1"
+
+							var skyharborbuy = '<span class="material-icons" style="font-size:130%">play_arrow</span> BUY ' + skyharborprice + ' SigUSD';
+
+							$.getJSON(urlskyharborby, function(dataactiveskyharborby) {
+										
+										activeskyharborby = dataactiveskyharborby.items[0].address.slice(0,3)+".."+dataactiveskyharborby.items[0].address.slice(-3);
+										
+										if(dataactiveskyharborby.items[0].address=="9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu"){
+											$("#CURR"+tokenidJSON).attr("class", "currownerlive firstmarket skyharbor");
+											document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">sailing</span> ACTIVE SKYHARBOR BY '+activeskyharborby+' <span class="rainbow rainbow_text_animated"><span class="material-icons" style="font-size:130%">brush</span></span><br>'+skyharborbuy+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
+										}else{
+											$("#CURR"+tokenidJSON).attr("class", "currownerlive secondmarket skyharbor");
+											document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">sailing</span> ACTIVE SKYHARBOR BY '+activeskyharborby+'<br>'+skyharborbuy+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
+										}
+
+										document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">sailing</span> ACTIVE SKYHARBOR BY '+activeskyharborby+'<br>'+skyharborbuy+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
+							});
+
+							$("#CURR"+tokenidJSON).attr("href", "https://www.skyharbor.io/collection/ergyoroi");
+							$("#CURR"+tokenidJSON).parent().parent().addClass('ACTIVE');
+
+							//console.log(skyharborprice);
+
+
 						}else if(document.getElementById("CURR"+tokenidJSON)!=null){
 							slicedcurrowner = datacurrowner.items[0].address.slice(0,3)+".."+datacurrowner.items[0].address.slice(-3);
 							$("#CURR"+tokenidJSON).attr("class", "currowner");
@@ -3492,6 +3539,8 @@ fingerprint
 																					removeother(r,data4RNT,tokenidJSON);
 																				}
 
+																			var splicecounter = 0;
+
 																			function removeother(r,data4RNT,tokenidJSON){
 																				var urlremoveother =  "https://api.ergoplatform.com/api/v1/transactions/"+data4RNT[r].transactionId;
 
@@ -3503,9 +3552,20 @@ fingerprint
 																			function jsonremoveother(r,data4RNT,tokenidJSON,urlremoveother){
 																				$.getJSON(urlremoveother, function(dataremoveother) {
 																					var mystring = JSON.stringify(dataremoveother);
-																					if(mystring.indexOf(skyp2s) >= 0){					
-																						data4RNT.splice(r,1);
+																					if((mystring.indexOf(skyp2s) >= 0)){					
+																						data4RNT.splice(r-splicecounter,1);
+																						splicecounter++;
 																					}
+
+																					if((mystring.indexOf(usd_skyp2s) >= 0)){					
+																						data4RNT.splice(r-splicecounter,1);
+																						splicecounter++;
+																					}
+
+																					// if((mystring.indexOf(usd_skyp2s) >= 0)){
+																					// 	data4RNT.splice(r,1);
+																					// }
+
 
 																					if(r==mylength-1){
 																						jsongethistory(tokenidJSON,data4RNT);
@@ -3757,12 +3817,20 @@ fingerprint
 			                    var pretotalsalescounter=0;
 			                    for (var j = 0; j < dataskyharborhistory.items.length; j++) {
 
-			                        if(dataskyharborhistory.items[j].address==skyp2s && (dataskyharborhistory.items[j].spentTransactionId) !== null){
+			                        if((dataskyharborhistory.items[j].address==skyp2s || dataskyharborhistory.items[j].address==usd_skyp2s) && (dataskyharborhistory.items[j].spentTransactionId) !== null){
 			                            pretotalsalescounter++;
 			                            skyharborsellerusertree = dataskyharborhistory.items[j].additionalRegisters.R5.renderedValue
-			                            skyharborsoldfor = (dataskyharborhistory.items[j].additionalRegisters.R4.renderedValue)/1000000000;
+
+			                            if(dataskyharborhistory.items[j].address==skyp2s){
+			                            	skyharborsoldfor = (dataskyharborhistory.items[j].additionalRegisters.R4.renderedValue)/1000000000;
+			                            	skyharborsoldforusd = (skyharborsoldfor*erg_usd).toFixed(2)
+			                            }else if(dataskyharborhistory.items[j].address==usd_skyp2s){
+			                            	skyharborsoldfor = ((dataskyharborhistory.items[j].additionalRegisters.R4.renderedValue)/100 * usd_erg).toFixed(3);
+			                            	skyharborsoldforusd = (skyharborsoldfor*erg_usd).toFixed(2)
+			                            }
+
 			                            skyharborglobalIndex = dataskyharborhistory.items[j].globalIndex;
-			                            checksellerandspent(skyharborsellerusertree,dataskyharborhistory.items[j].spentTransactionId,skyharborsoldfor,skyharborglobalIndex,tokenidJSON);
+			                            checksellerandspent(skyharborsellerusertree,dataskyharborhistory.items[j].spentTransactionId,skyharborsoldfor,skyharborglobalIndex,tokenidJSON,skyharborsoldforusd);
 
 
 			                            // boolY2K = 1;
@@ -3793,7 +3861,7 @@ fingerprint
 
 
 
-			                    function checksellerandspent(skyharborsellerusertree,spentid, skyharborsoldfor,skyharborglobalIndex,tokenidJSON){
+			                    function checksellerandspent(skyharborsellerusertree,spentid, skyharborsoldfor,skyharborglobalIndex,tokenidJSON,skyharborsoldforusd){
 			                        urlskyharborhistory2 = "https://api.ergoplatform.com/api/v1/transactions/"+spentid
 			                        $.getJSON(urlskyharborhistory2, function(dataskyharborhistory2) {
 			                            
@@ -3815,8 +3883,10 @@ fingerprint
 					                                       "globalIndex":  skyharborglobalIndex,
 					                                       "price": skyharborsoldfor,
 					                                       "urlspentid": spentid,
+					                                       "priceusd" : "($"+skyharborsoldforusd+")"
 					                                    }
 					                              )
+					                              totalsales++;
 				                            	}
 
 
@@ -3831,7 +3901,7 @@ fingerprint
 
 
 
-						                                totalsales++;
+						                                
 						                                
 						                                for(l=0;l<arr.length;l++){
 						                               		
@@ -3852,7 +3922,7 @@ fingerprint
 
 
 						                                    document.getElementById("SKY"+tokenidJSON).innerHTML=document.getElementById("SKY"+tokenidJSON).innerHTML+'<a target="_blank" style="display:none" class="historx'+tokenidJSON+' history" href=https://explorer.ergoplatform.com/en/transactions/'+arr[k].urlspentid+'>'+salesnumber+": "+//arr[k].globalIndex+
-						                                    " Σ"+arr[k].price+" <span class='material-icons' style='font-size:130%'>sailing</span></a>"
+						                                    " Σ"+arr[k].price+" "+arr[k].priceusd+" <span class='material-icons' style='font-size:130%'>sailing</span></a>"
 
 						                                }
 
