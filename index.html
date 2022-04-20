@@ -2481,6 +2481,9 @@ $.lazyload.check();
 
 
 
+
+
+
 <!-- <script type="text/javascript">
 	$(".zoom").one("load", function() {
 	 $(this).css('opacity','1')
@@ -3759,7 +3762,7 @@ fingerprint
 			                            skyharborsellerusertree = dataskyharborhistory.items[j].additionalRegisters.R5.renderedValue
 			                            skyharborsoldfor = (dataskyharborhistory.items[j].additionalRegisters.R4.renderedValue)/1000000000;
 			                            skyharborglobalIndex = dataskyharborhistory.items[j].globalIndex;
-			                            checksellerandspent(skyharborsellerusertree,dataskyharborhistory.items[j].spentTransactionId,skyharborsoldfor,skyharborglobalIndex);
+			                            checksellerandspent(skyharborsellerusertree,dataskyharborhistory.items[j].spentTransactionId,skyharborsoldfor,skyharborglobalIndex,tokenidJSON);
 
 
 			                            // boolY2K = 1;
@@ -3790,7 +3793,7 @@ fingerprint
 
 
 
-			                    function checksellerandspent(skyharborsellerusertree,spentid, skyharborsoldfor,skyharborglobalIndex){
+			                    function checksellerandspent(skyharborsellerusertree,spentid, skyharborsoldfor,skyharborglobalIndex,tokenidJSON){
 			                        urlskyharborhistory2 = "https://api.ergoplatform.com/api/v1/transactions/"+spentid
 			                        $.getJSON(urlskyharborhistory2, function(dataskyharborhistory2) {
 			                            
@@ -3798,8 +3801,15 @@ fingerprint
 			                            
 
 			                            if(1==1){
-
-																			if(skyharborsellerusertree!=dataskyharborhistory2.inputs[0].ergoTree){
+//																	if(skyharborsellerusertree!=dataskyharborhistory2.inputs[0].ergoTree){ acil
+																		var scannedindex = 0;
+																		for(var i=0;i<dataskyharborhistory2.outputs.length;i++){
+																			if(dataskyharborhistory2.outputs[i].assets[0] !== undefined && dataskyharborhistory2.outputs[i].assets[0].tokenId==tokenidJSON){
+																					scannedindex=i;
+																			}
+																		}
+																		// console.log(skyharborsellerusertree+" "+dataskyharborhistory2.outputs[0].ergoTree+" "+dataskyharborhistory2.outputs.length+" "+scannedindex+" "+tokenidJSON)
+																			if(skyharborsellerusertree!=dataskyharborhistory2.outputs[scannedindex].ergoTree){
 					                              arr.push(
 					                                    {
 					                                       "globalIndex":  skyharborglobalIndex,
