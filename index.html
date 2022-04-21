@@ -2499,14 +2499,10 @@ $.lazyload.check();
 
 <script type="text/javascript">
 	$(function() {
-		var w = $(window).width();
-		var h = $(window).height();
 		$('.pop').on('click', function() {
 			$('.imagepreview').attr('src', $(this).find('img').attr('src'));
 			$('#imagemodal').modal({
 			  fadeDuration: 100,
-			  height: h,
-  			width: w
 			})   
 		});		
 	});
@@ -3031,7 +3027,10 @@ function hexToAscii(str){
         return strOut;    
 }
 
+
+
 function myFunctionC() {
+
 
 	$(".grid-container-myergyoroi").html("");
 	$("#msg-myergyoroi").html("<span class='spinnermyergyoroi' ></span>");
@@ -3061,10 +3060,18 @@ function myFunctionC() {
 
                         var ergyoroilink = hexToAscii(data3.additionalRegisters.R9.renderedValue).replace("ipfs://", "https://cloudflare-ipfs.com/ipfs/");
 
-                        var item= $("<div class='grid-item-myergyoroi'><img class='myergyoroiimg zoom' src='"+ergyoroilink+"'></img><div class='ergyoroiname'>"+data3.assets[0].name+"</div><a href='https://ergonfts.org/#/?token="+data3.assets[0].tokenId+"' target=_blank' class='button fit tokenid-myergyoroi'><span class='material-icons' style='font-size:150%'>search</span> Token ID</a></div>").hide().fadeIn(1000);
+                        var item= $("<div class='grid-item-myergyoroi'><a class='pop'><img class='myergyoroiimg zoom' src='"+ergyoroilink+"'></img></a><div class='ergyoroiname'>"+data3.assets[0].name+"</div><a href='https://ergonfts.org/#/?token="+data3.assets[0].tokenId+"' target=_blank' class='button fit tokenid-myergyoroi'><span class='material-icons' style='font-size:150%'>search</span> Token ID</a></div>").hide().fadeIn(1000);
                
                         $(".grid-container-myergyoroi").append(item);
-			
+												
+												$(function() {
+													$('.pop').on('click', function() {
+														$('.imagepreview').attr('src', $(this).find('img').attr('src'));
+														$('#imagemodal').modal({
+														  fadeDuration: 100,
+														})   
+													});		
+												});
 
 
                         if($('.myergyoroiimg').length == totalergyoroi){
