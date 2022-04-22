@@ -1832,6 +1832,13 @@ backspace
 
 	var intervalId = window.setInterval(function(){
 
+		if($(".grid-item")[0].id=="ERGYOROI #001 Hannya The Jealous Demon Evolution"){
+			$('#checknew').prop('checked', false);
+		}else{
+			$('#checknew').prop('checked', true);
+		}
+
+		
 
 		if(	
 		globalcounter==0 &&
