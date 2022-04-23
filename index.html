@@ -28,6 +28,8 @@
 
 
 		<style>
+
+
 .pop{
 	border-bottom: none;
 }
@@ -1655,7 +1657,32 @@ percent
 												<span style="color: #ffae2b;"><span class="boldy"><span style="font-size: 14px;">≤</span> 8%</span></span>
 											</td>																	
 										</tr>
-								
+
+
+
+
+																				<tr style="background-color:rgba(255, 255, 255, 0.05)">
+										<td style="padding: 0px ;text-align: right;">
+												<span style="font-size: 12px;"class="boldy"><span class="material-icons" style="font-size: 16px">emoji_events</span> Hall of Fame Points</span>
+											</td>
+											<td style="padding: 0px; text-align:right;vertical-align: middle;padding-top: 10px;padding-bottom: 14px;">
+																			 <span class="boldy">1 pt</span>
+											</td>
+
+											<td style="padding: 0px; text-align:right;vertical-align: middle;padding-top: 10px;padding-bottom: 14px;">
+																			 <span style="color: #7ab257;"><span class="boldy">2 pts</span></span>
+											</td>
+
+											<td style="padding: 0px; text-align:right;vertical-align: middle;padding-top: 10px;padding-bottom: 14px;">
+																			 <span style="color: #52aeef;"><span class="boldy">4 pts</span></span>
+											</td>
+											<td style="padding: 0px; text-align:right;vertical-align: middle;padding-top: 10px;padding-bottom: 14px;">
+																			 <span style="color: #ab90d7;"><span class="boldy">10 pts</span></span>
+											</td>
+											<td style="padding: 0px; text-align:right;vertical-align: middle;padding-top: 10px;padding-bottom: 14px;">
+																			 <span style="color: #ffae2b;"><span class="boldy">24 pts</span></span>
+											</td>														
+										</tr>
 
 									</table><span style="text-align: left;font-size: 12px">
 <br>
@@ -1714,6 +1741,37 @@ sailing
 
 <br style="   margin: 10px 0;  display: block;">
 
+<div style="text-align: center; background-color:#111111"><span class="boldy" style=" font-size:24px;"><span class="material-icons" style="padding-bottom: 3px;">
+emoji_events
+</span> <span class="zen">HALL OF FAME</span></span></div>
+
+<center>
+<table style="max-width:100%; margin-bottom: 0px;">
+	<tr style="text-align:center">
+		<td style="width: 33.33%;"><span class="pop"><img class="zoom" src="images/t2c.png" style="width: auto;max-width: 70px;"></img></span></td>
+		<td style="width: 33.33%;"><span class="pop"><img class="zoom" src="images/t1c.png" style="width: auto;max-width: 70px;"></img></span></td>
+		<td style="width: 33.33%;"><span class="pop"><img class="zoom" src="images/t3c.png" style="width: auto;max-width: 70px;"></img></span></td>
+	</tr>
+	<tr style="text-align:center">
+
+		<td><span id="tid2" class="boldy" style="color: #9fccc7;"><span class="spinnersmallwhite"></span></span></td>
+		<td><span id="tid1" class="boldy" style="color: #fedf1c;"><span class="spinnersmallwhite"></span></span></td>
+		<td><span id="tid3" class="boldy" style="color: #f47931;"><span class="spinnersmallwhite"></span></span></td>
+	</tr>
+	<tr style="text-align:center">
+		<td><span id="pid2" class="boldy" style="color: #9fccc7;"><span class="spinnersmallwhite"></span></span></td>
+		<td><span id="pid1" class="boldy" style="color: #fedf1c;"><span class="spinnersmallwhite"></span></span></td>
+		<td><span id="pid3" class="boldy" style="color: #f47931;"><span class="spinnersmallwhite"></span></span></td>
+	</tr>
+</table>
+
+</center>
+<span style="font-size:12px"> Check My Points on <a href="#COLLECTION"><span style="font-size: 14px;" class="material-icons">
+inventory_2
+</span> My ERGYOROI Collection</a></span>
+
+<br style="   margin: 10px 0;  display: block;">
+
 <div style="background-color:#111111	; padding: 0px;max-width:100%; ">
 	<div style="background-color:#111111	; padding: 10px;max-width:100%;text-align: right;margin-left: auto; margin-right: 0; font-size: 12px;">
 
@@ -1760,6 +1818,7 @@ backspace
 </span>
 
 <script type="text/javascript">
+
 		var erg_usd = 0;
 		var usd_erg = 0;
 		$.getJSON("https://ergopad.io/api/asset/price/ergo", function(dataerg_usd) {
@@ -1837,7 +1896,8 @@ backspace
 
 <script type="text/javascript">
 	var globalcounter=0;
-
+	var globalmyleaderboard;
+	$('#btn-myergyoroi').prop('disabled', true);
 
 	var intervalId = window.setInterval(function(){
 
@@ -1862,6 +1922,46 @@ backspace
 	
 
 		){
+
+				var myleaderboard = [
+				    {
+				        ID:"0",
+				        PTS:0
+				    }
+				];
+
+				for(var i=0;i<$(".leaderboard").length;i++){
+				    if (myleaderboard.some(item => item.ID === $(".leaderboard")[i].value.split("@!@")[0])) {
+				      myleaderboard[myleaderboard.findIndex(x => x.ID === $(".leaderboard")[i].value.split("@!@")[0])].PTS = parseInt(myleaderboard[myleaderboard.findIndex(x => x.ID === $(".leaderboard")[i].value.split("@!@")[0])].PTS) + parseInt($(".leaderboard")[i].value.split("@!@")[2])
+				    }else{
+				        myleaderboard.push(
+				            {
+				               "ID":  $(".leaderboard")[i].value.split("@!@")[0],
+				               "PTS": parseInt($(".leaderboard")[i].value.split("@!@")[2])
+				            }
+				        )
+				    }
+
+
+				    console.log(myleaderboard)
+				}
+
+				myleaderboard.sort(function(a, b) {
+	        	return parseFloat(b.PTS) - parseFloat(a.PTS);
+	      });
+
+	      globalmyleaderboard = myleaderboard;
+
+				$('#tid1').html(myleaderboard[0].ID.slice(0,3) +".."+myleaderboard[0].ID.slice(-3))
+				$('#tid2').html(myleaderboard[1].ID.slice(0,3) +".."+myleaderboard[1].ID.slice(-3))
+				$('#tid3').html(myleaderboard[2].ID.slice(0,3) +".."+myleaderboard[2].ID.slice(-3))
+				$('#pid1').html(myleaderboard[0].PTS + " pts")
+				$('#pid2').html(myleaderboard[1].PTS + " pts")
+				$('#pid3').html(myleaderboard[2].PTS + " pts")			
+
+				$('#mycollectionspinner').html("")			
+				$('#btn-myergyoroi').prop('disabled', false);
+
 
 				$('#spinneractiveauction').html(" "+($('.firstmarket').length+$('.secondmarket').length));
 
@@ -2106,6 +2206,7 @@ backspace
 	  document.getElementById("checklegendary").checked = false;
 	  document.getElementById("checkactive").checked = false;
 	  document.getElementById("mysearch").value=""
+
 	  	
 	  	var filterrarity = document.getElementsByClassName('grid-item');
 
@@ -2649,137 +2750,141 @@ $.lazyload.check();
   }
 
   const globaltokenid = [
-'98551baac3139284e292a5839d1873593df395c43c5fc1619e789f4da3b00780',
-'fb760068f209cba8c3e63655bbed8afe200ce24f1bd1a6573d3555ef6b48d528',
-'f6af4dd2e5b9311f52edd95579570144f7729b96334ea8782ada9599db65742b',
-'fb8cdacdd0c9a1c13cc2521c871768a0309d2bc6d231dc7ba25f5a775e05f03b',
-'34cb312abbc7f8fb3f147d5b2aa3e5a7e2d8ab96de4315b9b1e25693d6c40703',
-'fd44c2c2eca0368e4eb5dee5c48a6157ca65114eff1207a7133e7108e51e3ae4',
-'cc3c68b062b117c1d0c78be7f5f362b234967b846cb92b787dcab23bcb1d82c4',
-'207b7356a003da53de1328a5124add84a76041c8666e24a28335398a72d67a93',
-'fc849bca5cef21199091373640b9c571d76ec5ebbcb9bfb180b557e2693cd9ed',
-'8c4d4be0a6ef0655cdf8d47b0c3e8d10ac386820b09437f0365762388f764728',
-'f54fececc49171fd32c6b4cba7963f230910f563dfb66fb02e37fb9abf03001b',
-'e1dddc22860912d271833f068ffb85972058cd855b5241b950754580ab096483',
-'c9919b497272ff9cd6354e04b26d6d7495b8aa9f114955ffc32657a95c878532',
-'498606cd6343621749e246261321414864acd5c9dcc3f0a87d2e9490f022b991',
-'9a099d315792502718153576cffe12c5467d1b23110dcc782e2dee2c66a41f7a',
-'3b1012319094c1ec6100ea8a161ee9756a94b80c321e370d36fdcf448880fd2d',
-'0eefe553170b892cc48739c6b39c70d0a060fe69dd5d8f54823b200d90c7c870',
-'3e839050c7f0fab1df029306aa660a7f16eab2be8d3280545c00722f52572b5e',
-'988aa7329da5b1398e08267dcb1ea45299f87e1446a3ad2ff9db50ff7f9b33b9',
-'0640b514697c9059b6007c80ef42e70ae505facf9843cdb90a9d525594d14e89',
-'9ff11af1d3ef0f4d81fdd2808fd47536b0f853900e121e1e7bd5d1005cabbd42',
-'5c6cbb2e118dc4a5d698b0c14015add45bcfd2d6564f172b9a4ef32fdce57c15',
-'fd1ee0204b9da053e3a8f3c2b18551136abd558e992dd42ca2ed6a165b334b7f',
-'52bbcae1f9cb25d3ecc4e5d97c045a438d5526c414f60316e4040958098bb2d2',
-'8ba16d31576a45c55ad76ccc3adc5acfa7ad4a1d6d80912cb2dfc2fe122ee7ec',
-'c7c7771d3da10f4d5e7f7aa1cbae8aac2719793988a448954e7d9ea24e50ee67',
-'4095f5f200dbf3c71bbf0c94e5cc8481cbb94478508cdc5ac01f0f38df8b56ff',
-'663b4af81eea810c0b6532efcb13274463372d9dde83d17fc0496c19076aea4e',
-'36cdc29277681c74a712ed409b998da4139b5b2433f195084858e1d0612b0089',
-'18628098617da2d0224097e20fb8e38a2862385692f9ebd7ec7f7daecd2220e8',
-'fc188a33486da6481d349a3dfa415d7e25e44679793afd9959161cefdfe5b250',
-'da6c2f7b2536df4e5b16e5f53a3159776cd12b8282b59fc0b09daf9dc37a57e1',
-'8f55de31fc003491dec64e764ca3ee67629c23d65c546860c6b04b54515d5419',
-'64ef95c5fb1ba4c9a4b2dd889d66bd5d434cd23c54e8cb1519becac6fd7995eb',
-'78029b54febfa9bccb79e37e8c6332b12b6bab391155f34fcc18888980140da7',
-'791e396dec17e57a973075aa07fdfac8ff5be5c2c9846b39b6959b990001f13e',
-'9188b3301b16751bec5aa320f1f6813181eafd4260350933b973563c7992a39e',
-'2e7e5e0081c2f1484d30734deeda8d4fb716837392b59e65c47ed43c8a17c81c',
-'c418c84106a337e9a0b544687e6d0267b0a9fd33ba5e36e5540504d994568f79',
-'75641c8efa512f94791f6d48bd684dbb2a28cb5d830b7447bbe214e82812624b',
-'3c92801add9210bdc0aef73501e64f411160610d7286a32490bfaad4ee78f84f',
-'8b6dcc4756dd92c9c5d425c4024703eb3ee44189d3da4fd8b2b6a6e492603407',
-'87a025fc3ae1b0c1183dd0743b2235d18f4a8c70345d4fa7e69de225a3401ad2',
-'4aa169c75357d415619fad57f826da9367b1692ac21429ab4be324759196735d',
-'131831df6b900f5d18e95b2b0b55cefabae32b47a3b1b6ec58f0c796d519ae8e',
-'b70dc4a6fb9ab95122327834d76cff7a0ff5e51e05a7526b636a699296cb0974',
-'b7faabdb99813bc3adeb7527fc1f6485b9f83adceeb6ccecde54a51d5099d15e',
-'2883333fac759b695014f8795b9669415c652b4b58c9c0e893795162cd341b4c',
-'27db89a412383a1a8e7b32240d3ab21d1293c71c2347b1875e2a5e644857af4b',
-'8d8bee48399a240013c07e1eaea08df615e684280712286b8207a6637e7fc812',
-'5121ae6269e944edb1ad690197aab4cc5c8455046e3fceee0c3b6cb34f911c35',
-'9364f829772fc2052367a908841b8349c4d175b11ca928148f839d798ba73c55',
-'0bf15bf32faa940c738b38604a65df8e0adbbc371e27a28b09c7f9def8f94c48',
-'0e5e86ef67d7ee304dec1612d14a1c68cb8a15a6280f78c1564d76c4d0328ac5',
-'04c9142fcb4cfce3b5dd1051192e5e1a7298266049c1309510913d20711c9c89',
-'e96e9976f1b03e8baf5a2a66a3c5772caa6475bae4a8dab3e67a9899f9d91d3e',
-'a9b50c51e29d75b2964bf3e262194a91b818ab545877dd649b563963de8ac0fc',
-'c3a062c568870dcca174f8ff28a432cf53e179dce514b5923e5a6f3e45e9cc73',
-'91a3c67094083d9ffb9e3e8b326dbf7c24759bde4f368076a9eefdf53161763e',
-'d29f0f2e5b3aeca0fd5a1ef2d6e8ca8d13eba887818b9c0ecab853ca6bc6d2c1',
-'f1aba2c0f7ded426274b25cede475991dbeaddb88bb5c44bbf9c5f0e24e941e8',
-'4392f5a7cbf5c543253570436307e6d24019119fc360cfeb25b68f407515ec54',
-'d2ec132dbb6e74bce650d4403abcd90ee56d3067a6e7cab7c23da8b01e6d90d3',
-'8595933044d0c17a666b20cf58fd31511fb0f57954a7d27f89c8fc5c6ff1e96e',
-'fc21aac0d69e53ec79e40356366d10900a9861a01e62d62c3008d1537e590215',
-'31d6f93435540f52f067efe2c5888b8d4c4418a4fd28156dd834102c8336a804',
-'0cde2fb531fbae4e1757f4701ca69345cda9f25f5d2d96cba824612d7694a8e3',
-'d39fbb2017217bf80b0d2bae915f5cef70f17e85f654549081980c2372fa091d',
-'3e2963b4d47e0b0b67ae377989f4c553740ec16e71896d193295468ab7c2839c',
-'1916f7bf0fdc155e13a188f4c607e578f443fe4c4b242087c29009b86c259cb7',
-'0a40bc6469963f700af3737055263afb053bc5cd7298ed334abf615510ff552d',
-'ccbda96869e9ebf0c266fd69be8cdd1d628867fa77b144dcb256ea1e1c5346a4',
-'2c2281840576d4c1bc315a84d941fc2d680131d4947e417ac2cc26fbf36379e5',
-'c8b99867fd6aa9b3144e13b6105d5316ea13752f17247a842aebc7d35d1b6863',
-'0e242338a9ebfb95bddb1175d104c2ed3b08dbe0c84be1d94bfeaae9c48df43b',
-'d13e706e6ca75605076d925b1d1bd6ec4c67c5a25ff6c37ec24b12828dbd69c3',
-'e979d6b4abe0f71fa5c872f4cd1e9c191a26def575c87dbd6008678cbe4895a0',
-'97e911bdb28dbd429c75bf8a0942de591a7596367946052d702634afb6a5aece',
-'9b28a759f46342497fb142ee557bc9a1707f4568707e25c2973359dc856c0762',
-'ab6c21f21a322ede56b4ecf82e07485b0ac5a8fbf7e164b72421380502a7586c',
-'9ddfd72835e158ab235d0167e4344c1e1e3281059aa98288977a54be5192aafd',
-'10d5d89a8d81318ab69eaf1e6fd52a3661ca7abbbbbe064761f6405264d56e54',
-'21a7e06cf0ef1b984a2084f7537f67f15008d07ce7da0354f74e74e87e715fb4',
-'c82546c10379df26c15bbae89fa6859291dc69b0fa38f61474f78a06e631434c',
-'f1a460b50b054b536ec83e773f3d43a3bbbb06b66629f120e6ab887483698a9b',
-'fdad8af90587bda873785624ad7b8109481806d7f0d3b5df5979ad53aa54d096',
-'114b633ec03427ede9773eb72968a6b470d937c78ae90ca257a1f393f0f19609',
-'f7f9b57d582bd34e5df29b2dd8fd1705cbe1aa55fd5caeccd72d65dd0db66e91',
-'0aaefe11f89e871c3ebe91432412debdd98e64c28978cf265fd903c6c1be8ea1',
-'4619e6a46b31523ae87d8f09245b46f61dd5f421b0edc04757bc4e879449e57a',
-'7b2ce79ab6f8af2af5177a34c617e05139c4e4273d23aeef19eb1d9a564d7b0c',
-'bf3f7a7043bbbcc1b9c9253af46638db66f1d5f4c1506b76a80df5127db64c5b',
-'ec26b2a347760898dcca1d8ccae98ef8145ccea57f27200256ccbf2ccfa71182',
-'4ac45c1d2271151c534d19457c5f5c87d6ad0c45fdb698d568df848beb2b8131',
-'13af3b8b1d03115fe2ce9afc8e30181d0767a1eae1597a1301991b5aa734414a',
-'78d81eb8429817827fccbb22d0629972746a42b8c7cdc2326c7d57f914e8fe1b',
-'cdaac17080c10b76bb668907e277610cbdfccc79283028753072b2fd764ad093',
-'901f29c703192ad696598c5a4dd6152002fd7cb7f2a763c1cc2ad6e3464c5aa8',
-'fb1dee2ed474309e7f8de960a69c75b501d77cb008a7cc00eabec7df64cef409',
-'f2be777025695f5abc319561b87174807c762bbcff11ab678c60a087863b362d',
-'c2ca4eb76e4f50561dbe61644dd77b56ab436702c1d29372bdec2c9edc23950d',
-'7d7ebc4fc4068965f36ae16b5b30798e297f7d304b11fc4ad5a0e6a9aeef1db4',
-'3b74c06148ded43c5a4043af18946b318cb22e3fa3e70b6388362e312e75a7d4',
-'d93bb0391480c6b0d55f5e2d5b3c27fa201dd7854aa5b4128d0602725b6df253',
-'6ad5673dd9fd1091c8222c317956e5bffb79845077173afca9eb173544411d31',
-'1a27f3306601bf22722231e7660816ef0b0a3ab61c50cf02f45abec6b9c0da41',
-'39961b3e7be818cd1ff7605528107e112e0fb09ff32cb8bbbb7129c2ab06bc60',
-'9f126722da9f04f10b97de8f766bfa8f154c5fc6d34b113c64260e65fe465f10',
-'7901bd97ea250ecf81433e696b26bccf5efc3a8d454e0a251defed5e9e7ae1ab',
-'b12d466ebbd914e9741d8d450f9fb65d8171e36f3d76cd4f6f467334544857a2',
-'f38ac4008c8245d7c954b2cba4824f3473658c63fb6b503643c69b5185a85d6c',
-'195cb115d09d27f71cb51a5cfca19686bbb89c1a37b63495ca6ac3d9a5d67e1b',
-'1e5d0758f4122c92995aaf3635423d9681cc33fb9eda8c958f91eeff8bd28c21',
-'739807fc054d0462734f23ced4e0144a6eac090a0ed1085b7d42fe2f24a214e0',
-'acd1df21d20649aaff38b825de18678e2b14f2f3af226292b3688c292153d5a5',
-'05d51c7813b97c00448b7dd7463a1d0b47d82d6b4325ea5a80dea9127bdd8838',
-'e01542bed9c24d50502a7fda28e37ec33cd523086128dae487e82908d267f556',
-'7a8fe634c691a7c27e00856d4bb3400bc65de6e86fbb26bec60ed3de519b1998',
-'a2bdcb85c9c9f078c67f91915d5fc57d7035506b47b37408153fbfc822624529',
-'381d373ab010dd69e0812f658f1742fc070889d91e8366635d1241416e627265',
-'ccbe85c2e9cfa445d5dc910f4b3d03c7701eb5bf9288ec270eda5394b8be78d8',
-'0ab8c121d6048582f53d030226567ab71c303e504152d74d4beeb7321b2f2783',
-'29138b69f15f09886f53653e4e909cb03c940af871408a5731d7c37688acc0b0',
-'0fd98c8d1d2d0c1a5de36c172d314e86344a1112ebff7fcba7d06b2e11522379',
-'4b6759b7b63a5a167c4c1fdd89357a55d622234312f18f4fc4b65d5c6719059e',
-'7574e91d72074f5571942b8e8e44a4d34ccefb392af6653cd42e613a6371e3d4',
-'5ecec3be9f0aac72ebedc7ce0718fe176147204e645c2b89717b347610bd05bc',
-'21656a4f8a7cbccfaa595e5c51f554c9cfbf76ed30dbba3518f14be2862a60ea',
-'6ac06f639f629dbafd5cf355a072a1917599fa2d2f9e395db42bfe28077e56b1',
-'350f7d1369beb454d8abc1da3af9e69b5602f2ea38ccb6c96237702b55333901',
-'12a00bd9f81bdca7814ec167cb48b21c6b0d8fc0beb849d66388d6242e353c6d',
+
+{'ID':'98551baac3139284e292a5839d1873593df395c43c5fc1619e789f4da3b00780',PTS:4},
+{'ID':'fb760068f209cba8c3e63655bbed8afe200ce24f1bd1a6573d3555ef6b48d528',PTS:4},
+{'ID':'f6af4dd2e5b9311f52edd95579570144f7729b96334ea8782ada9599db65742b',PTS:1},
+{'ID':'fb8cdacdd0c9a1c13cc2521c871768a0309d2bc6d231dc7ba25f5a775e05f03b',PTS:1},
+{'ID':'34cb312abbc7f8fb3f147d5b2aa3e5a7e2d8ab96de4315b9b1e25693d6c40703',PTS:1},
+{'ID':'fd44c2c2eca0368e4eb5dee5c48a6157ca65114eff1207a7133e7108e51e3ae4',PTS:1},
+{'ID':'cc3c68b062b117c1d0c78be7f5f362b234967b846cb92b787dcab23bcb1d82c4',PTS:1},
+{'ID':'207b7356a003da53de1328a5124add84a76041c8666e24a28335398a72d67a93',PTS:1},
+{'ID':'fc849bca5cef21199091373640b9c571d76ec5ebbcb9bfb180b557e2693cd9ed',PTS:1},
+{'ID':'8c4d4be0a6ef0655cdf8d47b0c3e8d10ac386820b09437f0365762388f764728',PTS:1},
+{'ID':'f54fececc49171fd32c6b4cba7963f230910f563dfb66fb02e37fb9abf03001b',PTS:2},
+{'ID':'e1dddc22860912d271833f068ffb85972058cd855b5241b950754580ab096483',PTS:2},
+{'ID':'c9919b497272ff9cd6354e04b26d6d7495b8aa9f114955ffc32657a95c878532',PTS:2},
+{'ID':'498606cd6343621749e246261321414864acd5c9dcc3f0a87d2e9490f022b991',PTS:2},
+{'ID':'9a099d315792502718153576cffe12c5467d1b23110dcc782e2dee2c66a41f7a',PTS:10},
+{'ID':'3b1012319094c1ec6100ea8a161ee9756a94b80c321e370d36fdcf448880fd2d',PTS:1},
+{'ID':'0eefe553170b892cc48739c6b39c70d0a060fe69dd5d8f54823b200d90c7c870',PTS:1},
+{'ID':'3e839050c7f0fab1df029306aa660a7f16eab2be8d3280545c00722f52572b5e',PTS:1},
+{'ID':'988aa7329da5b1398e08267dcb1ea45299f87e1446a3ad2ff9db50ff7f9b33b9',PTS:1},
+{'ID':'0640b514697c9059b6007c80ef42e70ae505facf9843cdb90a9d525594d14e89',PTS:1},
+{'ID':'9ff11af1d3ef0f4d81fdd2808fd47536b0f853900e121e1e7bd5d1005cabbd42',PTS:1},
+{'ID':'5c6cbb2e118dc4a5d698b0c14015add45bcfd2d6564f172b9a4ef32fdce57c15',PTS:1},
+{'ID':'fd1ee0204b9da053e3a8f3c2b18551136abd558e992dd42ca2ed6a165b334b7f',PTS:1},
+{'ID':'52bbcae1f9cb25d3ecc4e5d97c045a438d5526c414f60316e4040958098bb2d2',PTS:2},
+{'ID':'8ba16d31576a45c55ad76ccc3adc5acfa7ad4a1d6d80912cb2dfc2fe122ee7ec',PTS:2},
+{'ID':'c7c7771d3da10f4d5e7f7aa1cbae8aac2719793988a448954e7d9ea24e50ee67',PTS:2},
+{'ID':'4095f5f200dbf3c71bbf0c94e5cc8481cbb94478508cdc5ac01f0f38df8b56ff',PTS:2},
+{'ID':'663b4af81eea810c0b6532efcb13274463372d9dde83d17fc0496c19076aea4e',PTS:4},
+{'ID':'36cdc29277681c74a712ed409b998da4139b5b2433f195084858e1d0612b0089',PTS:4},
+{'ID':'18628098617da2d0224097e20fb8e38a2862385692f9ebd7ec7f7daecd2220e8',PTS:10},
+{'ID':'fc188a33486da6481d349a3dfa415d7e25e44679793afd9959161cefdfe5b250',PTS:1},
+{'ID':'da6c2f7b2536df4e5b16e5f53a3159776cd12b8282b59fc0b09daf9dc37a57e1',PTS:1},
+{'ID':'8f55de31fc003491dec64e764ca3ee67629c23d65c546860c6b04b54515d5419',PTS:1},
+{'ID':'64ef95c5fb1ba4c9a4b2dd889d66bd5d434cd23c54e8cb1519becac6fd7995eb',PTS:1},
+{'ID':'78029b54febfa9bccb79e37e8c6332b12b6bab391155f34fcc18888980140da7',PTS:1},
+{'ID':'791e396dec17e57a973075aa07fdfac8ff5be5c2c9846b39b6959b990001f13e',PTS:1},
+{'ID':'9188b3301b16751bec5aa320f1f6813181eafd4260350933b973563c7992a39e',PTS:1},
+{'ID':'2e7e5e0081c2f1484d30734deeda8d4fb716837392b59e65c47ed43c8a17c81c',PTS:1},
+{'ID':'c418c84106a337e9a0b544687e6d0267b0a9fd33ba5e36e5540504d994568f79',PTS:2},
+{'ID':'75641c8efa512f94791f6d48bd684dbb2a28cb5d830b7447bbe214e82812624b',PTS:2},
+{'ID':'3c92801add9210bdc0aef73501e64f411160610d7286a32490bfaad4ee78f84f',PTS:2},
+{'ID':'8b6dcc4756dd92c9c5d425c4024703eb3ee44189d3da4fd8b2b6a6e492603407',PTS:2},
+{'ID':'87a025fc3ae1b0c1183dd0743b2235d18f4a8c70345d4fa7e69de225a3401ad2',PTS:4},
+{'ID':'4aa169c75357d415619fad57f826da9367b1692ac21429ab4be324759196735d',PTS:4},
+{'ID':'131831df6b900f5d18e95b2b0b55cefabae32b47a3b1b6ec58f0c796d519ae8e',PTS:10},
+{'ID':'b70dc4a6fb9ab95122327834d76cff7a0ff5e51e05a7526b636a699296cb0974',PTS:24},
+{'ID':'b7faabdb99813bc3adeb7527fc1f6485b9f83adceeb6ccecde54a51d5099d15e',PTS:1},
+{'ID':'2883333fac759b695014f8795b9669415c652b4b58c9c0e893795162cd341b4c',PTS:1},
+{'ID':'27db89a412383a1a8e7b32240d3ab21d1293c71c2347b1875e2a5e644857af4b',PTS:1},
+{'ID':'8d8bee48399a240013c07e1eaea08df615e684280712286b8207a6637e7fc812',PTS:1},
+{'ID':'5121ae6269e944edb1ad690197aab4cc5c8455046e3fceee0c3b6cb34f911c35',PTS:1},
+{'ID':'9364f829772fc2052367a908841b8349c4d175b11ca928148f839d798ba73c55',PTS:1},
+{'ID':'0bf15bf32faa940c738b38604a65df8e0adbbc371e27a28b09c7f9def8f94c48',PTS:1},
+{'ID':'0e5e86ef67d7ee304dec1612d14a1c68cb8a15a6280f78c1564d76c4d0328ac5',PTS:1},
+{'ID':'04c9142fcb4cfce3b5dd1051192e5e1a7298266049c1309510913d20711c9c89',PTS:2},
+{'ID':'e96e9976f1b03e8baf5a2a66a3c5772caa6475bae4a8dab3e67a9899f9d91d3e',PTS:2},
+{'ID':'a9b50c51e29d75b2964bf3e262194a91b818ab545877dd649b563963de8ac0fc',PTS:2},
+{'ID':'c3a062c568870dcca174f8ff28a432cf53e179dce514b5923e5a6f3e45e9cc73',PTS:2},
+{'ID':'91a3c67094083d9ffb9e3e8b326dbf7c24759bde4f368076a9eefdf53161763e',PTS:4},
+{'ID':'d29f0f2e5b3aeca0fd5a1ef2d6e8ca8d13eba887818b9c0ecab853ca6bc6d2c1',PTS:4},
+{'ID':'f1aba2c0f7ded426274b25cede475991dbeaddb88bb5c44bbf9c5f0e24e941e8',PTS:10},
+{'ID':'4392f5a7cbf5c543253570436307e6d24019119fc360cfeb25b68f407515ec54',PTS:1},
+{'ID':'d2ec132dbb6e74bce650d4403abcd90ee56d3067a6e7cab7c23da8b01e6d90d3',PTS:1},
+{'ID':'8595933044d0c17a666b20cf58fd31511fb0f57954a7d27f89c8fc5c6ff1e96e',PTS:1},
+{'ID':'fc21aac0d69e53ec79e40356366d10900a9861a01e62d62c3008d1537e590215',PTS:1},
+{'ID':'31d6f93435540f52f067efe2c5888b8d4c4418a4fd28156dd834102c8336a804',PTS:1},
+{'ID':'0cde2fb531fbae4e1757f4701ca69345cda9f25f5d2d96cba824612d7694a8e3',PTS:1},
+{'ID':'d39fbb2017217bf80b0d2bae915f5cef70f17e85f654549081980c2372fa091d',PTS:1},
+{'ID':'3e2963b4d47e0b0b67ae377989f4c553740ec16e71896d193295468ab7c2839c',PTS:1},
+{'ID':'1916f7bf0fdc155e13a188f4c607e578f443fe4c4b242087c29009b86c259cb7',PTS:2},
+{'ID':'0a40bc6469963f700af3737055263afb053bc5cd7298ed334abf615510ff552d',PTS:2},
+{'ID':'ccbda96869e9ebf0c266fd69be8cdd1d628867fa77b144dcb256ea1e1c5346a4',PTS:2},
+{'ID':'2c2281840576d4c1bc315a84d941fc2d680131d4947e417ac2cc26fbf36379e5',PTS:2},
+{'ID':'c8b99867fd6aa9b3144e13b6105d5316ea13752f17247a842aebc7d35d1b6863',PTS:4},
+{'ID':'0e242338a9ebfb95bddb1175d104c2ed3b08dbe0c84be1d94bfeaae9c48df43b',PTS:4},
+{'ID':'d13e706e6ca75605076d925b1d1bd6ec4c67c5a25ff6c37ec24b12828dbd69c3',PTS:10},
+{'ID':'e979d6b4abe0f71fa5c872f4cd1e9c191a26def575c87dbd6008678cbe4895a0',PTS:24},
+{'ID':'97e911bdb28dbd429c75bf8a0942de591a7596367946052d702634afb6a5aece',PTS:1},
+{'ID':'9b28a759f46342497fb142ee557bc9a1707f4568707e25c2973359dc856c0762',PTS:1},
+{'ID':'ab6c21f21a322ede56b4ecf82e07485b0ac5a8fbf7e164b72421380502a7586c',PTS:1},
+{'ID':'9ddfd72835e158ab235d0167e4344c1e1e3281059aa98288977a54be5192aafd',PTS:1},
+{'ID':'10d5d89a8d81318ab69eaf1e6fd52a3661ca7abbbbbe064761f6405264d56e54',PTS:1},
+{'ID':'21a7e06cf0ef1b984a2084f7537f67f15008d07ce7da0354f74e74e87e715fb4',PTS:1},
+{'ID':'c82546c10379df26c15bbae89fa6859291dc69b0fa38f61474f78a06e631434c',PTS:1},
+{'ID':'f1a460b50b054b536ec83e773f3d43a3bbbb06b66629f120e6ab887483698a9b',PTS:1},
+{'ID':'fdad8af90587bda873785624ad7b8109481806d7f0d3b5df5979ad53aa54d096',PTS:2},
+{'ID':'114b633ec03427ede9773eb72968a6b470d937c78ae90ca257a1f393f0f19609',PTS:2},
+{'ID':'f7f9b57d582bd34e5df29b2dd8fd1705cbe1aa55fd5caeccd72d65dd0db66e91',PTS:2},
+{'ID':'0aaefe11f89e871c3ebe91432412debdd98e64c28978cf265fd903c6c1be8ea1',PTS:2},
+{'ID':'4619e6a46b31523ae87d8f09245b46f61dd5f421b0edc04757bc4e879449e57a',PTS:4},
+{'ID':'7b2ce79ab6f8af2af5177a34c617e05139c4e4273d23aeef19eb1d9a564d7b0c',PTS:4},
+{'ID':'bf3f7a7043bbbcc1b9c9253af46638db66f1d5f4c1506b76a80df5127db64c5b',PTS:10},
+{'ID':'ec26b2a347760898dcca1d8ccae98ef8145ccea57f27200256ccbf2ccfa71182',PTS:1},
+{'ID':'4ac45c1d2271151c534d19457c5f5c87d6ad0c45fdb698d568df848beb2b8131',PTS:1},
+{'ID':'13af3b8b1d03115fe2ce9afc8e30181d0767a1eae1597a1301991b5aa734414a',PTS:1},
+{'ID':'78d81eb8429817827fccbb22d0629972746a42b8c7cdc2326c7d57f914e8fe1b',PTS:1},
+{'ID':'cdaac17080c10b76bb668907e277610cbdfccc79283028753072b2fd764ad093',PTS:1},
+{'ID':'901f29c703192ad696598c5a4dd6152002fd7cb7f2a763c1cc2ad6e3464c5aa8',PTS:1},
+{'ID':'fb1dee2ed474309e7f8de960a69c75b501d77cb008a7cc00eabec7df64cef409',PTS:1},
+{'ID':'f2be777025695f5abc319561b87174807c762bbcff11ab678c60a087863b362d',PTS:1},
+{'ID':'c2ca4eb76e4f50561dbe61644dd77b56ab436702c1d29372bdec2c9edc23950d',PTS:2},
+{'ID':'7d7ebc4fc4068965f36ae16b5b30798e297f7d304b11fc4ad5a0e6a9aeef1db4',PTS:2},
+{'ID':'3b74c06148ded43c5a4043af18946b318cb22e3fa3e70b6388362e312e75a7d4',PTS:2},
+{'ID':'d93bb0391480c6b0d55f5e2d5b3c27fa201dd7854aa5b4128d0602725b6df253',PTS:2},
+{'ID':'6ad5673dd9fd1091c8222c317956e5bffb79845077173afca9eb173544411d31',PTS:4},
+{'ID':'1a27f3306601bf22722231e7660816ef0b0a3ab61c50cf02f45abec6b9c0da41',PTS:4},
+{'ID':'ad59ffa4c30b1d04d1fcc7be1fc62c9a49196e3a0009aa75252e0bd2db73bd79',PTS:10},
+{'ID':'39961b3e7be818cd1ff7605528107e112e0fb09ff32cb8bbbb7129c2ab06bc60',PTS:24},
+{'ID':'9f126722da9f04f10b97de8f766bfa8f154c5fc6d34b113c64260e65fe465f10',PTS:2},
+{'ID':'7901bd97ea250ecf81433e696b26bccf5efc3a8d454e0a251defed5e9e7ae1ab',PTS:1},
+{'ID':'b12d466ebbd914e9741d8d450f9fb65d8171e36f3d76cd4f6f467334544857a2',PTS:1},
+{'ID':'f38ac4008c8245d7c954b2cba4824f3473658c63fb6b503643c69b5185a85d6c',PTS:1},
+{'ID':'195cb115d09d27f71cb51a5cfca19686bbb89c1a37b63495ca6ac3d9a5d67e1b',PTS:1},
+{'ID':'1e5d0758f4122c92995aaf3635423d9681cc33fb9eda8c958f91eeff8bd28c21',PTS:1},
+{'ID':'739807fc054d0462734f23ced4e0144a6eac090a0ed1085b7d42fe2f24a214e0',PTS:1},
+{'ID':'acd1df21d20649aaff38b825de18678e2b14f2f3af226292b3688c292153d5a5',PTS:1},
+{'ID':'05d51c7813b97c00448b7dd7463a1d0b47d82d6b4325ea5a80dea9127bdd8838',PTS:1},
+{'ID':'e01542bed9c24d50502a7fda28e37ec33cd523086128dae487e82908d267f556',PTS:2},
+{'ID':'7a8fe634c691a7c27e00856d4bb3400bc65de6e86fbb26bec60ed3de519b1998',PTS:2},
+{'ID':'a2bdcb85c9c9f078c67f91915d5fc57d7035506b47b37408153fbfc822624529',PTS:2},
+{'ID':'381d373ab010dd69e0812f658f1742fc070889d91e8366635d1241416e627265',PTS:2},
+{'ID':'ccbe85c2e9cfa445d5dc910f4b3d03c7701eb5bf9288ec270eda5394b8be78d8',PTS:4},
+{'ID':'0ab8c121d6048582f53d030226567ab71c303e504152d74d4beeb7321b2f2783',PTS:4},
+{'ID':'29138b69f15f09886f53653e4e909cb03c940af871408a5731d7c37688acc0b0',PTS:10},
+{'ID':'0fd98c8d1d2d0c1a5de36c172d314e86344a1112ebff7fcba7d06b2e11522379',PTS:1},
+{'ID':'4b6759b7b63a5a167c4c1fdd89357a55d622234312f18f4fc4b65d5c6719059e',PTS:1},
+{'ID':'7574e91d72074f5571942b8e8e44a4d34ccefb392af6653cd42e613a6371e3d4',PTS:1},
+{'ID':'5ecec3be9f0aac72ebedc7ce0718fe176147204e645c2b89717b347610bd05bc',PTS:1},
+{'ID':'21656a4f8a7cbccfaa595e5c51f554c9cfbf76ed30dbba3518f14be2862a60ea',PTS:1},
+{'ID':'6ac06f639f629dbafd5cf355a072a1917599fa2d2f9e395db42bfe28077e56b1',PTS:1},
+{'ID':'350f7d1369beb454d8abc1da3af9e69b5602f2ea38ccb6c96237702b55333901',PTS:1},
+{'ID':'12a00bd9f81bdca7814ec167cb48b21c6b0d8fc0beb849d66388d6242e353c6d',PTS:1},
+
+
 
 
 
@@ -2793,7 +2898,13 @@ function myFunctionD() {
 
   var tokenid = globaltokenid;
 
-  if (tokenid.includes(x)) {
+  // if (tokenid[0].includes(x)) {
+  // 	document.getElementById("msg").innerHTML='<span  style="color:aquamarine; ">100% Authentic ERGYOROI Token,</span> to avoid mis-information please always double check with other method below<br></span>'
+  // }else{
+  // 	document.getElementById("msg").innerHTML='<span  style="color:crimson; ">NOT an ERGYOROI Token,</span> to avoid mis-information please always double check with other method below<br></span>'
+  // }
+
+  if (tokenid.some(item => item.ID === x)) {
   	document.getElementById("msg").innerHTML='<span  style="color:aquamarine; ">100% Authentic ERGYOROI Token,</span> to avoid mis-information please always double check with other method below<br></span>'
   }else{
   	document.getElementById("msg").innerHTML='<span  style="color:crimson; ">NOT an ERGYOROI Token,</span> to avoid mis-information please always double check with other method below<br></span>'
@@ -2949,9 +3060,9 @@ inventory_2
 <input style="max-width: 800px" type="text" placeholder="Input your / any Wallet Address" required="required" id="MYWALLETIDC" pattern="[a-zA-Z0-9]{51,51}" oninvalid="setCustomValidity('Make sure its valid Wallet Address and not a typo')" oninput="try{setCustomValidity('')}catch(e){}" >
 <span id="msg-myergyoroi" style="font-size: 14px;" class="boldy"></span>
 <br>
-<button type="submit" style="font-size:0.5em" id="btn-myergyoroi"><span class="material-icons" style="font-size:150%">
+<button type="submit" style="font-size:0.5em" id="btn-myergyoroi" disabled="disabled"><span class="material-icons" style="font-size:150%">
 account_balance_wallet
-</span> Show My ERGYOROI Collection</button>
+</span> Show My ERGYOROI Collection <span id="mycollectionspinner"><span class="spinnersmallwhite" style="line-height:1"></span></span></button>
 </form>
 <div class="grid-container-myergyoroi"></div>
 </section>
@@ -3072,7 +3183,7 @@ function myFunctionC() {
 
           for(var i=0;i<data.tokens.length;i++){
             
-            if(jQuery.inArray(data.tokens[i].tokenId, globaltokenid) !== -1){
+            if(  globaltokenid.some(item => item.ID === data.tokens[i].tokenId)){
                 //console.log(data.tokens[i].tokenId);
                 totalergyoroi++;
 
@@ -3126,7 +3237,12 @@ function myFunctionC() {
           	$("#btn-myergyoroi").prop('disabled', false);
 
           }else{
-          	$("#msg-myergyoroi").html("<span  style='color:aquamarine; '>You own "+totalergyoroi+" Authentic ERGYOROI,</span> any ERGYOROI that in active auction / sales won't be displayed<br>");
+
+          	if(x=="9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu"){
+          	$("#msg-myergyoroi").html("<span  style='color:aquamarine; '>You own "+totalergyoroi+" Authentic ERGYOROI,</span> any ERGYOROI that in active auction / sales won't be displayed<br><span  style='color:aquamarine; '>Total Hall of Fame Points: Please Insert Your Wallet Address Instead Artist Address<br>");
+          	}else{
+              $("#msg-myergyoroi").html("<span  style='color:aquamarine; '>You own "+totalergyoroi+" Authentic ERGYOROI,</span> any ERGYOROI that in active auction / sales won't be displayed<br><span  style='color:aquamarine; '>Total Hall of Fame Points: "+globalmyleaderboard[globalmyleaderboard.findIndex(y => y.ID === x)].PTS+"<br>"); 		
+          	}
 
           }
 
@@ -3337,7 +3453,7 @@ fingerprint
 
 								slicedcurrowner = datacurrowner.items[0].address.slice(0,3)+".."+datacurrowner.items[0].address.slice(-3);
 								$("#CURR"+tokenidJSON).attr("class", "currowner");
-							document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> CURRENT OWNER<br>'+slicedcurrowner+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
+							document.getElementById("CURR"+tokenidJSON).innerHTML = '<input type="hidden" class="leaderboard" value="'+datacurrowner.items[0].address+'@!@'+tokenidJSON+'@!@'+globaltokenid[globaltokenid.findIndex(x => x.ID === tokenidJSON)].PTS+'"><span class="material-icons" style="font-size:130%">person_pin_circle</span> CURRENT OWNER<br>'+slicedcurrowner+' <span class="material-icons" style="font-size:130%">open_in_new</span>';
 							$("#CURR"+tokenidJSON).attr("href", "https://explorer.ergoplatform.com/en/addresses/"+datacurrowner.items[0].address);
 
 						}else if(datacurrowner.items[0].address.slice(0,3)=="5t1"&&document.getElementById("CURR"+tokenidJSON)!=null){
