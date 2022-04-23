@@ -30,6 +30,7 @@
 		<style>
 
 
+
 .pop{
 	border-bottom: none;
 }
@@ -1895,9 +1896,14 @@ backspace
 </script>
 
 <script type="text/javascript">
+	$(document).ready(function() {
+		$('#btn-myergyoroi').prop('disabled', true);
+		$('#btn-myergyoroi').attr("disabled", 'disabled');  
+
+	});
 	var globalcounter=0;
 	var globalmyleaderboard;
-	$('#btn-myergyoroi').prop('disabled', true);
+
 
 	var intervalId = window.setInterval(function(){
 
@@ -2193,6 +2199,8 @@ backspace
 	}
 
 	function onPageLoadFunc() {
+		$('#btn-myergyoroi').prop('disabled', true);
+		$('#btn-myergyoroi').attr("disabled", 'disabled');
 		if($('#checknew').is(":checked")==true){
 	 		$('#checknew').prop('checked', false);
 	 		mynew();
@@ -3060,7 +3068,7 @@ inventory_2
 <input style="max-width: 800px" type="text" placeholder="Input your / any Wallet Address" required="required" id="MYWALLETIDC" pattern="[a-zA-Z0-9]{51,51}" oninvalid="setCustomValidity('Make sure its valid Wallet Address and not a typo')" oninput="try{setCustomValidity('')}catch(e){}" >
 <span id="msg-myergyoroi" style="font-size: 14px;" class="boldy"></span>
 <br>
-<button type="submit" style="font-size:0.5em" id="btn-myergyoroi" disabled="disabled"><span class="material-icons" style="font-size:150%">
+<button  type="submit" disabled="disabled" style="font-size:0.5em" id="btn-myergyoroi" ><span class="material-icons" style="font-size:150%">
 account_balance_wallet
 </span> Show My ERGYOROI Collection <span id="mycollectionspinner"><span class="spinnersmallwhite" style="line-height:1"></span></span></button>
 </form>
@@ -3171,7 +3179,8 @@ function myFunctionC() {
 
 	$(".grid-container-myergyoroi").html("");
 	$("#msg-myergyoroi").html("<span class='spinnermyergyoroi' ></span>");
-	$("#btn-myergyoroi").prop('disabled', true);
+	$('#btn-myergyoroi').prop('disabled', true);
+	$('#btn-myergyoroi').attr("disabled", 'disabled');
 
   var x=document.getElementById("MYWALLETIDC").value;
 
