@@ -3243,15 +3243,15 @@ function myFunctionC() {
           }
 
           if(totalergyoroi==0){
-          	$("#msg-myergyoroi").html("<span  style='color:crimson; '>Seems like you dont own any ERGYOROI yet,</span> get one or try again later, any ERGYOROI that in active auction / sales won't be displayed<br>");
+          	$("#msg-myergyoroi").html("<span  style='color:crimson; '>Seems like you dont own any ERGYOROI yet,</span> get one or try again later, any ERGYOROI that in active auction / sales won't be displayed / calculated<br>");
           	$("#btn-myergyoroi").prop('disabled', false);
 
           }else{
 
           	if(x=="9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu"){
-          	$("#msg-myergyoroi").html("<span  style='color:aquamarine; '>You own "+totalergyoroi+" Authentic ERGYOROI,</span> any ERGYOROI that in active auction / sales won't be displayed<br><span  style='color:aquamarine; '>Total Hall of Fame Points: Please Insert Your Wallet Address Instead Artist Address<br>");
+          	$("#msg-myergyoroi").html("<span  style='color:aquamarine; '>You own "+totalergyoroi+" Authentic ERGYOROI,</span> any ERGYOROI that in active auction / sales won't be displayed / calculated<br><span  style='color:aquamarine; '>Total Hall of Fame Points: Please Insert Your Wallet Address Instead Artist Address<br>");
           	}else{
-              $("#msg-myergyoroi").html("<span  style='color:aquamarine; '>You own "+totalergyoroi+" Authentic ERGYOROI,</span> any ERGYOROI that in active auction / sales won't be displayed<br><span  style='color:aquamarine; '>Total Hall of Fame Points: "+globalmyleaderboard[globalmyleaderboard.findIndex(y => y.ID === x)].PTS+"<br>"); 		
+              $("#msg-myergyoroi").html("<span  style='color:aquamarine; '>You own "+totalergyoroi+" Authentic ERGYOROI,</span> any ERGYOROI that in active auction / sales won't be displayed / calculated<br><span  style='color:aquamarine; '>Total Hall of Fame Points: "+globalmyleaderboard[globalmyleaderboard.findIndex(y => y.ID === x)].PTS+"<br>"); 		
           	}
 
           }
