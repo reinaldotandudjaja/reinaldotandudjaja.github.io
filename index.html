@@ -1950,7 +1950,7 @@ backspace
 				    }
 
 
-				    console.log(myleaderboard)
+				    //console.log(myleaderboard)
 				}
 
 				myleaderboard.sort(function(a, b) {
@@ -2086,7 +2086,7 @@ backspace
 						var e = $('.EPIC').length
 						var l = $('.LEGENDARY').length
 
-						console.log(c/allrarity*100);
+						//console.log(c/allrarity*100);
 						function roundToTwo(num) {    
 						    return +(Math.round(num + "e+2")  + "e-2");
 						}
@@ -3477,7 +3477,7 @@ fingerprint
 								$.getJSON(urlwhobid, function(datawhobid) {
 									whobid = datawhobid.items[0].address.slice(0,3)+".."+datawhobid.items[0].address.slice(-3);
 									lastbid = '<span class="material-icons blink" style="font-size:130%;color:red">circle</span> '+whobid+' BID Σ'+ lastbid;
-									console.log(lastbid)
+									//console.log(lastbid)
 
 									var activeauctionby;
 									var urlactiveauctionby = "https://api.ergoplatform.com/api/v1/boxes/unspent/byErgoTree/"+datacurrowner.items[0].additionalRegisters.R4.renderedValue+"?limit=1"
@@ -3521,7 +3521,7 @@ fingerprint
 									$.getJSON(urlwhobid, function(datawhobid) {
 										whobid = datawhobid.items[0].address.slice(0,3)+".."+datawhobid.items[0].address.slice(-3);
 										lastbid = '<span class="material-icons blink" style="font-size:130%;color:red">circle</span> '+whobid+' BID '+ datacurrowner.items[0].assets[1].amount + " " + datacurrowner.items[0].assets[1].name ;
-										console.log(lastbid)
+										//console.log(lastbid)
 
 										var activeauctionby;
 										var urlactiveauctionby = "https://api.ergoplatform.com/api/v1/boxes/unspent/byErgoTree/"+datacurrowner.items[0].additionalRegisters.R4.renderedValue+"?limit=1"
@@ -3616,7 +3616,7 @@ fingerprint
 							$("#CURR"+tokenidJSON).attr("href", "https://www.skyharbor.io/collection/ergyoroi");
 							$("#CURR"+tokenidJSON).parent().parent().addClass('ACTIVE');
 
-							console.log(skyharborprice);
+							//console.log(skyharborprice);
 
 						}else if(datacurrowner.items[0].address.slice(0,3)==usd_skyp2sslice &&document.getElementById("CURR"+tokenidJSON)!=null){
 
@@ -3736,7 +3736,7 @@ fingerprint
 
 																data4RNT=data4RNT.flat();
 
-																console.log(data4RNT);
+																//console.log(data4RNT);
 
 
 
@@ -4122,7 +4122,7 @@ fingerprint
 						                               		
 						                                	if(arr[l].price>maxskyvalue){
 						                                		maxskyvalue=arr[l].price
-						                                		console.log(maxskyvalue);
+						                                		//console.log(maxskyvalue);
 						                                	}else{
 						                                		maxskyvalue=maxskyvalue
 						                                	}
