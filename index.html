@@ -1959,9 +1959,9 @@ backspace
 
 	      globalmyleaderboard = myleaderboard;
 
-				$('#tid1').html(myleaderboard[0].ID.slice(0,3) +".."+myleaderboard[0].ID.slice(-3))
-				$('#tid2').html(myleaderboard[1].ID.slice(0,3) +".."+myleaderboard[1].ID.slice(-3))
-				$('#tid3').html(myleaderboard[2].ID.slice(0,3) +".."+myleaderboard[2].ID.slice(-3))
+				$('#tid1').html('<a style="border-bottom:none" target="_blank" href='+'https://explorer.ergoplatform.com/en/addresses/'+myleaderboard[0].ID+'>'+myleaderboard[0].ID.slice(0,3) +".."+myleaderboard[0].ID.slice(-3)+'</a>')
+				$('#tid2').html('<a style="border-bottom:none" target="_blank" href='+'https://explorer.ergoplatform.com/en/addresses/'+myleaderboard[0].ID+'>'+myleaderboard[1].ID.slice(0,3) +".."+myleaderboard[1].ID.slice(-3)+'</a>')
+				$('#tid3').html('<a style="border-bottom:none" target="_blank" href='+'https://explorer.ergoplatform.com/en/addresses/'+myleaderboard[0].ID+'>'+myleaderboard[2].ID.slice(0,3) +".."+myleaderboard[2].ID.slice(-3)+'</a>')
 				$('#pid1').html(myleaderboard[0].PTS + " pts")
 				$('#pid2').html(myleaderboard[1].PTS + " pts")
 				$('#pid3').html(myleaderboard[2].PTS + " pts")			
