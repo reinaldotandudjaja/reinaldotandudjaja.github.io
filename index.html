@@ -28,6 +28,18 @@
 
 
 		<style>
+.fullscreen {
+    opacity:0.9;
+    background-color:#000;
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    z-index:100000;
+    display: none;
+}
+
 .tdclass{
 	padding-top: 0px;
 	padding-bottom: 10px;
@@ -1373,7 +1385,10 @@ overflow: hidden;
 	</head>
 	<body class="is-preload" onpageshow="onPageShow()">
 
-
+<div class="fullscreen">
+  <div class="boldy" style="font-size:16px;text-align: center; padding-top: 45vh">ergyoroi.com not loading ? <br>
+  reload in <span id="reloadcounter"></span></div>
+</div>
 
 
 <div id="myBtnAvatar"><img width="100px" class="zoom" src="images/ERGYOROI/ERGYOROI %23001 Hannya The Jealous Demon Evolution.png"></img>
@@ -2000,6 +2015,8 @@ backspace
 	});
 	var globalcounter=0;
 	var globalmyleaderboard;
+	var reloadcounter=5;
+	var reloadcountercd=0;
 
 
 	var intervalId = window.setInterval(function(){
@@ -2008,6 +2025,17 @@ backspace
 			$('#checknew').prop('checked', false);
 		}else{
 			$('#checknew').prop('checked', true);
+		}
+
+		reloadcountercd++;
+		if(globalcounter==0&&reloadcountercd>10){ //2 seconds
+			$('#reloadcounter').html(reloadcounter)
+			reloadcounter--
+
+			$('.fullscreen').show();
+			if(reloadcounter==-1){
+				 location.reload(); 
+			}
 		}
 
 
