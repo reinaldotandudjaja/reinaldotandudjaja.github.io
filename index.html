@@ -4191,11 +4191,11 @@ fingerprint
 			                    var pretotalsalescounter=0;
 			                    for (var j = 0; j < dataskyharborhistory.items.length; j++) {
 
-			                        if((dataskyharborhistory.items[j].address==skyp2s || dataskyharborhistory.items[j].address==usd_skyp2s) && (dataskyharborhistory.items[j].spentTransactionId) !== null){
+			                        if((dataskyharborhistory.items[j].address==skyp2s || dataskyharborhistory.items[j].address==usd_skyp2s || dataskyharborhistory.items[j].address==skyp2s2) && (dataskyharborhistory.items[j].spentTransactionId) !== null){
 			                            pretotalsalescounter++;
 			                            skyharborsellerusertree = dataskyharborhistory.items[j].additionalRegisters.R5.renderedValue
 
-			                            if(dataskyharborhistory.items[j].address==skyp2s){
+			                            if(dataskyharborhistory.items[j].address==skyp2s || dataskyharborhistory.items[j].address==skyp2s2){
 			                            	skyharborsoldfor = (dataskyharborhistory.items[j].additionalRegisters.R4.renderedValue)/1000000000;
 			                            	skyharborsoldforusd = (skyharborsoldfor*erg_usd).toFixed(2)
 			                            }else if(dataskyharborhistory.items[j].address==usd_skyp2s){
@@ -4441,7 +4441,7 @@ fingerprint
 
 															        for (var i = 0; i < dataskyharborONR.items.length; i++) {
 
-															            if(dataskyharborONR.items[i].address==skyp2s && (dataskyharborONR.items[i+1]) !== undefined && dataskyharborONR.items[i+1].address != "9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu" && dataskyharborONR.items[i+1].address.length == 51 ){
+															            if((dataskyharborONR.items[i].address==skyp2s || dataskyharborONR.items[i].address==skyp2s2) && (dataskyharborONR.items[i+1]) !== undefined && dataskyharborONR.items[i+1].address != "9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu" && dataskyharborONR.items[i+1].address.length == 51 ){
 
 															           
 															                boolY2K = 1;
@@ -4539,7 +4539,7 @@ fingerprint
 
 														        for (var i = 0; i < dataskyharborONR.items.length; i++) {
 
-														            if(dataskyharborONR.items[i].address==skyp2s && (dataskyharborONR.items[i+1]) !== undefined && dataskyharborONR.items[i+1].address != "9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu" && dataskyharborONR.items[i+1].address.length == 51 ){
+														            if((dataskyharborONR.items[i].address==skyp2s || dataskyharborONR.items[i].address==skyp2s2) && (dataskyharborONR.items[i+1]) !== undefined && dataskyharborONR.items[i+1].address != "9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu" && dataskyharborONR.items[i+1].address.length == 51 ){
 
 														           
 														                boolY2K = 1;
