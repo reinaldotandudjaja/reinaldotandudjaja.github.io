@@ -1944,11 +1944,15 @@ backspace
 
 		var skyp2s = "X2nDjRGSwafYukBtSZruDGUNEc9wV3VnzNtmBukpHfK4Amv5aDwkx2WRL6KqRfT1BoPyzmQKZRNQBqrhv6xKYEhdAygRNAZS73ZkeTNtEpVhcwecQaNP217KXtHeN3nkogBUoNjraRwz5GkicJh2FrPapFFqFpCTUk8wuRDMw8pVDXeERkZhquKAcn8NDmtF6nfgFzLGnGUyC8FY2ACEfD9aCHEFUL1jcWMWm6CsxgwLWDE43SMjxJy8iMjHUWofTj1SiQJRaLPZWMakgXMCzRgEgT4NNbek1ggwWp5SsNg9hVGgKWnKCrsPS8fR8EzvACspP8vcpPUuUkroxQbYrAEVVk5F2LmRusUywgoWiWAdi9AWjqpBVTLXPvRYqfTgsZiJQ94BCiQf1JVD26FSXrjqDWdDXoF1dwJBTbKpjMJrT3iLHHiHjjUFyDM5wxuMivywBQmFWtFsU8EgPMnYHCRu5rEB4os2ZxU4su3GWfgS2rCk8xUh4GR"
 
+		var skyp2s2 = "26tpZU6i6zeBRuzZVo7tr47zjArAxkHP8x7ijiRbbrvLhySvSU84bH8wNPGGG27EwhJfJLe7bvRPv6B1jQFQqrWUQqBX1XJpVGoiNgveance6JFZ4mKv1KkRE8nBSB3jKBGnVJjJF6wR1Z8YXRsUqrTff4bfmtbhaRRjibnDDtKhS71spfjjTBeU1AhhQpitCDg4NFxmTLyV1arE7G2riZKzDryjWnCiEJGzWNxYtVt8uDxd3qNSRE5sHECwcsb98x7rn4q4FyHMvvWrRMPFfVgAQd5wHCAHwhMEdqUrSFQVkmUMavju8CLAgCNcVFjUBKPX4ooEHLUw3QkxS9Jp6fAFAGmzJ6QVD71mAZYMYhoEQnFyUBx1txJjVJjCrcZsW43dimbt5su4ahATJ8qRtWgwat8vTViTVXAcBmUSnqbqhAqTCxcsS5EFS6ApJSfthPHYUyXwtcbTptfdnUx1e5hEiGcwxoQ8ivufNNiZE9xkxi4nsBBrBVBJ7pfSSoHvbodkzLrq91RHYrvuatyLuBSxgJxs198xUQhULqxmWwgthJLrG5VVfVYH"
+
 		var usd_skyp2s = "qNtfov7o2g1GYShDaD4a1QNv1bSjEXAbnWzVJQA7qVYogTFuxuw659G1WWwonQqA91AsYa9vL7JQLysRvMyNdZ6iLHH5mgx5RKn6tEE5uki3MPNg5cVrnG9rhZuKA3CpyaMbBBus7fxoYQsHgLCShaqJEyjFZsKooWqVJ1nFQeo9hiTCLcWd91B4EeWzrimYswG4cPaJyBwQp9eit1Hq1UtZ8dwo3r7vKsH7aJLzZbq6mky4itWHKueA4bybDQfPwYXoujsChY5jawj6V1YQrrVbzdxm66pBSfCdzr76nWp5VdnPJXbvnN6tHpv2Taivs23JJBPakAeDSpX1TuYx7Ce5KYHutTczNcytPQgbetWXNxTKzDsmzLbEX1bsWdryJnJT5bUHUXEEacWmz6JgUaKRbrJwWNgrpH5V3t6nvUgpZFpwQnNLYnLQs4tVHch3DeifD3f7BX4s5E3qArtDkNMPsY6AgUPd6kLNbfRvyZPf2RDA2CXn9ABmnKmTZdJYfc2bLHG1H7igeBH4g5Tok5fkjux6L8T8Pf7jBiV6WYRjD4y8E6idTTWrBJ9vvPJURnFD6L8jp2f3xt6HvKD1bokKUZyeTiu9hmFm3s9TE8x7ztCXeYUiJq7Lm4FzFsXkyqKgGDRSXXGmqDpwaWSdtH9Pn43kLWr8hRoMkAm1f9e6nhJQfCRu8wAK3Zv74vRfq"
 
 		var usd_skyp2sslice = "qNt"
 
 		var skyp2sslice = "X2n"
+
+		var skyp2s2slice = "26t"
 
 
     var idleTime = 0;
@@ -3738,7 +3742,7 @@ fingerprint
 							$("#CURR"+tokenidJSON).attr("href", "https://ergoauctions.org/#/auction/active?type=picture&artist=9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu");
 							$("#CURR"+tokenidJSON).parent().parent().addClass('ACTIVE');
 
-						}else if(datacurrowner.items[0].address.slice(0,3)==skyp2sslice &&document.getElementById("CURR"+tokenidJSON)!=null){
+						}else if((datacurrowner.items[0].address.slice(0,3)==skyp2sslice || datacurrowner.items[0].address.slice(0,3)==skyp2s2slice) &&document.getElementById("CURR"+tokenidJSON)!=null){
 
 							var skyharborprice = JSON.parse(datacurrowner.items[0].additionalRegisters.R4.renderedValue)/1000000000;
 							
