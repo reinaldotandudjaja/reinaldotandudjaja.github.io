@@ -2024,7 +2024,7 @@ backspace
 	});
 	var globalcounter=0;
 	var globalmyleaderboard;
-	var reloadcounter=5; // try again in 5 seconds
+	var reloadcounter=3; // try again in 5 seconds
 	var reloadcountercd=0;
 
 
@@ -2037,7 +2037,7 @@ backspace
 		}
 
 		reloadcountercd++;
-		if(globalcounter==0&&reloadcountercd>10){ //show in 10 seconds
+		if(globalcounter==0&&reloadcountercd>20){ //show in 10 seconds
 			$('#reloadcounter').html(reloadcounter)
 			reloadcounter--
 
