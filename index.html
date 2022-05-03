@@ -28,6 +28,7 @@
 
 
 		<style>
+
 .trophy{
 	width: auto!important;
 	max-width: 80px!important;
@@ -207,16 +208,7 @@ background-color: transparent !important;
 	font-size: 90%;
 }
 
-.blink{
-	opacity: 1;
-	animation: blinkanimation 1s infinite;
-}
 
-@keyframes blinkanimation {
-  0% { opacity: 1; }
-  50% { opacity: 0;}
-  100% { opacity: 1; }
-}
 
 
 #myProgress3{
@@ -1384,6 +1376,47 @@ overflow: hidden;
 	background-color: white;
 }
 
+.spinner-outer {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: -13px;
+	left: 16px;
+	-ms-background-color: rgb(255, 0, 0);
+	-o-background-color: rgb(255, 0, 0);
+	-webkit-background-color: rgb(255, 0, 0);
+	-moz-background-color: rgb(255, 0, 0);
+	background-color: rgb(255, 0, 0);
+	border-radius: 100%;
+	-ms-animation: 1.6s ease-in-out 0s infinite normal none running outer;
+	-o-animation: 1.6s ease-in-out 0s infinite normal none running outer;
+	-webkit-animation: 1.6s ease-in-out 0s infinite normal none running outer;
+	-moz-animation: 1.6s ease-in-out 0s infinite normal none running outer;
+	animation: 1.6s ease-in-out 0s infinite normal none running outer;
+
+}
+
+@keyframes outer {
+	0% {
+	  transform: scale(0);
+	}
+	60%, 100% {
+	  transform: scale(1);
+	  opacity: 0;
+	}
+}
+
+.blink{
+	opacity: 1;
+	animation: blinkanimation 1.6s infinite;
+}
+
+@keyframes blinkanimation {
+  0% { opacity: 1; }
+  50% { opacity: 0;}
+  100% { opacity: 1; }
+}
+
 </style>
 
 
@@ -1916,7 +1949,7 @@ inventory_2
   <label for="checknew"> <span  style="color:#eb1948 ;" class="boldy cloud"><span class="rainbow rainbow_text_animated">&nbsp;Newest Release&nbsp;</span></span></label>  
 
   <input type="checkbox" id="checkactive" name="checkactive" value="checkactive" onchange="myfilter();mysearchfunc();hidehistory()">
-  <label for="checkactive"> <span  style="color:#39b884 ;" class="boldy cloud">&nbsp;<span class="material-icons blink" style="line-height: 1;
+  <label for="checkactive"> <span  style="color:#39b884 ;" class="boldy cloud">&nbsp;<div class="spinner-outer"></div><span class="material-icons blink" style="line-height: 1;
 padding-top: 1px;font-size:10px;color:red;">circle</span><span id="spinneractiveauction">&nbsp;<span class='spinnersmallwhite' style="height: 10px;width: 10px"></span></span> Active Auction / Sales&nbsp;</span></label> 
 
 </form>
