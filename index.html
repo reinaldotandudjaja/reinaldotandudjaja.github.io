@@ -1391,7 +1391,7 @@ overflow: hidden;
 	<body class="is-preload" onpageshow="onPageShow()">
 
 <div class="fullscreen">
-  <div class="boldy" style="font-size:16px;text-align: center; padding-top: 45vh">ergyoroi.com not loading ? <br>
+  <div class="boldy" style="font-size:16px;text-align: center; padding-top: 45vh"><span style="font-size: 48px;">💔</span><br>ergyoroi.com not loading ? <br>
   reload in <span id="reloadcounter"></span></div>
 </div>
 
@@ -2027,6 +2027,7 @@ backspace
 	var globalmyleaderboard;
 	var reloadcounter=3; // try again in 5 seconds
 	var reloadcountercd=0;
+	var forcereload=0;
 
 
 	var intervalId = window.setInterval(function(){
@@ -2038,14 +2039,19 @@ backspace
 		}
 
 		reloadcountercd++;
-		if(globalcounter==0&&reloadcountercd>20){ //show in 10 seconds
+		if((globalcounter==0||forcereload==1)&&reloadcountercd>20){ //show in 10 seconds
+
+			if(reloadcounter>0){
+				reloadcounter--
+			}
+
 			$('#reloadcounter').html(reloadcounter)
-			reloadcounter--
 
 			$('.fullscreen').show();
-			if(reloadcounter==-1){
+			if(reloadcounter==0){
 				 location.reload(); 
 			}
+			forcereload=1;
 		}
 
 
