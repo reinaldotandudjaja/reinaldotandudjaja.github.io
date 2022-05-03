@@ -1398,6 +1398,18 @@ overflow: hidden;
 	opacity: 0;
 }
 
+.spinner-outer2 {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: -14px;
+	left: -14px;
+	background-color: rgb(255, 0, 0);
+	border-radius: 100%;
+	animation: 1.6s ease-in-out 0s infinite normal none running outer;
+	opacity: 0;
+}
+
 
 
 
@@ -1407,7 +1419,7 @@ overflow: hidden;
 	  opacity: 100;
 	}
 	60%, 100% {
-	  transform: scale(1);
+	  transform: scale(1.3);
 	  opacity: 0;
 	}
 }
@@ -3693,7 +3705,7 @@ fingerprint
 								
 								$.getJSON(urlwhobid, function(datawhobid) {
 									whobid = datawhobid.items[0].address.slice(0,3)+".."+datawhobid.items[0].address.slice(-3);
-									lastbid = '<span class="material-icons blink" style="font-size:130%;color:red">circle</span> '+whobid+' BID Σ'+ lastbid;
+									lastbid = '<span class="material-icons blink" style="font-size:130%;color:red;position:relative"><div class="spinner-outer2"></div>circle</span> '+whobid+' BID Σ'+ lastbid;
 									//console.log(lastbid)
 
 									var activeauctionby;
@@ -3737,7 +3749,7 @@ fingerprint
 								
 									$.getJSON(urlwhobid, function(datawhobid) {
 										whobid = datawhobid.items[0].address.slice(0,3)+".."+datawhobid.items[0].address.slice(-3);
-										lastbid = '<span class="material-icons blink" style="font-size:130%;color:red">circle</span> '+whobid+' BID '+ datacurrowner.items[0].assets[1].amount + " " + datacurrowner.items[0].assets[1].name ;
+										lastbid = '<span class="material-icons blink" style="font-size:130%;color:red;position:relative"><div class="spinner-outer2"></div>circle</span> '+whobid+' BID '+ datacurrowner.items[0].assets[1].amount + " " + datacurrowner.items[0].assets[1].name ;
 										//console.log(lastbid)
 
 										var activeauctionby;
