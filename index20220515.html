@@ -2052,8 +2052,6 @@ backspace
 
 		var usd_skyp2s = "qNtfov7o2g1GYShDaD4a1QNv1bSjEXAbnWzVJQA7qVYogTFuxuw659G1WWwonQqA91AsYa9vL7JQLysRvMyNdZ6iLHH5mgx5RKn6tEE5uki3MPNg5cVrnG9rhZuKA3CpyaMbBBus7fxoYQsHgLCShaqJEyjFZsKooWqVJ1nFQeo9hiTCLcWd91B4EeWzrimYswG4cPaJyBwQp9eit1Hq1UtZ8dwo3r7vKsH7aJLzZbq6mky4itWHKueA4bybDQfPwYXoujsChY5jawj6V1YQrrVbzdxm66pBSfCdzr76nWp5VdnPJXbvnN6tHpv2Taivs23JJBPakAeDSpX1TuYx7Ce5KYHutTczNcytPQgbetWXNxTKzDsmzLbEX1bsWdryJnJT5bUHUXEEacWmz6JgUaKRbrJwWNgrpH5V3t6nvUgpZFpwQnNLYnLQs4tVHch3DeifD3f7BX4s5E3qArtDkNMPsY6AgUPd6kLNbfRvyZPf2RDA2CXn9ABmnKmTZdJYfc2bLHG1H7igeBH4g5Tok5fkjux6L8T8Pf7jBiV6WYRjD4y8E6idTTWrBJ9vvPJURnFD6L8jp2f3xt6HvKD1bokKUZyeTiu9hmFm3s9TE8x7ztCXeYUiJq7Lm4FzFsXkyqKgGDRSXXGmqDpwaWSdtH9Pn43kLWr8hRoMkAm1f9e6nhJQfCRu8wAK3Zv74vRfq"
 
-		var ergoauctionp2s = "5t19JGogcry9DRipPNcLs4mSnHYXQoqazPDMXXcdMixeH2mkgzMvWXjENsHRJzfHAFnTL5FBDHQCzBcnYg4CU1LcJZMmUXAaDcsKdgfBk4sE9BDbLt6Yxkjh6ow65HGCgxkwNAEArMAz8tqZL7GzKx4AvYVkqG3ExKggwDyVrvx7YzN8xeFtEUcnVkDKM8ow7YWW8eee2EidfYArPRd8fxQr5EuZVEiQbzKZ6m4xgtHfhsEptE3pNdt69F94gkytpounxBYpJPqfeZ8hVxLk8qaXTGFiJTDTt2p9D5ue4skZf4AGSLJyuzpMkjdifczQNc784ic1nbTAcjL3FKGHqnkaVwnCxU7go45X9ZFHwdpc6v67vFDoHzAAqypax4UFF1ux84X5G4xK5NFFjMZtvPyjqn2ErNXVgHBs2AkpngBPjnVRiN4sWkhR66NfBNpigU8PaTiB4Rim2FMZSXuyhRySCA1BV8ydVxz45T9VHqHA6WYkXp2ppAHmc29F8MrHX5Ew2x6amraFgvsdgAB3XiiEqEjRc83mhZVL1QgKi5CdeeGNYiXeCkxaRhG3j6r1JdAgzGDAQfN8sdRcEc1aYxbPfbqM1s81NFm7K1UmMUxrfCUp73poGAfV8FvQa2akyascKBaSCqvwuHW2ZP4oMoJHjZjTAgQjQF8cBNF9YLo6wXEtMQT5FYc3bHSgd4xZXCk2oHYjUSACW1Z5e7KZ3Qw1Sa2UvpMdWhbZ5Ncu99WT7v6nHFLJvHEPM7evr41nhCe9Yt3pAq4ee4rKCtEer4vQWq2b5UJSDXDj5VkVepQ5tmeXfXrBc42Yqucy6VeQSE7W66o4hQjwW1iN3yipmdTmpaAEASmbXwCxRSm7g4sNkfA969xo14PZQpBY3QUGqgCWoqJJVFWMhfvD53rzfgJpA4JH5B1fvY99q5iwbsAKdJfZi4fxub9QWZSNQfht4JqXMDmc6XTkWLE4VCxBRQYzF44H2E6mdf5EbZHUrpXj5c2VfC6PZGg9qmrz14aZjafM4M7kRTqMwVB8R9r7kXM1FWidGoprp2fRoJUALAKxKDSTVHX8ejT8zkSKJ5W45dSQjMe3WUDTeKhiy6Fqio2ukV8THaizTp6yZWxMVdu3a15pGBv1kmXZJEnLN9BsxyhnW2iGM7tvwK1jAneXeBH1uVdusR59j5ubCGKeoaS5ToC8Ky6wZ2iCyb2JF5CTvR4sMUg2ksmUm1dk8EoRjJ9i5gkqY"
-
 		var usd_skyp2sslice = "qNt"
 
 		var skyp2sslice = "X2n"
@@ -4580,7 +4578,6 @@ fingerprint
 
 															        var boolY2K=0;
 															        var Y2Kplusone=0;
-															        var skyharborsoldfor=0;
 
 															        for (var i = 0; i < dataskyharborONR.items.length; i++) {
 
@@ -4593,98 +4590,77 @@ fingerprint
 															                skyharborglobalIndex = dataskyharborONR.items[Y2Kplusone].globalIndex;
 															                skyharbortx = dataskyharborONR.items[Y2Kplusone].transactionId;
 															                skyharborsoldfor = (dataskyharborONR.items[i].additionalRegisters.R4.renderedValue)/1000000000;
-
 															                break;
 															            }
 															        }
 
-															        nextstep(ONRtransactionid,boolY2K,tokenidJSON,skyharborsoldfor,substr_tokenidJSON);
+															        if(boolY2K==1  ){
+				                                document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">looks_one</span> ON-RELEASE SKYHARBOR SOLD<br><span class="smalltext">Σ'+skyharborsoldfor+ '</span> <span class="material-icons" style="font-size:130%"">sailing</span>';
+
+								                	 			// $("[id='"+tokenidJSON+"']").attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data6.id);
+								                	 			$("[id='"+tokenidJSON+"']").attr("href", "https://www.skyharbor.io/token/"+substr_tokenidJSON);
+								                	 			//$("[id='"+tokenidJSON+"']").attr("href", "https://explorer.ergoplatform.com/en/transactions/"+skyharbortx);
+								                	 			$("[id='"+tokenidJSON+"']").attr("class", "sold");
+
+								                	 			alert('sold');
+															        }else{
 
 
-															        //
-															        function nextstep(ONRtransactionid,boolY2K,tokenidJSON,skyharborsoldfor,substr_tokenidJSON){
-																						if(1==1){
+							                            var url6="https://api.ergoplatform.com/api/v1/transactions/"+ONRtransactionid;
+							                            $.getJSON(url6, function(data6) {
+							                            	//auto check instant buy
+								                            if((data6.inputs[0].additionalRegisters.R8)!==undefined){
+
+										                            	var onreleaseinstantbid = data6.inputs[0].additionalRegisters.R8.renderedValue;
+										                            	
+										                            	if((onreleaseinstantbid!=-1&&(data6.inputs[0].value/1000000000)>=(onreleaseinstantbid/1000000000))){
+										                            	//	console.log(onreleaseinstantbid[1]/1000000000)
+
+																									//check002
+																                     if(tokenidJSON=="ONRb31e22f1224ff0f7c36e7f7fd4b16b2c6350a7aadf58f78b203a35664c9660ae"){
+														                                document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">looks_one</span> ON-RELEASE INSTANT SOLD<br><span class="smalltext">Σ'+data6.inputs[0].value/1000000000+ '</span> (OLD ID) <span class="material-icons" style="font-size:130%"">gavel</span>';
+
+																                	 			// $("[id='"+tokenidJSON+"']").attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data6.id);
+																                	 			$("[id='"+tokenidJSON+"']").attr("href", "https://ergoauctions.org/#/auction/specific/"+data6.inputs[0].boxId);
+																                	 			$("[id='"+tokenidJSON+"']").attr("class", "sold");
+																                	 			//$("[id='"+tokenidJSON+"']").show();
+													           
+
+														                       	}else{
+
+												                                document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">looks_one</span> ON-RELEASE INSTANT SOLD<br><span class="smalltext">Σ'+data6.inputs[0].value/1000000000+ '</span> <span class="material-icons" style="font-size:130%"">gavel</span>';
+
+																                	 			// $("[id='"+tokenidJSON+"']").attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data6.id);
+																                	 			$("[id='"+tokenidJSON+"']").attr("href", "https://ergoauctions.org/#/auction/specific/"+data6.inputs[0].boxId);
+																                	 			$("[id='"+tokenidJSON+"']").attr("class", "sold");
+														                	 		
+																                    }
 
 
-										                            var url6="https://api.ergoplatform.com/api/v1/transactions/"+ONRtransactionid;
-										                            $.getJSON(url6, function(data6) {
 
-
-
-																					        if(boolY2K==1 && data6.inputs[0].address != ergoauctionp2s){
-										                                document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">looks_one</span> ON-RELEASE SKYHARBOR SOLD<br><span class="smalltext">Σ'+skyharborsoldfor+ '</span> <span class="material-icons" style="font-size:130%"">sailing</span>';
+														                	 		}else{
+														                	 			document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">looks_one</span> ON-RELEASE SOLD<br><span class="smalltext">Σ'+data6.inputs[0].value/1000000000+ '</span> <span class="material-icons" style="font-size:130%"">gavel</span>';
 
 														                	 			// $("[id='"+tokenidJSON+"']").attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data6.id);
-														                	 			$("[id='"+tokenidJSON+"']").attr("href", "https://www.skyharbor.io/token/"+substr_tokenidJSON);
-														                	 			//$("[id='"+tokenidJSON+"']").attr("href", "https://explorer.ergoplatform.com/en/transactions/"+skyharbortx);
-														                	 			$("[id='"+tokenidJSON+"']").attr("class", "sold");
+														                	 			$("[id='"+tokenidJSON+"']").attr("href", "https://ergoauctions.org/#/auction/specific/"+data6.inputs[0].boxId);
+														                	 			$("[id='"+tokenidJSON+"']").attr("class", "bidsold");
+														                	 			//$("[id='"+tokenidJSON+"']").show();
 
-														                	 			alert('sold');
-																					        }else{
+														                	 		}
 
-													                            	//auto check instant buy
-														                            if((data6.inputs[0].additionalRegisters.R8)!==undefined){
+															              }else{ //else no instant buy option 
+															               				  document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">looks_one</span> ON-RELEASE SOLD<br><span class="smalltext">Σ'+data6.inputs[0].value/1000000000+ '</span> <span class="material-icons" style="font-size:130%"">gavel</span>';
 
-																                            	var onreleaseinstantbid = data6.inputs[0].additionalRegisters.R8.renderedValue;
-																                            	
-																                            	if((onreleaseinstantbid!=-1&&(data6.inputs[0].value/1000000000)>=(onreleaseinstantbid/1000000000))){
-																                            	//	console.log(onreleaseinstantbid[1]/1000000000)
+															                	 			// $("[id='"+tokenidJSON+"']").attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data6.id);
+															                	 			$("[id='"+tokenidJSON+"']").attr("href", "https://ergoauctions.org/#/auction/specific/"+data6.inputs[0].boxId);
+															                	 			$("[id='"+tokenidJSON+"']").attr("class", "bidsold");
+															                	 			//$("[id='"+tokenidJSON+"']").show();
+															              }
 
-																															//check002
-																						                     if(tokenidJSON=="ONRb31e22f1224ff0f7c36e7f7fd4b16b2c6350a7aadf58f78b203a35664c9660ae"){
-																				                                document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">looks_one</span> ON-RELEASE INSTANT SOLD<br><span class="smalltext">Σ'+data6.inputs[0].value/1000000000+ '</span> (OLD ID) <span class="material-icons" style="font-size:130%"">gavel</span>';
-
-																						                	 			// $("[id='"+tokenidJSON+"']").attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data6.id);
-																						                	 			$("[id='"+tokenidJSON+"']").attr("href", "https://ergoauctions.org/#/auction/specific/"+data6.inputs[0].boxId);
-																						                	 			$("[id='"+tokenidJSON+"']").attr("class", "sold");
-																						                	 			//$("[id='"+tokenidJSON+"']").show();
-																			           
-
-																				                       	}else{
-
-																		                                document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">looks_one</span> ON-RELEASE INSTANT SOLD<br><span class="smalltext">Σ'+data6.inputs[0].value/1000000000+ '</span> <span class="material-icons" style="font-size:130%"">gavel</span>';
-
-																						                	 			// $("[id='"+tokenidJSON+"']").attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data6.id);
-																						                	 			$("[id='"+tokenidJSON+"']").attr("href", "https://ergoauctions.org/#/auction/specific/"+data6.inputs[0].boxId);
-																						                	 			$("[id='"+tokenidJSON+"']").attr("class", "sold");
-																				                	 		
-																						                    }
-
-
-
-																				                	 		}else{
-																				                	 			document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">looks_one</span> ON-RELEASE SOLD<br><span class="smalltext">Σ'+data6.inputs[0].value/1000000000+ '</span> <span class="material-icons" style="font-size:130%"">gavel</span>';
-
-																				                	 			// $("[id='"+tokenidJSON+"']").attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data6.id);
-																				                	 			$("[id='"+tokenidJSON+"']").attr("href", "https://ergoauctions.org/#/auction/specific/"+data6.inputs[0].boxId);
-																				                	 			$("[id='"+tokenidJSON+"']").attr("class", "bidsold");
-																				                	 			//$("[id='"+tokenidJSON+"']").show();
-
-																				                	 		}
-
-																					              }else{ //else no instant buy option 
-																					               				  document.getElementById(tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">looks_one</span> ON-RELEASE SOLD<br><span class="smalltext">Σ'+data6.inputs[0].value/1000000000+ '</span> <span class="material-icons" style="font-size:130%"">gavel</span>';
-
-																					                	 			// $("[id='"+tokenidJSON+"']").attr("href", "https://explorer.ergoplatform.com/en/transactions/"+data6.id);
-																					                	 			$("[id='"+tokenidJSON+"']").attr("href", "https://ergoauctions.org/#/auction/specific/"+data6.inputs[0].boxId);
-																					                	 			$("[id='"+tokenidJSON+"']").attr("class", "bidsold");
-																					                	 			//$("[id='"+tokenidJSON+"']").show();
-																					              }
-																					        }
-										                            });
-
-
-																		        }
-
-
-
-
-
+							                            });
 
 
 															        }
-															        //
-															        
 															    });
 
 
