@@ -146,8 +146,27 @@ background-color: transparent !important;
     border: 3px solid;
 }
 
-.rainbow {
 
+.rainbow_text_animated2 {
+		/*background: linear-gradient(to right, #000000, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff, #000000);*/
+    /*background: linear-gradient(to right, #AE8625, #F7EF8A, #D2AC47 , #EDC967, #AE8625, #F7EF8A, #D2AC47 , #EDC967);*/
+		/*		background: -moz-linear-gradient(to right, #ff0000, #ff8000 ,#ffff00,#80ff00, #00ff00,#00ff80,#00ffff,#0080ff,#0000ff, #8000ff, #ff00ff, #ff0080, #ff0000, #ff8000 ,#ffff00,#80ff00, #00ff00,#00ff80,#00ffff,#0080ff,#0000ff, #8000ff, #ff00ff, #ff0080);*/
+
+		background-color: -moz-linear-gradient(to right, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+		background-color: -webkit-linear-gradient(to right, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+		background-color: -o-linear-gradient(to right, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+		background-color: -ms-linear-gradient(to right, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+		background-color: linear-gradient(to right, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+		
+
+		-moz-background-clip: text;
+    -webkit-background-clip: text;
+    -o-background-clip: text;
+    -ms-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 25s ease-in-out infinite;
+    background-size: 400% 100%;
 }
 
 .rainbow_text_animated {
@@ -171,6 +190,7 @@ background-color: transparent !important;
     animation: rainbow_animation 25s ease-in-out infinite;
     background-size: 400% 100%;
 }
+
 
 .shinygold {
 		/*background: linear-gradient(to right, #000000, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff, #000000);*/
@@ -3234,12 +3254,13 @@ function myFunctionD() {
 
 <span class="material-icons" style="font-size: 14px">looks_one</span> On-Release &nbsp;
 <span class="material-icons" style="font-size: 14px">looks_two</span> On-Aftermarket &nbsp;
-<span class="rainbow rainbow_text_animated"><span class="material-icons" style="font-size: 14px">brush</span></span> By Artist / Creator 
+<span class="rainbow rainbow_text_animated"><span class="material-icons" style="font-size: 14px">brush</span></span> On-Release / By Artist
 </span>
 
 <br>
 
-
+<span  class="bgrainbow" style="font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12px"> &nbsp;On-Release / By Artist</span>
+<br>
 <span style="background-color: #6e1f60; font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12px"> &nbsp;Artist Owned (Not For Sale)</span>
 <br>
 <span style="background-color: #17192c; font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12px"> &nbsp;Current Owner (RealTime Updates)</span>
