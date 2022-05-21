@@ -3527,9 +3527,9 @@ function myFunctionC() {
                     $.getJSON(url3, function(data3) {
                         //console.log(hexToAscii(data3.additionalRegisters.R9.renderedValue).replace("ipfs://", "https://cloudflare-ipfs.com/ipfs/"))
 
-                        var ergyoroilink = hexToAscii(data3.additionalRegisters.R9.renderedValue).replace("ipfs://", "https://cloudflare-ipfs.com/ipfs/");
+                        var ergyoroilink = hexToAscii(data3.additionalRegisters.R9.renderedValue).replace("ipfs://", "https://ipfs.io/ipfs/");
 
-                        var item= $("<div class='grid-item-myergyoroi'><a class='pop'><img class='myergyoroiimg zoom' src='"+ergyoroilink+"'></img></a><div class='ergyoroiname'>"+data3.assets[0].name+"</div><a href='https://ergonfts.org/#/?token="+data3.assets[0].tokenId+"' target=_blank' class='button fit tokenid-myergyoroi'><span class='material-icons' style='font-size:150%'>search</span> Token ID</a></div>").hide().fadeIn(1000);
+                        var item= $("<div class='grid-item-myergyoroi'><a class='pop'><img loading='lazy' class='myergyoroiimg zoom' src='"+ergyoroilink+"'></img></a><div class='ergyoroiname'>"+data3.assets[0].name+"</div><a href='https://ergonfts.org/#/?token="+data3.assets[0].tokenId+"' target=_blank' class='button fit tokenid-myergyoroi'><span class='material-icons' style='font-size:150%'>search</span> Token ID</a></div>").hide().fadeIn(1000);
                
                         $(".grid-container-myergyoroi").append(item);
 												
