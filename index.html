@@ -2058,10 +2058,10 @@ backspace
 
 		var erg_usd = 0;
 		var usd_erg = 0;
-		$.getJSON("https://ergopad.io/api/asset/price/ergo", function(dataerg_usd) {
-			erg_usd = dataerg_usd.price
-			usd_erg = 1/erg_usd
-		});
+		// $.getJSON("https://ergopad.io/api/asset/price/ergo", function(dataerg_usd) {
+		// 	erg_usd = dataerg_usd.price
+		// 	usd_erg = 1/erg_usd
+		// });
 
 
 		//var skyp2s = "Y2KFdpZQzL2Pb1vwYnaaYXcQCo7sajiPK3iL8TXttqAKwoqvVCSjqJEqi4x3PeQ8Ap5rUWYN7681J5DA7TzX5XSwVuNVatLYjmRKisnW8KoE7vGpfap4ixXB4jnw7jHMGvL81P8RtLDHvWTKDuDtnDFJiSaYH6SWxy8VKNDSM3H5sr7QSkG7NbN3wYAPHfmDnXwBajEbBRLXekpYnPc7Hb66buc1bBMhQE3vKXCxrzb93wX5zxy4cDoJhZtcFCHcxWpf1vh6DoxWu9tWEkLSaAHeVbm8fF34Nu6QZpSyQpb592ZzGgBBDz35WtYiDCyHb1CKEz1ckwXuF6cRNE2WP8ttsKX1HTPByZaaiXCqQTqWg31p1SrGj7pUXKQ9y8yYf6AJW2frv1nb9aLxmqozgZcZgVj9xeQ6BF2BVcqaiAjdwcRovh42vPzhJ2CTMEZ"
@@ -4808,10 +4808,19 @@ fingerprint
 
 
 	function lazyloadjson(mythis){
-
-	ANTgetJSON(mythis.id.substring(8));
-	getONR($(mythis).siblings('.actions').find('.ONRvalue').attr('id'));
-	//ANTgetJSON(mythis.id.substring(7),$(mythis).siblings('.ONRvalue').attr('id'));
+		if(erg_usd==0){
+			$.getJSON("https://ergopad.io/api/asset/price/ergo", function(dataerg_usd) {
+				erg_usd = dataerg_usd.price
+				usd_erg = 1/erg_usd
+			}).done(function() {
+				ANTgetJSON(mythis.id.substring(8));
+				getONR($(mythis).siblings('.actions').find('.ONRvalue').attr('id'));
+  		})
+		}else{
+			ANTgetJSON(mythis.id.substring(8));
+			getONR($(mythis).siblings('.actions').find('.ONRvalue').attr('id'));
+			//ANTgetJSON(mythis.id.substring(7),$(mythis).siblings('.ONRvalue').attr('id'));
+		}
 	} 
 
 
