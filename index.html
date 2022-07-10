@@ -4032,17 +4032,18 @@ fingerprint
 
 
 
-		function ANTgetJSON(tokenidJSON){
-			var url = "https://api.ergoplatform.com/api/v1/tokens/"+tokenidJSON;
-			$.getJSON(url, function(ANTdata1) {
+		function ANTgetJSON(tokenidJSON,tokenidJSON2){
 
-				var url2 = "https://api.ergoplatform.com/api/v1/boxes/"+ANTdata1.boxId;
-				$.getJSON(url2, function(ANTdata2) {
+			var urlnewmint = "https://api.ergoplatform.com/api/v1/tokens/"+tokenidJSON2;
+			$.getJSON(urlnewmint, function(ANTdata1newmint) {
+
+				var url2newmint = "https://api.ergoplatform.com/api/v1/boxes/"+ANTdata1newmint.boxId;
+				$.getJSON(url2newmint, function(ANTdata2newmint) {
 					
-					var url3 = "https://api.ergoplatform.com/api/v1/blocks/"+ANTdata2.blockId;
-					$.getJSON(url3, function(ANTdata3) {
+					var url3newmint = "https://api.ergoplatform.com/api/v1/blocks/"+ANTdata2newmint.blockId;
+					$.getJSON(url3newmint, function(ANTdata3newmint) {
 
-						timestamp = Math.floor(((new Date()).getTime() - ANTdata3.block.header.timestamp) / (1000 * 60 * 60 * 24 ));
+						timestamp = Math.floor(((new Date()).getTime() - ANTdata3newmint.block.header.timestamp) / (1000 * 60 * 60 * 24 ));
 						stringtime = ""
 						if(timestamp==1){
 							stringtime = '<span class="material-icons" style="font-size:150%">hourglass_top</span> Antiquity '+timestamp + " day"
@@ -4053,6 +4054,30 @@ fingerprint
 						$("#ANTIQUITY"+tokenidJSON).css("background",'#eee').html(stringtime).fadeIn(4000);
 
 					});
+				});
+			});
+
+
+			var url = "https://api.ergoplatform.com/api/v1/tokens/"+tokenidJSON;
+			$.getJSON(url, function(ANTdata1) {
+
+				var url2 = "https://api.ergoplatform.com/api/v1/boxes/"+ANTdata1.boxId;
+				$.getJSON(url2, function(ANTdata2) {
+					
+					// var url3 = "https://api.ergoplatform.com/api/v1/blocks/"+ANTdata2.blockId;
+					// $.getJSON(url3, function(ANTdata3) {
+
+					// 	timestamp = Math.floor(((new Date()).getTime() - ANTdata3.block.header.timestamp) / (1000 * 60 * 60 * 24 ));
+					// 	stringtime = ""
+					// 	if(timestamp==1){
+					// 		stringtime = '<span class="material-icons" style="font-size:150%">hourglass_top</span> Antiquity '+timestamp + " day"
+					// 	}else{
+					// 		stringtime = '<span class="material-icons" style="font-size:150%">hourglass_top</span> Antiquity '+timestamp + " days"
+					// 	}
+						
+					// 	$("#ANTIQUITY"+tokenidJSON).css("background",'#eee').html(stringtime).fadeIn(4000);
+
+					// });
 
 							//STARTRECENT##########################
 
@@ -4839,12 +4864,22 @@ fingerprint
 				erg_usd = dataerg_usd.price
 				usd_erg = 1/erg_usd
 			}).done(function() {
-				ANTgetJSON(mythis.id.substring(8));
+				if($(mythis).siblings('.actions').find('.ONRvalue').attr('id') !== undefined){
+					ANTgetJSON(mythis.id.substring(8),$(mythis).siblings('.actions').find('.ONRvalue').attr('id').slice(3));
+				}else{
+					ANTgetJSON(mythis.id.substring(8),mythis.id.substring(8));
+				}
+
 				getONR($(mythis).siblings('.actions').find('.ONRvalue').attr('id'));
   		})
 		}else{
-			ANTgetJSON(mythis.id.substring(8));
-			getONR($(mythis).siblings('.actions').find('.ONRvalue').attr('id'));
+				if($(mythis).siblings('.actions').find('.ONRvalue').attr('id') !== undefined){
+					ANTgetJSON(mythis.id.substring(8),($(mythis).siblings('.actions').find('.ONRvalue').attr('id')).slice(3));
+				}else{
+					ANTgetJSON(mythis.id.substring(8),mythis.id.substring(8));
+				}
+
+				getONR($(mythis).siblings('.actions').find('.ONRvalue').attr('id'));
 			//ANTgetJSON(mythis.id.substring(7),$(mythis).siblings('.ONRvalue').attr('id'));
 		}
 	} 
