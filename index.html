@@ -3783,9 +3783,19 @@ fingerprint
 					var urlcurrowner ="https://api.ergoplatform.com/api/v1/boxes/unspent/byTokenId/"+tokenidJSON;
 					$.getJSON(urlcurrowner, function(datacurrowner) {
 						
+						if(datacurrowner.total!=0){
 						slicedcurrowner = datacurrowner.items[0].address.slice(0,3)+".."+datacurrowner.items[0].address.slice(-3);
-						
-						if(datacurrowner.items[0].address=="9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu"&&document.getElementById("CURR"+tokenidJSON)!=null){
+					}
+
+						if(datacurrowner.total==0&&document.getElementById("CURR"+tokenidJSON)!=null)
+						{
+							slicedcurrowner = "";
+							$("#CURR"+tokenidJSON).attr("class", "currowner artistsoon");
+							document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> CURRENT OWNER<br>'+slicedcurrowner+' 🔥🔥🔥';
+							$("#CURR"+tokenidJSON).attr("href", "https://twitter.com/SkyHarbor_io/status/1545484956054478848");
+							$("#CURR"+tokenidJSON).closest('div').addClass('bgrainbow') 
+						}
+						else if(datacurrowner.items[0].address=="9iASL5zR9YJHtH32DEnJ6dD5DumVxr3MUZjty1sZuCYFCmSPjEu"&&document.getElementById("CURR"+tokenidJSON)!=null){
 							slicedcurrowner = datacurrowner.items[0].address.slice(0,3)+".."+datacurrowner.items[0].address.slice(-3);
 							$("#CURR"+tokenidJSON).attr("class", "currowner artistsoon");
 							document.getElementById("CURR"+tokenidJSON).innerHTML = '<span class="material-icons" style="font-size:130%">person_pin_circle</span> CURRENT OWNER<br>'+slicedcurrowner+' <span class="rainbow rainbow_text_animated"><span class="material-icons" style="font-size:130%">brush</span></span>';
