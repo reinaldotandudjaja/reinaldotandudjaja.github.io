@@ -2058,7 +2058,7 @@ backspace
 
 		var erg_usd = 0;
 		var usd_erg = 0;
-		$.getJSON("https://ergopad.io/api/asset/price/ergo", function(dataerg_usd) {
+		$.getJSON("https://api.ergopad.io/asset/price/ergo", function(dataerg_usd) {
 		 	erg_usd = dataerg_usd.price
 		 	usd_erg = 1/erg_usd
 		});
@@ -4860,7 +4860,7 @@ fingerprint
 
 	function lazyloadjson(mythis){
 		if(erg_usd==0){
-			$.getJSON("https://ergopad.io/api/asset/price/ergo", function(dataerg_usd) {
+			$.getJSON("https://api.ergopad.io/asset/price/ergo", function(dataerg_usd) {
 				erg_usd = dataerg_usd.price
 				usd_erg = 1/erg_usd
 			}).done(function() {
